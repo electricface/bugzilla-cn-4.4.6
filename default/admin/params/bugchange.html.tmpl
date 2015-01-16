@@ -8,7 +8,7 @@
 
 [%
    title = "$terms.Bug 变更政策"
-   desc = "设定 $terms.bug 变更的政策"
+   desc = "设置 $terms.bug 变更的政策"
 %]
 
 [% accept_status = display_value('bug_status', 'IN_PROGRESS') FILTER html %]
@@ -24,12 +24,12 @@
                                  "若设为「关」，则使用该产品预设的目标里程碑。",
 
   musthavemilestoneonaccept =>
-    "使用 ${field_descs.target_milestone} 时，是否要求使用者在接受一个 $terms.bug 时，设定目標里程碑？",
+    "使用 ${field_descs.target_milestone} 时，是否要求使用者在接受一个 $terms.bug 时，设置目標里程碑？",
 
   commentonchange_resolution => "若设为「开」，当变更 $terms.bug 的解決方案时，使用者需要输入留言。",
 
   commentonduplicate => "若设为「开」，当 $terms.bug 被标记为重复 (DUPLICATE) 时，使用者需要输入留言。",
 
   noresolveonopenblockers => "若设为「开」，当 $terms.bug 的依赖关系树还有未解的 $terms.bugs 时，" _
-                             "将不允许设定解決方案为已修复 (FIXED) 。" }
+                             "将不允许设置解決方案为已修复 (FIXED) 。" }
 %]

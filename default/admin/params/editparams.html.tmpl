@@ -27,7 +27,7 @@
   [% IF curpanel == -1 %]
     参数：索引
   [% ELSE %]
-    设定：[%+ current_panel.title FILTER html %]
+    设置：[%+ current_panel.title FILTER html %]
   [% END %]
 [% END %]
 
@@ -89,7 +89,7 @@
           <input type="hidden" name="section" value="[% current_panel.name FILTER html %]">
           <input type="hidden" name="action" value="save">
           <input type="hidden" name="token" value="[% token FILTER html %]">
-          <input type="submit" id="save-params" value="保存设定">
+          <input type="submit" id="save-params" value="保存设置">
         </form>
       [% END %]
     </td>

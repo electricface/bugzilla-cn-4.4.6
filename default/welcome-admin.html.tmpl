@@ -21,18 +21,18 @@
 <div id="welcome-admin">
   <p>欢迎， [% user.identity FILTER html %] 。</p>
 
-  <p>你会看到此页面是因为有部分核心参数尚未设定。此页面的目的是告诉你正确安装的最后几个步骤。</p>
+  <p>你会看到此页面是因为有部分核心参数尚未设置。此页面的目的是告诉你正确安装的最后几个步骤。</p>
 
   <p>作为一名管理员，你可以通过下方的<a href="admin.cgi">管理</a>链接，浏览所有管理员页面。<br>
      此链接可以在所有页面看得到。<br>
-     在此链接中，请务必至少浏览<a href="editparams.cgi">参数设定</a>页。<br>
-     该页面允许你设定所有重要的参数。同时，你也可以设定以下参数：</p>
+     在此链接中，请务必至少浏览<a href="editparams.cgi">参数设置</a>页。<br>
+     该页面允许你设置所有重要的参数。同时，你也可以设置以下参数：</p>
 
   <ul>
     <li>
       <a href="editparams.cgi?section=core#urlbase_desc">urlbase</a><br>
       基准网址。指向安装 [% terms.Bugzilla %] 的机器的网址。也会用于电子邮件中。<br>
-      （这也是你会看到此页面的原因：只要此参数未被设定，就会一直看到此页面。）
+      （这也是你会看到此页面的原因：只要此参数未被设置，就会一直看到此页面。）
     </li>
 
     <li>
@@ -59,21 +59,21 @@
     <li>
       <a href="editparams.cgi?section=auth#createemailregexp_desc">createemailregexp</a><br>
       允许创建新帐号的正则表达式。此参数定义哪些使用者可以创建新帐号。<br>
-      如果设定为 ".*" (预设值)，则所有人均可创建新帐号。<br>
-      如果设定为 "@mycompany.com$"，则只有拥有 @mycompany.com 账号的使用者可以创建新帐号。<br>
+      如果设置为 ".*" (预设值)，则所有人均可创建新帐号。<br>
+      如果设置为 "@mycompany.com$"，则只有拥有 @mycompany.com 账号的使用者可以创建新帐号。<br>
       如果留白，将不允许使用者自行建立新账号，仅能由管理员创建。<br>
-      如果你不希望公开此 [% terms.Bugzilla %] ，你必须将此参数设定为预设值意外的值。
+      如果你不希望公开此 [% terms.Bugzilla %] ，你必须将此参数设置为预设值意外的值。
     </li>
 
     <li>
       <a href="editparams.cgi?section=mta#mail_delivery_method_desc">mail_delivery_method</a><br>
-      邮件发送方式。定义邮件使用何种方式发送，例如 sendmail 或 SMTP 。必须设定正确，才能发送邮件。
+      邮件发送方式。定义邮件使用何种方式发送，例如 sendmail 或 SMTP 。必须设置正确，才能发送邮件。
     </li>
   </ul>
 
   <p>
-    在你设定完成之后，我们也建议你有空时不妨看看其它的 [% terms.Bugzilla %] 参数设定。<br>
-    这样你才能明白他们的功用，以及在需要时修改这些设定。
+    在你设置完成之后，我们也建议你有空时不妨看看其它的 [% terms.Bugzilla %] 参数设置。<br>
+    这样你才能明白他们的功用，以及在需要时修改这些设置。
   </p>
 </div>
 

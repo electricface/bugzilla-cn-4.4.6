@@ -8,7 +8,7 @@
 
 [%
    title = "使用者认证"
-   desc = "设定使用者认证政策"
+   desc = "设置使用者认证政策"
 %]
 
 [% param_descs = {
@@ -50,7 +50,7 @@
                           <dt>LDAP</dt>
                           <dd>
                             使用 LDAP 服务器进行 LDAP 认证。请參考
-                            $terms.Bugzilla 说明以了解更多信息。使用此方法必须先设定<a
+                            $terms.Bugzilla 说明以了解更多信息。使用此方法必须先设置<a
                             href=\"?section=ldap\">额外的参数</a>。
                           </dd>
                         </dl>",
@@ -70,7 +70,7 @@
                       </li>
                     </ul>",
 
-  requirelogin => "若设定此选项，则所有浏览系统任何页面均需要登录。不允许匿名使用者使用。",
+  requirelogin => "若设置此选项，则所有浏览系统任何页面均需要登录。不允许匿名使用者使用。",
 
   emailregexp =>
     "定义有效的电子邮件地址的正则表达式。" _
@@ -84,16 +84,16 @@
   emailregexpdesc => "以<u>英文</u>表示 <tt>emailregexp</tt> 参数所允许的电子邮件地址。",
 
   emailsuffix => "这是用来加在使用者账号后面，形成电子邮件地址的字串。" _
-                 "如果你将 <tt>emailregexp</tt> 参数设定为仅允许本地的使用者名称，" _
+                 "如果你将 <tt>emailregexp</tt> 参数设置为仅允许本地的使用者名称，" _
                  "但希望将邮件发送到 username@my.local.hostname 时，这个参数将十分有用。",
 
   createemailregexp => "此处定义使用者自行使用「新建账号」功能所允许的电子邮件地址" _
                        "（不分大小写）的正则表达式。" _
                        "预设值 (.*) 允许建立任何符何 emailregexp 参数的账号。" _
-                       "如果设为空白，将不允许使用者自行建立新账号；所有的账号都必须通过管理者设定。",
+                       "如果设为空白，将不允许使用者自行建立新账号；所有的账号都必须通过管理者设置。",
 
   password_complexity =>
-    "设定密码所要求的复杂程度。不管复杂程度为何，密码都必须至少" _
+    "设置密码所要求的复杂程度。不管复杂程度为何，密码都必须至少" _
     " ${constants.USER_PASSWORD_MIN_LENGTH} 字符。" _
     "<ul>" _
       "<li>no_constraints - " _

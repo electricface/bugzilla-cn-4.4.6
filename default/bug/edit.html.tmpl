@@ -688,7 +688,7 @@
              和 QA 联络人
           [% END %]
           一定可以看见这个 [% terms.bug %] 。
-          这个部分的设定只有在 [% terms.bug %] 被限制在至少一个群组时，才会生效。
+          这个部分的设置只有在 [% terms.bug %] 被限制在至少一个群组时，才会生效。
         </p>
       </div>
     [% END %]
@@ -853,8 +853,8 @@
         [% END %]
         [% IF show_more_flags %]
           <span id="bz_flags_more_container" class="bz_default_hidden">
-            [% IF !bug_flags_set %]<em>尚未设定</em>[% END %]
-            (<a href="#" id="bz_flags_more_action">[% IF !bug_flags_set %]设定[% ELSE %]更多[% END %]旗标</a>)
+            [% IF !bug_flags_set %]<em>尚未设置</em>[% END %]
+            (<a href="#" id="bz_flags_more_action">[% IF !bug_flags_set %]设置[% ELSE %]更多[% END %]旗标</a>)
           </span>
           <script type="text/javascript">
             YAHOO.util.Dom.removeClass('bz_flags_more_container', 'bz_default_hidden');
@@ -1039,7 +1039,7 @@
                id="newcommentprivacy"
                onClick="updateCommentTagControl(this, 'comment')">
         <label for="newcommentprivacy">
-          将注释设定为不公开（只有
+          将注释设置为不公开（只有
           <strong>[% Param('insidergroup') FILTER html %]</strong> 群组可见）
         </label>
       [% END %]

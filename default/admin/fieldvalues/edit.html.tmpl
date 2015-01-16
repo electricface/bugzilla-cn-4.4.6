@@ -52,7 +52,7 @@
       <tr>
         <th align="right">
           <label for="visibility_value_id">只在
-           [%+ field.value_field.description FILTER html %] 设定为以下数值时出现：
+           [%+ field.value_field.description FILTER html %] 设置为以下数值时出现：
           </label>
         </th>
         <td>
@@ -70,7 +70,7 @@
               </option>
             [% END %]
           </select>
-          <small>（若不设定，则此数值将永远显示。）</small>
+          <small>（若不设置，则此数值将永远显示。）</small>
         </td>
       </tr>
     [% END %]
@@ -95,7 +95,7 @@
   <input type="hidden" name="action" value="update">
   <input type="hidden" name="field" value="[% field.name FILTER html %]">
   <input type="hidden" name="token" value="[% token FILTER html %]">
-  <input type="submit" id="update" value="保存设定">
+  <input type="submit" id="update" value="保存设置">
 </form>
 
 [% PROCESS admin/fieldvalues/footer.html.tmpl

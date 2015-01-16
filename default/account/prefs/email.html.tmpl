@@ -28,7 +28,7 @@
 [% END %]
 
 <p>
-如果你不想要收到 [% terms.bug %] 变更状态通知信，你可以用以下设定来过滤部分或全部的通知信。
+如果你不想要收到 [% terms.bug %] 变更状态通知信，你可以用以下设置来过滤部分或全部的通知信。
 </p>
 
 [% IF user.authorizer.can_change_email && Param('allowemailchange') %]
@@ -64,7 +64,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
 <table>
   <tr>
     <td colspan="2">
-      <b>整体设定选项：</b>
+      <b>整体设置选项：</b>
     </td>
   </tr>
 
@@ -76,7 +76,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
         value="1"
         [% " checked"
            IF user.mail_settings.${constants.REL_ANY}.${constants.EVT_FLAG_REQUESTED} %]>
-      <label for="[% prefname %]">当有人要求我设定这一项旗标时，发送电子邮件给我</label>
+      <label for="[% prefname %]">当有人要求我设置这一项旗标时，发送电子邮件给我</label>
       <br>
     </td>
   </tr>
@@ -88,7 +88,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
         value="1"
         [% " checked"
            IF user.mail_settings.${constants.REL_ANY}.${constants.EVT_REQUESTED_FLAG} %]>
-      <label for="[% prefname %]">当有人应允我的要求，设定一项旗标，发送电子邮件给我</label>
+      <label for="[% prefname %]">当有人应允我的要求，设置一项旗标，发送电子邮件给我</label>
       <br>
     </td>
   </tr>
@@ -96,14 +96,14 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
   <tr>
     <td width="150"></td>
     <td>
-      你在监控所有的 [% terms.bugs %] 。若要删除此设定，请联系 <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a> 。
+      你在监控所有的 [% terms.bugs %] 。若要删除此设置，请联系 <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a> 。
     </td>
   </tr>
 [% END %]
 </table>
 
 <hr>
-<b>栏位及收件人个别设定选项：</b>
+<b>栏位及收件人个别设置选项：</b>
 <br>
 <br>
 
@@ -211,7 +211,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
       &nbsp;
     </td>
     <td width="40%">
-      <b>但当…的时候，我不想要收到信（覆盖以上设定值）：</b>
+      <b>但当…的时候，我不想要收到信（覆盖以上设置值）：</b>
     </td>
   </tr>
 
@@ -238,7 +238,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
 <b>监控用户</b>
 
 <p>
-如果你监控一位用户，那么就会根据<u>你的</u>偏好设定以及<u>他和 [% terms.bug %] </u>的关系（例如：负责人）来决定是否收到电子邮件。
+如果你监控一位用户，那么就会根据<u>你的</u>偏好设置以及<u>他和 [% terms.bug %] </u>的关系（例如：负责人）来决定是否收到电子邮件。
 </p>
 
 <p>

@@ -46,7 +46,7 @@
         </dt>
         <dd class="unconfirmed">
           这个 [% terms.bug %] 最近才被加到数据库。没有人确认它是不是真的。拥有
-          "canconfirm" 权限的使用者可以将它的状态设定为
+          "canconfirm" 权限的使用者可以将它的状态设置为
           <b>[% display_value("bug_status", "CONFIRMED") FILTER html %]</b>
           来确认这个 [% terms.bug %] 。或者它也可以直接被解決，并标记为
           <b>[% display_value("bug_status", "RESOLVED") FILTER html %]</b> 。
@@ -96,8 +96,8 @@
         </dt>
         <dd class="resolved">
           已采取解決方案，并等待 QA 认证。在此状态下，
-          [% terms.bugs %] 可以被重新开启并设定为开启的状态，或是经由
-          QA 认证并设定为
+          [% terms.bugs %] 可以被重新开启并设置为开启的状态，或是经由
+          QA 认证并设置为
           <b>[% display_value("bug_status", "VERIFIED") FILTER html %]</b> 。
         </dd>
 

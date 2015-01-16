@@ -14,8 +14,8 @@
 [% param_descs = {
   shadowdbhost => "Shadow 数据库在的主机。",
 
-  shadowdbport => "Shadow 数据库所在的连接埠。若 <tt>shadowdbhost</tt> 设为空白，则会忽略此设定。" _
-                  "注意：如果主机是本地的机器，那么 MySQL 会忽略此设定，因此你必须在下方指定 socket 。",
+  shadowdbport => "Shadow 数据库所在的连接埠。若 <tt>shadowdbhost</tt> 设为空白，则会忽略此设置。" _
+                  "注意：如果主机是本地的机器，那么 MySQL 会忽略此设置，因此你必须在下方指定 socket 。",
 
   shadowdbsock => "如果主机是本地的机器的話，此选项用来指定连接到 shadow 数据库的 socket 。" _
                   "因此在从客户端连到本地服务器时， MySQL 会忽略客户端所指定的连接埠，" _
@@ -26,5 +26,5 @@
   shadowdb => "如果不设为空白，那么这就是另一个资料库的名称，并且被 $terms.Bugzilla 用来做只读的复制备份。" _
               "这么做的好处是在执行又长又慢的只读程序时，可以使用此一数据库，而不会让其他人因此锁死。" _
               "这个数据库必须设在 <tt>shadowdbhost</tt> 上，且必须存在。 " _
-              "$terms.Bugzilla 并不会更新它，因此如果你使用此一参数，那么你必须替你的数据库设定复制。" }
+              "$terms.Bugzilla 并不会更新它，因此如果你使用此一参数，那么你必须替你的数据库设置复制。" }
 %]

@@ -24,7 +24,7 @@
 
 [% filtered_login = user.login FILTER html %]
 [% PROCESS global/header.html.tmpl
-   title = "用户偏好设定"
+   title = "用户偏好设置"
    subheader = filtered_login
    style_urls = ['skins/standard/admin.css']
    javascript_urls = ['js/util.js', 'js/field.js']
@@ -32,9 +32,9 @@
    yui = ['autocomplete']
  %]
 
-[% tabs = [{ name => "settings", label => "一般设定",
+[% tabs = [{ name => "settings", label => "一般设置",
               link => "userprefs.cgi?tab=settings", saveable => "1" },
-            { name => "email", label => "电子邮件设定",
+            { name => "email", label => "电子邮件设置",
               link => "userprefs.cgi?tab=email", saveable => "1" },
             { name => "saved-searches", label => "已保存的搜索",
               link => "userprefs.cgi?tab=saved-searches", saveable => "1" },
@@ -88,7 +88,7 @@
         <tr>
           <td width="150">&nbsp;</td>
           <td>
-            <input type="submit" id="update" value="保存设定">
+            <input type="submit" id="update" value="保存设置">
           </td>
         </tr>
       </table>

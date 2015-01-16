@@ -16,7 +16,7 @@
   [% IF    message_tag == "account_created" %]
     已成功创建账号 [% otheruser.login FILTER html %] 。
     [% IF groups.size %]
-      若要编辑群组设定，使用以下的表单。
+      若要编辑群组设置，使用以下的表单。
     [% END %]
 
   [% ELSIF message_tag == "account_creation_canceled" %]
@@ -37,7 +37,7 @@
             [% ELSIF field == 'realname' %]
               真实姓名已更新。
             [% ELSIF field == 'cryptpassword' %]
-              已设定新密码。
+              已设置新密码。
             [% ELSIF field == 'disabledtext' %]
               已修改「无法使用此账号登录」文字。
             [% ELSIF field == 'is_enabled' %]
@@ -228,7 +228,7 @@
 
   [% ELSIF message_tag == "default_settings_updated" %]
     [% IF changes_saved %]
-      已存储对预设偏好设定所做的变更。
+      已存储对预设偏好设置所做的变更。
     [% ELSE %]
       并未做出变更。
     [% END %]
@@ -291,14 +291,14 @@
           [% IF value.visibility_value.defined %]
             <li>只在
               [%+ value.field.value_field.description FILTER html %]
-              设定为
+              设置为
               '[%+ value.visibility_value.name FILTER html %]'
               時出現。
             </li>
           [% ELSE %]
             <li>無論
               [%+ value.field.value_field.description FILTER html %]
-              设定为何，此字段将永远显示。
+              设置为何，此字段将永远显示。
             </li>
           [% END %]
         [% END %]
@@ -411,7 +411,7 @@
     [% END %]
 
   [% ELSIF message_tag == "install_workflow_init" %]
-    设定预设的工作流程中...
+    设置预设的工作流程中...
 
   [% ELSIF message_tag == "invalid_column_name" %]
     所指定的自定排序包含无效的字段名称：
@@ -574,7 +574,7 @@
       <ul>
         [% IF changes.is_active.defined %]
           [%# 注：active/inactive, 见 flag_type_deactivated #%]
-          <li>旗标类型已设定为[% flagtype.is_active ? "启用" : "停用 (inactive)" %]</li>
+          <li>旗标类型已设置为[% flagtype.is_active ? "启用" : "停用 (inactive)" %]</li>
         [% END %]
         [% IF changes.name.defined %]
           <li>旗标类型已更名为 <em>[% flagtype.name FILTER html %]</em></li>
@@ -633,10 +633,10 @@
     输入管理员帐号的密码：
 
   [% ELSIF message_tag == "install_admin_created" %]
-    [% user.login FILTER html %] 已设定为管理员。
+    [% user.login FILTER html %] 已设置为管理员。
 
   [% ELSIF message_tag == "install_admin_setup" %]
-    目前尚未设定管理者。<br>
+    目前尚未设置管理者。<br>
     这可能是你第一次使用 [% terms.Bugzilla %] ，或者你的管理者权限被意外刪除了。
 
   [% ELSIF message_tag == "install_column_add" %]
@@ -681,12 +681,12 @@
 
   [% ELSIF message_tag == "install_fk_invalid_fixed" %]
     <b><u>警告：</u></b>在 [% table FILTER html %].[% column FILTER html %]
-    里已经有无效的数值被[% IF action == 'delete' %]刪除[% ELSE %]设定为
+    里已经有无效的数值被[% IF action == 'delete' %]刪除[% ELSE %]设置为
     NULL [% END %]：
     [%+ values.join(', ') FILTER html %]
 
   [% ELSIF message_tag == "install_fk_setup" %]
-    设定 foreign key 中...
+    设置 foreign key 中...
 
   [% ELSIF message_tag == "install_group_create" %]
     新增 [% name FILTER html %] 群组...
@@ -695,10 +695,10 @@
     新增预设群组中...
 
   [% ELSIF message_tag == "install_setting_new" %]
-    新增使用者设定： '[% name FILTER html %]'
+    新增使用者设置： '[% name FILTER html %]'
 
   [% ELSIF message_tag == "install_setting_setup" %]
-    设定使用者偏好设定中...
+    设置使用者偏好设置中...
 
   [% ELSIF message_tag == "install_success" %]
     checksetup.pl 已完成。
@@ -711,14 +711,14 @@
 
   [% ELSIF message_tag == "install_urlbase_default" %]
     你现在已安装 [% terms.Bugzilla %]
-    。请浏览「参数设定」页面（在管理员账号的尾页有链接），以确保所有设定都正确，包括将
-    'urlbase' 选项设定为正确的网址。
+    。请浏览「参数设置」页面（在管理员账号的尾页有链接），以确保所有设置都正确，包括将
+    'urlbase' 选项设置为正确的网址。
 
   [% ELSIF message_tag == "install_reset_password" %]
     输入 [% user.login FILTER html %] 的新密码：
 
   [% ELSIF message_tag == "install_reset_password_done" %]
-    新密码已设定。
+    新密码已设置。
 
   [% ELSIF message_tag == "install_webservergroup_empty" %]
     ****************************************************************************
@@ -728,7 +728,7 @@
     <br>这代表着拥有浏览这台机器的<u>任何人</u>可以对你安装的 [% terms.Bugzilla %]
     做任何事情，甚至也可以执行任何 Perl 程序。
 
-    你真的，真的，真的需要变更此项设定？
+    你真的，真的，真的需要变更此项设置？
     ****************************************************************************
 
   [% ELSIF message_tag == "install_webservergroup_not_in" %]
@@ -741,8 +741,8 @@
     或是刪除 "webservergroup" 参数的值。
 
   [% ELSIF message_tag == "install_webservergroup_windows" %]
-    <b><u>警告：</u></b>你将 webservergroup 设定在 [% constants.bz_locations.localconfig FILTER html %] 中。
-    <br>若在 Windows 下执行，这样设定并不会有任何安全性。
+    <b><u>警告：</u></b>你将 webservergroup 设置在 [% constants.bz_locations.localconfig FILTER html %] 中。
+    <br>若在 Windows 下执行，这样设置并不会有任何安全性。
     <br>请确认在你的 [% terms.Bugzilla %] 目录的文件权限是否适合你的系统，并避免不必要的写入权限。
 
   [% ELSIF message_tag == "product_created" %]
@@ -821,7 +821,7 @@
     [% terms.$term FILTER html %]
 
   [% ELSIF message_tag == "unexpected_flag_types" %]
-    无法设定部份旗标。请检查你的设定。
+    无法设置部份旗标。请检查你的设置。
 
   [% ELSIF message_tag == "user_match_failed" %]
     你输入的使用者名称并不符合任何已知的 [% terms.Bugzilla %] 使用者，因此字段

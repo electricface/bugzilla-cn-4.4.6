@@ -80,13 +80,13 @@
 
       <td>
         为了让使用者能夠替 [% type.target_type == "bug" ? terms.bugs : "附件" %]
-        设定此旗标类型， [% type.target_type == "bug" ? terms.bugs : "附件" %]
+        设置此旗标类型， [% type.target_type == "bug" ? terms.bugs : "附件" %]
         必须（「包括」）或必须不（「不包括」）属于哪些产品／模块。
         [% UNLESS can_fully_edit %]
           <p class="warning">此旗标类型也适用于一些你不被允许编辑的产品
           （也因此你在清单中并不会看见它们）。因为你的权限有限，
           因此你仅被允许在你可以编辑的产品中新增／移除此旗标类型，
-          但是无法编辑此一旗标类型的其他设定值。</p>
+          但是无法编辑此一旗标类型的其他设置值。</p>
         [% END %]
         <table>
           <tr>
@@ -113,12 +113,12 @@
               <b>包括：</b><br>
               [% PROCESS category_select name="inclusion_to_remove" categories = inclusions %]<br>
               <input type="submit" id="categoryAction-removeInclusion"
-                     name="categoryAction-removeInclusion" value="删除该项「包括」设定">
+                     name="categoryAction-removeInclusion" value="删除该项「包括」设置">
             </td>
             <td style="vertical-align: top;">
               <b>不包括：</b><br>
               [% PROCESS category_select name="exclusion_to_remove" categories = exclusions %]<br>
-                     name="categoryAction-removeExclusion" value="删除该项「不包括」设定">
+                     name="categoryAction-removeExclusion" value="删除该项「不包括」设置">
             </td>
           </tr>
         </table>
@@ -141,7 +141,7 @@
         <input type="checkbox" id="is_active" name="is_active"
                [%- ' disabled="disabled"' UNLESS can_fully_edit %]
                [% " checked" IF type.is_active || !type.is_active.defined %]>
-        <label for="is_active">启用（将会在使用者界面显示此旗标类型，并可设定）</label>
+        <label for="is_active">启用（将会在使用者界面显示此旗标类型，并可设置）</label>
       </td>
     </tr>
 
@@ -187,7 +187,7 @@
                [% " checked" IF type.is_multiplicable || !type.is_multiplicable.defined %]>
         <label for="is_multiplicable">多重种类（可以在同一
                [% type.target_type == "bug" ? terms.bug : "附件" %]
-               上设定多个此类旗标类型）</label>
+               上设置多个此类旗标类型）</label>
       </td>
     </tr>
 
@@ -213,7 +213,7 @@
     <tr>
       <th>&nbsp;</th>
       <td>
-        <input type="submit" id="save" value="[% action == "insert" ? "新增" : "存储设定" %]">
+        <input type="submit" id="save" value="[% action == "insert" ? "新增" : "存储设置" %]">
       </td>
     </tr>
 

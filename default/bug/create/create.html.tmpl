@@ -372,7 +372,7 @@ TUI_hide_default('attachment_text_field');
          emptyok => 1
          custom_userlist => assignees_list
        %]
-      <noscript>（如不填，则会设定为该模块的预设负责人）</noscript>
+      <noscript>（如不填，则会设置为该模块的预设负责人）</noscript>
     </td>
   </tr>
 
@@ -391,7 +391,7 @@ TUI_hide_default('attachment_text_field');
          emptyok => 1
          custom_userlist => qa_contacts_list
        %]
-        <noscript>（如不填，则会设定为预设的QA联络人）</noscript>
+        <noscript>（如不填，则会设置为预设的QA联络人）</noscript>
       </td>
     </tr>
 [% END %]
@@ -561,7 +561,7 @@ TUI_hide_default('attachment_text_field');
           [% ' checked="checked"' IF comment_is_private %]
                onClick="updateCommentTagControl(this, 'comment')">
         <label for="comment_is_private">
-          将描述内容与附件设定为不公开（仅
+          将描述内容与附件设置为不公开（仅
           <strong>[% Param('insidergroup') FILTER html %]</strong>
           群组成员可见）
         </label>

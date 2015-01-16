@@ -47,7 +47,7 @@
     要取消的 token 不存在。
 
   [% ELSIF error == "chart_data_not_generated" %]
-    [% admindocslinks = {'extraconfig.html' => '设定图表'} %]
+    [% admindocslinks = {'extraconfig.html' => '设置图表'} %]
     [% IF product %]
       因为自建立产品以来尚未收集产生图表用的资料，所以目前尚未有产品 <em>[% product FILTER html %]</em> 的图表。
     [% ELSE %]
@@ -72,25 +72,25 @@
 
   [% ELSIF error == "column_not_null_without_default" %]
     新增字段 [% name FILTER html %] 失败：
-    <br>除非你在参数 <code>$init_value</code> 中做设定，否则你不能在现有的表格中加入没有预设值的 NOT NULL 字段。
+    <br>除非你在参数 <code>$init_value</code> 中做设置，否则你不能在现有的表格中加入没有预设值的 NOT NULL 字段。
 
   [% ELSIF error == "column_not_null_no_default_alter" %]
     由于 [% name FILTER html %] 字段內含有 NULL 值，因此你不能在不指定预设值或指定一个值给
     $set_nulls_to 的前提下，将 [% name FILTER html %] 字段设为 NOT NULL 值。
 
   [% ELSIF error == "comment_extra_data_not_allowed" %]
-    你尝试将 <code>extra_data</code> 字段设定为
+    你尝试将 <code>extra_data</code> 字段设置为
     '[% extra_data FILTER html %]' ，但是类别 [% type FILTER html %]
     的留言不允许 <code>extra_data</code> 此参数。
 
   [% ELSIF error == "comment_extra_data_required" %]
-    类别 [% type FILTER html %] 的留言需要设定
+    类别 [% type FILTER html %] 的留言需要设置
     <code>extra_data</code> 此参数。
 
   [% ELSIF error == "comment_extra_data_not_numeric" %]
-    你尝试将 <code>extra_data</code> 字段设定为
+    你尝试将 <code>extra_data</code> 字段设置为
     '[% extra_data FILTER html %]' ，但是类别 [% type FILTER html %]
-    的留言需要设定数字的 <code>extra_data</code> 参数。
+    的留言需要设置数字的 <code>extra_data</code> 参数。
 
   [% ELSIF error == "comment_type_invalid" %]
     '[% type FILTER html %]' is not a valid comment type.
@@ -106,7 +106,7 @@
     [% IF Param("auth_env_email") %]
       这代表 '[% Param("auth_env_email") FILTER html %]' 环境变量是空白或不存在。
     [% ELSE %]
-      你必须设定 "auth_env_email" 参数到包含使用者的电子邮件地址的该环境变量名称中。
+      你必须设置 "auth_env_email" 参数到包含使用者的电子邮件地址的该环境变量名称中。
     [% END %]
 
   [% ELSIF error == "extension_must_be_subclass" %]
@@ -161,11 +161,11 @@
 
   [% ELSIF error == "flag_unexpected_object" %]
     [% title = "无法被辨认的对象" %]
-    无法对种类是 [% caller FILTER html %] 的对象设定旗标。
-    旗标仅能设定于 [% terms.bugs %] 和附件上。
+    无法对种类是 [% caller FILTER html %] 的对象设置旗标。
+    旗标仅能设置于 [% terms.bugs %] 和附件上。
 
   [% ELSIF error == "illegal_field" %]
-    并未设定有效的 [% field FILTER html %] 。
+    并未设置有效的 [% field FILTER html %] 。
 
   [% ELSIF error == "invalid_customfield_type" %]
     [% title = "无效的字段种类" %]
@@ -187,7 +187,7 @@
     [% END %]
 
   [% ELSIF error == "invalid_post_bug_submit_action" %]
-    无效的 post_bug_submit_action 设定。
+    无效的 post_bug_submit_action 设置。
 
   [% ELSIF error == "invalid_series_id" %]
     [% title = "无效的系列" %]
@@ -200,7 +200,7 @@
   [% ELSIF error == "invalid_webservergroup" %]
     没有此群组： [% group FILTER html %] 。<br>
     请检查你在 [% constants.bz_locations.localconfig FILTER html %]
-    的 $webservergroup 设定。
+    的 $webservergroup 设置。
 
   [% ELSIF error == "invalid_field_name" %]
     不能把 [% field FILTER html %] 作为字段名称。
@@ -269,23 +269,23 @@
 
   [% ELSIF error == "param_must_be_numeric" %]
     [% title = "无效的参数。" %]
-    对 <code>[% function FILTER html %]</code> 设定了无效的参数
+    对 <code>[% function FILTER html %]</code> 设置了无效的参数
     <code>[% param FILTER html %]</code> ：必须是数字。
 
   [% ELSIF error == "param_required" %]
     [% title = "未输入参数" %]
     功能 <code>[% function FILTER html %]</code> 需要参数
-    <code>[% param FILTER html %]</code> ，但并未设定该参数。
+    <code>[% param FILTER html %]</code> ，但并未设置该参数。
 
   [% ELSIF error == "params_required" %]
     [% title = "未输入参数" %]
-    功能 <code>[% function FILTER html %]</code> 需要你设定
+    功能 <code>[% function FILTER html %]</code> 需要你设置
     以下的参数之一：
     <code>[% params.join(', ') FILTER html %]</code>
 
   [% ELSIF error == "product_empty_group_controls" %]
     [% title = "缺少群组管控" %]
-    必须对 [% group.name FILTER html %] 群组设定新的群组管控权限。
+    必须对 [% group.name FILTER html %] 群组设置新的群组管控权限。
 
   [% ELSIF error == "product_illegal_group_control" %]
     [% title = "不合法的群组管控" %]
@@ -314,17 +314,17 @@
     '[% joiner FILTER html %]' 对搜索而言不是有效的 joiner 。
 
   [% ELSIF error == "setting_info_invalid" %]
-    要新增设定，你必须输入设定名称、合适的数值／排序键，以及预设值。
+    要新增设置，你必须输入设置名称、合适的数值／排序键，以及预设值。
 
   [% ELSIF error == "setting_name_invalid" %]
-    设定名称 <em>[% name FILTER html %]</em> 并非有效的选项。
-    设定名称必须以字母开头，且仅包含字母、数字，或者是符号 '_' 、 '-' 、 '.' 和 ':' 。
+    设置名称 <em>[% name FILTER html %]</em> 并非有效的选项。
+    设置名称必须以字母开头，且仅包含字母、数字，或者是符号 '_' 、 '-' 、 '.' 和 ':' 。
 
   [% ELSIF error == "setting_subclass_invalid" %]
-    没有 <code>[% subclass FILTER html %]</code> 此设定子类。
+    没有 <code>[% subclass FILTER html %]</code> 此设置子类。
 
   [% ELSIF error == "setting_value_invalid" %]
-    所设定的数值 "<code>[% value FILTER html %]</code>" 并不在设定 <em>[% name FILTER html %]</em> 的有效数值清单中。
+    所设置的数值 "<code>[% value FILTER html %]</code>" 并不在设置 <em>[% name FILTER html %]</em> 的有效数值清单中。
 
   [% ELSIF error == "token_generation_error" %]
     Token 产生系统发生严重错误。

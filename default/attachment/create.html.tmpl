@@ -65,7 +65,7 @@ TUI_hide_default('attachment_text_field');
             [% bug_statuses.push(bug_status) IF bug_status.is_open %]
           [% END %]
           [% IF bug_statuses.size %]
-            <label for="takebug">并且将 [% terms.bug %] 的状态设定为</label>
+            <label for="takebug">并且将 [% terms.bug %] 的状态设置为</label>
             <select id="bug_status" name="bug_status">
               <option value="[% bug.status.name FILTER html %]">[% display_value("bug_status", bug.status.name) FILTER html %] (目前的状态)</option>
               [% FOREACH bug_status = bug_statuses %]
@@ -107,7 +107,7 @@ TUI_hide_default('attachment_text_field');
           <input type="checkbox" name="isprivate" id="isprivate"
           value="1" onClick="updateCommentPrivacy(this)">
           <label for="isprivate">
-            将附件及意见设定为不公开（只有
+            将附件及意见设置为不公开（只有
             <strong>[% Param('insidergroup') FILTER html %]</strong>
             群组中的成员才能看见）
           </label>

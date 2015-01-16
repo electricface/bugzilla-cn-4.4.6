@@ -18,7 +18,7 @@
 %strings = (
     any => '任何',
     apachectl_failed => <<END,
-警告：无法检查 Apache 的设定。当你并非以 ##root## 执行
+警告：无法检查 Apache 的设置。当你并非以 ##root## 执行
 checksetup.pl 时，这有可能会发生。若要查看所遭遇到的问题，
 执行： ##command##
 END
@@ -54,7 +54,7 @@ EOT
 END
     cpan_bugzilla_home =>
         "警告：使用 Bugzilla 的目录作为 CPAN home 资料夹。",
-    db_enum_setup  => "设定标准的下拉框字段的选项：",
+    db_enum_setup  => "设置标准的下拉框字段的选项：",
     db_schema_init => "初始化 bz_schema...",
     db_table_new   => "增加新的 table ##table##...",
     db_table_setup => "建立 table 中...",
@@ -125,7 +125,7 @@ END
 错误：使用 install-module.pl 必须先安装 "make" 。
 END
     lc_new_vars => <<'END',
-此版本的 Buzilla 包含一些你也许想要改变及套用到本地设定的参数。
+此版本的 Buzilla 包含一些你也许想要改变及套用到本地设置的参数。
 自从你上次执行 checksetup.pl 以后，以下参数对 ##localconfig##
 而言是新的：
 
@@ -142,19 +142,19 @@ END
 .htaccess 档案，它可以让此档案 (localconfig) 和其他的机密档案
 无法通过网络读取。
 
-设定为 1 时， checksetup.pl 将会检查是否有 .htaccess 文件。
+设置为 1 时， checksetup.pl 将会检查是否有 .htaccess 文件。
 若无，则会创建 .htaccess 文件。
 
-设定为 0 时， checksetup.pl 将不会创建 .htaccess 文件。
+设置为 0 时， checksetup.pl 将不会创建 .htaccess 文件。
 END
     localconfig_cvsbin => <<'END',
 如果你想要使用 Patch Viewer 的 CVS 集成界面，请输入可执行
 "cvs" 的完整路径。
 END
     localconfig_db_check => <<'END',
-checksetup.pl 是否应当尝试检查你的数据库设定是否正确？
+checksetup.pl 是否应当尝试检查你的数据库设置是否正确？
 有些数据库服务器/Perl 模块/moonphase 的组合会导致此功能无法运作，
-因此你可以尝试设定此参数为 0 ，让 checksetup.pl 可以执行。
+因此你可以尝试设置此参数为 0 ，让 checksetup.pl 可以执行。
 END
     localconfig_db_driver => <<'END',
 使用哪一种 SQL 数据库。预设值是 mysql 。
@@ -177,7 +177,7 @@ END
 END
     localconfig_db_port => <<'END',
 有时数据库服务器会使用非标准的 port 。如果有这种情況的话，在此参数指定该
-port 的数字。设定为 0 代表「使用预设的 port 」。
+port 的数字。设置为 0 代表「使用预设的 port 」。
 END
     localconfig_db_sock => <<'END',
 MySQL 才需要输入的：输入 unix socket for MySQL 的路径。
@@ -186,12 +186,12 @@ END
     localconfig_db_user => "用来连接数据库的使用者",
     localconfig_diffpath => <<'END',
 如果要让「两个 patch 之间的 diff 」功能有效，需要知道 "diff" bin
-在哪个目录。（只有在使用 Patch Viewer 功能时才需要设定。）
+在哪个目录。（只有在使用 Patch Viewer 功能时才需要设置。）
 END
     localconfig_index_html => <<'END',
 大部份的网页服务器允许你使用 index.cgi 作为目录索引，并且也已经
-事先设定好了。如果你的没有，那么你会需要一个 index.html 文件，
-以避免重导向到 index.cgi 。设定 $index_html 为 1 时，
+事先设置好了。如果你的没有，那么你会需要一个 index.html 文件，
+以避免重导向到 index.cgi 。设置 $index_html 为 1 时，
 checksetup.pl 会在 index.html 不存在时，替你建立一个。
 注意： checksetup.pl 不会取代已存在的文件，所以如果你希望
        checksetup.pl 替你建立 index.html 時，你必须先确认
@@ -208,18 +208,18 @@ END
 此字串也必须要很长。
 END
     localconfig_use_suexec => <<'END',
-如果 Bugzilla 在 Apache SuexecUserGroup 环境下执行，请设定为 1 。
+如果 Bugzilla 在 Apache SuexecUserGroup 环境下执行，请设置为 1 。
 
 如果你的网页服务器有使用 cPanel 、 Plesk 或者类似的控制软件，
 或是你的 Bugzilla 是在 shared hosting 的环境下，那你大概就是在
 Apache SuexecUserGroup 环境下。
 
-如果是 Windows box ，忽略此设定，因为它无效。
+如果是 Windows box ，忽略此设置，因为它无效。
 
-如果设定为 0 ， checksetup.pl 会设定正常网页服务器环境下，
+如果设置为 0 ， checksetup.pl 会设置正常网页服务器环境下，
 适当的文件权限。
 
-如果设定为 1 ， checksetup.p 会设定合适的文件权限，让 Bugzilla 在
+如果设置为 1 ， checksetup.p 会设置合适的文件权限，让 Bugzilla 在
 SuexecUserGroup 环境下可以正常运作。
 END
     localconfig_webservergroup => <<'END',
@@ -229,21 +229,21 @@ Debian/Ubuntu 下通常是 "www-data" 。
 如果你把下面的 use_suexec 参数打开的话，那么是转换过后的网页服务器的
 的用户组名称，以执行 cgi 文件。
 
-如果是 Windows 上，忽略此设定，因为它无效。
+如果是 Windows 上，忽略此设置，因为它无效。
 
-如果你沒有权限可以存取 script 执行的目录，设定为 "" 。
-如果设定为 "" ，那么你所安装的 Bugzilla 将会“非常”不安全，
+如果你沒有权限可以存取 script 执行的目录，设置为 "" 。
+如果设置为 "" ，那么你所安装的 Bugzilla 将会“非常”不安全，
 因为有些文件将可以随意读取／写入，所以只要有权限进入机器的人
-就可以随便做什么。你只应该在测试安装，而且无法设定为其他值时，
-才设定成 "" 。※※！！已经警告过你了！！※※
+就可以随便做什么。你只应该在测试安装，而且无法设置为其他值时，
+才设置成 "" 。※※！！已经警告过你了！！※※
 
-如果设定为 "" 以外的值，你必须要以该指定用户组中的成员，或是
+如果设置为 "" 以外的值，你必须要以该指定用户组中的成员，或是
 ##root## ，才能执行 checksetup.pl 。
 END
     max_allowed_packet => <<EOT,
-警告：你必须在你的 MySQL 设定里将 max_allowed_packet 参数设定为
-##needed## 。现在它设定为 ##current## 。
-你可以在 MySQL 设定文件中的 [mysqld] 段落中找到此参数。
+警告：你必须在你的 MySQL 设置里将 max_allowed_packet 参数设置为
+##needed## 。现在它设置为 ##current## 。
+你可以在 MySQL 设置文件中的 [mysqld] 段落中找到此参数。
 EOT
     min_version_required => "最低版本需求： ",
 
@@ -255,7 +255,7 @@ EOT
 * APACHE 模块                                                         *
 ***********************************************************************
 * 一般来说，当 Bugzilla 升级時，所有 Bugzilla 使用者必须清除他们浏    *
-* 览器中的缓存，否则Bugzilla会发生故障。如果你在 Apache 设定中启用特  *
+* 览器中的缓存，否则Bugzilla会发生故障。如果你在 Apache 设置中启用特  *
 * 定的模块（通常叫 httpd.conf 或 apache2.conf ）的话，当你升级        *
 * Bugzilla 的时候， Bugzilla 的使用者就不需要清除浏览器中的缓存。     *
 * 你需要要启用的模块有：                                              *

@@ -8,7 +8,7 @@
 
 [%
    title = "高级"
-   desc = "高级设定"
+   desc = "高级设置"
 %]
 
 [% sts_desc = BLOCK %]
@@ -30,14 +30,14 @@
     <li>
       include_subdomains - 传输 HSTS header 时加入 <code>includeSubDomains</code>
       旗标，这将会使所有子域名的安全性变更生效。当你的 <code>attachment_base</code>
-      是在 [% terms.Bugzilla %] 主域名下的一个子域名时，这项设定就很有用了。
+      是在 [% terms.Bugzilla %] 主域名下的一个子域名时，这项设置就很有用了。
     </li>
   </ul>
 [% END %]
 
 [% param_descs = {
   cookiedomain =>
-    "如果你的网站是 'www.foo.com' ，则把此参数设定为"
+    "如果你的网站是 'www.foo.com' ，则把此参数设置为"
     _ " '.foo.com' 时，将会允许 'bar.foo.com' 存取 $terms.Bugzilla"
     _ " 的 cookie 。这对于同一个网站服务器有多个域名，且希望共享"
     _ " $terms.Bugzilla 的 cookie 时很有用。",
@@ -52,7 +52,7 @@
   proxy_url =>
     "$terms.Bugzilla 可以自动连接到网络并获取关于最新版的版本信息，参考"
     _ " <tt>upgrade_notification</tt> 参数。如果通过代理服务器连接，"
-    _ "可能需要设定代理服务器的网址，以免 HTTP_PROXY 环境变量无法被存取。"
+    _ "可能需要设置代理服务器的网址，以免 HTTP_PROXY 环境变量无法被存取。"
     _ "如需认证，使用 <code>http://user:pass@proxy_url/</code> 的格式。",
 
   strict_transport_security => sts_desc,

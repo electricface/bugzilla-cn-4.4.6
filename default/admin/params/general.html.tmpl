@@ -8,7 +8,7 @@
 
 [%
    title = "一般"
-   desc = "非必要的一般杂项设定。"
+   desc = "非必要的一般杂项设置。"
 %]
 
 [% param_descs = {
@@ -26,7 +26,7 @@
     _ "<strong>已存在的数据库只有在文件从现有编码执行 "
     _ "<kbd>contrib/recode.pl</kbd> 转换为 UTF-8 之后，"
     _ "才可以设为「开」。</strong>"
-    _ "<p>注意：若你將此参数从「关」设为「开」，则设定完后必须立刻执行 <kbd>checksetup.pl</kbd> 。</p>",
+    _ "<p>注意：若你將此参数从「关」设为「开」，则设置完后必须立刻执行 <kbd>checksetup.pl</kbd> 。</p>",
 
   shutdownhtml =>
     "如果此字段并非空白，那么将会完全停用 $terms.Bugzilla ，"
@@ -53,5 +53,5 @@
     _ "如果你安装的是 release candidate (RC) 版本，在有新的 RC 时也会通知你。</li>"
     _ "<li>停用 (disabled) ：不会通知有新版本，也不会连接到远程服务器。</li></ul>"
     _ "<p>注意：如果你的 $terms.Bugzilla 服务器需要代理服务器才能连接至网络，"
-    _ "你也需要在「高级」选项里设定 <tt>proxy_url</tt> 此参数。</p>",
+    _ "你也需要在「高级」选项里设置 <tt>proxy_url</tt> 此参数。</p>",
 } %]
