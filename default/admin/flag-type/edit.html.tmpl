@@ -76,7 +76,7 @@
     </tr>
 
     <tr>
-      <th>分類：</th>
+      <th>分类：</th>
 
       <td>
         为了让使用者能夠替 [% type.target_type == "bug" ? terms.bugs : "附件" %]
@@ -84,7 +84,7 @@
         必须（「包括」）或必须不（「不包括」）属于哪些产品／模块。
         [% UNLESS can_fully_edit %]
           <p class="warning">此旗标类型也适用于一些你不被允许编辑的产品
-          （也因此你在清单中并不会看见它们）。因为你的权限有限，
+          （也因此你在列表中并不会看见它们）。因为你的权限有限，
           因此你仅被允许在你可以编辑的产品中新增／移除此旗标类型，
           但是无法编辑此一旗标类型的其他设置值。</p>
         [% END %]
@@ -129,7 +129,7 @@
       <th>排序键：</th>
       <td>
         输入介于 1 和 [% constants.MAX_SMALLINT FILTER none %] 之间的数字。
-        当以清单显示给使用者时，将会以该方法排序。如果你想要以字母做排序，或不在乎排序，则无须填入。<br>
+        当以列表显示给使用者时，将会以该方法排序。如果你想要以字母做排序，或不在乎排序，则无须填入。<br>
         <input type="text" name="sortkey" value="[% type.sortkey || 1 FILTER html %]" size="5"
                maxlength="5" [% ' disabled="disabled"' UNLESS can_fully_edit %]>
       </td>
@@ -156,9 +156,9 @@
     </tr>
 
     <tr>
-      <th>邮件抄送清单：</th>
+      <th>邮件抄送列表：</th>
       <td>
-        如果可以要求此类型旗标的话，谁应该收到关于要求的电子邮件通知。此清单以半角逗号 (,)
+        如果可以要求此类型旗标的话，谁应该收到关于要求的电子邮件通知。此列表以半角逗号 (,)
         分隔多位收信人。收信人不一定要拥有 [% terms.Bugzilla %] 的账号。
         [% IF Param('emailsuffix') %]
           <br>注意：默认的电子邮件地址的后半段 (<kbd>[% Param('emailsuffix') %]</kbd>)

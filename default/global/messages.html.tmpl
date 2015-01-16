@@ -118,7 +118,7 @@
     名称是 <b>[% namedcmd FILTER html %]</b> 的搜索结果已刪除。
 
   [% ELSIF message_tag == "buglist_sorted_by_relevance" %]
-    此清单中的[% terms.Bugs %]以关联度排序，关联度最高的在最上面。
+    此列表中的[% terms.Bugs %]以关联度排序，关联度最高的在最上面。
 
   [% ELSIF message_tag == "buglist_updated_named_query" %]
     [% title = "已更新搜索" %]
@@ -201,9 +201,9 @@
           [% FOREACH cc_user = comp.initial_cc %]
             [% cc_list.push(cc_user.login) %]
           [% END %]
-          <li>默认邮件抄送清单已更新为 [% cc_list.join(", ") FILTER html %]</li>
+          <li>默认邮件抄送列表已更新为 [% cc_list.join(", ") FILTER html %]</li>
         [% ELSE %]
-          <li>已刪除默认邮件抄送清单</li>
+          <li>已刪除默认邮件抄送列表</li>
         [% END %]
       [% END %]
       [% IF changes.isactive.defined %]
@@ -258,7 +258,7 @@
     (<em>[% field.name FILTER html %]</em>) 的合法选项。
     [% IF field.name == "bug_status" %]
       你现在应该浏览<a href="editworkflow.cgi">流程页面</a>来把你新的
-      [% terms.bug %] 状态包括在內。
+      [% terms.bug %] 状态包括在内。
     [% END %]
 
   [% ELSIF message_tag == "field_value_deleted" %]
@@ -546,8 +546,8 @@
 
   [% ELSIF message_tag == "password_change_request" %]
     [% title = "要求修改密码" %]
-    已发出內含有认证码的修改密码用电子邮件。
-    依照电子邮件內的指示来修改密码。
+    已发出内含有认证码的修改密码用电子邮件。
+    依照电子邮件内的指示来修改密码。
 
   [% ELSIF message_tag == "password_changed" %]
     [% title = "密码已更新" %]
@@ -616,7 +616,7 @@
           [% END %]
         [% END %]
         [% IF changes.inclusions.defined || changes.exclusions.defined %]
-          <li>「包括」和「不包括」的清单已更新</li>
+          <li>「包括」和「不包括」的列表已更新</li>
         [% END %]
      </ul>
     [% ELSE %]
@@ -758,7 +758,7 @@
 
   [% ELSIF message_tag == "product_invalid" %]
     [% title = "$terms.Bugzilla 模块描述" %]
-    产品 <em>[% product FILTER html %]</em> 不存在，或是你沒有权限浏览。下列清单是你可以选择的产品。
+    产品 <em>[% product FILTER html %]</em> 不存在，或是你沒有权限浏览。下列列表是你可以选择的产品。
 
   [% ELSIF message_tag == "remaining_time_zeroed" %]
     由于已将此 [% terms.bug %] 关闭，或只是将它从其中一种关闭的状态修改为另一种，因此
@@ -877,7 +877,7 @@
   [% message = BLOCK %]
     你不正确的使用 [% terms.Bugzilla %] 的信息功能。
     你输入了字串 '[% message_tag FILTER html %]' 。
-    正确的用法是输入一个标签，并且在 <kbd>messages.html.tmpl</kbd> 档案中定义该标签。<br>
+    正确的用法是输入一个标签，并且在 <kbd>messages.html.tmpl</kbd> 文件中定义该标签。<br>
     <br>
     如果你是一个 [% terms.Bugzilla %] 的使用者，但却看到此信息时，请将这页存储下来并发给 [% Param('maintainer') %] 。
   [% END %]

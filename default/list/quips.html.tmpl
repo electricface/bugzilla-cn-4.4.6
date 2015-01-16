@@ -15,7 +15,7 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-           title = "${terms.Bugzilla} 智语系统"
+           title = "${terms.Bugzilla} 妙语系统"
            header = "新增自己的大标题"
  %]
 
@@ -33,25 +33,25 @@
 [% IF deleted_quip %]
   <p>
     <font color="red">
-      已刪除智语 '<tt>[% deleted_quip FILTER html %]</tt>'。
+      已刪除妙语 '<tt>[% deleted_quip FILTER html %]</tt>'。
     </font>
   </p>
 [% END %]
 
 [% IF approved or unapproved %]
-  <p>[% approved.size %] 条智语已通过审核， [% unapproved.size %] 条智语尚未审核。</p>
+  <p>[% approved.size %] 条妙语已通过审核， [% unapproved.size %] 条妙语尚未审核。</p>
 [% END %]
 
 
 <p>
-  [% terms.Bugzilla %] 会随机选择一条智语作为每个 [% terms.bug %] 清单的大标题。
+  [% terms.Bugzilla %] 会随机选择一条妙语作为每个 [% terms.bug %] 列表的大标题。
 </p>
 
 [% IF Param("quip_list_entry_control") != "closed" %]
   <p>
-    你可以加长智語的清单。只要输入聪明的、有趣的，甚至无聊的句子（但请勿输入十八禁的或具有攻击性的句子），然后按下「提交」键即可。
+    你可以加长智語的列表。只要输入聪明的、有趣的，甚至无聊的句子（但请勿输入十八禁的或具有攻击性的句子），然后按下「提交」键即可。
     [% IF Param("quip_list_entry_control") == "moderated" AND !user.in_group('bz_quip_moderators') %]
-      注意：在智语被采用前，将先接受审核。
+      注意：在妙语被采用前，将先接受审核。
     [% END %]
   </p>
 
@@ -65,14 +65,14 @@
     </p>
   </form>
 [% ELSE %]
-  <p>现在不允许输入新的智语。
+  <p>现在不允许输入新的妙语。
   </p>
 [% END %]
 
 [% IF show_quips %]
   [% IF !user.in_group('bz_quip_moderators') %]
     <h2>
-      已存在的智语：
+      已存在的妙语：
     </h2>
     <ul>
       [% FOREACH quipid = quipids %]
@@ -81,10 +81,10 @@
       [% END %]
     </ul>
   [% ELSE %]
-    <h2>编辑已存在的智语：</h2>
+    <h2>编辑已存在的妙语：</h2>
     <p>
-      <strong>注意：</strong>只会显示审核通过的智语。
-      如果参数 'quip_list_entry_control' 设为<q>开</q>，将会把输入的智语自动审核通过。
+      <strong>注意：</strong>只会显示审核通过的妙语。
+      如果参数 'quip_list_entry_control' 设为<q>开</q>，将会把输入的妙语自动审核通过。
     </p>
     <form name="editform" method="post" action="quips.cgi">
       <input type="hidden" name="action" value="approve">
@@ -92,7 +92,7 @@
              value="[% issue_hash_token(['approve-quips']) FILTER html %]">
       <table border="1">
         <thead><tr>
-          <th>智语</th>
+          <th>妙语</th>
           <th>作者</th>
           <th>动作</th>
           <th>审核通过</th>
@@ -145,7 +145,7 @@
 [% ELSE %]
   <p>
     想要全部列出的人，也可以<a
-    href="quips.cgi?action=show">浏览[% IF user.in_group('bz_quip_moderators') %]并编辑[% END %]整个智语的清单</a>。
+    href="quips.cgi?action=show">浏览[% IF user.in_group('bz_quip_moderators') %]并编辑[% END %]整个妙语的列表</a>。
   </p>
 [% END %]
 

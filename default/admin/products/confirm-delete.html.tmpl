@@ -86,7 +86,7 @@
       [% IF product.is_active %]
         开
       [% ELSE %]
-        關
+        关
       [% END %]
     </td>
   </tr>
@@ -212,8 +212,8 @@
   <form method="post" action="editproducts.cgi">
     <input type="checkbox" id="delete_series" name="delete_series" value=1>
     <label for="delete_series">
-      刪除相關的系列（你也可以稍后檢視
-      <a href="chart.cgi?category=[% product.name FILTER html %]">「新图表」頁面</a>来刪除它们）。
+      刪除相关的系列（你也可以稍后檢視
+      <a href="chart.cgi?category=[% product.name FILTER html %]">「新图表」页面</a>来刪除它们）。
     </label><p>
     <input type="submit" id="delete" value="是的，刪除">
     <input type="hidden" name="action" value="delete">

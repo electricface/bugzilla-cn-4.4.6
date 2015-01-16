@@ -75,7 +75,7 @@
     <br>除非你在参数 <code>$init_value</code> 中做设置，否则你不能在现有的表格中加入没有默认值的 NOT NULL 字段。
 
   [% ELSIF error == "column_not_null_no_default_alter" %]
-    由于 [% name FILTER html %] 字段內含有 NULL 值，因此你不能在不指定默认值或指定一个值给
+    由于 [% name FILTER html %] 字段内含有 NULL 值，因此你不能在不指定默认值或指定一个值给
     $set_nulls_to 的前提下，将 [% name FILTER html %] 字段设为 NOT NULL 值。
 
   [% ELSIF error == "comment_extra_data_not_allowed" %]
@@ -324,7 +324,7 @@
     没有 <code>[% subclass FILTER html %]</code> 此设置子类。
 
   [% ELSIF error == "setting_value_invalid" %]
-    所设置的数值 "<code>[% value FILTER html %]</code>" 并不在设置 <em>[% name FILTER html %]</em> 的有效数值清单中。
+    所设置的数值 "<code>[% value FILTER html %]</code>" 并不在设置 <em>[% name FILTER html %]</em> 的有效数值列表中。
 
   [% ELSIF error == "token_generation_error" %]
     Token 产生系统发生严重错误。

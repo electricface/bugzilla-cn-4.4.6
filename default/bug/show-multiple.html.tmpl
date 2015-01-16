@@ -7,7 +7,7 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "纯文字 $terms.Bug 清单"
+  title = "纯文字 $terms.Bug 列表"
   h1 = ""
   style_urls = ["skins/standard/show_multiple.css",
                 "skins/standard/buglist.css"]
@@ -58,7 +58,7 @@
       <td class="error">
         [% IF bug.error == "InvalidBugId" %]
           '[%+ bug.bug_id FILTER html %]' 不是一个有效的 [% terms.bug %]
-          编号，也不是一个已知的 [% terms.bug %] 別名。
+          编号，也不是一个已知的 [% terms.bug %] 别名。
         [% ELSIF bug.error == "NotPermitted" %]
           你不被允许浏览这个 [% terms.bug %] 。
         [% ELSIF bug.error == "NotFound" %]

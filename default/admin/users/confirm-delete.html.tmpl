@@ -115,7 +115,7 @@
             <a href="buglist.cgi?emailreporter1=1&amp;emailtype1=exact&amp;email1=
                [%- otheruser.login FILTER uri %]">报告了 [% reporter %] 个 [% terms.bugs %]</a>
                。如果你删除该使用者，数据库的记录将不一致，导致这
-               [%+ reporter %] 个 [% terms.bug %] 不再出现在 [% terms.bug %] 清单中。
+               [%+ reporter %] 个 [% terms.bug %] 不再出现在 [% terms.bug %] 列表中。
           </li>
         [% END %]
         [% IF bugs_activity %]
@@ -176,13 +176,13 @@
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?emailcc1=1&amp;emailtype1=exact&amp;email1=
                [%- otheruser.login FILTER uri %]">在 [% cc %] 个 [% terms.bugs %]</a>
-               的邮件抄送清单中。如果你删除该使用者，将会自动自邮件抄送清单中删除。
+               的邮件抄送列表中。如果你删除该使用者，将会自动自邮件抄送列表中删除。
           </li>
         [% END %]
         [% IF component_cc %]
           <li>
             [% otheruser.login FILTER html %] 在 [% component_cc %]
-            项模块的默认邮件抄送清单中。如果你删除该使用者，将会自动自默认的邮件抄送清单中删除。
+            项模块的默认邮件抄送列表中。如果你删除该使用者，将会自动自默认的邮件抄送列表中删除。
           </li>
         [% END %]
         [% IF email_setting %]
@@ -223,16 +223,16 @@
         [% END %]
         [% IF quips %]
           <li>
-            [% otheruser.login FILTER html %] 提出了 [% quips %] 条智语。如果你删除此使用者账号，这
-            [%+ quips %] 条智语将不再有作者，但仍会显示。
+            [% otheruser.login FILTER html %] 提出了 [% quips %] 条妙语。如果你删除此使用者账号，这
+            [%+ quips %] 条妙语将不再有作者，但仍会显示。
           </li>
         [% END %]
         [% IF watch.watched || watch.watcher %]
           <li>
             [% otheruser.login FILTER html %]
-            [% IF watch.watched %]被 [% watch.watched %] 位使用者监控中[% END %]
-            [% IF watch.watcher %][% '，并' IF watch.watched %]监控 [% watch.watcher %]
-            位使用者中[% END %]。所有相关的监控将和该使用者一并刪除。
+            [% IF watch.watched %]被 [% watch.watched %] 位使用者监视中[% END %]
+            [% IF watch.watcher %][% '，并' IF watch.watched %]监视 [% watch.watcher %]
+            位使用者中[% END %]。所有相关的监视将和该使用者一并刪除。
           </li>
         [% END %]
         [% IF whine_events %]
@@ -243,7 +243,7 @@
         [% IF whine_schedules %]
           <li>
             [% otheruser.login FILTER html %] 是
-            [% whine_schedules %] 项订阅的收件者之一。对应到发送此账号的排程将被删除，但不会修改订阅的內容。
+            [% whine_schedules %] 项订阅的收件者之一。对应到发送此账号的排程将被删除，但不会修改订阅的内容。
           </li>
         [% END %]
         [% IF otheruser.has_audit_entries %]
@@ -282,7 +282,7 @@
 
   <a href="editusers.cgi?action=edit&amp;userid=[% otheruser.id %]
            [% INCLUDE listselectionurlparams %]">编辑该使用者</a>，回到<a
-     href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">使用者清单</a>，[% IF editusers %]<a
+     href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">使用者列表</a>，[% IF editusers %]<a
      href="editusers.cgi?action=add[% INCLUDE listselectionurlparams %]">新增使用者</a>，[% END %]或是<a
      href="editusers.cgi">搜索其他使用者</a>。
 </p>

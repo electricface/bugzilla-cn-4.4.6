@@ -80,7 +80,7 @@
   <br>
 [% ELSE %]
   [% IF headers %]
-    <a href="attachment.cgi?oldid=[% oldid %]&amp;newid=[% newid %]&amp;action=interdiff&amp;format=raw">原始档案</a>
+    <a href="attachment.cgi?oldid=[% oldid %]&amp;newid=[% newid %]&amp;action=interdiff&amp;format=raw">原始文件</a>
     | 回到 [% "$terms.bug $bugid" FILTER bug_link(bugid) FILTER none %]
     |
   [% END %]
@@ -98,7 +98,7 @@
 
 [% IF do_context %]
   [%# only happens for normal viewing, not interdiff %]
-  | <span style='font-weight: bold'>內容：</span>
+  | <span style='font-weight: bold'>内容：</span>
   [% IF context == "patch" %]
     (<strong>Patch</strong> /
   [% ELSE %]

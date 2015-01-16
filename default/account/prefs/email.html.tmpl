@@ -96,7 +96,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
   <tr>
     <td width="150"></td>
     <td>
-      你在监控所有的 [% terms.bugs %] 。若要删除此设置，请联系 <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a> 。
+      你在监视所有的 [% terms.bugs %] 。若要删除此设置，请联系 <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a> 。
     </td>
   </tr>
 [% END %]
@@ -235,15 +235,15 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
 </table>
 
 <hr>
-<b>监控用户</b>
+<b>监视用户</b>
 
 <p>
-如果你监控一位用户，那么就会根据<u>你的</u>偏好设置以及<u>他和 [% terms.bug %] </u>的关系（例如：负责人）来决定是否收到电子邮件。
+如果你监视一位用户，那么就会根据<u>你的</u>偏好设置以及<u>他和 [% terms.bug %] </u>的关系（例如：负责人）来决定是否收到电子邮件。
 </p>
 
 <p>
 [% IF watchedusers.size %]
-你正在监控以下用户：
+你正在监视以下用户：
   </p>
   <p>
     <select id="watched_by_you" name="watched_by_you" multiple="multiple" size="5">
@@ -252,13 +252,13 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
         [% END %]
     </select> <br />
     <input type="checkbox" id="remove_watched_users" name="remove_watched_users">
-    <label for="remove_watched_users">将选择的用户从监控清单中删除</label>
+    <label for="remove_watched_users">将选择的用户从监视列表中删除</label>
 [% ELSE %]
-你现在并未监控任何用户。
+你现在并未监视任何用户。
 [% END %]
 </p>
 
-<p id="new_watched_by_you">将用户加入监控清单〔以半角逗号 (,) 分隔多个使用者〕：
+<p id="new_watched_by_you">将用户加入监视列表〔以半角逗号 (,) 分隔多个使用者〕：
   [% INCLUDE global/userselect.html.tmpl
      id => "new_watchedusers"
      name => "new_watchedusers"
@@ -268,7 +268,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
   %]
 </p>
 
-<p id="watching_you">正在监控你的用户：<br>
+<p id="watching_you">正在监视你的用户：<br>
   [% IF watchers.size %]
     [% FOREACH watcher = watchers %]
       [% watcher FILTER html %] <br>

@@ -566,7 +566,7 @@
         [% END %]
       </span>
       (<a href="buglist.cgi?bug_id=[% bug.duplicate_ids.join(",") FILTER html %]">
-       [%-%]以 [% terms.bug %] 清单方式浏览</a>)
+       [%-%]以 [% terms.bug %] 列表方式浏览</a>)
     </td>
   </tr>
 [% END %]
@@ -680,7 +680,7 @@
                  name="cclist_accessible" id="cclist_accessible"
                  [% " checked" IF bug.cclist_accessible %]
                  [% " disabled=\"disabled\"" UNLESS user_can_edit_accessible %]>
-          <label for="cclist_accessible">邮件副本清单</label>
+          <label for="cclist_accessible">邮件副本列表</label>
         </div>
         <p class="instructions">
           [% terms.bug %] 的负责人
@@ -727,7 +727,7 @@
 [% BLOCK section_cclist %]
     <tr>
       <th class="field_label">
-        <label for="newcc" accesskey="a">邮件副本清单：</label>
+        <label for="newcc" accesskey="a">邮件副本列表：</label>
       </th>
       <td>
         [% IF user.id %]
@@ -737,7 +737,7 @@
                    IF user.settings.state_addselfcc.value == 'always'
                       || (!bug.user.has_any_role
                           && user.settings.state_addselfcc.value == 'cc_unless_role') %]>
-            <label for="addselfcc">把自己加入抄送清单</label>
+            <label for="addselfcc">把自己加入抄送列表</label>
             <br>
           [% END %]
         [% END %]
@@ -782,9 +782,9 @@
               <input type="checkbox" id="removecc" name="removecc">
               <label for="removecc">
                 [% IF bug.user.canedit %]
-                  删除选择的抄送清单
+                  删除选择的抄送列表
                 [% ELSE %]
-                  将我从抄送清单中删除
+                  将我从抄送列表中删除
                 [% END %]
               </label>
               <br>

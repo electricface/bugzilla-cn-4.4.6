@@ -38,7 +38,7 @@
   <td valign="top">[% terms.Bugs %] ：</td>
   <td valign="top">
 [% IF milestone.bug_count %]
-  <a title="列出里程碑在 '[% milestone.name FILTER html %]' 的 [% terms.bugs %] 清单"
+  <a title="列出里程碑在 '[% milestone.name FILTER html %]' 的 [% terms.bugs %] 列表"
      href="buglist.cgi?target_milestone=[% milestone.name FILTER uri %]&amp;product=
           [%- product.name FILTER uri %]"
           >[% milestone.bug_count FILTER none %]</a>

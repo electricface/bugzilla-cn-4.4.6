@@ -68,7 +68,7 @@ function toggle_display(link) {
         <td valign="top">
           [% IF attachment.datasize %]
             <a href="attachment.cgi?id=[% attachment.id %]"
-               title="浏览附件的內容">
+               title="浏览附件的内容">
           [% END %]
           <b>[% attachment.description FILTER html FILTER obsolete(attachment.isobsolete) %]</b>
           [% "</a>" IF attachment.datasize %]

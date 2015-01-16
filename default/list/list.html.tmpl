@@ -21,7 +21,7 @@
 [% USE Bugzilla %]
 [% cgi = Bugzilla.cgi %]
 
-[% unfiltered_title = "$terms.Bug 清单" %]
+[% unfiltered_title = "$terms.Bug 列表" %]
 [% IF searchname || defaultsavename %]
   [% unfiltered_title = unfiltered_title _ ": " _ (searchname OR defaultsavename) %]
 [% END %]
@@ -86,7 +86,7 @@
   [% END %]
 
   [% IF user.settings.display_quips.value == 'on' %]
-    [% DEFAULT quip = "$terms.Bugzilla 可以在这里随机显示智语，但目前仍未输入任何智语。" %]
+    [% DEFAULT quip = "$terms.Bugzilla 可以在这里随机显示妙语，但目前仍未输入任何妙语。" %]
     <span class="bz_quip">
       <a href="quips.cgi"><em>[% quip FILTER html %]</em></a>
     </span>
@@ -96,7 +96,7 @@
 
 [% IF toolong %]
   <h2 class="bz_smallminded">
-    此清单对 [% terms.Bugzilla %] 而言太长了，因此将不会在每一个 [% terms.bug %]
+    此列表对 [% terms.Bugzilla %] 而言太长了，因此将不会在每一个 [% terms.bug %]
     上显示「第一个／最后一个／前一个／下一个」的选项。
   </h2>
 [% END %]

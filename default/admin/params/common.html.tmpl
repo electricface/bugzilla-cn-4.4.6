@@ -29,7 +29,7 @@
         <label for="[% param.name FILTER html %]-on">开</label>
         <input type="radio" name="[% param.name FILTER html %]" id="[% param.name FILTER html %]-off"
                value=0 [% "checked=\"checked\"" IF !Param(param.name) %]>
-        <label for="[% param.name FILTER html %]-off">關</label>
+        <label for="[% param.name FILTER html %]-off">关</label>
       [% ELSIF param.type == "m" %]
         [% boxSize = 5 %]
         [% boxSize = param.choices.size IF param.choices.size < 5 %]
@@ -116,7 +116,7 @@
         <p>
           <input type="checkbox" name="reset-[% param.name FILTER html %]"
                  id="reset-[% param.name FILTER html %]">
-          <label for="reset-[% param.name FILTER html %]">重设</label>
+          <label for="reset-[% param.name FILTER html %]">重置</label>
         </p>
       [% END %]
       <hr>

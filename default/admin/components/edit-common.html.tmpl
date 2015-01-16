@@ -58,7 +58,7 @@
   </tr>
 [% END %]
 <tr>
-  <th class="field_label"><label for="initialcc">默认邮件抄送清单：</label></th>
+  <th class="field_label"><label for="initialcc">默认邮件抄送列表：</label></th>
   <td>
     [% INCLUDE global/userselect.html.tmpl
        name     => "initialcc"
@@ -69,7 +69,7 @@
     %]
     <br>
     [% IF !Param("usemenuforusers") %]
-      <em>输入邮件抄送清单时，多位联络人可以用半角逗号 (,) 分隔。</em>
+      <em>输入邮件抄送列表时，多位联络人可以用半角逗号 (,) 分隔。</em>
     [% END %]
   </td>
 </tr>

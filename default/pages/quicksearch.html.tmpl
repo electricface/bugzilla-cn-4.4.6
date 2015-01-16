@@ -47,7 +47,7 @@
     以及 [% field_descs.longdesc FILTER html %] 这些字段搜索你所输入的字。</li>
 
   <li>在搜索框输入一个<strong>数字</strong>则会直接跳至该编号的 [% terms.bug %] 。
-      另外，输入 [% terms.bug %] 的<strong>別名</strong>也会直接跳至该 [% terms.bug %]。
+      另外，输入 [% terms.bug %] 的<strong>别名</strong>也会直接跳至该 [% terms.bug %]。
   </li>
 
   <li>加入较多的字会使搜索结果<strong>变少</strong>，而不是增加。
@@ -71,7 +71,7 @@
     <kbd>field:value</kbd> 这个格式。 <kbd>field</kbd> 是此份文件下方
     提到的<a href="#fields">字段名称</a>之一，而 <kbd>value</kbd> 是你
     想要在该字段搜索的数值。如果在 <kbd>value</kbd> 字段中输入逗号 (,) ，
-    会把你所输入的数值视为一串数值的清单，并且会搜索符合<em>任何一个</em>数值的
+    会把你所输入的数值视为一串数值的列表，并且会搜索符合<em>任何一个</em>数值的
     [% terms.bugs %] 。</li>
 </ul>
 
@@ -150,7 +150,7 @@
   <li>如果你要搜索的是<strong>片語</strong>或是含有空白、逗号 (,) 、冒号 (:)
     、引号 (&quot;) 的字，必须以引号包覆这些字。
     例如： <kbd>"yes, this is a phrase"</kbd> 。
-    如要搜索含有会被快速搜索认定为特別功能的字符时，也可以放在引号中。
+    如要搜索含有会被快速搜索认定为特别功能的字符时，也可以放在引号中。
     例如： <kbd>"this|that"</kbd> 就会以字面上的 <em>this|that</em> 进行搜索。
     同样的道理， <kbd>"-field:value"</kbd> 就会以字面上的 <em>-field:value</em>
     进行搜索，而不是解读为 <kbd>"NOT field:value"</kbd> 。
@@ -215,8 +215,8 @@
       <td class="field_nickname">
         把搜索的<strong>第一个字</strong>设置为任何状态，甚至是状态的缩写，
         就会搜索符合该状态的 [% terms.bugs %] 。
-        <strong><kbd>ALL</kbd></strong> 是代表「所有状态」的特別快捷键。
-        <strong><kbd>OPEN</kbd></strong> 是代表「所有状态为开启」的特別快捷键。
+        <strong><kbd>ALL</kbd></strong> 是代表「所有状态」的特别快捷键。
+        <strong><kbd>OPEN</kbd></strong> 是代表「所有状态为开启」的特别快捷键。
       </td>
     </tr>
     <tr>

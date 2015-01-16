@@ -49,7 +49,7 @@ EOT
 checksetup.pl ）：
 EOT
     continue_without_answers => <<'END',
-在互动模式（不会有一个 'answers' 档案）重新执行 checksetup.pl
+在互动模式（不会有一个 'answers' 文件）重新执行 checksetup.pl
 以继续。
 END
     cpan_bugzilla_home =>
@@ -139,7 +139,7 @@ END
 END
     localconfig_create_htaccess => <<'END',
 如果你使用 Apache 作为你的网页服务器， Bugzilla 可以替你建立
-.htaccess 档案，它可以让此档案 (localconfig) 和其他的机密档案
+.htaccess 文件，它可以让此文件 (localconfig) 和其他的机密文件
 无法通过网络读取。
 
 设置为 1 时， checksetup.pl 将会检查是否有 .htaccess 文件。
@@ -372,9 +372,9 @@ END
 255 字符，而原本过长的摘要已复制一份至留言中。受到影响的 bug 编号是：
 END
     update_quips => <<'END',
-智语现在存储在数据库中，而不是存在外部文件。原先存储在
-##data##/comments 的智语已被复制到数据库中，并将该文件更名为
-##data##/comments.bak 。你只要确认智语有搬移成功，即可将该文件
+妙语现在存储在数据库中，而不是存在外部文件。原先存储在
+##data##/comments 的妙语已被复制到数据库中，并将该文件更名为
+##data##/comments.bak 。你只要确认妙语有搬移成功，即可将该文件
 删除。
 END
     update_queries_to_tags => "填入新的 'tag' table 中：",

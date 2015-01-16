@@ -51,7 +51,7 @@
         <br>你也可以从群组中新增或移除用户。（又称「用户权限设置」）</dd>
 
         [% class = (Param('useclassification') && user.in_group('editclassifications')) ? "" : "forbidden" %]
-        <dt id="classifications" class="[% class %]"><a href="editclassifications.cgi">分類</a></dt>
+        <dt id="classifications" class="[% class %]"><a href="editclassifications.cgi">分类</a></dt>
         <dd class="[% class %]">如果你需要一次管理多种产品，建议你将产品分为数个分类。
         <br>这样对使用者搜索或报告新的 [% terms.bugs %] 时，也较为容易。</dd>
 

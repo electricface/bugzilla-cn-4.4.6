@@ -57,13 +57,13 @@
         <input type="radio" name="sortvisible" id="entirelist" value="0"
           [% ' checked="checked"' IF NOT sortvisible %]>
         <label for="entirelist">
-          整份清单
+          整份列表
         </label>
         <br>
         <input type="radio" name="sortvisible" id="visiblelist" value="1"
           [% ' checked="checked"' IF sortvisible %]>
         <label for="visiblelist">
-          目前可见的清单
+          目前可见的列表
         </label>
       </td>
       <td rowspan="4" valign="top">限制于下列产品：</td>
@@ -115,7 +115,7 @@
 
 <form method="post" action="buglist.cgi">
   <input type="hidden" name="bug_id" value="[% bug_ids_string FILTER html %]">
-  或者以<input type="submit" id="list" value="[% terms.bug %] 清单">呈现即可。
+  或者以<input type="submit" id="list" value="[% terms.bug %] 列表">呈现即可。
   (注意：顺序可能不一样。)
 </form>
 
@@ -127,15 +127,15 @@
 
 <p>
   最常报告的 [% terms.Bugs %] 页面列出目前状态为开启，且最常被报告的
-  [%+ terms.bugs %] 清单。此清单产生方式为计算被直接或间接标记为重复的
-  [%+ terms.bugs %] 数量。提供此清单的目的是将输入 [% terms.Bugzilla %]
+  [%+ terms.bugs %] 列表。此列表产生方式为计算被直接或间接标记为重复的
+  [%+ terms.bugs %] 数量。提供此列表的目的是将输入 [% terms.Bugzilla %]
   的重复 [% terms.bugs %] 数量减到最低，以省下品保工程师分类 [% terms.bugs %] 的时间。
 </p>
 
-<b>我如何使用这份清单？</b>
+<b>我如何使用这份列表？</b>
 
 <ul>
-  <li>检查最常报告的 [% terms.bugs %] 清单。</li>
+  <li>检查最常报告的 [% terms.bugs %] 列表。</li>
   <li>如果你的问题列在上面：</li>
 
   <ul>

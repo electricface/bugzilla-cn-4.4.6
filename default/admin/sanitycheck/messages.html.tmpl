@@ -239,7 +239,7 @@
        [%- issue_hash_token(['sanitycheck']) FILTER uri %]">寄出这些邮件</a>。
 
   [% ELSIF san_tag == "whines_obsolete_target_deletion_start" %]
-    移除訂閱中不存在的使用者／群组中。
+    移除订阅中不存在的使用者／群组中。
 
   [% ELSIF san_tag == "whines_obsolete_target_deletion_end" %]
     已自订阅中移除不存在的使用者／群组。
@@ -288,7 +288,7 @@
     <a href="show_bug.cgi?id=[% bug_id FILTER uri %]">[% bug_id FILTER html %]</a>
     [% ", " IF !loop.last %]
   [% END %]
-  （<a href="buglist.cgi?bug_id=[% badbugs.join(",") FILTER uri %]">显示为 [% terms.bug %] 清单</a>）。
+  （<a href="buglist.cgi?bug_id=[% badbugs.join(",") FILTER uri %]">显示为 [% terms.bug %] 列表</a>）。
 [% END %]
 
 [% BLOCK bug_link %]

@@ -37,7 +37,7 @@
 <ol>
  <li>点选「<a href="enter_bug.cgi">提交新[% terms.bug %]</a> 」</li>
  <li>选择在哪个产品遇到这个 [% terms.bug %]</li>
- <li>填表。以下是一些有助了解表格內容的说明：</li>
+ <li>填表。以下是一些有助了解表格内容的说明：</li>
 </ol>
 
   <blockquote>
@@ -47,14 +47,14 @@
 
     <p><b>[% field_descs.op_sys FILTER html %]：</b>在哪个操作系统发现的？（例如 Linux 、 Windows XP 、 Mac OS X 。）<br>
     如果你知道这个 [% terms.bug %] 会发生在多种操作系统，选择<em>[% display_value("op_sys", "全部 (All)") FILTER html %]</em> 。
-    如果你的[% field_descs.op_sys FILTER html %]不在清单上，选择<em>[% display_value("op_sys", "其他 (Other)") FILTER html %]</em> 。</p>
+    如果你的[% field_descs.op_sys FILTER html %]不在列表上，选择<em>[% display_value("op_sys", "其他 (Other)") FILTER html %]</em> 。</p>
 
     <p><b>摘要：</b>你如何以少于 60 个字符的长度，来描述这个 [% terms.bug %] ？<br>
     一个好的摘要应该能够<b>快速并独一无二地识别 [% terms.bug %] 的报告。</b>
     它应该要解释问题所在点，而非提供解決方法。<br>
     <ul>
-     <li>好的例子：「<tt>取消复制文件的对话框时，文件管理器宕掉</tt>」</li>
-     <li>不好的例子：「<tt>软件宕掉</tt>」</li>
+     <li>好的例子：「<tt>取消复制文件的对话框时，文件管理器崩溃</tt>」</li>
+     <li>不好的例子：「<tt>软件崩溃</tt>」</li>
      <li>不好的例子：「<tt>浏览器应该要可以浏览我的网页</tt>」</li>
     </ul>
 
@@ -67,17 +67,17 @@
 
       <blockquote>
 <pre>
-在 NSGetFactory 功能下拖拉任何页面，会使 Mac build 宕掉。
+在 NSGetFactory 功能下拖拉任何页面，会使 Mac build 崩溃。
 </pre>
       </blockquote>
 
-      <p><b>重现步骤：</b> 可以简单重现 [% terms.bug %] 的步骤。包括任何特別的设置步骤。</p>
+      <p><b>重现步骤：</b> 可以简单重现 [% terms.bug %] 的步骤。包括任何特别的设置步骤。</p>
 
       <blockquote>
 <pre>
 1) 浏览任何网页。（我用了默认的默认页面， resource:/res/samples/test0.html ）
 
-2) 拖拉该页。（特別是当按住鼠标按键时，将鼠标游标从浏览器內容区的任一点拖至浏览器內容区的底部。）
+2) 拖拉该页。（特别是当按住鼠标按键时，将鼠标游标从浏览器内容区的任一点拖至浏览器内容区的底部。）
 </pre>
       </blockquote>
 
@@ -93,7 +93,7 @@
 
       <blockquote>
 <pre>
-窗口应该往下拉。下拉的內容应该被选取。（至少应用程序不应该宕掉。）
+窗口应该往下拉。下拉的内容应该被选取。（至少应用程序不应该崩溃。）
 </pre>
       </blockquote>
 
@@ -114,17 +114,17 @@ Build 2006-08-10 的 Mac OS 10.4.3
       </blockquote>
 
       <p><b>附加信息：</b>其他有用的信息。
-      <br><br>对于会造成宕掉的 [% terms.bugs %] ：</p>
+      <br><br>对于会造成崩溃的 [% terms.bugs %] ：</p>
 
       <ul>
-        <li><b>Windows ：</b>注明宕掉的种类，以及应用程序在哪种模块下宕掉（例如：在 apprunner.exe 中拒绝存取。）</li>
+        <li><b>Windows ：</b>注明崩溃的种类，以及应用程序在哪种模块下崩溃（例如：在 apprunner.exe 中拒绝存取。）</li>
 
         <li><b>Mac OS X ：</b>附上 "Crash Reporter" 的记录文件。只要附上 "Thread 0 Crashed"
         的段落即可。请勿贴上整份记录文挡！</li>
       </ul>
     </blockquote>
 
-  <p>检查报告內容是否正确，然后点选「提交」按钮，就可以将你报告的 [% terms.bug %] 放进 [% terms.Bugzilla %] 数据库里了。<br>
+  <p>检查报告内容是否正确，然后点选「提交」按钮，就可以将你报告的 [% terms.bug %] 放进 [% terms.Bugzilla %] 数据库里了。<br>
   </p>
 </blockquote>
 

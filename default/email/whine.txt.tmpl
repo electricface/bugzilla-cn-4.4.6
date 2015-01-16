@@ -8,7 +8,7 @@
 
 From: [% Param("mailfrom") %]
 To: [% email %][% Param("emailsuffix") %]
-Subject: [% terms.Bugzilla %] [% terms.bug %] 清单需要你的注意。
+Subject: [% terms.Bugzilla %] [% terms.bug %] 列表需要你的注意。
 X-Bugzilla-Type: whine
 
 [此电子邮件为系统自动产生。]
@@ -24,13 +24,13 @@ X-Bugzilla-Type: whine
 
 (1) 你觉得这个 [% terms.bug %] 可以很快解決（例如说，
     它是个 [% display_value("resolution", "INVALID") %] [% terms.bug %] ）。
-(2) 你觉得这个 [% terms.bug %] 不是你负责，因此你把它重新分配给別人。
+(2) 你觉得这个 [% terms.bug %] 不是你负责，因此你把它重新分配给别人。
     （提示：如果你不知道要分配给谁，重新选择适合的模块字段，
     并使用「将负责人重新设置为默认值」选项。
 (3) 你觉得这个 [% terms.bug %] 是你负责的，但是现在还无法解决。
     那么就将 [% terms.bug %] 的状态设置为 [% get_status("IN_PROCESS") %] 。
 
-若要得到所有状态是 [% display_value("bug_status", "CONFIRMED") %] 的 [%+ terms.bugs %] 清单，
+若要得到所有状态是 [% display_value("bug_status", "CONFIRMED") %] 的 [%+ terms.bugs %] 列表，
 你可以使用以下网址（你也可以加入书签）：
 
  [% urlbase %]buglist.cgi?bug_status=CONFIRMED&assigned_to=[% email %]

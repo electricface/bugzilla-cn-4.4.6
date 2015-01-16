@@ -130,10 +130,10 @@
         <br/>
         使用此标签可列出因
         [%+ field_types.${constants.FIELD_TYPE_BUG_ID} FILTER html %]
-        此字段，而连至一个 [% terms.bug %] 的 [% terms.bugs %] 清单。
+        此字段，而连至一个 [% terms.bug %] 的 [% terms.bugs %] 列表。
         例如，描述是「此 [% terms.bug %] 和 ... 重复」时，
         反向关系就会是「和此 [% terms.bug %] 重复的 [% terms.bugs %] 」。
-        如果要停用此字段的清单，请留白。
+        如果要停用此字段的列表，请留白。
       </td>
     [% END %]
     [% IF field.is_select %]

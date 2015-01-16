@@ -13,7 +13,7 @@
 %]
 
 <p>
-  选择你想要在你的 [% terms.bug %] 清单中出现的字段。注意此功能需要将 cookie 启用。
+  选择你想要在你的 [% terms.bug %] 列表中出现的字段。注意此功能需要将 cookie 启用。
 </p>
 
 [% field_descs.short_short_desc     = "摘要（前 60 个字）" %]
@@ -111,7 +111,7 @@
              value="[% issue_hash_token([saved_search.id, saved_search.name]) FILTER html %]">
       <input type="checkbox" id="save_columns_for_search" checked="checked"
              name="save_columns_for_search" value="1">
-      <label for="save_columns_for_search">只在搜索 '[% saved_search.name FILTER html %]' 时存储此字段清单</label>
+      <label for="save_columns_for_search">只在搜索 '[% saved_search.name FILTER html %]' 时存储此字段列表</label>
     </p>
   [% ELSE %]
     <input type="hidden" name="token"

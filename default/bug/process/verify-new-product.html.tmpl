@@ -115,7 +115,7 @@
   [% END %]
 
   [% IF old_groups.size %]
-    <p>对 '[% product.name FILTER html %]' 产品而言，这些群组已经无效；或者你不被允許将 [% terms.bugs %] 限制于这些群组中。如果不加入其他群组的话， [%+ terms.Bugs %] 将不再被限制于这些群组，且会变为公开：<br>
+    <p>对 '[% product.name FILTER html %]' 产品而言，这些群组已经无效；或者你不被允许将 [% terms.bugs %] 限制于这些群组中。如果不加入其他群组的话， [%+ terms.Bugs %] 将不再被限制于这些群组，且会变为公开：<br>
     [% FOREACH group = old_groups %]
       <input type="checkbox" id="group_[% group.id FILTER html %]"
              name="groups" disabled="disabled" value="[% group.name FILTER html %]">
