@@ -22,13 +22,13 @@
 [%# If the user's bugmail has been disabled by admins, show a warning. %]
 [% IF user.email_disabled %]
   <div class="warningmessages">
-    你的 [% terms.bug %] 修改状态通知信已被管理员停用。请联络
-    [% Param('maintainer') %] 以启用 [% terms.bug %] 修改状态通知信。
+    你的[% terms.bug %]修改状态通知信已被管理员停用。请联络
+    [% Param('maintainer') %] 以启用[% terms.bug %]修改状态通知信。
   </div>
 [% END %]
 
 <p>
-如果你不想要收到 [% terms.bug %] 修改状态通知信，你可以用以下设置来过滤部分或全部的通知信。
+如果你不想要收到[% terms.bug %]修改状态通知信，你可以用以下设置来过滤部分或全部的通知信。
 </p>
 
 [% IF user.authorizer.can_change_email && Param('allowemailchange') %]
@@ -96,7 +96,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
   <tr>
     <td width="150"></td>
     <td>
-      你在监视所有的 [% terms.bugs %] 。若要删除此设置，请联系 <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a> 。
+      你在监视所有的[% terms.bugs %]。若要删除此设置，请联系 <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a> 。
     </td>
   </tr>
 [% END %]
@@ -109,11 +109,11 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
 
 [% events = [
     { id = constants.EVT_ADDED_REMOVED,
-      description = "被加入某个 $terms.bug ，或自某个 $terms.bug 中刪除" },
+      description = "被加入某个${terms.bug}，或自某个${terms.bug}中刪除" },
     { id = constants.EVT_BUG_CREATED,
-      description = "建立一个新的 $terms.bug " },
+      description = "建立一个新的${terms.bug}" },
     { id = constants.EVT_OPENED_CLOSED,
-      description = " $terms.bug 已解决或再开启 (REOPENED)" },
+      description = "${terms.bug}已解决或再开启 (REOPENED)" },
     { id = constants.EVT_COMPONENT,
       description = "产品或子产品修改" },
     { id = constants.EVT_PROJ_MANAGEMENT,
@@ -136,7 +136,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
 
 [% neg_events = [
     { id = constants.EVT_UNCONFIRMED,
-      description = " $terms.bug 仍然处于未确认 (UNCONFIRMED)状态" },
+      description = "${terms.bug}仍然处于未确认 (UNCONFIRMED)状态" },
     { id = constants.EVT_CHANGED_BY_ME,
       description = "我做的修改" },
 ] %]
@@ -166,7 +166,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
 <table class="bz_emailprefs" border="1">
   <tr>
     <td colspan="[% num_columns FILTER html %]" align="center" width="50%">
-      <b>当我和这个 [% terms.bug %] 的关系是</b>
+      <b>当我和这个[% terms.bug %]的关系是</b>
     </td>
     <td rowspan="2" width="40%">
       <b>当…的时候，我想要收到信：</b>
@@ -238,7 +238,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
 <b>监视用户</b>
 
 <p>
-如果你监视一位用户，那么就会根据<u>你的</u>偏好设置以及<u>他和 [% terms.bug %] </u>的关系（例如：负责人）来决定是否收到电子邮件。
+如果你监视一位用户，那么就会根据<u>你的</u>偏好设置以及<u>他和[% terms.bug %]</u>的关系（例如：负责人）来决定是否收到电子邮件。
 </p>
 
 <p>

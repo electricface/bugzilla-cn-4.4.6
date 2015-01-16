@@ -11,7 +11,7 @@
 [% IF headers %]
 
   <br>
-  <span>回到 [% "$terms.bug $bugid" FILTER bug_link(bugid) FILTER none %]</span>
+  <span>回到 [% "${terms.bug}$bugid" FILTER bug_link(bugid) FILTER none %]</span>
 
   [% PROCESS global/footer.html.tmpl %]
 

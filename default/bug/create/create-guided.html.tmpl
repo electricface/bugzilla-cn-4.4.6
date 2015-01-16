@@ -25,7 +25,7 @@
   <font color="red">
     这是使用于 mozilla.org 的模版。此模版以及 comment-guided.txt.tmpl
     模版以及所有通过此模版发送的资料及格式，在此仅作为示范如何使用自定义模板，特别是自定义
-    [% terms.bug %] 输入模版的部份。由于大部份文字均不适用，若你要在此台安装
+    [% terms.bug %]输入模版的部份。由于大部份文字均不适用，若你要在此台安装
     [% terms.Bugzilla %] 的机器上使用此表格，你需要做出适当的调整。
   </font>
 </p>
@@ -55,9 +55,9 @@ function PutDescription() {
 <h3 id="step1">步骤 3 之 1 － 你的[% terms.bug %]是否已被提价了？</h3>
 
 <p>
-  <font color="red">请勿跳过此步骤－－半数以上的 [% terms.bugs %] 都已提交过了。
+  <font color="red">请勿跳过此步骤－－半数以上的[% terms.bugs %]都已提交过了。
   </font>
-    检查一下最常提交的两份 [% terms.bugs %] 列表：
+    检查一下最常提交的两份[% terms.bugs %]列表：
 </p>
 
 [%# Include other products if sensible %]
@@ -70,8 +70,8 @@ function PutDescription() {
 [% END %]
 
 <p>
-    <a href="duplicates.cgi?[% productstring %]&amp;format=simple" target="somebugs">所有时间点的前 100 个 [% terms.bugs %]</a>（默认载入） |
-    <a href="duplicates.cgi?[% productstring %]&amp;format=simple&amp;sortby=delta&amp;reverse=1&amp;maxrows=100&amp;changedsince=14" target="somebugs">最近两周的热门 [% terms.bugs %]</a>
+    <a href="duplicates.cgi?[% productstring %]&amp;format=simple" target="somebugs">所有时间点的前 100 个[% terms.bugs %]</a>（默认载入） |
+    <a href="duplicates.cgi?[% productstring %]&amp;format=simple&amp;sortby=delta&amp;reverse=1&amp;maxrows=100&amp;changedsince=14" target="somebugs">最近两周的热门[% terms.bugs %]</a>
 </p>
 
 <iframe name="somebugs" id="somebugs"
@@ -80,7 +80,7 @@ function PutDescription() {
 </iframe>
 
 <p>
-    如果 [% terms.bug %] 不在上面，那么试着输入一些有关的关键字来搜索 [% terms.Bugzilla %] 。例如：
+    如果[% terms.bug %]不在上面，那么试着输入一些有关的关键字来搜索 [% terms.Bugzilla %] 。例如：
     <tt><b>pop3 信件</b></tt>或<tt><b>复制 粘贴</b></tt>。结果将会显示在上面。
   </p>
 
@@ -108,14 +108,14 @@ function PutDescription() {
   </form>
 
 <p>
-  检查搜索结果。如果显示<tt><b>[% terms.zeroSearchResults %]</b></tt>的信息，代表 [% terms.Bugzilla %] 没找到符合的 [% terms.bugs %] 。看有没有打错字，或试试其他关键字。如果你找到的 [% terms.bug %] 看起来有点像你遇到的，请在后头加上一些信息，而不是新增一个 [% terms.bug %] 。
+  检查搜索结果。如果显示<tt><b>[% terms.zeroSearchResults %]</b></tt>的信息，代表 [% terms.Bugzilla %] 没找到符合的[% terms.bugs %]。看有没有打错字，或试试其他关键字。如果你找到的[% terms.bug %]看起来有点像你遇到的，请在后头加上一些信息，而不是新增一个[% terms.bug %]。
 </p>
 
 
 <h3 id="step2">步骤 3 之 2 － 提供信息</h3>
 
 <p>
-  如果你试了几次搜索但都找不到，那么请提交这个 [% terms.bug %] 。
+  如果你试了几次搜索但都找不到，那么请提交这个[% terms.bug %]。
 </p>
 
 <form method="post" action="post_bug.cgi">
@@ -178,7 +178,7 @@ function PutDescription() {
       </table>
 
       <p>
-        问题发生的区域。你可以借由使用搜索结果中类似的 [% terms.bugs %] 来选择正确的模块，或是浏览<a
+        问题发生的区域。你可以借由使用搜索结果中类似的[% terms.bugs %]来选择正确的模块，或是浏览<a
         target="_blank" href="describecomponents.cgi?product=
             [% product.name FILTER uri %]">模块描述</a>的完整列表（在新窗口打开）以获得更多信息。
       </p>
@@ -376,7 +376,7 @@ function PutDescription() {
         cols    = constants.COMMENT_COLS
       %]
       <p>
-        加上任何可能相关的信息，例如你在使用的<b>布景</b>（这个 [% terms.bug %]
+        加上任何可能相关的信息，例如你在使用的<b>布景</b>（这个[% terms.bug %]
         在默认布景下还会发生吗？），一个
         <b><a href="http://kb.mozillazine.org/Quality_Feedback_Agent">Talkback crash ID</a></b>
         ，或任何关于<b>你的电脑状态</b>的信息。较长的信息，例如 <b>stack trace</b> 或
@@ -400,7 +400,7 @@ function PutDescription() {
           Major ：主要的功能坏了。
         </option>
         <option name="normal" value="normal" selected="selected">
-          Normal ：这是一个因该要修好的 [% terms.bug %] 。
+          Normal ：这是一个因该要修好的[% terms.bug %]。
         </option>
         <option name="minor" value="minor">
           Minor ：小功能坏了，而且有方法可以避免。
@@ -422,12 +422,12 @@ function PutDescription() {
 </table>
 
 
-<h3 id="step3">步骤 3 之 3 － 提交 [% terms.bug %]</h3>
+<h3 id="step3">步骤 3 之 3 － 提交[% terms.bug %]</h3>
 
 <p>
-  <input type="submit" id="report" value="提交 [% terms.bug %]"
+  <input type="submit" id="report" value="提交[% terms.bug %]"
    onclick="if (this.form.comment.value == '')
-   { alert('请对这个 [% terms.bug %] 输入一些细节。');
+   { alert('请对这个[% terms.bug %]输入一些细节。');
      this.form.comment.focus();
      return false; } return true;">
 </p>
@@ -436,7 +436,7 @@ function PutDescription() {
   就这样！非常感谢。如果有任何进度，将会以电子邮件通知。
 
 <p>
-  请谅解我们收到一堆 [% terms.bug %] 报告－－可能要一段时间才会看到你的报告。你可以通过清楚描述
+  请谅解我们收到一堆[% terms.bug %]报告－－可能要一段时间才会看到你的报告。你可以通过清楚描述
   [%+ terms.bug %] 来帮助我们更快了解问题所在，并回复电子邮件中任何可能询问的问题。
 </p>
 

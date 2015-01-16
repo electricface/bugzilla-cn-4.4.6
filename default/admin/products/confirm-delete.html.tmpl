@@ -81,7 +81,7 @@
   [% END %]
 
   <tr>
-    <td>[% terms.bugs %] 回报：</td>
+    <td>[% terms.bugs %]回报：</td>
     <td>
       [% IF product.is_active %]
         开
@@ -169,7 +169,7 @@
     <td>
       [% IF product.bug_count %]
         <a href="buglist.cgi?product=[% product.name FILTER uri %]"
-           title="列出产品 '[% product.name FILTER html %]' 的 [% terms.bugs %]">
+           title="列出产品 '[% product.name FILTER html %]' 的[% terms.bugs %]">
           [%- product.bug_count FILTER html %]</a>
       [% ELSE %]
         无
@@ -184,7 +184,7 @@
 
   [% IF !Param("allowbugdeletion") %]
 
-    <p class="confirmation">很抱歉，此产品还有 [% product.bug_count FILTER html %] 个 [% terms.bugs %] 。
+    <p class="confirmation">很抱歉，此产品还有 [% product.bug_count FILTER html %] 个[% terms.bugs %]。
     在你刪除此产品之前，你必须将它[% '们' IF product.bug_count > 1 %]修改至其他产品中。</p>
 
   [% ELSE %]
@@ -194,7 +194,7 @@
         <td>
           此产品中已输入 [% product.bug_count FILTER html %] 个 [%+ terms.bugs %] ！
           当你刪除此产品时，
-          <b>所有</b>已储存的 [% terms.bugs %] 和他们的历史记录也会一并刪除。
+          <b>所有</b>已储存的[% terms.bugs %]和他们的历史记录也会一并刪除。
         </td>
       </tr>
     </table>

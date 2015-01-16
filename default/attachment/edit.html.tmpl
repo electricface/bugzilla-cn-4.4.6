@@ -241,7 +241,7 @@
       <div id="attachment_comments_and_flags">
         [% IF user.id %]
           <div id="smallCommentFrame" >
-            <label for="comment">（对 [% terms.bug %] ）的留言：</label>
+            <label for="comment">（对[% terms.bug %]）的留言：</label>
             [% classNames = 'block' %]
             [% classNames = "$classes bz_private" IF attachment.isprivate %]
             [% INCLUDE global/textarea.html.tmpl
@@ -298,7 +298,7 @@
 </div>
 
 <div id="attachment_list">
-  在 [% "$terms.bug ${attachment.bug_id}" FILTER bug_link(attachment.bug_id) FILTER none %] 里的附件：
+  在 [% "${terms.bug}${attachment.bug_id}" FILTER bug_link(attachment.bug_id) FILTER none %] 里的附件：
   [% FOREACH a = attachments %]
     [% IF a.isobsolete %]
       <span class="bz_obsolete">

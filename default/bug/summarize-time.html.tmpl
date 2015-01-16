@@ -9,10 +9,10 @@
 [% title = "时间统计" %]
 [% IF do_depends %]
     [% header = "$terms.Bug $ids.0" FILTER bug_link(ids.0) FILTER none %]
-    [% header = header _ " (包括把这个 $terms.bug 档掉的所有 $terms.bugs)" _ title %]
+    [% header = header _ " (包括把这个${terms.bug}档掉的所有${terms.bugs})" _ title %]
     [% title = "$terms.Bug $ids.0 " _ title %]
 [% ELSE %]
-    [% title = "$ids.size 个已选的 $terms.bugs " _ title %]
+    [% title = "$ids.size 个已选的${terms.bugs}" _ title %]
     [% header = title %]
 [% END %]
 
@@ -67,7 +67,7 @@
 
   [% IF null.size > 0 %]
     [% INCLUDE inactive_report %]
-    <h4 style="margin: 0">总计有 [% null.size %] 个不活跃的 [% terms.bugs %]</h4>
+    <h4 style="margin: 0">总计有 [% null.size %] 个不活跃的[% terms.bugs %]</h4>
   [% END %]
 
 [% END %]
@@ -89,7 +89,7 @@
         [% END %]
 
     [% additional = "$global.owner_count.size 位开发者 @
-                     $global.bug_count.size 个 $terms.bugs" %]
+                     $global.bug_count.size 个${terms.bugs}" %]
     [% INCLUDE section_total colspan=3 additional=additional %]
     </table>
 [% END %]
@@ -133,7 +133,7 @@
                               detailed=detailed %]
     [% END %]
 
-    [% additional = "$global.bug_count.size 个 $terms.bugs &
+    [% additional = "$global.bug_count.size 个${terms.bugs}&
                      $global.owner_count.size 位开发者" %]
     [% INCLUDE section_total additional=additional colspan=2 %]
     </table>
@@ -220,7 +220,7 @@
 [% END %]
 
 [% BLOCK inactive_report %]
-    <h3>不活躍的 [% terms.bugs %]</h3>
+    <h3>不活躍的[% terms.bugs %]</h3>
     <table cellpadding="4" cellspacing="0" width="90%" class="zeroitems">
     [% cid = 0 %]
     [% FOREACH bug_id = null.nsort %]

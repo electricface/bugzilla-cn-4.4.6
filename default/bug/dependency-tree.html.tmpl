@@ -46,14 +46,14 @@
         [% IF ids.size %]
             依赖于
         [% ELSE %]
-            并未依赖任何[% '开启的' IF hide_resolved %][% terms.bugs %] 。
+            并未依赖任何[% '开启的' IF hide_resolved %][% terms.bugs %]。
         [% END %]
     [% ELSIF type == 2 %]
         [% tree_name = "blocked_tree" %]
         [% IF ids.size %]
             阻挡
         [% ELSE %]
-            并未阻挡任何[% '开启的' IF hide_resolved %][% terms.bugs %] 。
+            并未阻挡任何[% '开启的' IF hide_resolved %][% terms.bugs %]。
         [% END %]
     [% END %]
     [% IF ids.size %]
@@ -72,13 +72,13 @@
 
     [% IF maxdepth -%]最多到 [% maxdepth %] 层 | [% END -%]
     [% IF use_post %]
-      <button>以 [% terms.bug %] 列表方式浏览</button>
+      <button>以[% terms.bug %]列表方式浏览</button>
       [% IF user.in_group('editbugs') && ids.size > 1 %]
         | <button type="submit" name="tweak" value="1">修改多个</button>
       [% END %]
       </form>
     [% ELSE %]
-      <a href="buglist.cgi?bug_id=[% ids.join(",") %]">以 [% terms.bug %] 列表方式浏览</a>
+      <a href="buglist.cgi?bug_id=[% ids.join(",") %]">以[% terms.bug %]列表方式浏览</a>
       [% IF user.in_group('editbugs') && ids.size > 1 %]
         | <a href="buglist.cgi?bug_id=[% ids.join(",") %]&amp;tweak=1">修改多个</a>
       [% END %]
@@ -145,7 +145,7 @@
     <a href="showdependencytree.cgi?id=[% bugid FILTER uri %]"
        class="tree_link">
       <img src="skins/standard/dependency-tree/tree.png"
-           title="显示 [% terms.bug %] [%+ bugid FILTER html %] 的依赖关系树">
+           title="显示[% terms.bug %][%+ bugid FILTER html %] 的依赖关系树">
     </a>
   [% END %]
 [% END %]

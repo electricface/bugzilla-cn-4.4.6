@@ -566,7 +566,7 @@
         [% END %]
       </span>
       (<a href="buglist.cgi?bug_id=[% bug.duplicate_ids.join(",") FILTER html %]">
-       [%-%]以 [% terms.bug %] 列表方式浏览</a>)
+       [%-%]以[% terms.bug %]列表方式浏览</a>)
     </td>
   </tr>
 [% END %]
@@ -624,7 +624,7 @@
             <b>只有在所有已选择群组中的使用者可以浏览这个
               [%+ terms.bug %] ：</b>
              <p class="instructions">
-               若不勾选， [% terms.bug %] 将会公开。
+               若不勾选，[% terms.bug %]将会公开。
              </p>
           </div>
       [% END %]
@@ -683,12 +683,12 @@
           <label for="cclist_accessible">邮件副本列表</label>
         </div>
         <p class="instructions">
-          [% terms.bug %] 的负责人
+          [% terms.bug %]的负责人
           [% IF (Param('useqacontact')) %]
              和 QA 联络人
           [% END %]
-          一定可以看见这个 [% terms.bug %] 。
-          这个部分的设置只有在 [% terms.bug %] 被限制在至少一个群组时，才会生效。
+          一定可以看见这个[% terms.bug %]。
+          这个部分的设置只有在[% terms.bug %]被限制在至少一个群组时，才会生效。
         </p>
       </div>
     [% END %]
@@ -1018,7 +1018,7 @@
     <tr>
       <td colspan="7" align="right">
         <a href="summarize_time.cgi?id=[% bug.bug_id %]&amp;do_depends=1">
-        统计时间 (包含把这个 [% terms.bug %] block掉的 [% terms.bugs %] 的时间)</a>
+        统计时间 (包含把这个[% terms.bug %]block掉的[% terms.bugs %]的时间)</a>
       </td>
     </tr>
   </table>
@@ -1061,7 +1061,7 @@
           [% END %]
           [% Hook.process("after_comment_textarea", 'bug/edit.html.tmpl') %]
         [% ELSE %]
-          你并未被允许在这个 [% terms.bug %] 新增留言。
+          你并未被允许在这个[% terms.bug %]新增留言。
         [% END %]
         <br>
         [% PROCESS commit_button id=""%]
@@ -1089,7 +1089,7 @@
               你需要
               <a href="show_bug.cgi?id=
                       [%- bug.bug_id %]&amp;GoAheadAndLogIn=1">登入</a>
-              才能够发表留言，或对此 [% terms.bug %] 做修改。
+              才能够发表留言，或对此[% terms.bug %]做修改。
             </fieldset>
           </td>
         </tr>

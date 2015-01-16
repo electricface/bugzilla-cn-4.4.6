@@ -30,10 +30,10 @@
 
   mailfrom => "$terms.Bugzilla mail daemon 的电子邮件地址。有些电子邮件系统要求这必须是有效的电子邮件地址。",
 
-  use_mailer_queue => "在一个大型的 $terms.Bugzilla 专案上，由于 $terms.Bugzilla 会一次发送所有信件的缘故，导致更新 $terms.bugs 可能会很慢。<br>" _
+  use_mailer_queue => "在一个大型的 $terms.Bugzilla 专案上，由于 $terms.Bugzilla 会一次发送所有信件的缘故，导致更新${terms.bugs}可能会很慢。<br>" _
                       "如果你开启此参数， $terms.Bugzilla 会把所有的信件排程后，于后台执行发送程序。<br>" _
                       "开启此参数前，请确认你已经安装了在 <kbd>checksetup.pl</kbd> 中列出的特定 Perl 模块，并且已执行 <code>jobqueue.pl</code> daemon ，否则 $terms.Bugzilla 并不会发送邮件。<br>" _
-                      "此参数不是只会影响发出的 $terms.bug 通知邮件，而是会影响所有 $terms.Bugzilla 的邮件。",
+                      "此参数不是只会影响发出的${terms.bug}通知邮件，而是会影响所有 $terms.Bugzilla 的邮件。",
 
   smtpserver => "若使用 SMTP 作为邮件传送方式时， SMTP 的服务器地址。",
 
@@ -48,7 +48,7 @@
   smtp_debug => "若设为「开」，则将会在 $terms.Bugzilla 和 SMTP 服务器连接发生错误时，" _
                 "会将详细信息记录在网页服务器的 log 文件。你可以用此功能来对电子邮件的问题进行故障排除。",
 
-  whinedays => "在系统的 cronjob 提醒拥有 $terms.bug 的人之前，系统允许一个 $terms.bug 处于确认的 (CONFIRMED)状态且仍未被处理的天数。<br>" _
+  whinedays => "在系统的 cronjob 提醒拥有${terms.bug}的人之前，系统允许一个${terms.bug}处于确认的 (CONFIRMED)状态且仍未被处理的天数。<br>" _
                "若设为 0 ，则会停用订阅功能。",
 
   globalwatchers => "以半角逗号 (,) 分隔的列表。此列表将会收到系统所发出的每一封通知邮件。" }

@@ -22,7 +22,7 @@
           [% IF comment.count %]
             <b>
               来自 [% INCLUDE global/user.html.tmpl who = comment.author %] 对
-              [% "$terms.bug $bug.id" FILTER bug_link(bug, { full_url => 1, user => to_user }) FILTER none %]
+              [% "${terms.bug}$bug.id" FILTER bug_link(bug, { full_url => 1, user => to_user }) FILTER none %]
               的 [% "留言 # ${comment.count}" FILTER bug_link( bug,
               {comment_num => comment.count, full_url => 1}) FILTER none %]
             </b>

@@ -8,7 +8,7 @@
 
 [%
    title = "默认搜索值"
-   desc = "默认搜索值和 $terms.bug 列表"
+   desc = "默认搜索值和${terms.bug}列表"
 %]
 
 [% param_descs = {
@@ -25,20 +25,20 @@
                                 </li>
                               </ul>",
 
-  mostfreqthreshold => "一个 $terms.bug 最少要重复几次才会出现在" _
-                       "<a href=\"duplicates.cgi\">最常报告的 $terms.bugs 页面</a>中。" _
+  mostfreqthreshold => "一个${terms.bug}最少要重复几次才会出现在" _
+                       "<a href=\"duplicates.cgi\">最常报告的${terms.bugs}页面</a>中。" _
                        "如果你的数据库十分庞大，让此页面需以较长的时间载入，" _
                        "试着增加此数值。",
 
-  mybugstemplate => "这是让使用者简单列出「我所有的 $terms.bugs 」列表的网址。" _
+  mybugstemplate => "这是让使用者简单列出「我所有的${terms.bugs}」列表的网址。" _
                     " %userid% 会被取代为该使用者的账号。",
 
   defaultquery => "当使用者浏览「高级搜索」页时的默认搜索。这是网址的参数格式，因此较为难以阅读，十分抱歉。",
 
   search_allow_no_criteria =>
-    "除非程序里明确允许回传所有的 $terms.bugs ，否则这个选项将可阻止没有条件 (criteria) 的搜索。" _
-    "当设为「关」，搜索都必须指定一些条件，以限制传给使用者的 $terms.bugs 数量。" _
-    "当设为「开」，使用者将可以不带任何条件进行搜索，并回传他所能看到的所有 $terms.bugs 的列表。" _
+    "除非程序里明确允许回传所有的${terms.bugs}，否则这个选项将可阻止没有条件 (criteria) 的搜索。" _
+    "当设为「关」，搜索都必须指定一些条件，以限制传给使用者的${terms.bugs}数量。" _
+    "当设为「开」，使用者将可以不带任何条件进行搜索，并回传他所能看到的所有${terms.bugs}的列表。" _
     "在数据库较大的 $terms.Bugzilla 上不建议将此选项开启。",
 
   default_search_limit =>
@@ -49,7 +49,7 @@
     "与设值对大多数安装 $terms.Bugzilla 的使用者而言都应该可以接受。</p>",
 
   max_search_results =>
-    "搜索可以回传的最大 $terms.bugs 笔数。" _
+    "搜索可以回传的最大${terms.bugs}笔数。" _
     "表格式和图形式报告不在此限。",
 
 } %]

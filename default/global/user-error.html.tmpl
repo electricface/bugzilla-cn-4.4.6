@@ -69,7 +69,7 @@
     [% IF user.can_see_bug(bug_id) %]
       [% terms.Bug %] [%+ bug_id FILTER bug_link(bug_id) FILTER none %]
     [% ELSE %]
-      另一个 [% terms.bug %]
+      另一个[% terms.bug %]
     [% END %]
     已使用别名 <em>[% alias FILTER html %]</em> 。
     请选择其他的别名。
@@ -230,25 +230,25 @@
   [% ELSIF error == "bug_access_denied" %]
     [% title = "沒有浏览权限" %]
     [% admindocslinks = {'groups.html' => '群组安全性'} %]
-    你沒有浏览 [% terms.bug %] #[% bug_id FILTER html %] 的权限。
+    你沒有浏览[% terms.bug %]#[% bug_id FILTER html %] 的权限。
 
   [% ELSIF error == "bug_access_query" %]
     [% title = "权限不足" %]
     [% docslinks = {'myaccount.html' => '建立新账号'} %]
-    你并未授权浏览 [% terms.bug %] #[% bug_id FILTER html %] 。
-    要浏览这个 [% terms.bug %] ，你必须先以拥有适当权限的账号<a
+    你并未授权浏览[% terms.bug %]#[% bug_id FILTER html %] 。
+    要浏览这个[% terms.bug %]，你必须先以拥有适当权限的账号<a
     href="show_bug.cgi?id=
     [% bug_id FILTER uri %]&amp;GoAheadAndLogIn=1">登入</a>。
 
   [% ELSIF error == "bug_url_invalid" %]
     [% title = "无效的 $terms.Bug 回报资讯网址" %]
-    <code>[% url FILTER html %]</code> 对一个 [% terms.bug %] 而言并不是有效的网址。
+    <code>[% url FILTER html %]</code> 对一个[% terms.bug %]而言并不是有效的网址。
     [% IF reason == 'http' %]
       网址必须以 "http" 或 "https" 开头。
     [% ELSIF reason == 'path_only' %]
       你必须输入完整的网址。
     [% ELSIF reason == 'id' %]
-      在网址中沒有有效的 [% terms.bug %] 编号。
+      在网址中沒有有效的[% terms.bug %]编号。
     [% ELSE %]
       [%+ field_descs.see_also FILTER html %] 的网址應该指到以下其中一个地方：
       <ul>
@@ -273,7 +273,7 @@
 
   [% ELSIF error == "buglist_parameters_required" %]
     [% title = "需要输入字串" %]
-    [% docslinks = {'query.html' => "搜索 $terms.bugs",
+    [% docslinks = {'query.html' => "搜索${terms.bugs}",
                     'query.html#list' => "$terms.Bug 清单"} %]
     在未输入搜索字串时，你无法搜索，或储存搜索结果。
 
@@ -290,7 +290,7 @@
 
   [% ELSIF error == "comment_invalid_isprivate" %]
     你试着修改意见编号 [% id FILTER html %] 的公开與否，但它并非这个
-    [% terms.bug %] 的有效意见。
+    [% terms.bug %]的有效意见。
 
   [% ELSIF error == "comment_is_private" %]
     意见编号 [% id FILTER html %] 不公开。
@@ -298,13 +298,13 @@
   [% ELSIF error == "comment_required" %]
     [% title = "需要意见" %]
     [% IF old.defined && new.defined %]
-      当把一个 [% terms.bug %] 的状态从
+      当把一个[% terms.bug %]的状态从
       [% (old || "（空白）") FILTER html %]
       修改为
       [% (new || "（空白）") FILTER html %]
       时，你必须提供<b>意见</b>。
     [% ELSIF new %]
-      你必须提供这个 [% terms.bug %] 的描述。
+      你必须提供这个[% terms.bug %]的描述。
     [% ELSE %]
       你必须对此改变提供<b>意见</b>。
     [% END %]
@@ -357,8 +357,8 @@
 
   [% ELSIF error == "component_has_bugs" %]
     [% title = BLOCK %]子产品已有 [% terms.Bugs %][% END %]
-    此子产品内已经有 [% nb FILTER html %] 个 [% terms.bugs %] ！
-    在刪除子产品之前，你必须将 [% terms.bugs %] 重新分配到其他的子产品。
+    此子产品内已经有 [% nb FILTER html %] 个[% terms.bugs %]！
+    在刪除子产品之前，你必须将[% terms.bugs %]重新分配到其他的子产品。
 
   [% ELSIF error == "component_is_last" %]
     [% title = BLOCK %]此产品中的最后一个子产品[% END %]
@@ -385,7 +385,7 @@
   [% ELSIF error == "customfield_has_contents" %]
     [% title = "自订栏位已有内容" %]
     无法刪除自订栏位 '[% name FILTER html %]' ，因为至少有一个
-    [% terms.bug %] 在此自订栏位拥有非空白的值。
+    [% terms.bug %]在此自订栏位拥有非空白的值。
 
   [% ELSIF error == "customfield_not_obsolete" %]
     [% title = "自订栏位并非廢棄" %]
@@ -393,8 +393,8 @@
 
   [% ELSIF error == "dependency_loop_multi" %]
     [% title = "检测到依赖性循环" %]
-    如果做出这些修改，下列的 [% terms.bug %] 将会同时出现在依赖关系樹的
-    「会擋掉这些 [% terms.bug %] 」和「要先修好这些 [% terms.bug %] 」：
+    如果做出这些修改，下列的[% terms.bug %]将会同时出现在依赖关系樹的
+    「会挡掉这些[% terms.bug %]」和「要先修好这些[% terms.bug %]」：
     [% FOREACH dep = deps %]
       [%+ dep FILTER bug_link(dep) FILTER none %]
     [% END %]
@@ -402,22 +402,22 @@
 
   [% ELSIF error == "dependency_loop_single" %]
     [% title = "检测到依赖性循环" %]
-    你不能把一个 [% terms.bug %] 标记为「如果沒修好这个 [% terms.bug %] ，会擋掉它自己」。
+    你不能把一个[% terms.bug %]标记为「如果沒修好这个[% terms.bug %]，会挡掉它自己」。
 
   [% ELSIF error == "dupe_id_required" %]
     [% title = "需要指定重复的 $terms.Bug 编号" %]
-    你必须指定和此 [% terms.bug %] 重复的 [% terms.bug %] 编号。
+    你必须指定和此[% terms.bug %]重复的[% terms.bug %]编号。
 
   [% ELSIF error == "dupe_not_allowed" %]
-    [% title = "无法将 $terms.bugs 标记为重复" %]
-    当你一次修改数个 [% terms.bugs %] 时，无法将 [% terms.bugs %] 标记为重复。
+    [% title = "无法将${terms.bugs}标记为重复" %]
+    当你一次修改数个[% terms.bugs %]时，无法将[% terms.bugs %]标记为重复。
 
   [% ELSIF error == "dupe_loop_detected" %]
     [% title = "检测到重复的循环" %]
-    你无法将 [% terms.bug %] [% bug_id FILTER html %] 标记为和
+    你无法将[% terms.bug %][% bug_id FILTER html %] 标记为和
     [% IF dupe_of == bug_id %]它自己重复。
     [% ELSE %]
-      [% terms.bug %] [% dupe_of FILTER html %]重复，因为会造成重复的循环。
+      [% terms.bug %][% dupe_of FILTER html %]重复，因为会造成重复的循环。
     [% END %]
 
   [% ELSIF error == "email_change_in_progress" %]
@@ -438,7 +438,7 @@
   [% ELSIF error == "entry_access_denied" %]
     [% title = "权限不足" %]
     [% admindocslinks = {'groups.html' => '群组安全性'} %]
-    很抱歉，产品 <em>[% product FILTER html %]</em> 不存在，或者你沒有权限在此产品输入 [% terms.bug %] 。
+    很抱歉，产品 <em>[% product FILTER html %]</em> 不存在，或者你沒有权限在此产品输入[% terms.bug %]。
 
   [% ELSIF error == "extension_create_no_name" %]
     因此程式需要，你必须替你的附加元件命名，以做为参数。
@@ -580,7 +580,7 @@
     [% title = "无法刪除此栏位值" %]
     你无法刪除栏位 '[% field.description FILTER html %]' 的值
     '[% value.name FILTER html %]' ，因为还有 [% count FILTER html %] 个
-    [% terms.bugs %] 使用该栏位值。
+    [% terms.bugs %]使用该栏位值。
 
   [% ELSIF error == "fieldvalue_undefined" %]
     [% title = "不允许未定义的值" %]
@@ -623,12 +623,12 @@
     [% docslinks = {'flags-overview.html' => '旗标概述',
                     'flags.html' => '使用旗标'} %]
 
-    你要求 [% requestee.identity FILTER html %] 对[% terms.bug %] [% bug_id FILTER html -%]
+    你要求 [% requestee.identity FILTER html %] 对[% terms.bug %][% bug_id FILTER html -%]
     [% IF attach_id && attach_id > 0 %]的附件 [% attach_id FILTER html %] [% END %]设置旗标
     <code>[% flag_type.name FILTER html %]</code> ，
-    但是该 [% terms.bug %] 仅限制属于特定群组的使用者浏览，
-    而你所要求的使用者并不属于 [% terms.bug %] 所限定的特定群组。
-    请选择其他人，或者将该使用者加入 [% terms.bug %] 的寄件副本清单中。
+    但是该[% terms.bug %]仅限制属于特定群组的使用者浏览，
+    而你所要求的使用者并不属于[% terms.bug %]所限定的特定群组。
+    请选择其他人，或者将该使用者加入[% terms.bug %]的寄件副本清单中。
 
   [% ELSIF error == "flag_requestee_unauthorized_attachment" %]
     [% title = "你要求设置旗标的人未经授权" %]
@@ -637,7 +637,7 @@
     [% docslinks = {'flags-overview.html' => '旗标概述',
                     'flags.html' => '使用旗标'} %]
 
-    你要求 [% requestee.identity FILTER html %] 对[% terms.bug %] [% bug_id FILTER html %] 的
+    你要求 [% requestee.identity FILTER html %] 对[% terms.bug %][% bug_id FILTER html %] 的
     附件 [% attach_id FILTER html %]设置旗标 <code>[% flag_type.name FILTER html %]</code> ，
     但是该附件仅限制属于 [% Param("insidergroup") FILTER html %] 群组的使用者浏览，
     而你所要求的使用者并不属于该群组。
@@ -749,16 +749,16 @@
 
   [% ELSIF error == "group_invalid_removal" %]
     你试着从群组 '[% name FILTER html %]' 中移除
-    [% terms.bug %] [%+ bug_id FILTER html %] ，但是该群组并不存在，
+    [% terms.bug %][%+ bug_id FILTER html %] ，但是该群组并不存在，
     或是你在产品 '[% product FILTER html %]' 中不被允许从该群组移除
-    [% terms.bugs %] 。
+    [% terms.bugs %]。
 
   [% ELSIF error == "group_restriction_not_allowed" %]
     [% title = "不被允许的群组限制" %]
-    你试着将 [% bug_id ? "$terms.bug $bug_id" : terms.abug FILTER html %]
+    你试着将 [% bug_id ? "${terms.bug}$bug_id" : terms.abug FILTER html %]
     限制于群组 '[% name FILTER html %]' 中，但是该群组并不存在，
     或是你在产品 '[% product FILTER html %]' 中不被允许将
-    [% terms.bugs %] 限制于该群组。
+    [% terms.bugs %]限制于该群组。
 
   [% ELSIF error == "group_not_specified" %]
     [% title = "未指定群组" %]
@@ -775,16 +775,16 @@
 
   [% ELSIF error == "illegal_attachment_edit_bug" %]
     [% title = "未经授权的动作" %]
-    你并未被授权编辑 [% terms.bug %]
+    你并未被授权编辑[% terms.bug %]
     [%+ bug_id FILTER html %] 的附件。
 
   [% ELSIF error == "illegal_bug_status_transition" %]
     [% title = "无效的 $terms.Bug 状态修改" %]
     [% IF old.defined %]
-      你并未被允许可以将 [% terms.bug %]
+      你并未被允许可以将[% terms.bug %]
       的状态自[%+ old FILTER html %]修改为[+% new FILTER html %]。
     [% ELSE %]
-      你并未被允许可以将新的 [% terms.bugs %] 设置为
+      你并未被允许可以将新的[% terms.bugs %]设置为
       [%+ new.name FILTER html %] 此状态。
     [% END %]
 
@@ -800,7 +800,7 @@
     [% END %]
     ，但是只有
     [% IF privs < constants.PRIVILEGES_REQUIRED_EMPOWERED %]
-      [% terms.bug %] 的负责人
+      [% terms.bug %]的负责人
       [% IF privs < constants.PRIVILEGES_REQUIRED_ASSIGNEE %]或回报者[% END %]
       ，或
     [% END %]
@@ -818,7 +818,7 @@
     你试着修改
     <strong>[% field_descs.$field FILTER html %]</strong> 栏位，
     但只有被允许编辑相关
-    [% terms.bugs %] 的人才能修改该栏位。
+    [% terms.bugs %]的人才能修改该栏位。
 
   [% ELSIF error == "illegal_date" %]
     [% title = "无效的日期" %]
@@ -888,13 +888,13 @@
       [% IF bug_id %]无效的[% ELSE %]缺少[% END %] [% terms.Bug %] 编号
     [% END %]
     [% IF bug_id %]
-      '[% bug_id FILTER html %]'并非有效的 [% terms.bug %]
-      编号，也不是 [% terms.bug %] 的别名。
+      '[% bug_id FILTER html %]'并非有效的[% terms.bug %]
+      编号，也不是[% terms.bug %]的别名。
     [% ELSE %]
       [% IF field %]
         栏位 '[% field_descs.$field FILTER html %]' 不得空白。
       [% END %]
-      你必须输入有效的 [% terms.bug %] 编号！
+      你必须输入有效的[% terms.bug %]编号！
     [% END %]
 
   [% ELSIF error == "invalid_changedsince" %]
@@ -974,11 +974,11 @@
     [% END %]
     [%+ field_descs.product FILTER html %]
     [% IF bug_id %]
-      [% "中的" IF product %][% terms.bug %] '[% bug_id FILTER html %]'。
+      [% "中的" IF product %][% terms.bug %]'[% bug_id FILTER html %]'。
     [% ELSIF new %]
-      ，也无法被指定于新的 [% terms.bug %] 。
+      ，也无法被指定于新的[% terms.bug %]。
     [% ELSE %]
-      [% "中" IF product %]已修改的 [% terms.bug %]。
+      [% "中" IF product %]已修改的[% terms.bug %]。
     [% END %]
 
   [% ELSIF error == "invalid_username" %]
@@ -1054,9 +1054,9 @@
     文件 <kbd>[% file FILTER html %]</kbd> 包含了必须在合并前设置的变数设置。
 
   [% ELSIF error == "migrate_from_invalid" %]
-    '[% from FILTER html %]' 并非可以合并的 [% terms.bug %] 追踪种类。
+    '[% from FILTER html %]' 并非可以合并的[% terms.bug %]追踪种类。
     请参考 <kbd>B[% %]ugzilla/Migrate/</kbd> 目录下的内容，该处列有
-    [% terms.bug %] 的追踪种类。
+    [% terms.bug %]的追踪种类。
 
   [% ELSIF error == "milestone_already_exists" %]
     [% title = "里程碑已存在" %]
@@ -1082,9 +1082,9 @@
 
   [% ELSIF error == "milestone_required" %]
     [% title = "需要输入里程碑" %]
-    如果你決定要负责 [% terms.bug %] [% bug.id FILTER html %]
+    如果你決定要负责[% terms.bug %][% bug.id FILTER html %]
     的话，你必须选择一个目标里程碑。
-    订出修復 [% terms.bug %] 的大概期限，也是负责的一部份。
+    订出修復[% terms.bug %]的大概期限，也是负责的一部份。
 
   [% ELSIF error == "milestone_sortkey_invalid" %]
     [% title = "无效的里程碑排序键" %]
@@ -1097,8 +1097,8 @@
     你的开始日期 ([% datefrom FILTER html %]) 晚于结束日期 ([% dateto FILTER html %])。
 
   [% ELSIF error == "mismatched_bug_ids_on_obsolete" %]
-    附件 [% attach_id FILTER html %] （[% description FILTER html %]）是附加在 [% terms.bug %]
-    [%+ attach_bug_id FILTER html %] 的附件，但在对 [% terms.bug %]
+    附件 [% attach_id FILTER html %] （[% description FILTER html %]）是附加在[% terms.bug %]
+    [%+ attach_bug_id FILTER html %] 的附件，但在对[% terms.bug %]
     [%+ my_bug_id FILTER html %] 新增附件时，你尝试将它标记为「已廢棄的附件」。
 
   [% ELSIF error == "missing_attachment_description" %]
@@ -1106,7 +1106,7 @@
     你必须为附件输入描述。
 
   [% ELSIF error == "missing_bug_id" %]
-    并未输入 [% terms.bug %] 编号。
+    并未输入[% terms.bug %]编号。
 
   [% ELSIF error == "missing_category" %]
     [% title = "缺少分类" %]
@@ -1117,7 +1117,7 @@
     [% admindocslinks = {'products.html'   => '管理产品',
                          'components.html' => '新增子产品'} %]
     很抱歉，产品 <em>[% product.name FILTER html %]</em>
-    中必须至少有一项启用的子产品，才能够输入 [% terms.bug %] 。<br>
+    中必须至少有一项启用的子产品，才能够输入[% terms.bug %]。<br>
     [% IF user.in_group("editcomponents", product.id) %]
       <a href="editcomponents.cgi?action=add&amp;product=[% product.name FILTER uri %]">新增子产品</a>。
     [% ELSE %]
@@ -1149,7 +1149,7 @@
 
   [% ELSIF error == "missing_query" %]
     [% title = "缺少搜索" %]
-    [% docslinks = {'query.html' => "搜索 $terms.bugs",
+    [% docslinks = {'query.html' => "搜索${terms.bugs}",
                     'query.html#list' => "$terms.Bug 清单"} %]
     名称是 <em>[% name FILTER html %]</em> 的搜索
     [% IF sharer_id && sharer_id != user.id %]
@@ -1160,7 +1160,7 @@
 
   [% ELSIF error == "missing_resolution" %]
     [% title = "需要解決方案" %]
-    将 [% terms.bugs %] 标记为[%+ status FILTER upper FILTER html %]需要有效的解決方案。
+    将[% terms.bugs %]标记为[%+ status FILTER upper FILTER html %]需要有效的解決方案。
 
   [% ELSIF error == "missing_subcategory" %]
     [% title = "缺少子类" %]
@@ -1170,7 +1170,7 @@
     [% title = "缺少版本" %]
     [% admindocslinks = {'versions.html' => '定义版本'} %]
     很抱歉，产品 <em>[% product.name FILTER html %]</em>
-    必须要至少有一个启用的版本，才能够输入 [% terms.bug %] 。<br>
+    必须要至少有一个启用的版本，才能够输入[% terms.bug %]。<br>
     [% IF user.in_group("editcomponents", product.id) %]
       <a href="editversions.cgi?action=add&amp;product=[% product.name FILTER uri %]">新增版本</a>。
     [% ELSE %]
@@ -1178,7 +1178,7 @@
     [% END %]
 
   [% ELSIF error == "multiple_alias_not_allowed" %]
-    你无法在修改多个 [% terms.bugs %] 时设置别名。
+    你无法在修改多个[% terms.bugs %]时设置别名。
 
   [% ELSIF error == "need_quip" %]
     [% title = "需要妙语" %]
@@ -1203,11 +1203,11 @@
     你并未选择要
     [% IF action == "modify" %]修改
     [% ELSIF action == "view" %]浏览[% END %]
-    的 [% terms.bugs %] 。
+    的[% terms.bugs %]。
 
   [% ELSIF error == "no_initial_bug_status" %]
     [% title = "沒有初始的 $terms.Bug 状态" %]
-    在新增 [% terms.bug %]时沒有初始的 [% terms.bug %] 状态可以选。
+    在新增[% terms.bug %]时沒有初始的[% terms.bug %]状态可以选。
     请将此问题回报給 [% Param("maintainer") %] 。
 
   [% ELSIF error == "no_new_quips" %]
@@ -1224,7 +1224,7 @@
     [% admindocslinks = {'products.html'   => '设置产品',
                          'components.html' => '在产品中新增子产品',
                          'groups.html'     => '群组安全性'} %]
-    并未定义可以输入 [% terms.bugs %] 的产品，或者你沒有权限可以浏览任何产品。
+    并未定义可以输入[% terms.bugs %]的产品，或者你沒有权限可以浏览任何产品。
 
   [% ELSIF error == "no_tag_to_edit" %]
     [% title = "未选择标签" %]
@@ -1334,24 +1334,24 @@
   [% ELSIF error == "product_disabled" %]
     [% title = BLOCK %]产品已不允许回报 [% terms.Bug %][% END %]
     [% admindocslinks = {'products.html' => '管理产品'} %]
-    很抱歉，已不允许在产品 <em>[% product.name FILTER html %]</em> 中回报 [% terms.bug %] 。
+    很抱歉，已不允许在产品 <em>[% product.name FILTER html %]</em> 中回报[% terms.bug %]。
 
   [% ELSIF error == "product_edit_denied" %]
     [% title = "权限不足" %]
     [% admindocslinks = {'products.html' => '管理产品',
                          'groups.html'   => '群组安全性'} %]
-    你并未被允许在产品 [% product FILTER html %] 中编辑 [% terms.bugs %] 。
+    你并未被允许在产品 [% product FILTER html %] 中编辑[% terms.bugs %]。
 
   [% ELSIF error == "product_has_bugs" %]
     [% title = BLOCK %]产品中还有[% terms.Bugs %][% END %]
     [% admindocslinks = {'products.html' => '管理产品'} %]
-    在此产品中还有 [% nb FILTER html %] 个 [% terms.bugs %] ！
-    在你刪除此产品之前，你必须先搬移这些 [% terms.bugs %] 到另一项产品中。
+    在此产品中还有 [% nb FILTER html %] 个[% terms.bugs %]！
+    在你刪除此产品之前，你必须先搬移这些[% terms.bugs %]到另一项产品中。
 
   [% ELSIF error == "product_illegal_group" %]
     [% title = "无效的群组" %]
     '[% group.name FILTER html %]' 并非使用中的
-    [% terms.bug %] 群组，因此你无法编辑它的群组控管设置。
+    [% terms.bug %]群组，因此你无法编辑它的群组控管设置。
 
   [% ELSIF error == "product_must_define_defaultmilestone" %]
     [% title = "必须定义新的默认里程碑" %]
@@ -1449,12 +1449,12 @@
 
   [% ELSIF error == "reassign_to_empty" %]
     [% title = "无效的重新分配" %]
-    要重新分配 [% terms.bug %] ，你必须输入新的负责人的电子邮件地址。
+    要重新分配[% terms.bug %]，你必须输入新的负责人的电子邮件地址。
 
   [% ELSIF error == "relationship_loop_single" %]
     [% title = "检测到关系循环" %]
-    [% terms.bug %] [%+ bug_id FILTER html %] 的 [% field_descs.$field_name FILTER html %]
-    对 [% terms.bug %] [%+ dep_id FILTER html %] 的依赖关系是个循环。
+    [% terms.bug %][%+ bug_id FILTER html %] 的 [% field_descs.$field_name FILTER html %]
+    对[% terms.bug %][%+ dep_id FILTER html %] 的依赖关系是个循环。
 
   [% ELSIF error == "report_axis_invalid" %]
     <em>[% val FILTER html %]</em> 对
@@ -1476,7 +1476,7 @@
 
   [% ELSIF error == "require_component" %]
     [% title = "需要输入子产品" %]
-    要将此 [% terms.bug %] 歸档，必须先选择一项子产品。
+    要将此[% terms.bug %]归档，必须先选择一项子产品。
     有必要的话，就用猜的。
 
   [% ELSIF error == "require_new_password" %]
@@ -1485,7 +1485,7 @@
 
   [% ELSIF error == "require_summary" %]
     [% title = "需要输入摘要" %]
-    你必须对这个 [% terms.bug %] 输入摘要。
+    你必须对这个[% terms.bug %]输入摘要。
 
   [% ELSIF error == "required_field" %]
     [% title = "需要设置栏位" %]
@@ -1497,7 +1497,7 @@
 
   [% ELSIF error == "resolution_not_allowed" %]
     [% title = "不允许设置解決方案" %]
-    你不能对状态是开启的 [% terms.bugs %] 设置解決方案。
+    你不能对状态是开启的[% terms.bugs %]设置解決方案。
 
   [% ELSIF error == "saved_search_used_by_whines" %]
     [% title = "搜索名称使用中" %]
@@ -1529,7 +1529,7 @@
     搜索。
 
   [% ELSIF error == "see_also_self_reference" %]
-    你不能把这个 [% terms.bug %] 放在它自己的
+    你不能把这个[% terms.bug %]放在它自己的
     [%+ field_descs.see_also FILTER html %] 栏位。
 
   [% ELSIF error == "series_already_exists" %]
@@ -1545,11 +1545,11 @@
     [% IF bug_id %]
       [% terms.Bug %] [%+ bug_id FILTER bug_link(bug_id) FILTER none %]
     [% ELSE %]
-      这个 [% terms.bug %]
+      这个[% terms.bug %]
     [% END %]
     还有 [% dep_count FILTER none %] 个未解決的依赖关系。在你将此
-    [% terms.bug %] 设置为 [% display_value("resolution", "FIXED") FILTER html %]
-    之前，必须解決这些 [% terms.bugs %] 或者把它们从 "[% field_descs.dependson FILTER html %]"
+    [% terms.bug %]设置为 [% display_value("resolution", "FIXED") FILTER html %]
+    之前，必须解決这些[% terms.bugs %]或者把它们从 "[% field_descs.dependson FILTER html %]"
     栏位中移除。
 
   [% ELSIF error == "sudo_illegal_action" %]
@@ -1643,8 +1643,8 @@
 
   [% ELSIF error == "version_has_bugs" %]
     [% title = BLOCK %]版本中还有 [% terms.Bugs %][% END %]
-    这个版本中还有 [% nb FILTER html %] 个 [% terms.bugs %]！
-    在刪除此版本前，你必须将这些 [% terms.bugs %] 重新分配至另一个版本。
+    这个版本中还有 [% nb FILTER html %] 个[% terms.bugs %]！
+    在刪除此版本前，你必须将这些[% terms.bugs %]重新分配至另一个版本。
 
   [% ELSIF error == "version_is_last" %]
     [% title = BLOCK %]此产品的最后一个版本[% END %]
@@ -1659,7 +1659,7 @@
   [% ELSIF error == "user_has_responsibility" %]
     [% title = "无法刪除使用者账号" %]
     [% admindocslinks = {'useradmin.html' => '管理使用者'} %]
-    你想要刪除的使用者被设置为至少一项子产品的 [% terms.bug %] 默认负责人
+    你想要刪除的使用者被设置为至少一项子产品的[% terms.bug %]默认负责人
     [% IF Param('useqacontact') %]或 QA 连絡人[% END %]。
     因此，你现在无法刪除该账号。
 

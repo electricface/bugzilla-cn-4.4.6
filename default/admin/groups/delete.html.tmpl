@@ -52,11 +52,11 @@
   [% END %]
 
   [% IF group.bugs.size %]
-    <p><b>[% group.bugs.size FILTER html %] 个 [% terms.bug %] 报告属于只有此群组可浏览。
+    <p><b>[% group.bugs.size FILTER html %] 个[% terms.bug %]报告属于只有此群组可浏览。
      你无法在群组中还有[% terms.bugs %]时删除它。</b>
 
     <br><a href="buglist.cgi?field0-0-0=bug_group&amp;type0-0-0=equals&amp;value0-0-0=
-                 [%- group.name FILTER uri %]">显示有哪些 [% terms.bugs %]</a>
+                 [%- group.name FILTER uri %]">显示有哪些[% terms.bugs %]</a>
     - <label><input type="checkbox" name="removebugs">删除此群组中所有的[% terms.bugs %]限制。</label><p>
 
     <p><b>注意：</b>这可能会使不公开的[% terms.bugs %]变为公开。<br>

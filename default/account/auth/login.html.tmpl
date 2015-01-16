@@ -91,7 +91,7 @@
       [% IF Param("requirelogin") %]
         该 [% terms.Bugzilla %] 仅允许获得授权的用户登录浏览，因此需要有账号。
       [% ELSIF target.match("_bug\.cgi$") %]
-        当需要提交一个新的 [% terms.bug %] ，或者对现有的 [% terms.bug %] 留下留言时，需要一个账号。
+        当需要提交一个新的[% terms.bug %]，或者对现有的[% terms.bug %]留下留言时，需要一个账号。
         当后续需要更多信息时，可以联络上你。
       [% END %]
     </p>

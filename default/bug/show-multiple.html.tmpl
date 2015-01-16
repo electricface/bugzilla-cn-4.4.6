@@ -30,7 +30,7 @@
   [% END %]
 [% ELSE %]
   <p>
-    输入 [% terms.bug %] 编号搜索特定的 [% terms.bug %] 。
+    输入[% terms.bug %]编号搜索特定的[% terms.bug %]。
   </p>
 [% END %]
 
@@ -57,12 +57,12 @@
     <tr>
       <td class="error">
         [% IF bug.error == "InvalidBugId" %]
-          '[%+ bug.bug_id FILTER html %]' 不是一个有效的 [% terms.bug %]
-          编号，也不是一个已知的 [% terms.bug %] 别名。
+          '[%+ bug.bug_id FILTER html %]' 不是一个有效的[% terms.bug %]
+          编号，也不是一个已知的[% terms.bug %]别名。
         [% ELSIF bug.error == "NotPermitted" %]
-          你不被允许浏览这个 [% terms.bug %] 。
+          你不被允许浏览这个[% terms.bug %]。
         [% ELSIF bug.error == "NotFound" %]
-          找不到这个 [% terms.bug %]。
+          找不到这个[% terms.bug %]。
         [% ELSE %]
           [%+ bug.error FILTER html %]
         [% END %]

@@ -96,7 +96,7 @@
 
 [% IF toolong %]
   <h2 class="bz_smallminded">
-    此列表对 [% terms.Bugzilla %] 而言太长了，因此将不会在每一个 [% terms.bug %]
+    此列表对 [% terms.Bugzilla %] 而言太长了，因此将不会在每一个[% terms.bug %]
     上显示「第一个／最后一个／前一个／下一个」的选项。
   </h2>
 [% END %]
@@ -167,7 +167,7 @@
   <ul class="zero_result_links">
     <li>[% PROCESS enter_bug_link %]</li>
     [% IF one_product.defined %]
-      <li><a href="enter_bug.cgi">在不同的产品中提交一个新的 [% terms.bug %]</a></li>
+      <li><a href="enter_bug.cgi">在不同的产品中提交一个新的[% terms.bug %]</a></li>
     [% END %]
     <li><a href="[% PROCESS edit_search_url %]">修改搜索条件</a></li>
     <li><a href="query.cgi">开始新的搜索</a></li>
@@ -216,7 +216,7 @@
           </form>
           [% IF time_summary_limited %]
             <small>
-              时间统计将只会包含上面所显示的 [% terms.bugs %] 。如要显示搜索结果中所有
+              时间统计将只会包含上面所显示的[% terms.bugs %]。如要显示搜索结果中所有
               [% terms.bugs%] 的时间统计，你可以
               <a href="buglist.cgi?[% urlquerypart FILTER html %]
                        [%- "&order=$qorder" FILTER html IF order %]&limit=0">
@@ -318,7 +318,7 @@
    [% IF one_product.defined %]
      在 "[% one_product.name FILTER html %]" 产品中
    [% END %]
-   提交新的 [% terms.bug %]
+   提交新的[% terms.bug %]
   </a>
 [% END %]
 

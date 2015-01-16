@@ -19,7 +19,7 @@
 
 [% FOREACH group = na_groups %]
 <p>
-群组 '[% group.name FILTER html %]' 影响了 [% group.count %] 个 [% terms.bugs %] ，这些
+群组 '[% group.name FILTER html %]' 影响了 [% group.count %] 个[% terms.bugs %]，这些
 [% terms.bugs %] 已不再适用于此群组，因此将会被移除。</p>
 [% END %]
 <form action="editproducts.cgi" method="post" >

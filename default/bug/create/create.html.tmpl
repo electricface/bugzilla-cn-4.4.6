@@ -516,8 +516,8 @@ TUI_hide_default('attachment_text_field');
             product_name: '[% product.name FILTER js %]',
             summary_field: 'short_desc',
             options: {
-              MSG_LOADING: '搜索可能重复的 [% terms.bugs %] 中...',
-              MSG_EMPTY:   '找不到可能重复的 [% terms.bugs %] 。',
+              MSG_LOADING: '搜索可能重复的[% terms.bugs %]中...',
+              MSG_EMPTY:   '找不到可能重复的[% terms.bugs %]。',
               SUMMARY:     '可能重复'
             }
           });
@@ -532,7 +532,7 @@ TUI_hide_default('attachment_text_field');
 
       [% defaultcontent = BLOCK %]
         [% IF cloned_bug_id %]
-+++ 此 [% terms.bug %] 是拷贝自 [% terms.Bug %] #[% cloned_bug_id %] +++
++++ 此[% terms.bug %]是拷贝自 [% terms.Bug %] #[% cloned_bug_id %] +++
 
 
         [% END %]
@@ -641,7 +641,7 @@ TUI_hide_default('attachment_text_field');
         </strong>
       <br>
       <font size="-1">
-        (若均不勾选，则此 [% terms.bug %] 将会公开。)
+        (若均不勾选，则此[% terms.bug %]将会公开。)
       </font>
       <br>
       <br>

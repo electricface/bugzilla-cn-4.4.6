@@ -24,11 +24,11 @@
 
 <p>
   此页面允许你定义在流程中哪些状态的修改是有效的。<br>
-  为了向下相容较旧版本的 [% terms.Bugzilla %] ，因此当你重新开启了一个 [% terms.bug %]
+  为了向下相容较旧版本的 [% terms.Bugzilla %] ，因此当你重新开启了一个[% terms.bug %]
   时，将只会以[% display_value("bug_status", "UNCONFIRMED") FILTER html %] 或
   [%+ display_value("bug_status", "REOPENED") FILTER html %]
   （如果在流程中允许此状态），而非同时显示。<br>
-  显示的方式决定于这个 [% terms.bug %] 是否被确认过。<br>
+  显示的方式决定于这个[% terms.bug %]是否被确认过。<br>
   因此建议你允许此两种修改，让 [% terms.Bugzilla %] 自动正确选择。
 </p>
 
@@ -77,9 +77,9 @@
 </table>
 
 <p>
-  当 [% terms.bug %] 标记和另一个 [% terms.bug %] 重复，或是已经移到另一台机器上时，
-  [% terms.bug %] 的状态将自动设置为 <b>[% display_value("bug_status", Param("duplicate_or_move_bug_status")) FILTER html %]</b> 。
-  所有对这个 [% terms.bug %] 状态所做的修改都必须是有效的。（这也是你为什么无法在上面编辑的原因。）<br>
+  当[% terms.bug %]标记和另一个[% terms.bug %]重复，或是已经移到另一台机器上时，
+  [% terms.bug %]的状态将自动设置为 <b>[% display_value("bug_status", Param("duplicate_or_move_bug_status")) FILTER html %]</b> 。
+  所有对这个[% terms.bug %]状态所做的修改都必须是有效的。（这也是你为什么无法在上面编辑的原因。）<br>
   注意：你可以浏览<a
   href="editparams.cgi?section=bugchange#duplicate_or_move_bug_status">参数设置</a>页，并编辑
   <i>duplicate_or_move_bug_status</i> 参数来修改此设置。

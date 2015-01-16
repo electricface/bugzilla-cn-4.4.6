@@ -41,7 +41,7 @@
     送到 <code>[% function FILTER html %]</code> 函数的是不正确的参数 <code>[% argument FILTER html %]</code> 。
 
   [% ELSIF error == "bug_error" %]
-    在试图传回 [% terms.bug %] [%+ bug.bug_id FILTER html %] 时，传回错误 [% bug.error FILTER html %] 。
+    在试图传回[% terms.bug %][%+ bug.bug_id FILTER html %] 时，传回错误 [% bug.error FILTER html %] 。
 
   [% ELSIF error == "cancel_token_does_not_exist" %]
     要取消的 token 不存在。
@@ -162,7 +162,7 @@
   [% ELSIF error == "flag_unexpected_object" %]
     [% title = "无法被辨认的对象" %]
     无法对种类是 [% caller FILTER html %] 的对象设置旗标。
-    旗标仅能设置于 [% terms.bugs %] 和附件上。
+    旗标仅能设置于[% terms.bugs %]和附件上。
 
   [% ELSIF error == "illegal_field" %]
     并未设置有效的 [% field FILTER html %] 。

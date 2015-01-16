@@ -76,7 +76,7 @@
 </form>
 
 <p>
-  不，取消删除，并回到[%+ "$terms.bug " _ a.bug_id FILTER bug_link(a.bug_id) FILTER none %] 。
+  不，取消删除，并回到[%+ "${terms.bug}" _ a.bug_id FILTER bug_link(a.bug_id) FILTER none %] 。
 </p>
 
 [% PROCESS global/footer.html.tmpl %]

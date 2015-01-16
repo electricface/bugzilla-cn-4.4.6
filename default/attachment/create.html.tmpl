@@ -55,9 +55,9 @@ TUI_hide_default('attachment_text_field');
       <tr>
         <th>重新分配：</th>
         <td>
-          <em>如果你想要将这个 [% terms.bug %] 的负责人改为你自己，请勾选下方的选项。</em><br>
+          <em>如果你想要将这个[% terms.bug %]的负责人改为你自己，请勾选下方的选项。</em><br>
           <input type="checkbox" id="takebug" name="takebug" value="1">
-          <label for="takebug">我要负责这个 [% terms.bug %] </label>
+          <label for="takebug">我要负责这个[% terms.bug %]</label>
           [% bug_statuses = [] %]
           [% FOREACH bug_status = bug.status.can_change_to %]
             [% NEXT IF bug_status.name == "UNCONFIRMED"
@@ -65,7 +65,7 @@ TUI_hide_default('attachment_text_field');
             [% bug_statuses.push(bug_status) IF bug_status.is_open %]
           [% END %]
           [% IF bug_statuses.size %]
-            <label for="takebug">并且将 [% terms.bug %] 的状态设置为</label>
+            <label for="takebug">并且将[% terms.bug %]的状态设置为</label>
             <select id="bug_status" name="bug_status">
               <option value="[% bug.status.name FILTER html %]">[% display_value("bug_status", bug.status.name) FILTER html %] (目前的状态)</option>
               [% FOREACH bug_status = bug_statuses %]

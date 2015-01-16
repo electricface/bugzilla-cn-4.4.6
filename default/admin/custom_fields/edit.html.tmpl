@@ -39,7 +39,7 @@
       <td>[% field.name FILTER html %]</td>
 
       <th>
-        <label for="enter_bug">可以在建立 [% terms.bug %] 时设置：</label>
+        <label for="enter_bug">可以在建立[% terms.bug %]时设置：</label>
       </th>
       <td><input type="checkbox" id="enter_bug" name="enter_bug" value="1"
                  [%- " checked" IF field.enter_bug %]
@@ -51,7 +51,7 @@
                  value="[% field.description FILTER html %]"></td>
 
       <th>
-        <label for="new_bugmail">将新的 [% terms.bug %] 显示于 [% terms.bug %] 通知信中：</label>
+        <label for="new_bugmail">将新的[% terms.bug %]显示于[% terms.bug %]通知信中：</label>
       </th>
       <td><input type="checkbox" id="new_bugmail" name="new_bugmail" value="1"
                  [%- " checked" IF field.mailhead %]></td>
@@ -130,9 +130,9 @@
         <br/>
         使用此标签可列出因
         [%+ field_types.${constants.FIELD_TYPE_BUG_ID} FILTER html %]
-        此字段，而连至一个 [% terms.bug %] 的 [% terms.bugs %] 列表。
-        例如，描述是「此 [% terms.bug %] 和 ... 重复」时，
-        反向关系就会是「和此 [% terms.bug %] 重复的 [% terms.bugs %] 」。
+        此字段，而连至一个[% terms.bug %]的[% terms.bugs %]列表。
+        例如，描述是「此[% terms.bug %]和 ... 重复」时，
+        反向关系就会是「和此[% terms.bug %]重复的[% terms.bugs %]」。
         如果要停用此字段的列表，请留白。
       </td>
     [% END %]
@@ -176,7 +176,7 @@
 [% IF field.obsolete %]
 <p>
   <a href="editfields.cgi?action=del&amp;name=[% field.name FILTER html %]">自资料库中删除此自定义字段。</a><br>
-  只有在此自定义字段从未于 [% terms.bug %] 中使用过时，才会成功。
+  只有在此自定义字段从未于[% terms.bug %]中使用过时，才会成功。
 </p>
 [% END %]
 

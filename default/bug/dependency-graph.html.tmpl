@@ -24,8 +24,8 @@
 
 [% IF NOT multiple_bugs %]
   [% filtered_desc = short_desc FILTER html %]
-  [% title = "$terms.bug $bug_id 的${title}"
-     header = "$terms.bug <a href=\"show_bug.cgi?id=$bug_id\">$bug_id</a> 的 $header"
+  [% title = "${terms.bug}$bug_id 的${title}"
+     header = "${terms.bug}<a href=\"show_bug.cgi?id=$bug_id\">$bug_id</a> 的 $header"
      subheader = filtered_desc
    %]
 [% END %]
@@ -35,7 +35,7 @@
 [% image_map %]
 
 <p>
-  绿色的圆圈代表开启的 [% terms.bugs %] 。
+  绿色的圆圈代表开启的[% terms.bugs %]。
 </p>
 
 [% IF image_map %]
@@ -55,7 +55,7 @@
       <td><input id="id" name="id" value="[% bug_id %]"></td>
       <td>
         <input type="checkbox" id="showsummary" name="showsummary" [% " checked" IF showsummary %]>
-        <label for="showsummary">显示所有已呈现的 [% terms.bugs %] 的摘要</label>
+        <label for="showsummary">显示所有已呈现的[% terms.bugs %]的摘要</label>
       </td>
     </tr>
 
@@ -64,9 +64,9 @@
       <td colspan="2">
         <select id="display" name="display">
           <option value="tree"[% 'selected="selected"' IF (!display || display == "tree") %]>
-            将 [% terms.bugs %] 限制在和输入的 [% terms.bugs %] 有直接关系</option>
+            将[% terms.bugs %]限制在和输入的[% terms.bugs %]有直接关系</option>
           <option value="web" [% 'selected="selected"' IF display == "web" %]>
-            显示和输入的 [% terms.bugs %] 有任何关系的 [% terms.bugs %]</option>
+            显示和输入的[% terms.bugs %]有任何关系的[% terms.bugs %]</option>
         </select>
       </td>
     </tr>

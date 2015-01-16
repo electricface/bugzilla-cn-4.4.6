@@ -11,7 +11,7 @@
   style_urls = ['skins/standard/page.css']
 %]
 
-<p>此页面描述你在一个 [% terms.bug %] 看到的字段。</p>
+<p>此页面描述你在一个[% terms.bug %]看到的字段。</p>
 
 <table class="field_value_explanation">
   <thead>
@@ -27,10 +27,10 @@
 
   <tr>
     <td>[% field_descs.bug_status FILTER html %] 字段指出一个
-        [% terms.bug %] 的状态为何。仅允许特定的状态转换。</td>
+        [% terms.bug %]的状态为何。仅允许特定的状态转换。</td>
 
     <td>[% field_descs.resolution FILTER html %] 字段指出这个
-        [% terms.bug %] 的解決方案为何。</td>
+        [% terms.bug %]的解決方案为何。</td>
   </tr>
   </thead>
 
@@ -45,10 +45,10 @@
           [% display_value("bug_status", "UNCONFIRMED") FILTER html %]
         </dt>
         <dd class="unconfirmed">
-          这个 [% terms.bug %] 最近才被加到数据库。没有人确认它是不是真的。拥有
+          这个[% terms.bug %]最近才被加到数据库。没有人确认它是不是真的。拥有
           "canconfirm" 权限的使用者可以将它的状态设置为
           <b>[% display_value("bug_status", "CONFIRMED") FILTER html %]</b>
-          来确认这个 [% terms.bug %] 。或者它也可以直接被解決，并标记为
+          来确认这个[% terms.bug %]。或者它也可以直接被解決，并标记为
           <b>[% display_value("bug_status", "RESOLVED") FILTER html %]</b> 。
         </dd>
 
@@ -56,7 +56,7 @@
           [% display_value("bug_status", "CONFIRMED") FILTER html %]
         </dt>
         <dd class="confirmed">
-          这个 [% terms.bug %] 是最近才新增且被确认的 [% terms.bug %] 。
+          这个[% terms.bug %]是最近才新增且被确认的[% terms.bug %]。
           当有人开始处理在这个状态的 [%+ terms.bugs %] 时，状态修改为
           <b>[% display_value("bug_status", "IN_PROGRESS") FILTER html %]</b>
           ；或是将它解决，并标记为
@@ -67,8 +67,8 @@
           [% display_value("bug_status", "IN_PROGRESS") FILTER html %]
         </dt>
         <dd class="in_progress">
-          这个 [% terms.bug %] 还没解決，但已分配给适当的人负责。在这个状态下，
-          [% terms.bugs %] 可以丟给其他人处理，并会自动将状态修改为
+          这个[% terms.bug %]还没解決，但已分配给适当的人负责。在这个状态下，
+          [% terms.bugs %]可以丟给其他人处理，并会自动将状态修改为
           <b>[% display_value("bug_status", "CONFIRMED") FILTER html %]</b>
           ；或是将它解决，并标记为
           <b>[% display_value("bug_status", "RESOLVED") FILTER html %]</b> 。
@@ -79,7 +79,7 @@
     </td>
 
     <td>
-      还没有解决方案。所有处于这些「开启」状态的 [% terms.bugs %]
+      还没有解决方案。所有处于这些「开启」状态的[% terms.bugs %]
       都不会有解決方案。
     </td>
   </tr>
@@ -96,7 +96,7 @@
         </dt>
         <dd class="resolved">
           已采取解決方案，并等待 QA 认证。在此状态下，
-          [% terms.bugs %] 可以被重新开启并设置为开启的状态，或是经由
+          [% terms.bugs %]可以被重新开启并设置为开启的状态，或是经由
           QA 认证并设置为
           <b>[% display_value("bug_status", "VERIFIED") FILTER html %]</b> 。
         </dd>
@@ -105,8 +105,8 @@
           [% display_value("bug_status", "VERIFIED") FILTER html %]
         </dt>
         <dd class="verified">
-          QA 看过了 [% terms.bug %] 和解決方案，并同意已采取适当的解決方案。
-          这是 [% terms.bugs %] 最后的状态。
+          QA 看过了[% terms.bug %]和解決方案，并同意已采取适当的解決方案。
+          这是[% terms.bugs %]最后的状态。
         </dd>
 
         [% Hook.process('closed-status') %]
@@ -119,38 +119,38 @@
           [% display_value("resolution", "FIXED") FILTER html %]
         </dt>
         <dd class="fixed">
-          这个 [% terms.bug %] 已被修复。
+          这个[% terms.bug %]已被修复。
         </dd>
 
         <dt class="invalid">
           [% display_value("resolution", "INVALID") FILTER html %]
         </dt>
         <dd class="invalid">
-          描述的问题并不是 [% terms.bug %] 。
+          描述的问题并不是[% terms.bug %]。
         </dd>
 
         <dt class="wontfix">
           [% display_value("resolution", "WONTFIX") FILTER html %]
         </dt>
         <dd class="wontfix">
-          描述的问题的确是 [% terms.bug %] ，但不打算修复。
+          描述的问题的确是[% terms.bug %]，但不打算修复。
         </dd>
 
         <dt class="duplicate">
          [% display_value("resolution", "DUPLICATE") FILTER html %]
         </dt>
         <dd class="duplicate">
-          此问题和已存在的 [% terms.bug %] 重复了。将一个 [% terms.bug %] 标记为
+          此问题和已存在的[% terms.bug %]重复了。将一个[% terms.bug %]标记为
           <b>[% display_value("resolution", "DUPLICATE") FILTER html %]</b>
-          时，需要输入该已存在的 [% terms.bug %] 编号。
+          时，需要输入该已存在的[% terms.bug %]编号。
         </dd>
 
         <dt class="worksforme">
           [% display_value("resolution", "WORKSFORME") FILTER html %]
         </dt>
         <dd class="worksforme">
-          无法重现这个 [% terms.bug %] ，且重审代码也没有发现任何可能引发这个
-          [% terms.bug %] 的线索。如果有较多的信息，这个 [% terms.bug %] 可以被重新开启。
+          无法重现这个[% terms.bug %]，且重审代码也没有发现任何可能引发这个
+          [% terms.bug %]的线索。如果有较多的信息，这个[% terms.bug %]可以被重新开启。
         </dd>
 
         [% Hook.process('resolution') %]

@@ -41,7 +41,7 @@
      },
      {
        name => "is_active"
-       heading => "允许报告新的 $terms.bugs"
+       heading => "允许报告新的${terms.bugs}"
        yesno_field => 1
      }
 ] %]
@@ -75,7 +75,7 @@
 [% IF !showbugcounts %]
 
   <p><a href="editproducts.cgi?showbugcounts=1[% classification_url_part %]"
-     >以 [% terms.bug %] 数目重新显示（较慢）</a></p>
+     >以[% terms.bug %]数目重新显示（较慢）</a></p>
 
 [% END %]
 

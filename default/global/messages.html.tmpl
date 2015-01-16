@@ -93,11 +93,11 @@
     已无法使用 [% account FILTER html %] 此账号登录，所以你无法修改他的密码。
 
   [% ELSIF message_tag == "attachment_creation_failed" %]
-    成功创建 [% terms.bug %] ，但无法创建附件。
+    成功创建[% terms.bug %]，但无法创建附件。
     请以下方的"新增附件"链接再次新增附件。
 
   [% ELSIF message_tag == "bug_group_description" %]
-    浏览 [% product.name FILTER html %] 产品的 [% terms.bugs %]
+    浏览 [% product.name FILTER html %] 产品的[% terms.bugs %]
 
   [% ELSIF message_tag == "buglist_adding_field" %]
     [% title = "新增字段至搜索页中…" %]
@@ -171,7 +171,7 @@
     [% title = "已刪除模块" %]
     已刪除模块 <em>[% comp.name FILTER html %]</em> 。
     [% IF comp.bug_count %]
-      在此模块中的所有 [% terms.bugs %] 和参照到这些 [% terms.bugs %] 的链接都已被刪除。
+      在此模块中的所有[% terms.bugs %]和参照到这些[% terms.bugs %]的链接都已被刪除。
     [% END %]
 
   [% ELSIF message_tag == "component_updated" %]
@@ -207,7 +207,7 @@
         [% END %]
       [% END %]
       [% IF changes.isactive.defined %]
-        <li>[% comp.is_active ? "启用" : "停用" %] 报告 [% terms.bugs %] 功能</li>
+        <li>[% comp.is_active ? "启用" : "停用" %] 报告[% terms.bugs %]功能</li>
       [% END %]
       </ul>
     [% ELSE %]
@@ -258,7 +258,7 @@
     (<em>[% field.name FILTER html %]</em>) 的合法选项。
     [% IF field.name == "bug_status" %]
       你现在应该浏览<a href="editworkflow.cgi">流程页面</a>来把你新的
-      [% terms.bug %] 状态包括在内。
+      [% terms.bug %]状态包括在内。
     [% END %]
 
   [% ELSIF message_tag == "field_value_deleted" %]
@@ -359,9 +359,9 @@
             <li>正则表达式已更新。</li>
           [% CASE 'isactive' %]
             [% IF changes.isactive.1 %]
-              <li>此群组将会被用于 [% terms.bugs %] 。</li>
+              <li>此群组将会被用于[% terms.bugs %]。</li>
             [% ELSE %]
-              <li>此群组将不再被用于 [% terms.bugs %] 。</li>
+              <li>此群组将不再被用于[% terms.bugs %]。</li>
             [% END %]
           [% CASE 'icon_url' %]
             <li>已更新群组图示网址。</li>
@@ -460,7 +460,7 @@
     (产品是 [% product.name FILTER html %])
 
   [% ELSIF message_tag == "migrate_creating_bugs" %]
-    新增 [% terms.bugs %] 中…
+    新增[% terms.bugs %]中…
 
   [% ELSIF message_tag == "migrate_field_created" %]
     新的自定义字段： [% field.description FILTER html %]
@@ -470,7 +470,7 @@
     已创建产品： [% created.name FILTER html %]
 
   [% ELSIF message_tag == "migrate_reading_bugs" %]
-    读取 [% terms.bugs %] 中…
+    读取[% terms.bugs %]中…
 
   [% ELSIF message_tag == "migrate_reading_products" %]
     读取产品中…
@@ -479,7 +479,7 @@
     读取使用者中…
 
   [% ELSIF message_tag == "migrate_translating_bugs" %]
-    将 [% terms.bug %] 的数值转换为适合
+    将[% terms.bug %]的数值转换为适合
     [%+ terms.Bugzilla %] 中…
 
   [% ELSIF message_tag == "migrate_user_created" %]
@@ -753,7 +753,7 @@
     [% title = "已刪除产品" %]
     产品 <em>[% product.name FILTER html %]</em> 及其模块、版本、里程碑、群组均已被刪除。
     [% IF product.bug_count %]
-      此产品的所有 [% terms.bugs %] 以及所有参照到这些 [% terms.bugs %] 的链接均已被刪除。
+      此产品的所有[% terms.bugs %]以及所有参照到这些[% terms.bugs %]的链接均已被刪除。
     [% END %]
 
   [% ELSIF message_tag == "product_invalid" %]
@@ -761,7 +761,7 @@
     产品 <em>[% product FILTER html %]</em> 不存在，或是你沒有权限浏览。下列列表是你可以选择的产品。
 
   [% ELSIF message_tag == "remaining_time_zeroed" %]
-    由于已将此 [% terms.bug %] 关闭，或只是将它从其中一种关闭的状态修改为另一种，因此
+    由于已将此[% terms.bug %]关闭，或只是将它从其中一种关闭的状态修改为另一种，因此
     [% field_descs.remaining_time FILTER html %] 子段已自动设为 0 。
 
   [% ELSIF message_tag == "report_created" %]
@@ -851,7 +851,7 @@
           <li>已将版本更名为 <em>[% version.name FILTER html %]</em></li>
         [% END %]
         [% IF changes.isactive.defined %]
-          <li>[% version.is_active ? "启用" : "停用" %] 报告 [% terms.bugs %] 功能</li>
+          <li>[% version.is_active ? "启用" : "停用" %] 报告[% terms.bugs %]功能</li>
         [% END %]
       </ul>
     [% ELSE %]

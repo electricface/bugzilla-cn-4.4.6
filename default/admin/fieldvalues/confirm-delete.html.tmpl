@@ -39,7 +39,7 @@
   <td valign="top">[% terms.Bugs %] ：</td>
   <td valign="top">
 [% IF value.bug_count %]
-  <a title="列出 '[% field.description FILTER html %]' 是 '[% value.name FILTER html %]' 的 [% terms.bugs %]"
+  <a title="列出 '[% field.description FILTER html %]' 是 '[% value.name FILTER html %]' 的[% terms.bugs %]"
      href="buglist.cgi?[% field.name FILTER uri %]=[% value.name FILTER uri %]"
     >[% value.bug_count FILTER html %]</a>
 [% ELSE %]
@@ -68,10 +68,10 @@
     [% END %]
 
     [% IF value.bug_count %]
-      <li>有 [% value.bug_count FILTER html %] 个 [% terms.bug %]
+      <li>有 [% value.bug_count FILTER html %] 个[% terms.bug %]
           使用了此一数值。在删除此数值之前，你必须先修改<a
           title="列出 '[% field.description FILTER html %]' 是
-                '[%+ value.name FILTER html %]' 的 [% terms.bugs %]"
+                '[%+ value.name FILTER html %]' 的[% terms.bugs %]"
           href="buglist.cgi?[% field.name FILTER uri %]=[% value.name FILTER uri %]"
           >那[% IF value.bug_count > 1 %]些[% ELSE %]个[% END %] [%+ terms.bug %] </a>的数值。
       </li>

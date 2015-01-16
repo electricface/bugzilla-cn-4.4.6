@@ -24,7 +24,7 @@
 
 <p>
   在你尝试对
-  [% "$terms.bug $attachment.bug_id" FILTER bug_link(attachment.bug_id) FILTER none %]
+  [% "${terms.bug}$attachment.bug_id" FILTER bug_link(attachment.bug_id) FILTER none %]
   的<a href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">附件 [% attachment.id %]</a>
   做修改的同时，有其他人已做出修改。<br>
   已做出的修改为：

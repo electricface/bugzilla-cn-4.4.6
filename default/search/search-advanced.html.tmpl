@@ -25,7 +25,7 @@ function remove_token() {
 [% END %]
 
 [% PROCESS global/header.html.tmpl
-  title = "搜索 $terms.bugs"
+  title = "搜索${terms.bugs}"
   yui = [ 'autocomplete', 'calendar' ]
   javascript = javascript
   javascript_urls = [ "js/util.js", "js/TUI.js", "js/field.js"]

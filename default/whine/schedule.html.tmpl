@@ -26,7 +26,7 @@
 %]
 
 <p>
-  「订阅」这项功能，是 [% terms.Bugzilla %] 在一个固定的期间执行一项已存储的搜索，并将搜索结果所列出的 [% terms.bugs %] 以电子邮件传送。
+  「订阅」这项功能，是 [% terms.Bugzilla %] 在一个固定的期间执行一项已存储的搜索，并将搜索结果所列出的[% terms.bugs %]以电子邮件传送。
 </p>
 
 <p>
@@ -44,9 +44,9 @@
 <p>
   搜索来自已存储的搜索。
   <br>已存储的搜索是在执行<a href="query.cgi">搜索</a>页面，并将该页面结果以指定的名称储存于 [% terms.Bugzilla %] 中。
-  <br>点击「新增搜索」，选择已存储的搜索名称，并于 [% terms.bug %] 表格中加入标题。
+  <br>点击「新增搜索」，选择已存储的搜索名称，并于[% terms.bug %]表格中加入标题。
   <br>「排序」下的数字为选填。若有多笔搜索排列，将会以该数字决定执行的顺序（从最小到最大）。
-  <br>如果勾选「每个 [% terms.bug %] 送出一封信」，那么符合该搜索的每个 [% terms.bug%] 都会寄出一封信。
+  <br>如果勾选「每个[% terms.bug %]送出一封信」，那么符合该搜索的每个 [% terms.bug%] 都会寄出一封信。
 </p>
 
 <p>
@@ -104,7 +104,7 @@
 
   <tr>
     <td valign="top" align="right">
-      即使搜索结果没有任何 [% terms.bugs %] ，仍然发送消息：
+      即使搜索结果没有任何[% terms.bugs %]，仍然发送消息：
     </td>
     <td colspan="2">
       <input type="checkbox" name="event_[% event.key %]_mailifnobugs"
@@ -263,7 +263,7 @@
                 <input type="checkbox" [% IF query.onemailperbug == 1 %] checked [% END %]
                        id="query_onemailperbug_[% query.id %]"
                        name="query_onemailperbug_[% query.id %]">
-                <label for="query_onemailperbug_[% query.id %]">每个 [% terms.bug %] 送出一封信</label>
+                <label for="query_onemailperbug_[% query.id %]">每个[% terms.bug %]送出一封信</label>
               </td>
               <td align="right">
                 <input type="submit" value="删除"

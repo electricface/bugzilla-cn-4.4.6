@@ -52,10 +52,10 @@
   [% END %]
 
   [% IF author.login == recipient.login %]
-以 [% terms.bug %] 列表检查： [% urlbase %]buglist.cgi?cmdtype=runnamed&namedcmd=[% query.name FILTER uri %]
+以[% terms.bug %]列表检查： [% urlbase %]buglist.cgi?cmdtype=runnamed&namedcmd=[% query.name FILTER uri %]
   [% END %]
   [% END %]
 [% ELSE %]
 
-  找不到符合搜索标准的 [% terms.bugs %] 。
+  找不到符合搜索标准的[% terms.bugs %]。
 [% END %]

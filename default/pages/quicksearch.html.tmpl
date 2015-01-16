@@ -46,8 +46,8 @@
     [%+ IF Param('usestatuswhiteboard') %][% field_descs.status_whiteboard FILTER html %][% END %]
     以及 [% field_descs.longdesc FILTER html %] 这些字段搜索你所输入的字。</li>
 
-  <li>在搜索框输入一个<strong>数字</strong>则会直接跳至该编号的 [% terms.bug %] 。
-      另外，输入 [% terms.bug %] 的<strong>别名</strong>也会直接跳至该 [% terms.bug %]。
+  <li>在搜索框输入一个<strong>数字</strong>则会直接跳至该编号的[% terms.bug %]。
+      另外，输入[% terms.bug %]的<strong>别名</strong>也会直接跳至该[% terms.bug %]。
   </li>
 
   <li>加入较多的字会使搜索结果<strong>变少</strong>，而不是增加。
@@ -58,13 +58,13 @@
     所以 <kbd>table</kbd> 、 <kbd>Table</kbd> 和 <kbd>TABLE</kbd> 会被当成相同的字串。</li>
 
   <li>[% terms.Bugzilla %] 不只是搜索完全符合的字，也会搜索<strong>包含</strong>该字串的其他字。
-    例如：搜索 "cat" 的时候，也会找到其他字里有 "cat" 的 [% terms.bugs %]&mdash;比方说，
-    提到 "<strong>cat</strong>ch" 或 "certifi<strong>cat</strong>e" 的 [% terms.bug %] 。
+    例如：搜索 "cat" 的时候，也会找到其他字里有 "cat" 的[% terms.bugs %]&mdash;比方说，
+    提到 "<strong>cat</strong>ch" 或 "certifi<strong>cat</strong>e" 的[% terms.bug %]。
     [% field_descs.longdesc FILTER html %]或[% field_descs.keywords FILTER html %]字段例外&mdash;
     那些字段只会搜索完全符合的字。</li>
 
-  <li>默认只会搜索<strong>开启的</strong> [% terms.bugs %] 。
-    如果你想知道如何搜索关闭的 [% terms.bugs %] ，
+  <li>默认只会搜索<strong>开启的</strong>[% terms.bugs %]。
+    如果你想知道如何搜索关闭的[% terms.bugs %]，
     请参考<a href="#shortcuts">高级快速键</a>一段。</li>
 
   <li>如果你想要搜索<strong>特定字段</strong>，用
@@ -72,7 +72,7 @@
     提到的<a href="#fields">字段名称</a>之一，而 <kbd>value</kbd> 是你
     想要在该字段搜索的数值。如果在 <kbd>value</kbd> 字段中输入逗号 (,) ，
     会把你所输入的数值视为一串数值的列表，并且会搜索符合<em>任何一个</em>数值的
-    [% terms.bugs %] 。</li>
+    [% terms.bugs %]。</li>
 </ul>
 
 <h2 id="basic_examples">简易搜索的范例</h2>
@@ -80,21 +80,21 @@
 <p>以下是一些搜索的范例。此页面下方也可以找到<a href="#advanced_examples">更复杂的范例</a>。</p>
 
 <ul class="qs_help">
-  <li>所有状态为开启 (OPEN) 的 [% terms.bugs %] 中， userA@company.com
-    在邮件抄送副本中的 [% terms.bugs %] （不需要输入「开启」这个状态字串，这是默认值）：<br>
+  <li>所有状态为开启 (OPEN) 的[% terms.bugs %]中， userA@company.com
+    在邮件抄送副本中的[% terms.bugs %]（不需要输入「开启」这个状态字串，这是默认值）：<br>
     <kbd>cc:userA@company.com</kbd></li>
-  <li>所有在产品「productA」中，状态为未确认 (UNCONFIRMED) 的 [% terms.bugs %]
-    （将 [% terms.bug %] 的状态放在第一个字的话，就会自动视为 [% terms.bug %]
+  <li>所有在产品「productA」中，状态为未确认 (UNCONFIRMED) 的[% terms.bugs %]
+    （将[% terms.bug %]的状态放在第一个字的话，就会自动视为[% terms.bug %]
     的状态）：<br>
     <kbd>UNCONFIRMED product:productA</kbd>
-  <li>所有 (ALL) 由 userB@company.com 报告的 [% terms.bugs %]
-    （必须要在第一个字指定状态为 ALL ，否则只会找状态为开启的 [% terms.bugs %]
+  <li>所有 (ALL) 由 userB@company.com 报告的[% terms.bugs %]
+    （必须要在第一个字指定状态为 ALL ，否则只会找状态为开启的[% terms.bugs %]
     ）：<br>
     <kbd>ALL reporter:userB@company.com</kbd>
   <li>所有状态为开启、严重等级是 blocker 或 critical ，且目标里程碑是
-    2.5 的 [% terms.bugs %] ：<br>
+    2.5 的[% terms.bugs %]：<br>
     <kbd>severity:blocker,critical milestone:2.5</kbd>
-  <li>所有在产品「Research & Development」中，优先程度是 P1 或 P2 ，状态为开启的 [% terms.bugs %]
+  <li>所有在产品「Research & Development」中，优先程度是 P1 或 P2 ，状态为开启的[% terms.bugs %]
     （因为产品名称中含有空白，因此必须以引号 (") 包覆它）：<br>
     <kbd>component:"Research & Development" priority:P1,P2</kbd></li>
 </ul>
@@ -172,13 +172,13 @@
       <li>
         <strong>AND</strong> ：<br>
         <kbd><em>foo bar</em></kbd> 会搜索包含 <kbd>foo</kbd> 和 <kbd>bar</kbd>
-        的 [% terms.bugs %] 。
+        的[% terms.bugs %]。
         等效于 <kbd><em>foo AND bar</em></kbd> 。
       </li>
       <li>
         <strong>OR</strong> ：<br>
         <kbd><em>foo<strong>|</strong>bar</em></kbd> 会搜索包含 <kbd>foo</kbd>
-        或 <kbd>bar</kbd> 的 [% terms.bugs %] 。
+        或 <kbd>bar</kbd> 的[% terms.bugs %]。
         等效于 <kbd><em>foo OR bar</em></kbd> 。
       </li>
     </ul>
@@ -214,7 +214,7 @@
       <td class="field_name">[% field_descs.bug_status FILTER html %]</td>
       <td class="field_nickname">
         把搜索的<strong>第一个字</strong>设置为任何状态，甚至是状态的缩写，
-        就会搜索符合该状态的 [% terms.bugs %] 。
+        就会搜索符合该状态的[% terms.bugs %]。
         <strong><kbd>ALL</kbd></strong> 是代表「所有状态」的特别快捷键。
         <strong><kbd>OPEN</kbd></strong> 是代表「所有状态为开启」的特别快捷键。
       </td>
@@ -223,16 +223,16 @@
       <td class="field_name">[% field_descs.resolution FILTER html %]</td>
       <td class="field_nickname">
         把搜索的<strong>第一个字</strong>设置为任何解決方案，甚至是解決方案的缩写，
-        就会搜索符合该解決方案的 [% terms.bugs %] 。
+        就会搜索符合该解決方案的[% terms.bugs %]。
         例如：把 <kbd>FIX</kbd> 作为搜索的第一个字，就会搜索解決方案是
-        <kbd>FIXED</kbd> 的 [% terms.bugs %] 。
+        <kbd>FIXED</kbd> 的[% terms.bugs %]。
     </tr>
     <tr>
       <td class="field_name">[% field_descs.priority FILTER html %]</td>
       <td class="field_nickname">"<strong>P1</strong>" （作为搜索字串中的任一字串）
-        代表「搜索最高优先权的 [% terms.bugs %] 」。
+        代表「搜索最高优先权的[% terms.bugs %]」。
         "P2" 代表搜搜第二高优先权，类推。
-        <p>"<strong>P1-3</strong>" 会搜索前三高优先权的任何 [% terms.bugs %] ，
+        <p>"<strong>P1-3</strong>" 会搜索前三高优先权的任何[% terms.bugs %]，
         类推。</p>
       </td>
     </tr>
@@ -281,17 +281,17 @@
   <a href="query.cgi?format=advanced">高级搜索</a>。</p>
 
 <ul class="qs_help">
-  <li>所有由 userA@company.com 报告的 [% terms.bugs %] ，或者由他负责的
-    [% terms.bugs %] （关于 @
+  <li>所有由 userA@company.com 报告的[% terms.bugs %]，或者由他负责的
+    [% terms.bugs %]（关于 @
     的用法，参见上方<a href="#shortcuts">高级快速键</a>一段）：<br>
     <kbd>ALL @userA@company.com OR reporter:userA@company.com</kbd></li>
-  <li>所有在产品「productA」中，状态为开启 (OPEN) 的 [% terms.bugs %] 中
+  <li>所有在产品「productA」中，状态为开启 (OPEN) 的[% terms.bugs %]中
     ，严重等级是 blocker 、 critical 或 major ，或者优先程度为 P1
     ，或者设置了 blocker+ 的旗标，且并非由 userB@company.com 或
     userC@company.com 负责（我们假设只有两个使用者符合 userB 和 userC
     ，不然就必须要输入完整的登录名称）：<br>
     <kbd>:productA sev:blocker,critical,major OR pri:P1 OR flag:blocker+ -assign:userB,userC</kbd></li>
-  <li>所有解決方案为已解决 (FIXED) 的 [% terms.bugs %] 中，设置了
+  <li>所有解決方案为已解决 (FIXED) 的[% terms.bugs %]中，设置了
     blocker+ 的旗标，但没有设置 approval+ 或 approval? 的旗标：<br>
     <kbd>FIXED flag:blocker+ -flag:approval+ -flag:approval?</kbd></li>
   <li>摘要中含有 <em>That's a "unusual" issue</em> 字串的

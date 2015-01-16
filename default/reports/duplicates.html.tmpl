@@ -99,7 +99,7 @@
     <tr>
       <td>
         <label for="openonly">
-          只显示开启的 [% terms.bugs %] ：
+          只显示开启的[% terms.bugs %]：
         </label>
       </td>
       <td>
@@ -115,7 +115,7 @@
 
 <form method="post" action="buglist.cgi">
   <input type="hidden" name="bug_id" value="[% bug_ids_string FILTER html %]">
-  或者以<input type="submit" id="list" value="[% terms.bug %] 列表">呈现即可。
+  或者以<input type="submit" id="list" value="[% terms.bug %]列表">呈现即可。
   (注意：顺序可能不一样。)
 </form>
 
@@ -129,27 +129,27 @@
   最常报告的 [% terms.Bugs %] 页面列出目前状态为开启，且最常被报告的
   [%+ terms.bugs %] 列表。此列表产生方式为计算被直接或间接标记为重复的
   [%+ terms.bugs %] 数量。提供此列表的目的是将输入 [% terms.Bugzilla %]
-  的重复 [% terms.bugs %] 数量减到最低，以省下品保工程师分类 [% terms.bugs %] 的时间。
+  的重复[% terms.bugs %]数量减到最低，以省下品保工程师分类[% terms.bugs %]的时间。
 </p>
 
 <b>我如何使用这份列表？</b>
 
 <ul>
-  <li>检查最常报告的 [% terms.bugs %] 列表。</li>
+  <li>检查最常报告的[% terms.bugs %]列表。</li>
   <li>如果你的问题列在上面：</li>
 
   <ul>
-    <li>点击 [% terms.bug %] 编号以确认你找到的是同一个
-        [% terms.bug %] 。如果你有额外的信息（例如测试结果）时，可随时发表留言。
+    <li>点击[% terms.bug %]编号以确认你找到的是同一个
+        [% terms.bug %]。如果你有额外的信息（例如测试结果）时，可随时发表留言。
     </li>
   </ul>
 
   <li>如果你的问题不在上面：</li>
 
   <ul>
-    <li>在已存在的 [% terms.bug %] 中<a href="query.cgi">尝试搜索是否有类似的 [% terms.bug %]</a>。</li>
+    <li>在已存在的[% terms.bug %]中<a href="query.cgi">尝试搜索是否有类似的[% terms.bug %]</a>。</li>
     <li>如果你在 [% terms.Bugzilla %] 中找到了你的问题，且有新的或额外的信息可提供时，可随时发表留言。</li>
-    <li>如果你在 [% terms.Bugzilla %] 并未找到你的问题，<a href="enter_bug.cgi">新增一个 [% terms.bug %]</a> 。</li>
+    <li>如果你在 [% terms.Bugzilla %] 并未找到你的问题，<a href="enter_bug.cgi">新增一个[% terms.bug %]</a> 。</li>
   </ul>
 </ul>
 

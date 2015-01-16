@@ -174,7 +174,7 @@ TUI_hide_default('information_query');
     <div id="bug_id_container" >
       <input type="text" name="bug_id" id="bug_id"
            value="[% default.bug_id.0 FILTER html %]" size="20">
-           <div class="field_help">[以逗号 (,) 分隔多个 [% terms.bug %] 编号</div>
+           <div class="field_help">[以逗号 (,) 分隔多个[% terms.bug %]编号</div>
     </div>
   </div>
 
@@ -224,7 +224,7 @@ TUI_hide_default('information_query');
   <div class="bz_section_title" id="people_filter">
     <div id="people_query_controller" class="arrow">&#9660;</div>
     <a href="javascript:TUI_toggle_class('people_query')">以人为条件搜索</a>
-    <span>将结果限制在一个人在一个 [% terms.bug %] 上的角色（例如 [% field_descs.assigned_to FILTER html %] 、
+    <span>将结果限制在一个人在一个[% terms.bug %]上的角色（例如 [% field_descs.assigned_to FILTER html %] 、
       [%+ field_descs.reporter FILTER html %] 、 [% field_descs.commenter FILTER html %]  ）。
     </span>
   </div>

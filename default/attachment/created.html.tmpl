@@ -20,7 +20,7 @@
 
 <dl>
   <dt>
-    已建立[% "$terms.bug $attachment.bug_id" FILTER bug_link(attachment.bug_id) FILTER none %]的<a
+    已建立[% "${terms.bug}$attachment.bug_id" FILTER bug_link(attachment.bug_id) FILTER none %]的<a
        title="[% attachment.description FILTER html %]"
        href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">附件 #[% attachment.id %]</a>
   </dt>

@@ -44,7 +44,7 @@
     [% IF !isnew && change.who.id != last_changer %]
       [% last_changer = change.who.id %]
       [% IF change.blocker %]
-        处理 [% terms.bug %] [%+ bug.id %] 之前要先处理的 [% terms.bug %] [%+ change.blocker.id %] 改变了状态。
+        处理[% terms.bug %][%+ bug.id %] 之前要先处理的[% terms.bug %][%+ change.blocker.id %] 改变了状态。
 
 [%+ terms.Bug %] [%+ change.blocker.id %] 摘要： [% change.blocker.short_desc %]
 [%+ urlbase %]show_bug.cgi?id=[% change.blocker.id %]

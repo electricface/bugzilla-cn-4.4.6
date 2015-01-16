@@ -27,31 +27,31 @@
        [%- issue_hash_token(['sanitycheck']) FILTER uri %]">[% text FILTER html %]</a>。
 
   [% ELSIF san_tag == "bug_check_creation_date" %]
-    检查没有建立日期的 [% terms.bugs %] 中…（没有建立日期将会使 [% terms.bugs %] 无法检查。）
+    检查没有建立日期的[% terms.bugs %]中…（没有建立日期将会使[% terms.bugs %]无法检查。）
 
   [% ELSIF san_tag == "bug_check_creation_date_error_text" %]
     没有建立日期的 [% terms.Bugs %]
 
   [% ELSIF san_tag == "bug_check_creation_date_repair_text" %]
-    修复没有建立日期的 [% terms.bugs %] 中…
+    修复没有建立日期的[% terms.bugs %]中…
 
   [% ELSIF san_tag == "bug_check_bugs_fulltext" %]
-    檢查没有全文字搜索的 [% terms.bugs %] 报告。
+    檢查没有全文字搜索的[% terms.bugs %]报告。
 
   [% ELSIF san_tag == "bug_check_bugs_fulltext_error_text" %]
     没有全文字搜索的 [% terms.Bugs %] 报告
 
   [% ELSIF san_tag == "bug_check_bugs_fulltext_repair_text" %]
-    修复缺少全文字搜索的这些 [% terms.bugs %] 报告
+    修复缺少全文字搜索的这些[% terms.bugs %]报告
 
   [% ELSIF san_tag == "bug_check_res_dupl" %]
-    检查解决方案中标记为重复的 [% terms.bugs %] …
+    检查解决方案中标记为重复的[% terms.bugs %]…
 
   [% ELSIF san_tag == "bug_check_res_dupl_error_text" %]
-    在标记为重复的 [% terms.Bugs %] 列表中找到并非被标记为重复的 [% terms.bugs %]
+    在标记为重复的 [% terms.Bugs %] 列表中找到并非被标记为重复的[% terms.bugs %]
 
   [% ELSIF san_tag == "bug_check_res_dupl_error_text2" %]
-    找到标记为重复的 [% terms.Bugs %] ，但并不在标记为重复的 [% terms.bugs %] 列表中
+    找到标记为重复的 [% terms.Bugs %] ，但并不在标记为重复的[% terms.bugs %]列表中
 
   [% ELSIF san_tag == "bug_check_status_res" %]
     检查状态／解決方案中…
@@ -78,7 +78,7 @@
     在 group_control_map 中找到 [% entries FILTER html %] 笔损坏的数值
 
   [% ELSIF san_tag == "bug_check_control_values_violation" %]
-    检查违法产品群组管控的 [% terms.bugs %] 中…
+    检查违法产品群组管控的[% terms.bugs %]中…
 
   [% ELSIF san_tag == "bug_check_control_values_error_text" %]
     找到并未被产品允许的群组
@@ -91,22 +91,22 @@
     对于产品而言，缺少必须的群组
 
   [% ELSIF san_tag == "bug_creation_date_start" %]
-    修复缺少的 [% terms.bug %] 建立日期中…
+    修复缺少的[% terms.bug %]建立日期中…
 
   [% ELSIF san_tag == "bug_creation_date_fixed" %]
     已修复 [% bug_count FILTER html %] 个 [%+ terms.bugs %] 。
 
   [% ELSIF san_tag == "bugs_fulltext_start" %]
-    现在修复 [% terms.bug %] 报告的全文字输入。
+    现在修复[% terms.bug %]报告的全文字输入。
 
   [% ELSIF san_tag == "bugs_fulltext_fixed" %]
     已修复 [% bug_count FILTER html %] 个 [%+ terms.bugs %] 。
 
   [% ELSIF san_tag == "bug_reference_deletion_start" %]
-    删除参照到已删除的 [% terms.bugs %] 的所有参照中…
+    删除参照到已删除的[% terms.bugs %]的所有参照中…
 
   [% ELSIF san_tag == "bug_reference_deletion_end" %]
-    已删除参照到已删除的 [% terms.bugs %] 的所有参照。
+    已删除参照到已删除的[% terms.bugs %]的所有参照。
 
   [% ELSIF san_tag == "cross_check_to" %]
     检查参照到 [% table FILTER html %].[% field FILTER html %] 中…
@@ -133,7 +133,7 @@
   [% ELSIF san_tag == "cross_check_bug_has_references" %]
     <a href="sanitycheck.cgi?remove_invalid_bug_references=1&amp;token=
        [%- issue_hash_token(['sanitycheck']) FILTER uri %]">
-      删除参照到不存在的 [% terms.bugs %] 的参照。</a>
+      删除参照到不存在的[% terms.bugs %]的参照。</a>
 
   [% ELSIF san_tag == "double_cross_check_to" %]
     检查对应到 [% table FILTER html %].[% field1 FILTER html %] /
@@ -216,7 +216,7 @@
     &lt;[% email FILTER html %]&gt;。
 
   [% ELSIF san_tag == "repair_bugs" %]
-    修复这些 [% terms.bugs %] 。
+    修复这些[% terms.bugs %]。
 
   [% ELSIF san_tag == "send_bugmail_start" %]
     尝试发送尚未寄出的邮件…
@@ -288,9 +288,9 @@
     <a href="show_bug.cgi?id=[% bug_id FILTER uri %]">[% bug_id FILTER html %]</a>
     [% ", " IF !loop.last %]
   [% END %]
-  （<a href="buglist.cgi?bug_id=[% badbugs.join(",") FILTER uri %]">显示为 [% terms.bug %] 列表</a>）。
+  （<a href="buglist.cgi?bug_id=[% badbugs.join(",") FILTER uri %]">显示为[% terms.bug %]列表</a>）。
 [% END %]
 
 [% BLOCK bug_link %]
-  <a href="show_bug.cgi?id=[% bug_id FILTER uri %]">[% terms.bug %] [%+ bug_id FILTER html %]</a>
+  <a href="show_bug.cgi?id=[% bug_id FILTER uri %]">[% terms.bug %][%+ bug_id FILTER html %]</a>
 [% END %]

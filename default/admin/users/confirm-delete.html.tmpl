@@ -106,22 +106,22 @@
             <a href="buglist.cgi?field0-0-0=attachments.submitter&type0-0-0=equals&value0-0-0=
                [%- otheruser.login FILTER uri %]"
                >已送出了 [% attachments %] 个附件</a>。如果你删除此使用者账号，资料库的记录将不一致，导致这
-               [%+ attachments %] 个附件不再出现于 [% terms.bugs %] 中。
+               [%+ attachments %] 个附件不再出现于[% terms.bugs %]中。
           </li>
         [% END %]
         [% IF reporter %]
           <li>
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?emailreporter1=1&amp;emailtype1=exact&amp;email1=
-               [%- otheruser.login FILTER uri %]">报告了 [% reporter %] 个 [% terms.bugs %]</a>
+               [%- otheruser.login FILTER uri %]">报告了 [% reporter %] 个[% terms.bugs %]</a>
                。如果你删除该使用者，数据库的记录将不一致，导致这
-               [%+ reporter %] 个 [% terms.bug %] 不再出现在 [% terms.bug %] 列表中。
+               [%+ reporter %] 个[% terms.bug %]不再出现在[% terms.bug %]列表中。
           </li>
         [% END %]
         [% IF bugs_activity %]
           <li>
-            [% otheruser.login FILTER html %] 曾对 [% terms.bugs %]
-            做出修改。如果你删除该使用者，数据库中的 [% terms.bugs %]
+            [% otheruser.login FILTER html %] 曾对[% terms.bugs %]
+            做出修改。如果你删除该使用者，数据库中的[% terms.bugs %]
             活动记录将不一致，导致这 [% bugs_activity %] 项修改不再出现在
             [%+ terms.bug %] 活动记录中。
           </li>
@@ -139,7 +139,7 @@
           <li>
             [% otheruser.login FILTER html %] 曾经<a
               href="buglist.cgi?emaillongdesc1=1&amp;emailtype1=exact&amp;email1=
-              [%- otheruser.login FILTER uri %]">对 [% terms.bugs %] 发表过
+              [%- otheruser.login FILTER uri %]">对[% terms.bugs %]发表过
               [%+ longdescs %] 次意见</a>。如果你删除该使用者，数据库中的留言记录将不一致，导致这
               [%+ longdescs %] 个留言无法再浏览。
           </li>
@@ -167,7 +167,7 @@
           <li>
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?emailassigned_to1=1&amp;emailqa_contact1=1&amp;emailtype1=exact&amp;email1=
-               [%- otheruser.login FILTER uri %]">是 [% assignee_or_qa %] 个 [% terms.bugs %]</a>
+               [%- otheruser.login FILTER uri %]">是 [% assignee_or_qa %] 个[% terms.bugs %]</a>
                的默认负责人或 QA 联络人。如果你删除该使用者，将会自动设回默认的负责人或默认的 QA 联络人。
           </li>
         [% END %]
@@ -175,7 +175,7 @@
           <li>
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?emailcc1=1&amp;emailtype1=exact&amp;email1=
-               [%- otheruser.login FILTER uri %]">在 [% cc %] 个 [% terms.bugs %]</a>
+               [%- otheruser.login FILTER uri %]">在 [% cc %] 个[% terms.bugs %]</a>
                的邮件抄送列表中。如果你删除该使用者，将会自动自邮件抄送列表中删除。
           </li>
         [% END %]

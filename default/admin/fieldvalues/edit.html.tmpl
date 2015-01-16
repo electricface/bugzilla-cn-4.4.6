@@ -75,7 +75,7 @@
       </tr>
     [% END %]
     <tr>
-      <th align="right"><label for="is_active">开启报告 [% terms.bugs %] 功能：</label></th>
+      <th align="right"><label for="is_active">开启报告[% terms.bugs %]功能：</label></th>
       <td><input id="is_active" name="is_active" type="checkbox" value="1"
            [%+ 'checked="checked"' IF value.is_active %]
            [%+ 'disabled="disabled"' IF value.is_default OR value.is_static %]>

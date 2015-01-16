@@ -18,19 +18,19 @@
 %]
 
 <p>
-  [% terms.Bugzilla %] 允许你以多种方式浏览及追踪 [% terms.bug %] 资料库的状态。
+  [% terms.Bugzilla %] 允许你以多种方式浏览及追踪[% terms.bug %]资料库的状态。
 </p>
 
 <h2>目前状态</h2>
 
 <ul>
   <li id="report_search">
-    <strong><a href="query.cgi">搜索</a></strong> - 列出一组 [% terms.bugs %] 。
+    <strong><a href="query.cgi">搜索</a></strong> - 列出一组[% terms.bugs %]。
   </li>
   <li id="report_tabular">
     <strong>
       <a href="query.cgi?format=report-table">表格式报告</a>
-    </strong> - 以 HTML 或 CSV 格式，产生一、二或三维空间的 [% terms.bug %] 数目表格。
+    </strong> - 以 HTML 或 CSV 格式，产生一、二或三维空间的[% terms.bug %]数目表格。
   </li>
   [% IF feature_enabled('graphical_reports') %]
     <li id="report_graphical">
@@ -41,7 +41,7 @@
   [% END %]
   <li id="report_duplicates">
     <strong><a href="duplicates.cgi">重复报告</a></strong> -
-    列出最常被报告的 [% terms.bugs %] 。
+    列出最常被报告的[% terms.bugs %]。
   </li>
   [% Hook.process('current_state') %]
 </ul>
@@ -53,7 +53,7 @@
   [% IF feature_enabled('old_charts') %]
     <li id="old_charts">
       <strong><a href="reports.cgi">旧的图表</a></strong> -
-      以资料库中每一个产品为单位，绘出时间、 [% terms.bugs %] 的状态和／或解決方案。
+      以资料库中每一个产品为单位，绘出时间、[% terms.bugs %]的状态和／或解決方案。
     </li>
   [% END %]
   [% IF feature_enabled('new_charts') AND user.in_group(Param("chartgroup")) %]

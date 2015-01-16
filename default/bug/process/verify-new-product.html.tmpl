@@ -43,10 +43,10 @@
 [% IF Param("usetargetmilestone")
    && bug.check_can_change_field('target_milestone', 0, 1)
 %]
-  你正在将 [% terms.bug %] 移至产品 <b>[% product.name FILTER html %]</b> ，因此版本、模块，以及目标里程碑的栏位都不正确了。<br>
+  你正在将[% terms.bug %]移至产品 <b>[% product.name FILTER html %]</b> ，因此版本、模块，以及目标里程碑的栏位都不正确了。<br>
   请现在立即设置正确的版本、模块，以及目标里程碑：
 [% ELSE %]
-  你正在将 [% terms.bug %] 移至产品 <b>[% product.name FILTER html %]</b> ，因此版本以及模块的栏位都不正确了。<br>
+  你正在将[% terms.bug %]移至产品 <b>[% product.name FILTER html %]</b> ，因此版本以及模块的栏位都不正确了。<br>
   请现在立即设置正确的版本以及模块：
 [% END %]
 </p>
@@ -115,7 +115,7 @@
   [% END %]
 
   [% IF old_groups.size %]
-    <p>对 '[% product.name FILTER html %]' 产品而言，这些群组已经无效；或者你不被允许将 [% terms.bugs %] 限制于这些群组中。如果不加入其他群组的话， [%+ terms.Bugs %] 将不再被限制于这些群组，且会变为公开：<br>
+    <p>对 '[% product.name FILTER html %]' 产品而言，这些群组已经无效；或者你不被允许将[% terms.bugs %]限制于这些群组中。如果不加入其他群组的话， [%+ terms.Bugs %] 将不再被限制于这些群组，且会变为公开：<br>
     [% FOREACH group = old_groups %]
       <input type="checkbox" id="group_[% group.id FILTER html %]"
              name="groups" disabled="disabled" value="[% group.name FILTER html %]">
@@ -129,7 +129,7 @@
 
 
   [% IF optional_groups.size %]
-    <p>这些群组是选用的。你可以决定将 [% terms.bugs %] 限制在下列一或多个群组中：<br>
+    <p>这些群组是选用的。你可以决定将[% terms.bugs %]限制在下列一或多个群组中：<br>
     [% IF multiple_bugs %]
       <script type="text/javascript">
         function turn_off(myself, id) {
@@ -189,7 +189,7 @@
   [% END %]
 
   [% IF mandatory_groups.size %]
-    <p>这些群组是强制性的，因此 [% terms.bugs %] 将会自动被限制于这些群组：<br>
+    <p>这些群组是强制性的，因此[% terms.bugs %]将会自动被限制于这些群组：<br>
     [% FOREACH group = mandatory_groups %]
       <input type="checkbox" id="group_[% group.group.id FILTER html %]"
               checked="checked" disabled="disabled"
@@ -213,7 +213,7 @@
 
 [% IF cgi.param('id') AND cgi.param('id').match('^\d+$') %]
   [% id = cgi.param('id') %]
-  取消，并回到 [% "$terms.bug $id" FILTER bug_link(id) FILTER none %]
+  取消，并回到 [% "${terms.bug}$id" FILTER bug_link(id) FILTER none %]
 [% ELSE %]
   取消，并回到<a href="buglist.cgi?regetlastlist=1">上次的搜索结果</a>
 [% END %]
