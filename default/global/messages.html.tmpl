@@ -278,7 +278,7 @@
           <li>已更新字段值为
             <em>[% changes.value.1 FILTER html %]</em> 。
             [% IF value.is_default %]
-              （注意：此为此字段的默认值。所有指向默认值的參照将会指向此新数值。）
+              （注意：此为此字段的默认值。所有指向默认值的参照将会指向此新数值。）
             [% END %]
           </li>
         [% END %]
@@ -293,7 +293,7 @@
               [%+ value.field.value_field.description FILTER html %]
               设置为
               '[%+ value.visibility_value.name FILTER html %]'
-              时出現。
+              时出现。
             </li>
           [% ELSE %]
             <li>无论
@@ -753,7 +753,7 @@
     [% title = "已刪除产品" %]
     产品 <em>[% product.name FILTER html %]</em> 及其模块、版本、里程碑、群组均已被刪除。
     [% IF product.bug_count %]
-      此产品的所有 [% terms.bugs %] 以及所有參照到这些 [% terms.bugs %] 的链接均已被刪除。
+      此产品的所有 [% terms.bugs %] 以及所有参照到这些 [% terms.bugs %] 的链接均已被刪除。
     [% END %]
 
   [% ELSIF message_tag == "product_invalid" %]

@@ -106,7 +106,7 @@
     删除参照到已删除的 [% terms.bugs %] 的所有参照中…
 
   [% ELSIF san_tag == "bug_reference_deletion_end" %]
-    已删除參照到已删除的 [% terms.bugs %] 的所有参照。
+    已删除参照到已删除的 [% terms.bugs %] 的所有参照。
 
   [% ELSIF san_tag == "cross_check_to" %]
     检查参照到 [% table FILTER html %].[% field FILTER html %] 中…
@@ -128,16 +128,16 @@
   [% ELSIF san_tag == "cross_check_attachment_has_references" %]
     <a href="sanitycheck.cgi?remove_invalid_attach_references=1&amp;token=
        [%- issue_hash_token(['sanitycheck']) FILTER uri %]">
-      删除參照到不存在的附件的參照。</a>
+      删除参照到不存在的附件的参照。</a>
 
   [% ELSIF san_tag == "cross_check_bug_has_references" %]
     <a href="sanitycheck.cgi?remove_invalid_bug_references=1&amp;token=
        [%- issue_hash_token(['sanitycheck']) FILTER uri %]">
-      删除參照到不存在的 [% terms.bugs %] 的參照。</a>
+      删除参照到不存在的 [% terms.bugs %] 的参照。</a>
 
   [% ELSIF san_tag == "double_cross_check_to" %]
     检查对应到 [% table FILTER html %].[% field1 FILTER html %] /
-    [%+ table FILTER html %].[% field2 FILTER html %] 的參照…
+    [%+ table FILTER html %].[% field2 FILTER html %] 的参照…
 
   [% ELSIF san_tag == "double_cross_check_from" %]
     … 从 [% table FILTER html %].[% field1 FILTER html %] /
