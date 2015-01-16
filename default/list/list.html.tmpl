@@ -237,12 +237,12 @@
         [% urlquerypart FILTER html %]&amp;ctype=ics">iCalendar</a> |
         <a href="colchange.cgi?
         [% urlquerypart FILTER html %]&amp;query_based_on=
-          [% defaultsavename OR searchname FILTER uri %]">变更字段</a> |
+          [% defaultsavename OR searchname FILTER uri %]">修改字段</a> |
 
         [% IF bugs.size > 1 && caneditbugs && !dotweak %]
           <a href="buglist.cgi?[% urlquerypart FILTER html %]
             [%- "&order=$qorder" FILTER html IF order %]&amp;tweak=1"
-            >一次变更多个 [% terms.Bugs %]</a>
+            >一次修改多个 [% terms.Bugs %]</a>
           |
         [% END %]
 

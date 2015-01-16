@@ -7,7 +7,7 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "变更字段"
+  title = "修改字段"
   javascript_urls = "js/change-columns.js"
   onload = "initChangeColumns()"
 %]
@@ -119,11 +119,11 @@
   [% END %]
 
   <p>
-    <input type="submit" id="change" value="变更栏位">
+    <input type="submit" id="change" value="修改栏位">
   </p>
 
   <input type="submit" id="resetit" name="resetit"
-         value="设回 [% terms.Bugzilla %] 的预设值">
+         value="设回 [% terms.Bugzilla %] 的默认值">
 </form>
 
 [% PROCESS global/footer.html.tmpl %]

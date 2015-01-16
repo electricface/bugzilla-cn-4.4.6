@@ -80,7 +80,7 @@
            [%+ 'checked="checked"' IF value.is_active %]
            [%+ 'disabled="disabled"' IF value.is_default OR value.is_static %]>
            [% IF value.is_default %]
-             此数值是此字段的预设值，无法被停用。
+             此数值是此字段的默认值，无法被停用。
            [% ELSIF value.is_static %]
               此数值不可删除，也不能被停用。
            [% END %]

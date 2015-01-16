@@ -59,7 +59,7 @@
             [%+ attachment.datasize FILTER unitconvert %]
           [% ELSE %]
             <em>已删除</em>
-          [% END %]，由 [%+ INCLUDE global/user.html.tmpl who = attachment.attacher %] 於 [%+ attachment.attached FILTER time %] 建立
+          [% END %]，由 [%+ INCLUDE global/user.html.tmpl who = attachment.attacher %] 于 [%+ attachment.attached FILTER time %] 建立
           [% IF attachment.isprivate %]；
             <span class="bz_private">仅 <strong>[% Param('insidergroup') FILTER html %]</strong> 群组可见</span>
           [% END %]

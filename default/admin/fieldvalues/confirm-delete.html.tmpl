@@ -60,16 +60,16 @@
 
   <ul class="warningmessages">
     [% IF value.is_default %]
-      <li>'[% value.name FILTER html %]' 是 '[% field.description FILTER html %]' 字段的预设值。
+      <li>'[% value.name FILTER html %]' 是 '[% field.description FILTER html %]' 字段的默认值。
         [% IF user.in_group('tweakparams') %]
-          在删除此数值之前，你必须先<a href="editparams.cgi?section=bugfields">调整此字段的预设值</a>。
+          在删除此数值之前，你必须先<a href="editparams.cgi?section=bugfields">调整此字段的默认值</a>。
         [% END %]
       </li>
     [% END %]
 
     [% IF value.bug_count %]
-      <li>有 [% value.bug_count FILTER html %] 個 [% terms.bug %]
-          使用了此一数值。在删除此数值之前，你必须先变更<a
+      <li>有 [% value.bug_count FILTER html %] 个 [% terms.bug %]
+          使用了此一数值。在删除此数值之前，你必须先修改<a
           title="列出 '[% field.description FILTER html %]' 是
                 '[%+ value.name FILTER html %]' 的 [% terms.bugs %]"
           href="buglist.cgi?[% field.name FILTER uri %]=[% value.name FILTER uri %]"

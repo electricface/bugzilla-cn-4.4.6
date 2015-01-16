@@ -23,13 +23,13 @@
 </script>
 
 <p>
-  此页面允许你定义在流程中哪些状态的变更是有效的。<br>
+  此页面允许你定义在流程中哪些状态的修改是有效的。<br>
   为了向下相容较旧版本的 [% terms.Bugzilla %] ，因此当你重新开启了一个 [% terms.bug %]
   时，将只会以[% display_value("bug_status", "UNCONFIRMED") FILTER html %] 或
   [%+ display_value("bug_status", "REOPENED") FILTER html %]
   （如果在流程中允许此状态），而非同时显示。<br>
   显示的方式决定于这个 [% terms.bug %] 是否被确认过。<br>
-  因此建议你允许此两种变更，让 [% terms.Bugzilla %] 自动正确选择。
+  因此建议你允许此两种修改，让 [% terms.Bugzilla %] 自动正确选择。
 </p>
 
 <form id="workflow_form" method="POST" action="editworkflow.cgi">
@@ -79,18 +79,18 @@
 <p>
   当 [% terms.bug %] 标记和另一个 [% terms.bug %] 重复，或是已经移到另一台机器上时，
   [% terms.bug %] 的状态将自动设置为 <b>[% display_value("bug_status", Param("duplicate_or_move_bug_status")) FILTER html %]</b> 。
-  所有对这个 [% terms.bug %] 状态所做的变更都必须是有效的。（这也是你为什么无法在上面编辑的原因。）<br>
+  所有对这个 [% terms.bug %] 状态所做的修改都必须是有效的。（这也是你为什么无法在上面编辑的原因。）<br>
   注意：你可以浏览<a
   href="editparams.cgi?section=bugchange#duplicate_or_move_bug_status">参数设置</a>页，并编辑
-  <i>duplicate_or_move_bug_status</i> 参数来变更此设置。
+  <i>duplicate_or_move_bug_status</i> 参数来修改此设置。
 </p>
 
 <p align="center">
   <input type="hidden" name="action" value="update">
   <input type="hidden" name="token" value="[% token FILTER html %]">
-  <input type="submit" id="update_workflow" value="确定变更"> -
-  <a href="editworkflow.cgi">取消变更</a> -
-  <a href="editworkflow.cgi?action=edit_comment">浏览哪些状态变更需要留下意见</a>
+  <input type="submit" id="update_workflow" value="确定修改"> -
+  <a href="editworkflow.cgi">取消修改</a> -
+  <a href="editworkflow.cgi?action=edit_comment">浏览哪些状态修改需要留下意见</a>
 </p>
 
 </form>

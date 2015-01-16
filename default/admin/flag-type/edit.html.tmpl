@@ -161,7 +161,7 @@
         如果可以要求此类型旗标的话，谁应该收到关于要求的电子邮件通知。此清单以半角逗号 (,)
         分隔多位收信人。收信人不一定要拥有 [% terms.Bugzilla %] 的账号。
         [% IF Param('emailsuffix') %]
-          <br>注意：预设的电子邮件地址的后半段 (<kbd>[% Param('emailsuffix') %]</kbd>)
+          <br>注意：默认的电子邮件地址的后半段 (<kbd>[% Param('emailsuffix') %]</kbd>)
           并<em>不会</em>被自动加在这些地址中，因此你应该完整填写每个电子邮件地址。
         [% END %]<br>
         <input type="text" name="cc_list" value="[% type.cc_list FILTER html %]" size="80"

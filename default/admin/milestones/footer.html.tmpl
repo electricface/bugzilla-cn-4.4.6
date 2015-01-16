@@ -33,7 +33,7 @@
 
 [% IF milestone.name && !no_edit_milestone_link %]
   编辑里程碑
-  <a title="編輯產品 '[%- product.name FILTER html %]' 的里程碑 '[% milestone.name FILTER html %]'"
+  <a title="编辑产品 '[%- product.name FILTER html %]' 的里程碑 '[% milestone.name FILTER html %]'"
   href="editmilestones.cgi?action=edit&amp;product=
         [%- product.name FILTER uri %]&amp;milestone=
         [%- milestone.name FILTER uri %]"

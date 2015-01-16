@@ -20,7 +20,7 @@
    "Bug Number"   => "$terms.Bug 编号",
    "Importance"   => "重要性",
    "Assignee"     => "负责人",
-   "Last Changed" => "上次变更" } %]
+   "Last Changed" => "上次修改" } %]
 
 <input type="hidden" name="cmdtype" value="doit">
 [% IF user.id %]
@@ -60,7 +60,7 @@
     <input type="checkbox" id="remasdefault"
            name="remtype" value="asdefault">
     <label for="remasdefault">
-      将这些设置为我的搜索选项的预设值
+      将这些设置为我的搜索选项的默认值
     </label>
   </p>
 [% END %]
@@ -69,6 +69,6 @@
   <p>
     <a href="query.cgi?nukedefaultquery=1&amp;token=
        [%- issue_hash_token(['nukedefaultquery']) FILTER uri %]">
-      将我的搜索选项预设值设回系统预设值</a>。
+      将我的搜索选项默认值设回系统默认值</a>。
   </p>
 [% END %]

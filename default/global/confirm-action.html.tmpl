@@ -18,22 +18,22 @@
 <div class="throw_error">
 <!--reason=[%reason FILTER html %]-->
   [% IF reason == "expired_token" %]
-    你所做的变更已被拒绝，原因是在提交你对 [% script_name FILTER html %]
-    所做的变更的时限（
+    你所做的修改已被拒绝，原因是在提交你对 [% script_name FILTER html %]
+    所做的修改的时限（
     [% constants.MAX_TOKEN_AGE FILTER html %]
-    天）已经超过了。可能是页面显示过久，或是意外送出已送出的旧有变更。
+    天）已经超过了。可能是页面显示过久，或是意外送出已送出的旧有修改。
 
   [% ELSIF reason == "missing_token" %]
-    看起來你并非从正确的页面过来。
+    看起来你并非从正确的页面过来。
     其中一个原因是你直接在浏览器的地址栏输入网址。这应该是安全的。
     你点击了一个自动跳转的网址，<b>但未经过你的同意</b>。
 
   [% ELSIF reason == "invalid_token" %]
-    你对 [% script_name FILTER html %] 做出的变更中含有不正确的
+    你对 [% script_name FILTER html %] 做出的修改中含有不正确的
     token ，可能是有人想要盜用你的账号，例如让你点击了一个自动跳转的网址跳转到这里，<b>但未经过你的同意</b>。
   [% END %]
   <p>
-    你确定你仍要做出这些变更吗？
+    你确定你仍要做出这些修改吗？
   </p>
 </div>
 
@@ -41,10 +41,10 @@
   [% PROCESS "global/hidden-fields.html.tmpl"
              exclude="^(Bugzilla_login|Bugzilla_password|token)$" %]
   <input type="hidden" name="token" value="[% token FILTER html %]">
-  <input type="submit" id="confirm" value="确认所做的变更">
+  <input type="submit" id="confirm" value="确认所做的修改">
 </form>
 
-<p><a href="index.cgi">放弃所做的变更</a>（你会被重定向到此 [% terms.Bugzilla %] 的首页）。
+<p><a href="index.cgi">放弃所做的修改</a>（你会被重定向到此 [% terms.Bugzilla %] 的首页）。
 </p>
 
 [% PROCESS global/footer.html.tmpl %]

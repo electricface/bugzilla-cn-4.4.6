@@ -87,7 +87,7 @@
   </p>
   <p>
     [% IF user.in_group("editcomponents", component.product_id) %]
-      点击上方的编辑产品链接变更此设置，
+      点击上方的编辑产品链接修改此设置，
     [% ELSE %]
       现在你可以
     [% END %]
@@ -121,8 +121,8 @@
         [% IF bugs_activity %]
           <li>
             [% otheruser.login FILTER html %] 曾对 [% terms.bugs %]
-            做出变更。如果你删除该使用者，数据库中的 [% terms.bugs %]
-            活动记录将不一致，导致这 [% bugs_activity %] 项变更不再出现在
+            做出修改。如果你删除该使用者，数据库中的 [% terms.bugs %]
+            活动记录将不一致，导致这 [% bugs_activity %] 项修改不再出现在
             [%+ terms.bug %] 活动记录中。
           </li>
         [% END %]
@@ -147,7 +147,7 @@
         [% IF profiles_activity %]
           <li>
             [% otheruser.login FILTER html %]
-            曾对其他使用者的文档做出变更。如果你删除该使用者，数据库中的使用者文件活动记录将不一致。
+            曾对其他使用者的文档做出修改。如果你删除该使用者，数据库中的使用者文件活动记录将不一致。
           </li>
         [% END %]
       </ul>
@@ -167,22 +167,22 @@
           <li>
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?emailassigned_to1=1&amp;emailqa_contact1=1&amp;emailtype1=exact&amp;email1=
-               [%- otheruser.login FILTER uri %]">是 [% assignee_or_qa %] 個 [% terms.bugs %]</a>
-               的预设负责人或 QA 联络人。如果你删除该使用者，将会自动设回预设的负责人或预设的 QA 联络人。
+               [%- otheruser.login FILTER uri %]">是 [% assignee_or_qa %] 个 [% terms.bugs %]</a>
+               的默认负责人或 QA 联络人。如果你删除该使用者，将会自动设回默认的负责人或默认的 QA 联络人。
           </li>
         [% END %]
         [% IF cc %]
           <li>
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?emailcc1=1&amp;emailtype1=exact&amp;email1=
-               [%- otheruser.login FILTER uri %]">在 [% cc %] 個 [% terms.bugs %]</a>
+               [%- otheruser.login FILTER uri %]">在 [% cc %] 个 [% terms.bugs %]</a>
                的邮件抄送清单中。如果你删除该使用者，将会自动自邮件抄送清单中删除。
           </li>
         [% END %]
         [% IF component_cc %]
           <li>
             [% otheruser.login FILTER html %] 在 [% component_cc %]
-            项模块的预设邮件抄送清单中。如果你删除該使用者，将会自动自预设的邮件抄送清单中删除。
+            项模块的默认邮件抄送清单中。如果你删除该使用者，将会自动自默认的邮件抄送清单中删除。
           </li>
         [% END %]
         [% IF email_setting %]
@@ -195,7 +195,7 @@
             [% otheruser.login FILTER html %] 曾<a
               href="buglist.cgi?field0-0-0=requestees.login_name&amp;type0-0-0=equals&amp;value0-0-0=
               [%- otheruser.login FILTER uri %]">被要求设置 [% flags.requestee %]
-              个旗标</a>。如果你删除该使用者，这 [% flags.requestee %] 个旗标将变更为非指定要求的状态。
+              个旗标</a>。如果你删除该使用者，这 [% flags.requestee %] 个旗标将修改为非指定要求的状态。
           </li>
         [% END %]
         [% IF namedqueries %]
@@ -243,7 +243,7 @@
         [% IF whine_schedules %]
           <li>
             [% otheruser.login FILTER html %] 是
-            [% whine_schedules %] 项订阅的收件者之一。对应到发送此账号的排程将被删除，但不会变更订阅的內容。
+            [% whine_schedules %] 项订阅的收件者之一。对应到发送此账号的排程将被删除，但不会修改订阅的內容。
           </li>
         [% END %]
         [% IF otheruser.has_audit_entries %]

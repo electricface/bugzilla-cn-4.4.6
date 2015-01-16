@@ -35,13 +35,13 @@
   <td valign="top">[% comp.description FILTER html_light %]</td>
 </tr>
 <tr>
-  <td valign="top">预设的负责人：</td>
+  <td valign="top">默认的负责人：</td>
   <td valign="top">[% comp.default_assignee.login FILTER html %]</td>
 
 [% IF Param('useqacontact') %]
 </tr>
 <tr>
-  <td valign="top">预设的 QA 联络人：</td>
+  <td valign="top">默认的 QA 联络人：</td>
   <td valign="top">[% comp.default_qa_contact.login FILTER html %]</td>
 [% END %]
 

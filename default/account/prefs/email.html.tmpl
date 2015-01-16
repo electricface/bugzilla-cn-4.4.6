@@ -22,18 +22,18 @@
 [%# If the user's bugmail has been disabled by admins, show a warning. %]
 [% IF user.email_disabled %]
   <div class="warningmessages">
-    你的 [% terms.bug %] 变更状态通知信已被管理员停用。请联络
-    [% Param('maintainer') %] 以启用 [% terms.bug %] 变更状态通知信。
+    你的 [% terms.bug %] 修改状态通知信已被管理员停用。请联络
+    [% Param('maintainer') %] 以启用 [% terms.bug %] 修改状态通知信。
   </div>
 [% END %]
 
 <p>
-如果你不想要收到 [% terms.bug %] 变更状态通知信，你可以用以下设置来过滤部分或全部的通知信。
+如果你不想要收到 [% terms.bug %] 修改状态通知信，你可以用以下设置来过滤部分或全部的通知信。
 </p>
 
 [% IF user.authorizer.can_change_email && Param('allowemailchange') %]
   <p>
-    如果你想要变更 [% terms.Bugzilla %] 发送通知信的电子邮件
+    如果你想要修改 [% terms.Bugzilla %] 发送通知信的电子邮件
     <b>[% user.email FILTER html %]</b> ，点击上面的「账号信息」标签。
   </p>
 [% END %]
@@ -115,30 +115,30 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
     { id = constants.EVT_OPENED_CLOSED,
       description = " $terms.bug 已解决或再开启 (REOPENED)" },
     { id = constants.EVT_COMPONENT,
-      description = "产品或子产品变更" },
+      description = "产品或子产品修改" },
     { id = constants.EVT_PROJ_MANAGEMENT,
-      description = "优先程度、状态、等级，或是里程碑变更" },
+      description = "优先程度、状态、等级，或是里程碑修改" },
     { id = constants.EVT_COMMENT,
       description = "新增留言" },
     { id = constants.EVT_ATTACHMENT,
       description = "新增附件" },
     { id = constants.EVT_ATTACHMENT_DATA,
-      description = "部分附件内容变更" },
+      description = "部分附件内容修改" },
     { id = constants.EVT_KEYWORD,
-      description = "关键字栏位变更" },
+      description = "关键字栏位修改" },
     { id = constants.EVT_CC,
-      description = "抄送栏位变更" },
+      description = "抄送栏位修改" },
     { id = constants.EVT_DEPEND_BLOCK,
-      description = "依赖关系变更" },
+      description = "依赖关系修改" },
     { id = constants.EVT_OTHER,
-      description = "其他变更" },
+      description = "其他修改" },
 ] %]
 
 [% neg_events = [
     { id = constants.EVT_UNCONFIRMED,
       description = " $terms.bug 仍然处于未确认 (UNCONFIRMED)状态" },
     { id = constants.EVT_CHANGED_BY_ME,
-      description = "我做的变更" },
+      description = "我做的修改" },
 ] %]
 
 [% relationships = [

@@ -110,7 +110,7 @@ TUI_hide_default('information_query');
   <a href="javascript:TUI_toggle_class('information_query')">
     [% terms.Bug %] 的详细信息
   </a>
-  <span class="section_help">以下列字段限制搜索結果：
+  <span class="section_help">以下列字段限制搜索结果：
     [%+ field_descs.longdesc FILTER html %] 、 [%+ field_descs.bug_file_loc FILTER html %] 、
     [% IF Param('usestatuswhiteboard') %] [%+ field_descs.status_whiteboard FILTER html %] 、 [%+ END %]
     [% IF use_keywords %] [%+ field_descs.keywords FILTER html %] 、 [%+ END %]
@@ -276,12 +276,12 @@ TUI_hide_default('information_query');
 [%# *** Bug Changes *** %]
 <div class="bz_section_title" id="history_filter">
   <div id="history_query_controller" class="arrow">&#9660;</div>
-  <a href="javascript:TUI_toggle_class('history_query')" >以变更履历为条件搜索</a>
-  <span>将结果限制在一段特定时间中字段如何变更</span>
+  <a href="javascript:TUI_toggle_class('history_query')" >以修改履历为条件搜索</a>
+  <span>将结果限制在一段特定时间中字段如何修改</span>
 </div>
 <ul class="bug_changes bz_search_section history_query" id="history_filter_section" >
   <li>
-    <label for="chfield">有下列一项或多项变更：</label>
+    <label for="chfield">有下列一项或多项修改：</label>
     [%# Create array, so we can sort it by description #%]
     [% chfields = [] %]
     [% FOREACH field = chfield %]

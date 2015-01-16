@@ -7,7 +7,7 @@
   #%]
 
 [% title = BLOCK %]
-  确认对产品 '[%- product.name FILTER html %]' 做出群组控制的变更
+  确认对产品 '[%- product.name FILTER html %]' 做出群组控制的修改
 [% END %]
 
 [% PROCESS global/header.html.tmpl title = title %]
@@ -27,7 +27,7 @@
   [% PROCESS "global/hidden-fields.html.tmpl" exclude="^Bugzilla_(login|password)$" %]
 
   <br>
-     点击「继续」按键确认上方的所有变更。如果你不想做出上列变更，请点击「上一页」按键回到上一页。
+     点击「继续」按键确认上方的所有修改。如果你不想做出上列修改，请点击「上一页」按键回到上一页。
   <p>
     <input type="hidden" name="confirmed" value="confirmed">
     <input type="submit" id="update" value="继续">

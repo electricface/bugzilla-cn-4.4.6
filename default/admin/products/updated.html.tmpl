@@ -50,7 +50,7 @@
 
 [% IF changes.defaultmilestone.defined %]
   <p>
-  已将预设里程碑从 '[% changes.defaultmilestone.0 FILTER html %]' 更新为
+  已将默认里程碑从 '[% changes.defaultmilestone.0 FILTER html %]' 更新为
   '[% product.default_milestone FILTER html %]' 。
   </p>
 [% END %]
@@ -75,7 +75,7 @@
 [% Hook.process('changes') %]
 
 [% IF !changes.keys.size %]
-  <p>并未对产品 '[% product.name FILTER html %]' 做出任何变更。</p>
+  <p>并未对产品 '[% product.name FILTER html %]' 做出任何修改。</p>
 [% END %]
 
 [% PROCESS admin/products/footer.html.tmpl %]

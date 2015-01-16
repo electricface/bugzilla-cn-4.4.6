@@ -25,7 +25,7 @@
   <font color="red">
     这是使用于 mozilla.org 的模版。此模版以及 comment-guided.txt.tmpl
     模版以及所有通过此模版发送的资料及格式，在此仅作为示范如何使用自定义模板，特别是自定义
-    [% terms.bug %] 输入模版的部份。由于大部份文字均不适用，若你要在此台安裝
+    [% terms.bug %] 输入模版的部份。由于大部份文字均不适用，若你要在此台安装
     [% terms.Bugzilla %] 的机器上使用此表格，你需要做出适当的调整。
   </font>
 </p>
@@ -70,7 +70,7 @@ function PutDescription() {
 [% END %]
 
 <p>
-    <a href="duplicates.cgi?[% productstring %]&amp;format=simple" target="somebugs">所有时间点的前 100 个 [% terms.bugs %]</a>（预设载入） |
+    <a href="duplicates.cgi?[% productstring %]&amp;format=simple" target="somebugs">所有时间点的前 100 个 [% terms.bugs %]</a>（默认载入） |
     <a href="duplicates.cgi?[% productstring %]&amp;format=simple&amp;sortby=delta&amp;reverse=1&amp;maxrows=100&amp;changedsince=14" target="somebugs">最近两周的热门 [% terms.bugs %]</a>
 </p>
 
@@ -288,7 +288,7 @@ function PutDescription() {
         <br>
         <tt>
           <font color="#009900">好的例子</font>：我在书签管理员中排序时宕机。<br>
-          在那之後，我最上层的书签 Q 到 Z 开头的都蒸发了。
+          在那之后，我最上层的书签 Q 到 Z 开头的都蒸发了。
         </tt>
       </p>
     </td>
@@ -377,7 +377,7 @@ function PutDescription() {
       %]
       <p>
         加上任何可能相关的信息，例如你在使用的<b>布景</b>（这个 [% terms.bug %]
-        在预设布景下还会发生吗？），一个
+        在默认布景下还会发生吗？），一个
         <b><a href="http://kb.mozillazine.org/Quality_Feedback_Agent">Talkback crash ID</a></b>
         ，或任何关于<b>你的电脑状态</b>的信息。较长的信息，例如 <b>stack trace</b> 或
         <b>HTML testcase</b> ，应该使用「添加附件」关联。如果你觉得 build 设置也有关联，请在网址列输入
@@ -437,7 +437,7 @@ function PutDescription() {
 
 <p>
   请谅解我们收到一堆 [% terms.bug %] 报告－－可能要一段时间才会看到你的报告。你可以通过清楚描述
-  [%+ terms.bug %] 來帮助我们更快了解问题所在，并回复电子邮件中任何可能询问的问题。
+  [%+ terms.bug %] 来帮助我们更快了解问题所在，并回复电子邮件中任何可能询问的问题。
 </p>
 
     </form>

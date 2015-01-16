@@ -74,13 +74,13 @@
     [% IF use_post %]
       <button>以 [% terms.bug %] 清单方式浏览</button>
       [% IF user.in_group('editbugs') && ids.size > 1 %]
-        | <button type="submit" name="tweak" value="1">变更多个</button>
+        | <button type="submit" name="tweak" value="1">修改多个</button>
       [% END %]
       </form>
     [% ELSE %]
       <a href="buglist.cgi?bug_id=[% ids.join(",") %]">以 [% terms.bug %] 清单方式浏览</a>
       [% IF user.in_group('editbugs') && ids.size > 1 %]
-        | <a href="buglist.cgi?bug_id=[% ids.join(",") %]&amp;tweak=1">变更多个</a>
+        | <a href="buglist.cgi?bug_id=[% ids.join(",") %]&amp;tweak=1">修改多个</a>
       [% END %]
     [% END %]
 
@@ -226,7 +226,7 @@
      <input name="id" type="hidden" value="[% bugid %]">
      <input name="hide_resolved" type="hidden" value="[% hide_resolved %]">
      <noscript>
-       <input type="submit" id="change_depth" value="变更"
+       <input type="submit" id="change_depth" value="修改"
               [% "disabled" IF realdepth < 2 %]>
      </noscript>
    </form>

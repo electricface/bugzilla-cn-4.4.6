@@ -28,9 +28,9 @@ X-Bugzilla-Type: admin
   [% IF tokentype == 'new_account' %]
     已取消创建用户账号
   [% ELSIF tokentype == 'password' %]
-    已取消密码变更要求
+    已取消密码修改要求
   [% ELSIF tokentype == 'emailnew' OR tokentype == 'emailold' %]
-    已取消变更电子邮件要求
+    已取消修改电子邮件要求
   [% ELSE %]
     已取消[% tokentype %]的 token
   [% END %]
@@ -41,13 +41,13 @@ X-Bugzilla-Type: admin
     账号 [% email %] 已存在。
 
   [% ELSIF cancelaction == 'email_change_canceled' %]
-    将 [% old_email %] 账号的电子邮件地址变更为 [% new_email %] 的要求已被取消。
+    将 [% old_email %] 账号的电子邮件地址修改为 [% new_email %] 的要求已被取消。
 
   [% ELSIF cancelaction == 'email_change_canceled_reinstated' %]
-    将你的账号的电子邮箱地址变更为 [% new_email %] 的要求已被取消。已恢复原账号的旧有设置。
+    将你的账号的电子邮箱地址修改为 [% new_email %] 的要求已被取消。已恢复原账号的旧有设置。
 
   [% ELSIF cancelaction == 'emailold_change_canceled' %]
-    将你的账号的电子邮箱地址变更为 [% new_email %] 的要求已被取消。
+    将你的账号的电子邮箱地址修改为 [% new_email %] 的要求已被取消。
 
   [% ELSIF cancelaction == 'password_change_canceled' %]
     你要求取消。
@@ -59,13 +59,13 @@ X-Bugzilla-Type: admin
     你已登录。
 
   [% ELSIF cancelaction == 'wrong_token_for_changing_passwd' %]
-    你已经使用 token 来变更密码。
+    你已经使用 token 来修改密码。
 
   [% ELSIF cancelaction == 'wrong_token_for_cancelling_email_change' %]
-    你已经使用 token 来取笑电子邮件的变更。
+    你已经使用 token 来取消电子邮件的修改。
 
   [% ELSIF cancelaction == 'wrong_token_for_confirming_email_change' %]
-    你已经使用 token 来确认电子邮件的变更。
+    你已经使用 token 来确认电子邮件的修改。
 
   [% ELSIF cancelaction == 'wrong_token_for_creating_account' %]
     你已经使用 token 来创建一个新的账号。

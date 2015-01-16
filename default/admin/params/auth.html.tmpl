@@ -44,8 +44,8 @@
                           <dt>RADIUS</dt>
                           <dd>
                             使用 RADIUS 服务器进行 RADIUS 认证。请參考
-                            $terms.Bugzilla 說明以瞭解更多資訊。使用此方法必須先設定<a
-                            href=\"?section=radius\">額外的參數</a>。
+                            $terms.Bugzilla 说明以了解更多资讯。使用此方法必须先设置<a
+                            href=\"?section=radius\">额外的参数</a>。
                           </dd>
                           <dt>LDAP</dt>
                           <dd>
@@ -64,8 +64,8 @@
                         关 (off) - cookie 只到使用者结束使用时有效 (使用者必须在每个新的浏览器窗口登录)。
                       </li>
                       <li>
-                        预设开 (defaulton)／预设关 (defaultoff) -
-                        选定如上所述的预设值，但使用者可自行选择是否让
+                        默认开 (defaulton)／默认关 (defaultoff) -
+                        选定如上所述的默认值，但使用者可自行选择是否让
                         $terms.Bugzilla 记住他的登录信息。
                       </li>
                     </ul>",
@@ -74,7 +74,7 @@
 
   emailregexp =>
     "定义有效的电子邮件地址的正则表达式。" _
-    "预设值为包括所有有效的电子邮件地址。" _
+    "默认值为包括所有有效的电子邮件地址。" _
     "使用 <tt>.*</tt> 的话，将会接受所有遵守 " _
     "<a href=\"http://tools.ietf.org/html/rfc2822#section-3.4.1\">RFC 2822</a> " _
     "规范的电子邮件地址。" _
@@ -89,7 +89,7 @@
 
   createemailregexp => "此处定义使用者自行使用「新建账号」功能所允许的电子邮件地址" _
                        "（不分大小写）的正则表达式。" _
-                       "预设值 (.*) 允许建立任何符何 emailregexp 参数的账号。" _
+                       "默认值 (.*) 允许建立任何符何 emailregexp 参数的账号。" _
                        "如果设为空白，将不允许使用者自行建立新账号；所有的账号都必须通过管理者设置。",
 
   password_complexity =>

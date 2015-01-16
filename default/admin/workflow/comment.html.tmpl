@@ -7,7 +7,7 @@
   #%]
 
 [% INCLUDE global/header.html.tmpl
-   title = "在哪些状态变更时需要提交留言"
+   title = "在哪些状态修改时需要提交留言"
    style_urls = ['skins/standard/admin.css']
 %]
 
@@ -23,7 +23,7 @@
 </script>
 
 <p>
-  此页面允许你定义使用者作出哪些状态变更时需要提交留言。
+  此页面允许你定义使用者作出哪些状态修改时需要提交留言。
 </p>
 
 <form id="workflow_form" method="POST" action="editworkflow.cgi">
@@ -71,8 +71,8 @@
 <p align="center">
   <input type="hidden" name="action" value="update_comment">
   <input type="hidden" name="token" value="[% token FILTER html %]">
-  <input type="submit" id="update_comment" value="确定变更"> -
-  <a href="editworkflow.cgi?action=edit_comment">取消变更</a> -
+  <input type="submit" id="update_comment" value="确定修改"> -
+  <a href="editworkflow.cgi?action=edit_comment">取消修改</a> -
   <a href="editworkflow.cgi">浏览现在的流程</a>
 </p>
 

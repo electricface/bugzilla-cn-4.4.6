@@ -102,7 +102,7 @@
 
     <form id="forgot" method="get" action="token.cgi">
       <input type="hidden" name="a" value="reqpw">
-      如果你有账号，但是忘记密码的话，在下面输入你的账号并按「重置密码」按钮来变更密码。<br>
+      如果你有账号，但是忘记密码的话，在下面输入你的账号并按「重置密码」按钮来修改密码。<br>
       <input size="35" name="loginname">
       <input type="hidden" id="token" name="token" value="[% issue_hash_token(['reqpw']) FILTER html %]">
       <input type="submit" id="request" value="重置密码">

@@ -62,7 +62,7 @@
           </option>
           <option value=[% constants.CONTROLMAPDEFAULT %]
             [% " selected='selected'" IF group.membercontrol == constants.CONTROLMAPDEFAULT %]
-            >预设 (Default)
+            >默认 (Default)
           </option>
           <option value=[% constants.CONTROLMAPMANDATORY %]
             [% " selected='selected'" IF group.membercontrol == constants.CONTROLMAPMANDATORY %]
@@ -82,7 +82,7 @@
           </option>
           <option value=[% constants.CONTROLMAPDEFAULT %]
             [% " selected='selected'" IF group.othercontrol == constants.CONTROLMAPDEFAULT %]
-            >预设 (Default)
+            >默认 (Default)
           </option>
           <option value=[% constants.CONTROLMAPMANDATORY %]
             [% " selected='selected'" IF group.othercontrol == constants.CONTROLMAPMANDATORY %]
@@ -208,11 +208,11 @@
       显示
     </td>
     <td>
-      预设
+      默认
     </td>
     <td>
       任何拥有编辑 [% terms.bug %] 权限的人均可以将此产品中的 [% terms.Bugs %]
-      放至此群组中，即使他们并非此群组的成员。预设非此群组的成员会将
+      放至此群组中，即使他们并非此群组的成员。默认非此群组的成员会将
       [% terms.bugs %] 放至此群组中。
     </td>
   </tr>
@@ -231,38 +231,38 @@
   </tr>
   <tr>
     <td>
-      预设
+      默认
     </td>
     <td>
       不适用
     </td>
     <td>
-      此产品中的 [% terms.Bugs %] 将会限制仅供此群组使用，并预设将 [% terms.bugs %]
+      此产品中的 [% terms.Bugs %] 将会限制仅供此群组使用，并默认将 [% terms.bugs %]
       放至此群组中。此群组的成员才能够将 [% terms.bugs %] 放至群组中。
     </td>
   </tr>
   <tr>
     <td>
-      预设
+      默认
     </td>
     <td>
-      预设
+      默认
     </td>
     <td>
-      此产品中的 [% terms.Bugs %] 将会限制仅供此群组使用，并预设将 [% terms.bugs %]
+      此产品中的 [% terms.Bugs %] 将会限制仅供此群组使用，并默认将 [% terms.bugs %]
       放至此群组中。此群组的成员才能够将 [% terms.bugs %]
-      放至群组中。非此群组的成员可以选择将 [% terms.bugs %] 放至此群组中。预设为放至此群组中。
+      放至群组中。非此群组的成员可以选择将 [% terms.bugs %] 放至此群组中。默认为放至此群组中。
     </td>
   </tr>
   <tr>
     <td>
-      预设
+      默认
     </td>
     <td>
       强制
     </td>
     <td>
-      此产品中的 [% terms.Bugs %] 将会限制仅供此群组使用，并预设将 [% terms.bugs %]
+      此产品中的 [% terms.Bugs %] 将会限制仅供此群组使用，并默认将 [% terms.bugs %]
       放至此群组中。此群组的成员才能够将 [% terms.bugs %]
       放至群组中。非此群组的成员一开始在此产品中报告 [% terms.bug %] 时，会强制将
       [% terms.bugs %] 放至此群组中。
@@ -276,13 +276,13 @@
       强制
     </td>
     <td>
-      此产品中的 [% terms.Bugs %] 被强制限制在此群組中。使用者没得选。
+      此产品中的 [% terms.Bugs %] 被强制限制在此群组中。使用者没得选。
     </td>
   </tr>
 </table>
 <p>
   请注意：上表已经描述<b>成员管控</b>和<b>其他管控</b>字段设置值的所有允许的组合。<br>
-  尝试提交并未列于上表的组合〔例如：强制 (MANDATORY) / 不适用 (NA) 、预设 (DEFAULT) /
+  尝试提交并未列于上表的组合〔例如：强制 (MANDATORY) / 不适用 (NA) 、默认 (DEFAULT) /
   显示 (SHOWN) 等等〕将会产生错误信息。
 </p>
 [% PROCESS global/footer.html.tmpl %]

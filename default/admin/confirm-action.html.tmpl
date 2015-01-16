@@ -20,8 +20,8 @@
 
 [% IF abuser %]
   <div class="throw_error">
-    <p>当你浏览 [% terms.Bugzilla %] 的管理表格時，将会随时产生 token
-    ，并存储在资料库以及浏览器载入的表格中，以确保所做出的变更要求是由
+    <p>当你浏览 [% terms.Bugzilla %] 的管理表格时，将会随时产生 token
+    ，并存储在资料库以及浏览器载入的表格中，以确保所做出的修改要求是由
     [% terms.Bugzilla %] 的表格送出。很遗憾的是，目前使用的 token
     并不正确，代表你可能并非来自正确的页面。
     <br>以下的 token 已被使用：</p>
@@ -54,7 +54,7 @@
       [% END %]
     </table>
 
-    <p>請向 [%+ Param("maintainer") FILTER html %] 报告该问题。</p>
+    <p>请向 [%+ Param("maintainer") FILTER html %] 报告该问题。</p>
   </div>
 [% ELSE %]
   <div class="throw_error">
@@ -63,7 +63,7 @@
     token ）。原因可能是下列其中之一：<br>
     <ul>
       <li>
-        你在成功提交变更后点击了浏览器的「上一页」按钮。这并不是个好方式（不过没有损害）。
+        你在成功提交修改后点击了浏览器的「上一页」按钮。这并不是个好方式（不过没有损害）。
       </li>
       <li>
         你直接在浏览器的网址栏输入网址。这应该是安全的。
@@ -72,15 +72,15 @@
         你点击了一个自动转址的网址，<b>但未经过你的同意</b>，因此这个动作较为严重。
       </li>
     </ul>
-    你确定你仍要做出这些变更吗？这可能导致非预料中或非期望的结果。
+    你确定你仍要做出这些修改吗？这可能导致非预料中或非期望的结果。
   </div>
 
   <form name="check" id="check" method="post" action="[% script_name FILTER html %]">
     [% PROCESS "global/hidden-fields.html.tmpl"
                exclude="^(Bugzilla_login|Bugzilla_password)$" %]
-    <input type="submit" id="confirm" value="确认变更">
+    <input type="submit" id="confirm" value="确认修改">
   </form>
-  <p>或是放弃这些变更，并回到 <a href="[% alternate_script FILTER html %]">
+  <p>或是放弃这些修改，并回到 <a href="[% alternate_script FILTER html %]">
     [%- alternate_script FILTER html %]</a> 。</p>
 [% END %]
 

@@ -26,8 +26,8 @@
   在你尝试对
   [% "$terms.bug $attachment.bug_id" FILTER bug_link(attachment.bug_id) FILTER none %]
   的<a href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">附件 [% attachment.id %]</a>
-  做变更的同时，有其他人已做出变更。<br>
-  已做出的变更为：
+  做修改的同时，有其他人已做出修改。<br>
+  已做出的修改为：
 </p>
 
 <p>
@@ -51,12 +51,12 @@
   <li>
     <form method="post" action="attachment.cgi">
       [% PROCESS "global/hidden-fields.html.tmpl" exclude="^Bugzilla_(login|password)$" %]
-      <input type="submit" id="process" value="仍旧提交我做的变更">
-        这将会覆盖以上的变更。
+      <input type="submit" id="process" value="仍旧提交我做的修改">
+        这将会覆盖以上的修改。
     </form>
   </li>
   <li>
-    删除我做的变更，并<a href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">重新浏览附件
+    删除我做的修改，并<a href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">重新浏览附件
     [% attachment.id %]</a>
   </li>
 </ul>

@@ -69,7 +69,7 @@
     状态是未确认 (UNCONFIRMED) 的 [% terms.Bugs %] ，但已设置 everconfirmed 参数
 
   [% ELSIF san_tag == "bug_check_status_everconfirmed_error_text2" %]
-    状态是已确认的 [% terms.Bugs %] ，但未設定 everconfirmed 参数
+    状态是已确认的 [% terms.Bugs %] ，但未设置 everconfirmed 参数
 
   [% ELSIF san_tag == "bug_check_control_values" %]
     检查 group_control_map 错误的数值中…
@@ -193,7 +193,7 @@
   [% ELSIF san_tag == "group_control_map_entries_generation" %]
     在产品 <em>[% product_name FILTER html %]</em> 中
     对群组 <em>[% group_name FILTER html %]</em>
-    产生群组管控 <code>顯示 (SHOWN) / 不适用 (NA)</code>。
+    产生群组管控 <code>显示 (SHOWN) / 不适用 (NA)</code>。
 
   [% ELSIF san_tag == "keyword_check_invalid_id" %]
     在关键字表格中找到伪造关键字编号 [% id FILTER html %] 。
@@ -231,7 +231,7 @@
     检查未寄出的邮件…
 
   [% ELSIF san_tag == "unsent_bugmail_alert" %]
-    已做出变更，但超过半小时没有寄信通知的 [% terms.Bugs %] ：
+    已做出修改，但超过半小时没有寄信通知的 [% terms.Bugs %] ：
     [% INCLUDE bug_list badbugs = badbugs %]
 
   [% ELSIF san_tag == "unsent_bugmail_fix" %]
@@ -239,7 +239,7 @@
        [%- issue_hash_token(['sanitycheck']) FILTER uri %]">寄出这些邮件</a>。
 
   [% ELSIF san_tag == "whines_obsolete_target_deletion_start" %]
-    移除訂閱中不存在的使用者／群組中。
+    移除訂閱中不存在的使用者／群组中。
 
   [% ELSIF san_tag == "whines_obsolete_target_deletion_end" %]
     已自订阅中移除不存在的使用者／群组。

@@ -57,7 +57,7 @@
         </dt>
         <dd class="confirmed">
           这个 [% terms.bug %] 是最近才新增且被确认的 [% terms.bug %] 。
-          当有人开始处理在这个状态的 [%+ terms.bugs %] 时，状态变更为
+          当有人开始处理在这个状态的 [%+ terms.bugs %] 时，状态修改为
           <b>[% display_value("bug_status", "IN_PROGRESS") FILTER html %]</b>
           ；或是将它解决，并标记为
           <b>[% display_value("bug_status", "RESOLVED") FILTER html %]</b> 。
@@ -68,7 +68,7 @@
         </dt>
         <dd class="in_progress">
           这个 [% terms.bug %] 还没解決，但已分配给适当的人负责。在这个状态下，
-          [% terms.bugs %] 可以丟给其他人处理，并会自动将状态变更为
+          [% terms.bugs %] 可以丟给其他人处理，并会自动将状态修改为
           <b>[% display_value("bug_status", "CONFIRMED") FILTER html %]</b>
           ；或是将它解决，并标记为
           <b>[% display_value("bug_status", "RESOLVED") FILTER html %]</b> 。

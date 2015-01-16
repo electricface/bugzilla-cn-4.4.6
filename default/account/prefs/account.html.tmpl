@@ -17,7 +17,7 @@
         || (user.authorizer.can_change_email && Param('allowemailchange')) %]
     <tr>
       <td colspan="3">
-        请输入你的密码以确认账号设置的变更。
+        请输入你的密码以确认账号设置的修改。
       </td>
     </tr>
     <tr>
@@ -62,7 +62,7 @@
           <td>[% new_login_name FILTER html %]</td>
         </tr>
         <tr>
-          <th align="right">变更的要求将在此期间过期：</th>
+          <th align="right">修改的要求将在此期间过期：</th>
           <td>[% login_change_date FILTER time %]</td>
         </tr>
       [% ELSE %]

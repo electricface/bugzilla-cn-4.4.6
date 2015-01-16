@@ -372,7 +372,7 @@ TUI_hide_default('attachment_text_field');
          emptyok => 1
          custom_userlist => assignees_list
        %]
-      <noscript>（如不填，则会设置为该模块的预设负责人）</noscript>
+      <noscript>（如不填，则会设置为该模块的默认负责人）</noscript>
     </td>
   </tr>
 
@@ -391,7 +391,7 @@ TUI_hide_default('attachment_text_field');
          emptyok => 1
          custom_userlist => qa_contacts_list
        %]
-        <noscript>（如不填，则会设置为预设的QA联络人）</noscript>
+        <noscript>（如不填，则会设置为默认的QA联络人）</noscript>
       </td>
     </tr>
 [% END %]
@@ -413,7 +413,7 @@ TUI_hide_default('attachment_text_field');
   </tr>
 
   <tr>
-    <th>预设[% field_descs.cc FILTER html %]：</th>
+    <th>默认[% field_descs.cc FILTER html %]：</th>
     <td colspan="2">
       <div id="initial_cc">
       </div>

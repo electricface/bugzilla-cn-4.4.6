@@ -63,7 +63,7 @@
     [% field_descs.longdesc FILTER html %]或[% field_descs.keywords FILTER html %]字段例外&mdash;
     那些字段只会搜索完全符合的字。</li>
 
-  <li>预设只会搜索<strong>开启的</strong> [% terms.bugs %] 。
+  <li>默认只会搜索<strong>开启的</strong> [% terms.bugs %] 。
     如果你想知道如何搜索关闭的 [% terms.bugs %] ，
     请参考<a href="#shortcuts">高级快速键</a>一段。</li>
 
@@ -81,7 +81,7 @@
 
 <ul class="qs_help">
   <li>所有状态为开启 (OPEN) 的 [% terms.bugs %] 中， userA@company.com
-    在邮件抄送副本中的 [% terms.bugs %] （不需要输入「开启」这个状态字串，这是预设值）：<br>
+    在邮件抄送副本中的 [% terms.bugs %] （不需要输入「开启」这个状态字串，这是默认值）：<br>
     <kbd>cc:userA@company.com</kbd></li>
   <li>所有在产品「productA」中，状态为未确认 (UNCONFIRMED) 的 [% terms.bugs %]
     （将 [% terms.bug %] 的状态放在第一个字的话，就会自动视为 [% terms.bug %]
@@ -160,7 +160,7 @@
     <strong>OR</strong> 。
 
     你也可以用 <kbd>-</kbd> 代表 "NOT"，以及 <kbd>|</kbd> 代表 "OR" 。
-    "AND" 并没有特殊字符，因为预设任何以空白分隔的字都会以 "AND" 进行搜艘。
+    "AND" 并没有特殊字符，因为默认任何以空白分隔的字都会以 "AND" 进行搜索。
     范例：
     <ul>
       <li>

@@ -39,7 +39,7 @@
 
   <input type="checkbox" id="insertnew" name="insertnew" value="1"
     [% IF Param("makeproductgroups") %] checked[% END %]>
-  <label for="insertnew">将新的群組插入所有已存在的产品中。</label>
+  <label for="insertnew">将新的群组插入所有已存在的产品中。</label>
   <p>
   <input type="submit" id="create" value="新增">
   <input type="hidden" name="action" value="new">
@@ -80,7 +80,7 @@
 
 [% IF Param("makeproductgroups") %]
   <p>
-    预设值把新的群组和现有的产品全数作出关联。<br>
+    默认值把新的群组和现有的产品全数作出关联。<br>
     若不勾选「将新的群组插入所有已存在的产品中」选项，则只有在该群组的权限被加入一项产品时，才会对该群组产生关联。
   </p>
 [% ELSE %]

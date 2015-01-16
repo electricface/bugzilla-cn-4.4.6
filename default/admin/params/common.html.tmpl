@@ -26,7 +26,7 @@
       [% ELSIF param.type == "b" %]
         <input type="radio" name="[% param.name FILTER html %]" id="[% param.name FILTER html %]-on"
                value=1 [% "checked=\"checked\"" IF Param(param.name) %]>
-        <label for="[% param.name FILTER html %]-on">開</label>
+        <label for="[% param.name FILTER html %]-on">开</label>
         <input type="radio" name="[% param.name FILTER html %]" id="[% param.name FILTER html %]-off"
                value=0 [% "checked=\"checked\"" IF !Param(param.name) %]>
         <label for="[% param.name FILTER html %]-off">關</label>

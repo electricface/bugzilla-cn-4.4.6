@@ -8,12 +8,12 @@
 
 From: [% Param('mailfrom') %]
 To: [% emailaddress %]
-Subject: [% terms.Bugzilla %] 要求变更电子邮件地址
+Subject: [% terms.Bugzilla %] 要求修改电子邮件地址
 X-Bugzilla-Type: admin
 
-[%+ terms.Bugzilla %] 收到将使用 [% oldemailaddress %] 注册的账号变更为使用该电子邮件地址注册的请求。
+[%+ terms.Bugzilla %] 收到将使用 [% oldemailaddress %] 注册的账号修改为使用该电子邮件地址注册的请求。
 
-如要确认变更，请点击以下网址：
+如要确认修改，请点击以下网址：
 
 [%+ urlbase %]token.cgi?t=[% token FILTER uri %]&a=cfmem
 

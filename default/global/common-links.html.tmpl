@@ -50,7 +50,7 @@
   [%-# Work around FF bug: keep this on one line %]</li>
 
   [% IF user.login %]
-    <li><span class="separator">| </span><a href="userprefs.cgi">偏好設定</a></li>
+    <li><span class="separator">| </span><a href="userprefs.cgi">偏好设置</a></li>
     [% IF user.in_group('tweakparams') || user.in_group('editusers') || user.can_bless
           || (Param('useclassification') && user.in_group('editclassifications'))
           || user.in_group('editcomponents') || user.in_group('admin') || user.in_group('creategroups')

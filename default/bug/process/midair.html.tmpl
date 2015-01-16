@@ -32,8 +32,8 @@
 <p>
   在你尝试对
   [%+ "$terms.bug $bug.id" FILTER bug_link(bug) FILTER none %]
-  做变更的同时，有其他人已做出变更。
-  已作出的变更为：
+  做修改的同时，有其他人已做出修改。
+  已作出的修改为：
 </p>
 
 <p>
@@ -69,8 +69,8 @@
              value="[% bug.delta_ts FILTER html %]">
       [% PROCESS "global/hidden-fields.html.tmpl"
           exclude="^Bugzilla_login|Bugzilla_password|delta_ts$" %]
-      <input type="submit" id="process" value="仍舊送出我做的變更">
-        [% "除了已加入的留言之外，" IF comments.size > start_at %]这将会覆盖以上的变更。
+      <input type="submit" id="process" value="仍舊送出我做的修改">
+        [% "除了已加入的留言之外，" IF comments.size > start_at %]这将会覆盖以上的修改。
     </form>
   </li>
       [% IF cgi.param("comment") %]
@@ -88,7 +88,7 @@
     </li>
   [% END %]
   <li>
-    删除我做的变更，并[% "重新浏览 $terms.bug $bug.id 。" FILTER bug_link(bug) FILTER none %]
+    删除我做的修改，并[% "重新浏览 $terms.bug $bug.id 。" FILTER bug_link(bug) FILTER none %]
   </li>
 </ul>
 

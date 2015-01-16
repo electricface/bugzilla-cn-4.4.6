@@ -35,7 +35,7 @@
 <p>
   <a href="#explanation">这份资料是什么？</a>
   <br>
-  <a href="#params">变更参数</a>
+  <a href="#params">修改参数</a>
 </p>
 
 [% PROCESS "reports/duplicates-table.html.tmpl" %]
@@ -44,7 +44,7 @@
 
 [% bug_ids_string = bug_ids.join(',') %]
 
-<h3 id="params">变更参数</h3>
+<h3 id="params">修改参数</h3>
 
 <form method="get" action="duplicates.cgi">
   <input type="hidden" name="sortby" value="[% sortby FILTER html %]">
@@ -88,7 +88,7 @@
 
     <tr>
       <td>
-        <label for="changedsince">字段在最近几天变更：</label>
+        <label for="changedsince">字段在最近几天修改：</label>
       </td>
       <td>
         <input size="4" name="changedsince" id="changedsince"
@@ -110,7 +110,7 @@
 
   </table>
 
-  <input type="submit" id="change" value="变更">
+  <input type="submit" id="change" value="修改">
 </form>
 
 <form method="post" action="buglist.cgi">

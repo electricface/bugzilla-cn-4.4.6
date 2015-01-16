@@ -72,10 +72,10 @@
 
   [% ELSIF error == "column_not_null_without_default" %]
     新增字段 [% name FILTER html %] 失败：
-    <br>除非你在参数 <code>$init_value</code> 中做设置，否则你不能在现有的表格中加入没有预设值的 NOT NULL 字段。
+    <br>除非你在参数 <code>$init_value</code> 中做设置，否则你不能在现有的表格中加入没有默认值的 NOT NULL 字段。
 
   [% ELSIF error == "column_not_null_no_default_alter" %]
-    由于 [% name FILTER html %] 字段內含有 NULL 值，因此你不能在不指定预设值或指定一个值给
+    由于 [% name FILTER html %] 字段內含有 NULL 值，因此你不能在不指定默认值或指定一个值给
     $set_nulls_to 的前提下，将 [% name FILTER html %] 字段设为 NOT NULL 值。
 
   [% ELSIF error == "comment_extra_data_not_allowed" %]
@@ -136,7 +136,7 @@
 
   [% ELSIF error == "extern_id_conflict" %]
     在数据库中， '[% username FILTER html %]' 对应到外部编号
-    '[% extern_id FILTER html %]' ，但是你的账号來源说 '[% extern_user FILTER html %]' 拥有该外部编号。
+    '[% extern_id FILTER html %]' ，但是你的账号来源说 '[% extern_user FILTER html %]' 拥有该外部编号。
 
   [% ELSIF error == "field_choice_must_use_type" %]
     当你在 <code>Bugzilla::Field::Choice</code> 调用一个 class method
@@ -175,7 +175,7 @@
     [% title = "无效的功能名称" %]
     [% feature FILTER html %] 并非有效的功能名称。请参考
     <code>Bugzilla::Install::Requirements</code> 的
-    <code>OPTIONAL_MODULES</code> 來寻找有效的名称。
+    <code>OPTIONAL_MODULES</code> 来寻找有效的名称。
 
   [% ELSIF error == "invalid_flag_association" %]
     [% title = "无效的旗标关联" %]
@@ -212,7 +212,7 @@
 
   [% ELSIF error == "jobqueue_no_job_mapping" %]
     <code>Bugzilla::JobQueue</code> 并未被指派来处理
-    "[% job FILTER html %]" 。你必須在
+    "[% job FILTER html %]" 。你必须在
     <code>Bugzilla::JobQueue</code> 里把此种 job 类别加入 <code>JOB_MAP</code> 此常数中，
     也许会需要用到 'job_map' 这个 hook 。
 
@@ -252,10 +252,10 @@
 
   [% ELSIF error == "must_be_patch" %]
     [% title = "附件必须是 patch" %]
-    附件 #[% attach_id FILTER html %] 必须是一個 patch 。
+    附件 #[% attach_id FILTER html %] 必须是一个 patch 。
 
   [% ELSIF error == "not_in_transaction" %]
-    未开始变更就尝试结束。
+    未开始修改就尝试结束。
 
   [% ELSIF error == "object_dep_sort_loop" %]
     '[% field FILTER html %] 字段在 VALIDATOR_DEPENDENCIES
@@ -314,7 +314,7 @@
     '[% joiner FILTER html %]' 对搜索而言不是有效的 joiner 。
 
   [% ELSIF error == "setting_info_invalid" %]
-    要新增设置，你必须输入设置名称、合适的数值／排序键，以及预设值。
+    要新增设置，你必须输入设置名称、合适的数值／排序键，以及默认值。
 
   [% ELSIF error == "setting_name_invalid" %]
     设置名称 <em>[% name FILTER html %]</em> 并非有效的选项。

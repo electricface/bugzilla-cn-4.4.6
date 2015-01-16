@@ -6,7 +6,7 @@
   # defined by the Mozilla Public License, v. 2.0.
   #%]
 
-[% dontchange = "--不要变更--" %]
+[% dontchange = "--不要修改--" %]
 <input type="hidden" name="dontchange" value="[% dontchange FILTER html %]">
 <input type="hidden" name="token" value="[% token FILTER html %]">
 
@@ -29,10 +29,10 @@
 <hr>
 
 <p style="font-size:smaller">
- 一次变更多个 [% terms.bugs %] ：</p>
+ 一次修改多个 [% terms.bugs %] ：</p>
 <ol style="font-size:smaller">
-  <li>在上方勾选你想变更的 [% terms.bugs %] 。</li>
-  <li>在下方的栏位做出适当的变更。如果你需要解释的话，请在留言栏留下解释。</li>
+  <li>在上方勾选你想修改的 [% terms.bugs %] 。</li>
+  <li>在下方的栏位做出适当的修改。如果你需要解释的话，请在留言栏留下解释。</li>
   <li>点击em>发送</em>鈕。</li>
 </ol>
 
@@ -164,7 +164,7 @@
            size => 40
       %]
       <input type="checkbox" id="set_default_assignee" name="set_default_assignee" value="1">
-      <label for="set_default_assignee">将产品负责人设回预设值</label>
+      <label for="set_default_assignee">将产品负责人设回默认值</label>
     </td>
   </tr>
 
@@ -179,7 +179,7 @@
              size => 40
         %]
         <input type="checkbox" id="set_default_qa_contact" name="set_default_qa_contact" value="1">
-        <label for="set_default_qa_contact">将 QA 联络人设回预设值</label>
+        <label for="set_default_qa_contact">将 QA 联络人设回默认值</label>
       </td>
     </tr>
   [% END %]
@@ -324,9 +324,9 @@
   <b>群组：</b><br>
   <table border="1">
     <tr>
-      <th>将<br>[% terms.bugs %]自<br>此群組<br>刪除</th>
-      <th>新增<br>[% terms.bugs %]<br>到<br>此群組</th>
-      <th>群組名称：</th>
+      <th>将<br>[% terms.bugs %]自<br>此群组<br>刪除</th>
+      <th>新增<br>[% terms.bugs %]<br>到<br>此群组</th>
+      <th>群组名称：</th>
     </tr>
 
     [% FOREACH group = groups %]
@@ -361,7 +361,7 @@
 
   [% IF foundinactive %]
     <p style="font-size:smaller">（注意：不允许将 [% terms.Bugs %]
-    新增到[% FILTER inactive %]已不活动的群組[% END %]中，仅能刪除。）</p>
+    新增到[% FILTER inactive %]已不活动的群组[% END %]中，仅能刪除。）</p>
   [% END %]
 
 [% END %]

@@ -38,8 +38,8 @@ END
     checking_dbd => '检查可用的 perl DBD 模块...',
     checking_optional => '下列 perl 模块是可选的：',
     checking_modules => '检查 perl 模块中...',
-    chmod_failed => '##path##: 变更权限失败： ##error##',
-    chown_failed => '##path##: 变更拥有者失败： ##error##',
+    chmod_failed => '##path##: 修改权限失败： ##error##',
+    chown_failed => '##path##: 修改拥有者失败： ##error##',
     commands_dbd => <<EOT,
 你必须执行以下命令之一（视你使用的资料库而定）：
 EOT
@@ -157,7 +157,7 @@ checksetup.pl 是否应当尝试检查你的数据库设置是否正确？
 因此你可以尝试设置此参数为 0 ，让 checksetup.pl 可以执行。
 END
     localconfig_db_driver => <<'END',
-使用哪一种 SQL 数据库。预设值是 mysql 。
+使用哪一种 SQL 数据库。默认值是 mysql 。
 支持的数据库列表可以通过列出 Bugzilla/DB 目录维护 －－
 每个模块都对应到一种支持的数据库，而模块的文件名（在 ".pm" 之前）
 都对应到此参数的一个有效的值。
@@ -177,11 +177,11 @@ END
 END
     localconfig_db_port => <<'END',
 有时数据库服务器会使用非标准的 port 。如果有这种情況的话，在此参数指定该
-port 的数字。设置为 0 代表「使用预设的 port 」。
+port 的数字。设置为 0 代表「使用默认的 port 」。
 END
     localconfig_db_sock => <<'END',
 MySQL 才需要输入的：输入 unix socket for MySQL 的路径。
-如不输入，那么会使用 MySQL 的预设值。大概会是你要的。
+如不输入，那么会使用 MySQL 的默认值。大概会是你要的。
 END
     localconfig_db_user => "用来连接数据库的使用者",
     localconfig_diffpath => <<'END',
@@ -194,7 +194,7 @@ END
 以避免重导向到 index.cgi 。设置 $index_html 为 1 时，
 checksetup.pl 会在 index.html 不存在时，替你建立一个。
 注意： checksetup.pl 不会取代已存在的文件，所以如果你希望
-       checksetup.pl 替你建立 index.html 時，你必须先确认
+       checksetup.pl 替你建立 index.html 时，你必须先确认
        index.html 文件不存在。
 END
     localconfig_interdiffbin => <<'END',
@@ -204,7 +204,7 @@ END
     localconfig_site_wide_secret => <<'END',
 此密钥用来建立及验证加密的 token 。这些 token 用在 Bugzilla 的
 一些安全性相关的功能中，以保护 Bugzilla 避免特定的攻击。
-预设是一组乱数字串。把这组密钥保管好是很重要的。
+默认是一组乱数字串。把这组密钥保管好是很重要的。
 此字串也必须要很长。
 END
     localconfig_use_suexec => <<'END',
@@ -254,7 +254,7 @@ EOT
 ***********************************************************************
 * APACHE 模块                                                         *
 ***********************************************************************
-* 一般来说，当 Bugzilla 升级時，所有 Bugzilla 使用者必须清除他们浏    *
+* 一般来说，当 Bugzilla 升级时，所有 Bugzilla 使用者必须清除他们浏    *
 * 览器中的缓存，否则Bugzilla会发生故障。如果你在 Apache 设置中启用特  *
 * 定的模块（通常叫 httpd.conf 或 apache2.conf ）的话，当你升级        *
 * Bugzilla 的时候， Bugzilla 的使用者就不需要清除浏览器中的缓存。     *

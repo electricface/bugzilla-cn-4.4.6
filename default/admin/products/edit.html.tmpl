@@ -25,7 +25,7 @@
 
 [% group_control = {${constants.CONTROLMAPNA}        => '不适用',
                     ${constants.CONTROLMAPSHOWN}     => '显示',
-                    ${constants.CONTROLMAPDEFAULT}   => '预设',
+                    ${constants.CONTROLMAPDEFAULT}   => '默认',
                     ${constants.CONTROLMAPMANDATORY} => '强制'}
 %]
 
@@ -130,7 +130,7 @@
         value="[% product.name FILTER html %]">
   <input type="hidden" name="action" value="update">
   <input type="hidden" name="token" value="[% token FILTER html %]">
-  <input type="submit" id="update-product" value="存储变更">
+  <input type="submit" id="update-product" value="存储修改">
 </form>
 
 [% PROCESS "admin/products/footer.html.tmpl"

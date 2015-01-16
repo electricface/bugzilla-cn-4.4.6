@@ -388,7 +388,7 @@
             %]
             <br>
             <input type="checkbox" id="set_default_assignee" name="set_default_assignee" value="1">
-            <label id="set_default_assignee_label" for="set_default_assignee">将负责人设回预设值</label>
+            <label id="set_default_assignee_label" for="set_default_assignee">将负责人设回默认值</label>
           </div>
           <script type="text/javascript">
            hideEditableField('bz_assignee_edit_container',
@@ -440,7 +440,7 @@
             %]
             <br>
             <input type="checkbox" id="set_default_qa_contact" name="set_default_qa_contact" value="1">
-            <label for="set_default_qa_contact">将 QA 联络人设回预设值</label>
+            <label for="set_default_qa_contact">将 QA 联络人设回默认值</label>
           </div>
           <script type="text/javascript">
             hideEditableField('bz_qa_contact_edit_container',
@@ -652,7 +652,7 @@
 
     [% IF inagroup %]
       <div id="bz_enable_role_visibility_help">
-        <b>只有群组的成员可以变更属于该群组的
+        <b>只有群组的成员可以修改属于该群组的
           [%+ terms.bug %] 的可见性：</b>
       </div>
       <div id="bz_enable_role_visibility">
@@ -711,7 +711,7 @@
 
   <tr>
     <th class="field_label">
-      变更于：
+      修改于：
     </th>
     <td>
       [% bug.delta_ts FILTER time FILTER replace(':\d\d$', '') FILTER replace(':\d\d ', ' ')%]
@@ -1089,7 +1089,7 @@
               你需要
               <a href="show_bug.cgi?id=
                       [%- bug.bug_id %]&amp;GoAheadAndLogIn=1">登入</a>
-              才能够发表留言，或对此 [% terms.bug %] 做变更。
+              才能够发表留言，或对此 [% terms.bug %] 做修改。
             </fieldset>
           </td>
         </tr>
@@ -1158,7 +1158,7 @@
 [% BLOCK commit_button %]
   [% IF user.id %]
     <div class="knob-buttons">
-      <input type="submit" value="保存变更"
+      <input type="submit" value="保存修改"
              id="commit[% id FILTER css_class_quote %]">
     </div>
   [% END %]

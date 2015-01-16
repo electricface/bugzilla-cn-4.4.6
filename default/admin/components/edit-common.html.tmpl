@@ -33,7 +33,7 @@
   </td>
 </tr>
 <tr>
-  <th class="field_label"><label for="initialowner">预设负责人：</label></th>
+  <th class="field_label"><label for="initialowner">默认负责人：</label></th>
   <td>
     [% INCLUDE global/userselect.html.tmpl
        name => "initialowner"
@@ -45,7 +45,7 @@
 </tr>
 [% IF Param('useqacontact') %]
   <tr>
-    <th class="field_label"><label for="initialqacontact">预设 QA 联络人：</label></th>
+    <th class="field_label"><label for="initialqacontact">默认 QA 联络人：</label></th>
     <td>
       [% INCLUDE global/userselect.html.tmpl
          name => "initialqacontact"
@@ -58,7 +58,7 @@
   </tr>
 [% END %]
 <tr>
-  <th class="field_label"><label for="initialcc">预设邮件抄送清单：</label></th>
+  <th class="field_label"><label for="initialcc">默认邮件抄送清单：</label></th>
   <td>
     [% INCLUDE global/userselect.html.tmpl
        name     => "initialcc"
