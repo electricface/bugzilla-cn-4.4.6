@@ -34,7 +34,7 @@
 [% IF user.authorizer.can_change_email && Param('allowemailchange') %]
   <p>
     如果你想要修改 [% terms.Bugzilla %] 发送通知信的电子邮件
-    <b>[% user.email FILTER html %]</b> ，点击上面的「账号信息」标签。
+    <b>[% user.email FILTER html %]</b> ，点击上面的「账号设置」标签。
   </p>
 [% END %]
 
