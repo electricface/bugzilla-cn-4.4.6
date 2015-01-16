@@ -31,38 +31,38 @@
 
 [% error_message = BLOCK %]
   [% IF    error == "account_creation_disabled" %]
-    [% title = "不允许创建账号" %]
-    不允许创建账号
+    [% title = "不允许新建账号" %]
+    不允许新建账号
     <hr>
     只能由管理员 ([% Param("maintainer") %]) 创建新帐号。
 
   [% ELSIF error == "account_creation_restricted" %]
-    [% title = "帳號建立已被限制" %]
-    建立使用者帳號的行為已被限制。
+    [% title = "新建账号被限制" %]
+    新建账号的行为被限制。
     <hr>
-    要建立帳號，請洽管理者 ([% Param("maintainer") %]) 。
+    想要新建账号，请联系管理者([% Param("maintainer") %]) 。
 
   [% ELSIF error == "account_disabled" %]
-    [% title = "帳號已被停權" %]
+    [% title = "账号被禁用" %]
     [% disabled_reason FILTER none %]
     <hr>
-    如果你認為你不應被停權，請寄信給 [% Param("maintainer") %] 並解釋原因。
+    如果觉得你的账号不应该被禁用，请向[% Param("maintainer") %] 发送邮件并解释原因。
 
   [% ELSIF error == "account_exists" %]
-    [% title = "帳號已存在" %]
-    帳號名稱[% IF email %] [% email FILTER html %] [% END %]已存在。
+    [% title = "账号已存在" %]
+    账号[% IF email %] [% email FILTER html %] [% END %]已存在。
 
   [% ELSIF error == "account_locked" %]
-    [% title = "帳號已鎖住" %]
-    因為你已超過嘗試登入的次數，
-    你的 IP ([% ip_addr FILTER html %]) 在
-    [% unlock_at FILTER time %] 前已不被允許登入此帳號。
+    [% title = "账号被锁定" %]
+    因为你已经超过尝试登录的次数，
+    您的IP ([% ip_addr FILTER html %]) 在
+    [% unlock_at FILTER time %] 前不允许登录此账号。
 
   [% ELSIF error == "alias_has_comma_or_space" %]
-    [% title = "別名中有無效的字元" %]
-    你所輸入的別名 <em>[% alias FILTER html %]</em>
-    內包含了至少一個逗號 (,) 或空白。由於逗號及空白是用來分隔在清單中的每一個別名，
-    因此無法在別名中使用它們。請選擇不包含逗號和空白的別名。
+    [% title = "别名中包含无效字符" %]
+    您输入的别名 <em>[% alias FILTER html %]</em>
+    包含了至少一个逗号(,) 或空白。由于逗号和空白是用來分隔在清单中的每一个別名，
+    因此不能在別名中使用它们。请选择不包含逗号和空白的別名。
 
   [% ELSIF error == "alias_in_use" %]
     [% title = "別名使用中" %]
@@ -72,34 +72,34 @@
       另一個 [% terms.bug %]
     [% END %]
     已使用別名 <em>[% alias FILTER html %]</em> 。
-    請選擇其他的別名。
+    请选择其他的别名。
 
   [% ELSIF error == "alias_is_numeric" %]
-    [% title = "別名不能全為數字" %]
-    你試著替 [% terms.bug %] 取這個別名 <em>[% alias FILTER html %]</em> ，
-    但是別名不能全為數字，以免和
-    [% terms.bug %] 編號搞混。請選擇至少有一個英文字母的別名。
+    [% title = "別名不能全为数字" %]
+    你尝试给此[% terms.bug %]取这个别名<em>[% alias FILTER html %]</em> ，
+    但是別名不能全为数字，以免和
+    [% terms.bug %]编号搞混。请选择至少有一个英文字母的別名。
 
   [% ELSIF error == "alias_too_long" %]
-    [% title = "別名太長" %]
-    [% terms.Bug %]別名不能超過 20 字元。
-    請選擇較短的別名。
+    [% title = "別名太长" %]
+    [% terms.Bug %]別名不能超过 20 个字符。
+    请选择更短的別名。
 
   [% ELSIF error == "attachment_bug_id_mismatch" %]
-    [% title = "無效的附件" %]
-    你嘗試對不同 [% terms.bugs %] 的附件執行一項動作。
-    此動作必須在所有附件來自同一個 [% terms.bug %] 的條件下才能執行。
+    [% title = "无效的附件" %]
+    你尝试对不同[% terms.bugs %]的附件执行一项动作。
+    此动作必须在所有附件来自同一个[% terms.bug %]的条件下才能執行。
 
   [% ELSIF error == "auth_cant_create_account" %]
-    [% title = "無法建立帳號" %]
-    如要建立帳號，請洽管理者。
+    [% title = "无法新建账号" %]
+    如要新建账号，请联系管理员。
 
   [% ELSIF error == "auth_failure" %]
-    [% title = "需要授權" %]
-    [% admindocslinks = {'groups.html' => '群組安全性'} %]
+    [% title = "需要授权" %]
+    [% admindocslinks = {'groups.html' => '群组安全性'} %]
     很抱歉，
     [% IF group %]
-      你並非 '[% group FILTER html %]' 群組的成員，
+      你并非'[% group FILTER html %]'群组的成员，
     [% END %]
 
     [% IF reason %]
@@ -1577,7 +1577,7 @@
     需要輸入你的 [% terms.Bugzilla %] 密碼，來執行 sudo 。請<a
     href="relogin.cgi?action=prepare-sudo&amp;target_login=
     [%- target_login FILTER uri %]&amp;reason=
-    [%- reason FILTER uri %]">回到上一頁</a>並輸入密碼。
+    [%- reason FILTER uri %]">回到上一页</a>並輸入密碼。
 
   [% ELSIF error == "sudo_preparation_required" %]
     [% title = "需要正常流程" %]
@@ -1763,7 +1763,7 @@
 </table>
 
 <p>
-  請按<b>上一頁</b>再試一次。
+  請按<b>上一页</b>再試一次。
 </p>
 
 [%# If a saved search fails, people want the ability to edit or delete it.
