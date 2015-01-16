@@ -110,7 +110,7 @@ TUI_hide_default('information_query');
   <a href="javascript:TUI_toggle_class('information_query')">
     [% terms.Bug %] 的详细信息
   </a>
-  <span class="section_help">以下列字段限制查询結果：
+  <span class="section_help">以下列字段限制搜索結果：
     [%+ field_descs.longdesc FILTER html %] 、 [%+ field_descs.bug_file_loc FILTER html %] 、
     [% IF Param('usestatuswhiteboard') %] [%+ field_descs.status_whiteboard FILTER html %] 、 [%+ END %]
     [% IF use_keywords %] [%+ field_descs.keywords FILTER html %] 、 [%+ END %]
@@ -165,7 +165,7 @@ TUI_hide_default('information_query');
   [% END %]
 
   <div class="search_field_row">
-    查询结果中应该
+    搜索结果中应该
     <select name="bug_id_type" id="bug_id_type">
       <option value="anyexact"[% " selected" IF default.bug_id_type.0 == "anyexact" %]>只包括</option>
       <option value="nowords"[% " selected" IF default.bug_id_type.0 == "nowords" %]>不包括</option>
@@ -223,7 +223,7 @@ TUI_hide_default('information_query');
 [%# *** Email Numbering *** %]
   <div class="bz_section_title" id="people_filter">
     <div id="people_query_controller" class="arrow">&#9660;</div>
-    <a href="javascript:TUI_toggle_class('people_query')">以人为条件查询</a>
+    <a href="javascript:TUI_toggle_class('people_query')">以人为条件搜索</a>
     <span>将结果限制在一个人在一个 [% terms.bug %] 上的角色（例如 [% field_descs.assigned_to FILTER html %] 、
       [%+ field_descs.reporter FILTER html %] 、 [% field_descs.commenter FILTER html %]  ）。
     </span>
@@ -276,7 +276,7 @@ TUI_hide_default('information_query');
 [%# *** Bug Changes *** %]
 <div class="bz_section_title" id="history_filter">
   <div id="history_query_controller" class="arrow">&#9660;</div>
-  <a href="javascript:TUI_toggle_class('history_query')" >以变更履历为条件查询</a>
+  <a href="javascript:TUI_toggle_class('history_query')" >以变更履历为条件搜索</a>
   <span>将结果限制在一段特定时间中字段如何变更</span>
 </div>
 <ul class="bug_changes bz_search_section history_query" id="history_filter_section" >

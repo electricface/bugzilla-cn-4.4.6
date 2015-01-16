@@ -7,14 +7,14 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "简单查询"
+  title = "简单搜索"
   style_urls = [ "skins/standard/search_form.css" ]
 %]
 
 [% WRAPPER search/tabs.html.tmpl %]
 
 <p>
-输入字符串来查询一个特定的 [% terms.bug %] 。 [% terms.Bugzilla %] 将会以那些字符串来查询 [% terms.bug %]
+输入字符串来搜索一个特定的 [% terms.bug %] 。 [% terms.Bugzilla %] 将会以那些字符串来搜索 [% terms.bug %]
 的描述和留言，并以相关度的高低列出符合的 [% terms.bugs %] 。
 </p>
 
@@ -101,11 +101,11 @@
     <td>
 
       [% IF Param('search_allow_no_criteria') %]
-        <input type="submit" id="search" value="查询">
+        <input type="submit" id="search" value="搜索">
       [% ELSE %]
-        <input type="submit" id="search" value="查询"
+        <input type="submit" id="search" value="搜索"
              onclick="if (this.form.content.value == '')
-                      {alert('「字符串」字段不得为空白。你必须至少在查询栏内输入一个字。');
+                      {alert('「字符串」字段不得为空白。你必须至少在搜索栏内输入一个字。');
                        return false;} return true;">
       [% END %]
     </td>

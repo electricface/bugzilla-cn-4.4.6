@@ -108,10 +108,10 @@
   'nowordssubstr', 'notmatches',
 ] %]
 <a id="search_description_controller" class="bz_default_hidden"
-   href="javascript:TUI_toggle_class('search_description')">隐藏查询描述</a>
+   href="javascript:TUI_toggle_class('search_description')">隐藏搜索描述</a>
 [%# Show the link if the browser supports JS %]
 <script type="text/javascript">
-  TUI_alternates['search_description'] = '显示查询描述';
+  TUI_alternates['search_description'] = '显示搜索描述';
   YAHOO.util.Dom.removeClass('search_description_controller',
                              'bz_default_hidden');
 </script>
@@ -169,8 +169,8 @@
     [% IF one_product.defined %]
       <li><a href="enter_bug.cgi">在不同的产品中提交一个新的 [% terms.bug %]</a></li>
     [% END %]
-    <li><a href="[% PROCESS edit_search_url %]">修改查询条件</a></li>
-    <li><a href="query.cgi">开始新的查询</a></li>
+    <li><a href="[% PROCESS edit_search_url %]">修改搜索条件</a></li>
+    <li><a href="query.cgi">开始新的搜索</a></li>
   </ul>
 [% END %]
 
@@ -216,11 +216,11 @@
           </form>
           [% IF time_summary_limited %]
             <small>
-              时间统计将只会包含上面所显示的 [% terms.bugs %] 。如要显示查询结果中所有
+              时间统计将只会包含上面所显示的 [% terms.bugs %] 。如要显示搜索结果中所有
               [% terms.bugs%] 的时间统计，你可以
               <a href="buglist.cgi?[% urlquerypart FILTER html %]
                        [%- "&order=$qorder" FILTER html IF order %]&limit=0">
-                显示所有查询结果</a>。</small>
+                显示所有搜索结果</a>。</small>
           [% END %]
         [% END %]
       </td>
@@ -257,7 +257,7 @@
     [% END %]
 
     <td valign="middle" class="bz_query_edit">
-      <a href="[% PROCESS edit_search_url %]">修改查询条件</a>
+      <a href="[% PROCESS edit_search_url %]">修改搜索条件</a>
     </td>
 
     [% IF searchtype == "saved" %]
@@ -266,7 +266,7 @@
         <a href="buglist.cgi?cmdtype=dorem&amp;remaction=forget&amp;namedcmd=
                 [% searchname FILTER uri %]&amp;token=
                 [% issue_hash_token([search_id, searchname]) FILTER uri %]">
-          刪除已存储的查询 '[% searchname FILTER html %]'</a>
+          刪除已存储的搜索 '[% searchname FILTER html %]'</a>
       </td>
     [% ELSE %]
       <td>&nbsp;</td>
@@ -280,7 +280,7 @@
           <input type="hidden" name="remtype" value="asnamed">
           <input type="hidden" name="token" value="[% issue_hash_token(['savedsearch']) FILTER html %]">
           <input type="text" id="save_newqueryname" name="newqueryname" size="20"
-                 title="新查询名称" value="[% defaultsavename FILTER html %]">
+                 title="新搜索名称" value="[% defaultsavename FILTER html %]">
         </form>
       </td>
     [% END %]
@@ -330,7 +330,7 @@
       只显示 [% Param('default_search_limit') FILTER html %] 个
       [%+ terms.bugs %] 。
       <a href="buglist.cgi?[% urlquerypart FILTER html %]
-              [%- "&order=$qorder" FILTER html IF order %]&limit=0">显示所有查询结果</a>。
+              [%- "&order=$qorder" FILTER html IF order %]&limit=0">显示所有搜索结果</a>。
       [% time_summary_limited = 1 %]
     [% ELSE %]
       找到 [% bugs.size %] 个 [%+ terms.bugs %] 。

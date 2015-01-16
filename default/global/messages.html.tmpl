@@ -859,7 +859,7 @@
     [% END %]
 
   [% ELSIF message_tag == "whine_query_failed" %]
-    来自 [% author.login FILTER html %] 的订阅排程查询
+    来自 [% author.login FILTER html %] 的订阅排程搜索
     '[% query_name FILTER html %]' 失败了，原因是：
     [%+ reason FILTER html %]
 

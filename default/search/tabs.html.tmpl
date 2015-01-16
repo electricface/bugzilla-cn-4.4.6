@@ -11,9 +11,9 @@
   #%]
 
 [% WRAPPER global/tabs.html.tmpl
-     tabs = [ { name => 'specific', label => "简单查询",
+     tabs = [ { name => 'specific', label => "简单搜索",
                 link => "query.cgi?format=specific" },
-              { name => 'advanced', label => "高级查询",
+              { name => 'advanced', label => "高级搜索",
                 link => "query.cgi?format=advanced" } ]
      current_tab_name = query_format || format || "advanced"
 %]

@@ -13,13 +13,13 @@
   <li><a href="./">首頁</a></li>
   <li><span class="separator">| </span><a href="enter_bug.cgi">提交新[% terms.bug %]</a></li>
   <li><span class="separator">| </span><a href="describecomponents.cgi">浏览</a></li>
-  <li><span class="separator">| </span><a href="query.cgi">查询</a></li>
+  <li><span class="separator">| </span><a href="query.cgi">搜索</a></li>
 
   <li class="form">
     <span class="separator">| </span>
     <form action="buglist.cgi" method="get"
         onsubmit="if (this.quicksearch.value == '')
-                  { alert('请至少输入一个字符串来查询。');
+                  { alert('请至少输入一个字符串来搜索。');
                     return false; } return true;">
     <input type="hidden" id="no_redirect[% qs_suffix FILTER html %]" name="no_redirect" value="0">
     <script type="text/javascript">
@@ -29,11 +29,11 @@
       }
     </script>
     <input class="txt" type="text" id="quicksearch[% qs_suffix FILTER html %]" name="quicksearch"
-           title="快速查询" value="[% quicksearch FILTER html %]">
-    <input class="btn" type="submit" value="查询"
+           title="快速搜索" value="[% quicksearch FILTER html %]">
+    <input class="btn" type="submit" value="搜索"
            id="find[% qs_suffix FILTER html %]">
     [%-# Work around FF bug: keep this on one line %]</form>
-  <a href="page.cgi?id=quicksearch.html" title="快速查询说明">[?]</a></li>
+  <a href="page.cgi?id=quicksearch.html" title="快速搜索说明">[?]</a></li>
 
   <li><span class="separator">| </span><a href="report.cgi">报表</a></li>
 

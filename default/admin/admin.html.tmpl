@@ -99,7 +99,7 @@
 
         [% class = user.in_group('bz_canusewhines') ? "" : "forbidden" %]
         <dt id="whining" class="[% class %]"><a href="editwhines.cgi">订阅</a></dt>
-        <dd class="[% class %]">设定在特定日期及时间执行的查询，并将结果以电子邮件发送。
+        <dd class="[% class %]">设定在特定日期及时间执行的搜索，并将结果以电子邮件发送。
         <br>这是种建立提醒，以及追踪活动的好方式。</dd>
 
 	[% Hook.process('end_links_right') %]
