@@ -292,7 +292,7 @@ EOT
     module_ok => 'OK',
     module_unknown_version => "找到未知的版本",
     mysql_innodb_disabled => <<'END',
-你所安装的 MySQL 已停用 InnoDB 。
+你所安装的 MySQL 已禁用 InnoDB 。
 Bugzilla 需要 InnoDB 启用才能使用。
 请启用后重新执行 checksetup.pl 。
 END

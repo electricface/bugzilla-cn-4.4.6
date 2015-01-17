@@ -46,7 +46,7 @@
               已修改用户的外部登录账号。
             [% ELSIF field == 'disable_mail' %]
               [% IF otheruser.email_disabled %]
-                [% terms.Bug %]通知信已停用。
+                [% terms.Bug %]通知信已禁用。
               [% ELSE %]
                 [% terms.Bug %]通知信已启用。
               [% END %]
@@ -207,7 +207,7 @@
         [% END %]
       [% END %]
       [% IF changes.isactive.defined %]
-        <li>[% comp.is_active ? "启用" : "停用" %] 报告[% terms.bugs %]功能</li>
+        <li>[% comp.is_active ? "启用" : "禁用" %] 报告[% terms.bugs %]功能</li>
       [% END %]
       </ul>
     [% ELSE %]
@@ -335,7 +335,7 @@
   [% ELSIF message_tag == "group_membership_removed" %]
     [% title = "已刪除群组成员权限" %]
     [% IF users.size %]
-      已[% IF regexp %]对符合正则表达式
+      已[% IF regexp %]对匹配正则表达式
         '[% regexp FILTER html %]' 的用户[% END %]刪除群组
         <em>[% group FILTER html %]</em> 的成员权限：
       [% FOREACH user = users %]
@@ -558,8 +558,8 @@
     已添加旗标类型 <em>[% name FILTER html %]</em> 。
 
   [% ELSIF message_tag == "flag_type_deactivated" %]
-    [% title = BLOCK %]已停用旗标类型 '[% flag_type.name FILTER html %]'[% END %]
-    已停用 (deactivate) 旗标类型 <em>[% flag_type.name FILTER html %]</em> 。
+    [% title = BLOCK %]已禁用旗标类型 '[% flag_type.name FILTER html %]'[% END %]
+    已禁用 (deactivate) 旗标类型 <em>[% flag_type.name FILTER html %]</em> 。
 
   [% ELSIF message_tag == "flag_type_deleted" %]
     [% title = BLOCK %]已刪除旗标类型 '[% name FILTER html %]'[% END %]
@@ -574,7 +574,7 @@
       <ul>
         [% IF changes.is_active.defined %]
           [%# 注：active/inactive, 见 flag_type_deactivated #%]
-          <li>旗标类型已设置为[% flagtype.is_active ? "启用" : "停用 (inactive)" %]</li>
+          <li>旗标类型已设置为[% flagtype.is_active ? "启用" : "禁用 (inactive)" %]</li>
         [% END %]
         [% IF changes.name.defined %]
           <li>旗标类型已更名为 <em>[% flagtype.name FILTER html %]</em></li>
@@ -824,11 +824,11 @@
     无法设置部份旗标。请检查你的设置。
 
   [% ELSIF message_tag == "user_match_failed" %]
-    你输入的用户名称并不符合任何已知的 [% terms.Bugzilla %] 用户，因此字段
+    你输入的用户名称并不匹配任何已知的 [% terms.Bugzilla %] 用户，因此字段
     [% match_field FILTER html %] 留空。
 
   [% ELSIF message_tag == "user_match_multiple" %]
-    你输入的用户名称符合多位用户，因此字段
+    你输入的用户名称匹配多位用户，因此字段
     [% match_field FILTER html %] 留空。
 
   [% ELSIF message_tag == "version_created" %]
@@ -851,7 +851,7 @@
           <li>已将版本更名为 <em>[% version.name FILTER html %]</em></li>
         [% END %]
         [% IF changes.isactive.defined %]
-          <li>[% version.is_active ? "启用" : "停用" %] 报告[% terms.bugs %]功能</li>
+          <li>[% version.is_active ? "启用" : "禁用" %] 报告[% terms.bugs %]功能</li>
         [% END %]
       </ul>
     [% ELSE %]

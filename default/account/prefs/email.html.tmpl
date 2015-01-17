@@ -22,7 +22,7 @@
 [%# If the user's bugmail has been disabled by admins, show a warning. %]
 [% IF user.email_disabled %]
   <div class="warningmessages">
-    你的[% terms.bug %]修改状态通知信已被管理员停用。请联络
+    你的[% terms.bug %]修改状态通知信已被管理员禁用。请联络
     [% Param('maintainer') %] 以启用[% terms.bug %]修改状态通知信。
   </div>
 [% END %]

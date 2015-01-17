@@ -39,7 +39,7 @@
    }
 %]
 [% IF matchsuccess == 1 %]
-  [% PROCESS global/header.html.tmpl title="确认符合" %]
+  [% PROCESS global/header.html.tmpl title="确认匹配" %]
 
   [% USE Bugzilla %]
 
@@ -54,21 +54,21 @@
 
   <p>
     [% IF matchmultiple %]
-      你在前一页所输入的名称或电子邮件地址，在 [% terms.Bugzilla %] 中符合多条信息。
-      <br>请检查下列可能符合的列表，并选择你想要的用户，
+      你在前一页所输入的名称或电子邮件地址，在 [% terms.Bugzilla %] 中匹配多条信息。
+      <br>请检查下列可能匹配的列表，并选择你想要的用户，
     [% ELSE %]
       [% terms.Bugzilla %] 设置为无论在什么时候你输入了名称或是一部份的电子邮件，都必须要确认。
-      <br>以下是你所输入的名称／电子邮件，以及符合的账号。
+      <br>以下是你所输入的名称／电子邮件，以及匹配的账号。
       请确认他们是否正确，
     [% END %]
     或回到前一页重新输入。
   </p>
 [% ELSE %]
-  [% PROCESS global/header.html.tmpl title="找不到符合的资料" %]
+  [% PROCESS global/header.html.tmpl title="找不到匹配的资料" %]
   <p>
-    你在前一页所输入的名称或电子邮件地址，在 [% terms.Bugzilla %] 中找不到符合的信息。
+    你在前一页所输入的名称或电子邮件地址，在 [% terms.Bugzilla %] 中找不到匹配的信息。
     [% IF !user.id %]
-      <b>注意：你现在是登出状态。只会显示完全符合的电子邮件地址。</b>
+      <b>注意：你现在是登出状态。只会显示完全匹配的电子邮件地址。</b>
     [% END %]
   </p>
   <p>请回到前一页，并试试其他的名称或电子邮件地址。</p>
@@ -96,14 +96,14 @@
                 [% IF query.value.users.size > 1 %]
                   [% IF query.value.status == 'fail' %]
                     <font color="#FF0000">
-                      符合多名用户。
+                      匹配多名用户。
                     </font>
                     请按上一页，并以更明确的名称或地址再次尝试。
                   [% ELSE %]
                     [% IF query.value.status == 'trunc' %]
-                      符合多于搜索上限数量 ([% query.value.users.size %]) 的用户：<br>
+                      匹配多于搜索上限数量 ([% query.value.users.size %]) 的用户：<br>
                     [% ELSE %]
-                      符合：<br>
+                      匹配：<br>
                     [% END %]
                     <select name="[% field.key FILTER html %]"
                      id="[% field.key FILTER html %]"
@@ -124,7 +124,7 @@
                     </select>
                   [% END %]
                 [% ELSE %]
-                  符合
+                  匹配
                   <b>[% query.value.users.0.identity FILTER html %]</b>
                 [% END %]
             [% ELSE %]
@@ -132,7 +132,7 @@
                   <font color="#FF0000">要搜索的子字串太短
                   (至少 3 个字符)</font>
                 [% ELSE %]
-                  <font color="#FF0000">找不到符合的资料</font>
+                  <font color="#FF0000">找不到匹配的资料</font>
                 [% END %]
             [% END %]
             </div>

@@ -444,8 +444,8 @@
     因此程式需要，你必须替你的附加元件命名，以做为参数。
 
   [% ELSIF error == "extension_disabled" %]
-    [% title = "附加元件已停用" %]
-    你无法浏览此页面，因为附加元件 '[% name FILTER html %]' 已停用。
+    [% title = "附加元件已禁用" %]
+    你无法浏览此页面，因为附加元件 '[% name FILTER html %]' 已禁用。
 
   [% ELSIF error == "extension_first_letter_caps" %]
     你的附加元件名称的第一个字母必须为大写。
@@ -544,7 +544,7 @@
   [% ELSIF error == "fieldvalue_is_default" %]
     [% title = "指定的字段值为默认值" %]
     '[% value.name FILTER html %]' 是字段 '[% field.description FILTER html %]'
-    的默认值，因此无法刪除或停用。
+    的默认值，因此无法刪除或禁用。
     [% IF user.in_group('tweakparams') %]
       你必须先<a href="editparams.cgi?section=bugfields#
       [%- param_name FILTER uri %]">修改</a>默认值。
@@ -562,7 +562,7 @@
 
   [% ELSIF error == "fieldvalue_not_deletable" %]
     [% title = "无法刪除字段值" %]
-    无法刪除或停用字段值 '[% value.name FILTER html %]' ，因为它在字段
+    无法刪除或禁用字段值 '[% value.name FILTER html %]' ，因为它在字段
     '[% field.description FILTER html %]' 中扮演特别的角色。
 
   [% ELSIF error == "fieldvalue_reserved_word" %]
@@ -651,9 +651,9 @@
     旗标状态 <em>[% status FILTER html %]</em> 无效。
 
   [% ELSIF error == "flag_type_cannot_deactivate" %]
-    [% title = "无法停用旗标类型" %]
+    [% title = "无法禁用旗标类型" %]
     很抱歉，旗标类型 '[% flagtype.name FILTER html %]'
-    也用在一些你无法看见的项目，所以你无法停用 (deactivate) 它。
+    也用在一些你无法看见的项目，所以你无法禁用 (deactivate) 它。
 
   [% ELSIF error == "flag_type_cannot_delete" %]
     [% title = "不允许刪除旗标类型" %]
@@ -863,8 +863,8 @@
     你并未被授权编辑此系列。必须是建立此系列的人或管理员才能编辑。
 
   [% ELSIF error == "illegal_regexp" %]
-    [% title = "无效的正规表达式" %]
-    你所提供的正规表达式 [% value FILTER html %] 无效。错误是：
+    [% title = "无效的正则表达式" %]
+    你所提供的正则表达式 [% value FILTER html %] 无效。错误是：
     [% dberror FILTER html %] 。
 
  [% ELSIF error == "illegal_user_id" %]
@@ -951,8 +951,8 @@
     项目名称 '[% product FILTER html %]' 无效或不存在。
 
   [% ELSIF error == "invalid_regexp" %]
-    [% title = "无效的正规表达式" %]
-    你所输入的正规表达式无效。
+    [% title = "无效的正则表达式" %]
+    你所输入的正则表达式无效。
 
   [% ELSIF error == "invalid_user" %]
     [% title = "无效的用户" %]
@@ -997,7 +997,7 @@
       [%+ remaining FILTER html %] 次后仍无法输入正确的密码，
       你将会有
       [%+ constants.LOGIN_LOCKOUT_INTERVAL FILTER html %] 分鐘无法登录此账号。
-      如要避免账号被锁住，可以用「忘记密码」的链接来重設密码。
+      如要避免账号被锁住，可以用「忘记密码」的链接来重设密码。
     [% END %]
 
   [% ELSIF error == "json_rpc_get_method_required" %]
@@ -1433,7 +1433,7 @@
       <p><code>[% field FILTER html %]</code> 并非已知的字段。</p>
     [% END %]
     [% FOREACH field = ambiguous.keys %]
-      <p><code>[% field FILTER html %]</code> 符合多个字段：
+      <p><code>[% field FILTER html %]</code> 匹配多个字段：
         [%+ ambiguous.${field}.join(', ') FILTER html %]</p>
     [% END %]
 
@@ -1508,7 +1508,7 @@
 
   [% ELSIF error == "search_content_without_matches" %]
     [% title = "无效的搜索" %]
-    「内容」字段只能被用于「符合」搜索，而「符合」搜索也只能用于「内容」字段。
+    「内容」字段只能被用于「匹配」搜索，而「匹配」搜索也只能用于「内容」字段。
 
   [% ELSIF error == "search_grouped_field_invalid" %]
     在群组搜索条件中， [% terms.Bugzilla %] 不支持使用
@@ -1668,7 +1668,7 @@
     已登出的用户无法在此功能使用 "ids" 参数浏览任何用户信息。
 
   [% ELSIF error == "user_access_by_match_denied" %]
-    [% title = "拒绝列出符合的用户" %]
+    [% title = "拒绝列出匹配的用户" %]
     已登出的用户无法在此功能使用 "match" 参数浏览任何用户信息。
 
   [% ELSIF error == "user_login_required" %]
@@ -1677,7 +1677,7 @@
     你必须替新用户输入账号。
 
   [% ELSIF error == "user_match_failed" %]
-    [% title = "找不到符合的资料" %]
+    [% title = "找不到匹配的资料" %]
     <tt>[% name FILTER html %]</tt> 并不存在，或者你不被允许看见该用户。
 
   [% ELSIF error == "user_match_too_many" %]

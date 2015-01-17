@@ -14,11 +14,11 @@
 [% param_descs = {
   shadowdbhost => "Shadow 数据库在的主机。",
 
-  shadowdbport => "Shadow 数据库所在的连接埠。若 <tt>shadowdbhost</tt> 设为空白，则会忽略此设置。" _
+  shadowdbport => "Shadow 数据库所在的端口。若 <tt>shadowdbhost</tt> 设为空白，则会忽略此设置。" _
                   "注意：如果主机是本地的机器，那么 MySQL 会忽略此设置，因此你必须在下方指定 socket 。",
 
   shadowdbsock => "如果主机是本地的机器的话，此选项用来指定连接到 shadow 数据库的 socket 。" _
-                  "因此在从客户端连到本地服务器时， MySQL 会忽略客户端所指定的连接埠，" _
+                  "因此在从客户端连到本地服务器时， MySQL 会忽略客户端所指定的端口，" _
                   "而使用它内建（在 unix 机器上）的 socket 路径连接。" _
                   "如果设为空白，并且在 localhost 安装数据库的话， " _
                   "<tt>shadowdbport</tt> 参数将被忽略。",

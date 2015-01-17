@@ -250,8 +250,8 @@ TUI_hide_default('information_query');
         { name => "notsubstring", description => "不包含" },
         { name => "exact", description => "是" },
         { name => "notequals", description => "不是" },
-        { name => "regexp", description => "符合正则表达式" },
-        { name => "notregexp", description => "不符合正则表达式" } ] %]
+        { name => "regexp", description => "匹配正则表达式" },
+        { name => "notregexp", description => "不匹配正则表达式" } ] %]
         <option value="[% qv.name %]"
           [% " selected" IF default.emailtype.$n == qv.name %]>[% qv.description %]</option>
       [% END %]
