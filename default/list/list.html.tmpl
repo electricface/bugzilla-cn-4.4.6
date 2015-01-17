@@ -86,7 +86,7 @@
   [% END %]
 
   [% IF user.settings.display_quips.value == 'on' %]
-    [% DEFAULT quip = "$terms.Bugzilla 可以在这里随机显示妙语，但目前仍未输入任何妙语。" %]
+    [% DEFAULT quip = "$terms.Bugzilla 可以在这里随机显示标语，但目前仍未输入任何标语。" %]
     <span class="bz_quip">
       <a href="quips.cgi"><em>[% quip FILTER html %]</em></a>
     </span>

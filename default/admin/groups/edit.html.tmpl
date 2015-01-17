@@ -59,7 +59,7 @@
     </tr>
 
     <tr>
-      <th>使用者正则表达式：</th>
+      <th>用户正则表达式：</th>
       <td>
         <input type="text" name="regexp" size="40"
                value="[% group.user_regexp FILTER html %]">
@@ -96,7 +96,7 @@
   <table class="grant_table">
     <tr>
       <th class="one">属于此群组成员的群组<br>
-        （以 <var>X</var> 标记的使用者已自动加入群组
+        （以 <var>X</var> 标记的用户已自动加入群组
           [%+ group.name FILTER html %] ）</th>
       <th>此群组属于哪些群组的成员<br>
         （如果你属于群组 [% group.name FILTER html %]
@@ -119,12 +119,12 @@
     <tr>
       <th class="one">
         可以授权成员加入此群组的群组<br>
-        （以 <var>X</var> 标记的使用者可以将其他使用者加到
+        （以 <var>X</var> 标记的用户可以将其他用户加到
           [%+ group.name FILTER html %] ）
 
       </th>
      <th>此群组可以授权成员加入其他群组<br>
-         （在 [% group.name FILTER html %] 群组的使用者可以加其他使用者到…）
+         （在 [% group.name FILTER html %] 群组的用户可以加其他用户到…）
      </th>
     </tr>
     <tr>
@@ -145,11 +145,11 @@
       <tr>
         <th class="one">
           可以看见此群组的群组<br>
-          （以 <var>X</var> 标记的使用者可以看见
-            [%+ group.name FILTER html %] 群组中的使用者）
+          （以 <var>X</var> 标记的用户可以看见
+            [%+ group.name FILTER html %] 群组中的用户）
         </th>
        <th>此群组可以看见的群组<br>
-           （在 [% group.name FILTER html %] 群组中的使用者可以看见这些群组中的使用者…）
+           （在 [% group.name FILTER html %] 群组中的用户可以看见这些群组中的用户…）
        </th>
       </tr>
       <tr>
@@ -172,13 +172,13 @@
 
 <h4>大量搬移</h4>
 
-<p>你可以用此表格来对群组中的使用者做大量搬移。
+<p>你可以用此表格来对群组中的用户做大量搬移。
    <br>如果你从 [% terms.Bugzilla %] 2.16 升级的话，这通常很有用。</p>
 
 <table><tr><td>
 <form method="post" action="editgroups.cgi">
   <fieldset>
-    <legend>删除所有账号符合下列正则表达式的使用者：</legend>
+    <legend>删除所有账号符合下列正则表达式的用户：</legend>
     <input type="text" size="20" name="regexp">
     <input type="submit" id="remove-membership" value="删除">
 

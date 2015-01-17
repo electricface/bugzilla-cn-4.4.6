@@ -17,7 +17,7 @@
   #                      canbless) for viewed user.
   #%]
 
-[% title = BLOCK %]编辑使用者 [% otheruser.identity FILTER html %][% END %]
+[% title = BLOCK %]编辑用户 [% otheruser.identity FILTER html %][% END %]
 
 [% PROCESS global/header.html.tmpl
   title = title
@@ -46,7 +46,7 @@
           <tr>
             [% IF editusers %]
               <th colspan="3">
-                可替其他使用者设置这些权限
+                可替其他用户设置这些权限
               </th>
             [% END %]
           </tr>
@@ -54,7 +54,7 @@
             [% IF editusers %]
               <td style="text-align: center; font-weight: bold">|</td>
             [% END %]
-            <th colspan="2">使用者是下列群组的成员</th>
+            <th colspan="2">用户是下列群组的成员</th>
           </tr>
           [% FOREACH group = groups %]
             [% perms = permissions.${group.id} %]
@@ -127,18 +127,18 @@
 </p>
 </form>
 <p>
-  属于任何群组的使用者以打勾或灰色线条显示。灰色线条代表非直接的成员，可能是来自其他群组（以中括号 [] 标记），或是来自正则表达式（以星号 * 标记）。
+  属于任何群组的用户以打勾或灰色线条显示。灰色线条代表非直接的成员，可能是来自其他群组（以中括号 [] 标记），或是来自正则表达式（以星号 * 标记）。
 </p>
 [% IF editusers %]
   <p>
-    在「可替其他使用者设置这些权限」勾选框旁的中括号指出因属于另一群组的成员，而有 bless 使用者（在群组中新增成员）的能力。
+    在「可替其他用户设置这些权限」勾选框旁的中括号指出因属于另一群组的成员，而有 bless 用户（在群组中新增成员）的能力。
   </p>
 [% END %]
 
 [% IF Param('allowuserdeletion') && editusers %]
   <form method="post" action="editusers.cgi">
   <p>
-    <input type="submit" id="delete" value="删除使用者" />
+    <input type="submit" id="delete" value="删除用户" />
     <input type="hidden" name="action" value="del" />
     <input type="hidden" name="userid" value="[% otheruser.id %]" />
     [% INCLUDE listselectionhiddenfields %]
@@ -148,11 +148,11 @@
 
 <p>
   你也可以[% IF editusers %]<a
-  href="editusers.cgi?action=add[% INCLUDE listselectionurlparams %]">新增使用者</a>，[% END %]
+  href="editusers.cgi?action=add[% INCLUDE listselectionurlparams %]">新增用户</a>，[% END %]
   [% IF listselectionvalues.matchtype != 'exact' %]回到<a
-  href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">使用者列表</a>，[% END %]
+  href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">用户列表</a>，[% END %]
   [% IF editusers OR listselectionvalues %]或是[% END %]<a
-  href="editusers.cgi">搜索其他使用者</a>。
+  href="editusers.cgi">搜索其他用户</a>。
 </p>
 
 [% PROCESS global/footer.html.tmpl %]

@@ -288,15 +288,7 @@ TUI_hide_default('attachment_text_field');
     <tr>
       <th colspan="3">&nbsp;</th>
       <td id="os_guess_note" class="comment">
-        <div>我们针对你的
-        [% IF Param('defaultplatform') %]
-          操作系统
-        [% ELSIF Param('defaultopsys') %]
-          硬件平台
-        [% ELSE %]
-          操作系统及硬件平台
-        [% END %]
-        作了推测。请检查是否正确。如果有任何错误，请做出必要的修改。</div>
+        <div>我们根据你的[% IF Param('defaultplatform') %]操作系统[% ELSIF Param('defaultopsys') %]硬件平台[% ELSE %]操作系统及硬件平台[% END %]作了推测。请检查是否正确。如果有任何错误，请做出必要的修改。</div>
       </td>
     </tr>
   [% END %]
@@ -636,7 +628,7 @@ TUI_hide_default('attachment_text_field');
     <td colspan="3">
       <br>
         <strong>
-          只有在所有已选择的群组中的使用者才能浏览这个
+          只有在所有已选择的群组中的用户才能浏览这个
           [+% terms.bug %] ：
         </strong>
       <br>
@@ -668,7 +660,7 @@ TUI_hide_default('attachment_text_field');
   <tr>
     <th>&nbsp;</th>
     <td colspan="3">
-      <input type="submit" id="commit" value="提交 [% terms.Bug %]">
+      <input type="submit" id="commit" value="提交[% terms.Bug %]">
       &nbsp;&nbsp;&nbsp;&nbsp;
       <input type="submit" name="maketemplate" id="maketemplate"
              value="将所有的值保存为书签模板"

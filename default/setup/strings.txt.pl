@@ -170,7 +170,7 @@ END
 是 DB 文件的名称（或路径）。
 END
     localconfig_db_pass => <<'END',
-在此输入数据库的密码。通常建议对你的 bugailla 数据库使用者指定密码。
+在此输入数据库的密码。通常建议对你的 bugailla 数据库用户指定密码。
 如果你输入了含有缩写符号 (') 或反斜线 (\) 的密码，你需要使用 '\'
 字符做转义（escape） 。 (\') 或 (\)
 （不用这些字符的话简单地多。）
@@ -183,7 +183,7 @@ END
 MySQL 才需要输入的：输入 unix socket for MySQL 的路径。
 如不输入，那么会使用 MySQL 的默认值。大概会是你要的。
 END
-    localconfig_db_user => "用来连接数据库的使用者",
+    localconfig_db_user => "用来连接数据库的用户",
     localconfig_diffpath => <<'END',
 如果要让「两个 patch 之间的 diff 」功能有效，需要知道 "diff" bin
 在哪个目录。（只有在使用 Patch Viewer 功能时才需要设置。）
@@ -254,10 +254,10 @@ EOT
 ***********************************************************************
 * APACHE 模块                                                         *
 ***********************************************************************
-* 一般来说，当 Bugzilla 升级时，所有 Bugzilla 使用者必须清除他们浏    *
+* 一般来说，当 Bugzilla 升级时，所有 Bugzilla 用户必须清除他们浏    *
 * 览器中的缓存，否则Bugzilla会发生故障。如果你在 Apache 设置中启用特  *
 * 定的模块（通常叫 httpd.conf 或 apache2.conf ）的话，当你升级        *
-* Bugzilla 的时候， Bugzilla 的使用者就不需要清除浏览器中的缓存。     *
+* Bugzilla 的时候， Bugzilla 的用户就不需要清除浏览器中的缓存。     *
 * 你需要要启用的模块有：                                              *
 *                                                                     *
 END
@@ -361,7 +361,7 @@ END
 的名称。
 END
     update_nomail_bad => <<'END',
-警告：以下使用者列在 ##data##/nomail 中，但是这里没有账号。
+警告：以下用户列在 ##data##/nomail 中，但是这里没有账号。
 不符的部份已移至 ##data##/nomail.bad 中：
 END
     update_summary_truncate_comment =>
@@ -372,9 +372,9 @@ END
 255 字符，而原本过长的摘要已复制一份至留言中。受到影响的 bug 编号是：
 END
     update_quips => <<'END',
-妙语现在存储在数据库中，而不是存在外部文件。原先存储在
-##data##/comments 的妙语已被复制到数据库中，并将该文件更名为
-##data##/comments.bak 。你只要确认妙语有搬移成功，即可将该文件
+标语现在存储在数据库中，而不是存在外部文件。原先存储在
+##data##/comments 的标语已被复制到数据库中，并将该文件更名为
+##data##/comments.bak 。你只要确认标语有搬移成功，即可将该文件
 删除。
 END
     update_queries_to_tags => "填入新的 'tag' table 中：",

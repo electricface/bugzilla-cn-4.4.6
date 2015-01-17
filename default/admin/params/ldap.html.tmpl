@@ -24,13 +24,13 @@
                 "例如： cn=default,cn=user:password 。<br>" _
                 "若为匿名使用 bind 时，请设为空白。",
 
-  LDAPBaseDN => "认证使用者所使用的 BaseDN 。例如 ou=People,o=Company 。",
+  LDAPBaseDN => "认证用户所使用的 BaseDN 。例如 ou=People,o=Company 。",
 
-  LDAPuidattribute => "包括使用者账号的属性名称。",
+  LDAPuidattribute => "包括用户账号的属性名称。",
 
-  LDAPmailattribute => "在目录中包含电子邮件地址，作为 $terms.Bugzilla 账号使用的使用者的属性名称。<br>" _
-                       "若设为空白，则 $terms.Bugzilla 会使用 LDAP 的使用者名称作为 $terms.Bugzilla 的使用者名称。" _
+  LDAPmailattribute => "在目录中包含电子邮件地址，作为 $terms.Bugzilla 账号使用的用户的属性名称。<br>" _
+                       "若设为空白，则 $terms.Bugzilla 会使用 LDAP 的用户名称作为 $terms.Bugzilla 的用户名称。" _
                        "你可能也会想要设置 'emailsuffix' 参数。",
 
-  LDAPfilter => "过滤有效的使用者列表所使用，到 AND 的过滤条件；和 <tt>LDAPuidattribute</tt> 一并使用。" }
+  LDAPfilter => "过滤有效的用户列表所使用，到 AND 的过滤条件；和 <tt>LDAPuidattribute</tt> 一并使用。" }
 %]

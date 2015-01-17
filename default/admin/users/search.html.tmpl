@@ -16,7 +16,7 @@
 
 
 [% PROCESS global/header.html.tmpl
-  title = "搜索使用者"
+  title = "搜索用户"
   style_urls = ['skins/standard/editusers.css']
   onload = "document.forms['f'].matchstr.focus()"
   doc_section = "useradmin.html#user-account-search"
@@ -28,11 +28,11 @@
 
 <form name="f" method="get" action="editusers.cgi">
 <input type="hidden" name="action" value="list" />
-<p><label for="matchvalue">以下列条件列出使用者</label>
+<p><label for="matchvalue">以下列条件列出用户</label>
 <select id="matchvalue" name="matchvalue">
   <option value="login_name">账号</option>
   <option value="realname">真实姓名</option>
-  <option value="userid">使用者编号</option>
+  <option value="userid">用户编号</option>
 </select>
 <label for="matchstr">符合</label>
 <input size="32" name="matchstr" id="matchstr" />
@@ -40,13 +40,13 @@
   <option value="substr" selected="selected">子字串（忽略大小写）</option>
   <option value="regexp">正则表达式（忽略大小写）</option>
   <option value="notregexp">不符合正则表达式（忽略大小写）</option>
-  <option value="exact">完全符合（搜索该使用者）</option>
+  <option value="exact">完全符合（搜索该用户）</option>
 </select>
 <input type="submit" id="search" value="搜索" /></p>
 
 [% IF restrictablegroups.size %]
   <p><input type="checkbox" name="grouprestrict" value="1" id="grouprestrict" />
-  <label for="grouprestrict">限制使用者属于群组…</label>
+  <label for="grouprestrict">限制用户属于群组…</label>
   <select name="groupid"
           onchange="document.forms['f'].grouprestrict.checked=true">
     [% FOREACH group = restrictablegroups %]
@@ -58,7 +58,7 @@
 <p>
   <input type="checkbox" name="enabled_only" value="1" id="enabled_only"
          checked="checked">
-  <label for="enabled_only">只搜索已启用的使用者账号</label>
+  <label for="enabled_only">只搜索已启用的用户账号</label>
 </p>
 
 [% Hook.process('end') %]
@@ -67,8 +67,8 @@
 
 [% IF editusers %]
   <p>
-    你也可以<a href="editusers.cgi?action=add">新增使用者</a>[%- IF listselectionvalues %]，或者<a
-    href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">再次显示使用者列表</a>[%- END %]。
+    你也可以<a href="editusers.cgi?action=add">新增用户</a>[%- IF listselectionvalues %]，或者<a
+    href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">再次显示用户列表</a>[%- END %]。
   </p>
 [% END %]
 

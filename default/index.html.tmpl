@@ -67,7 +67,7 @@ function quicksearchHelpText(el_id, action){
       <a href="[% release.data.url FILTER html %]">[% release.data.url FILTER html %]</a> 下载。<br>
       新版本发布日期： [% release.data.date FILTER html %] 。</p>
 
-      <p class="notice">此消息仅有管理权限的使用者可见。
+      <p class="notice">此消息仅有管理权限的用户可见。
       你可以在<a href="editparams.cgi?section=general#upgrade_notification_desc">参数设置</a>页设置此消息。</p>
     [% ELSIF release.error == "cannot_download" %]
       <p>无法下载远程文件 <a href="[% constants.REMOTE_FILE FILTER html %]">
@@ -111,7 +111,7 @@ function quicksearchHelpText(el_id, action){
             <li>
               <a id="account"
                  [% IF user.id %]
-                   href="userprefs.cgi"><span>使用者偏好设置</span></a>
+                   href="userprefs.cgi"><span>用户偏好设置</span></a>
                  [% ELSIF Param('createemailregexp')
                           && user.authorizer.user_can_create_account
                  %]

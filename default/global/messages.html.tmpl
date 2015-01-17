@@ -21,14 +21,14 @@
 
   [% ELSIF message_tag == "account_creation_canceled" %]
     [% title = "取消建立账号" %]
-    已取消建立使用者账号 [% account FILTER html %] 。
+    已取消建立用户账号 [% account FILTER html %] 。
 
   [% ELSIF message_tag == "account_updated" %]
     [% IF changed_fields.size
           + groups_added_to.size + groups_removed_from.size
           + groups_granted_rights_to_bless.size + groups_denied_rights_to_bless.size %]
-      [% title = "已更新使用者 $loginold" %]
-      已对使用者 [%+ loginold FILTER html %] 做出下列修改：
+      [% title = "已更新用户 $loginold" %]
+      已对用户 [%+ loginold FILTER html %] 做出下列修改：
       <ul>
         [% FOREACH field = changed_fields %]
           <li>
@@ -43,7 +43,7 @@
             [% ELSIF field == 'is_enabled' %]
               已[% otheruser.is_enabled ? '可' : '无法' %]使用此账号登录。
             [% ELSIF field == 'extern_id' %]
-              已修改使用者的外部登录账号。
+              已修改用户的外部登录账号。
             [% ELSIF field == 'disable_mail' %]
               [% IF otheruser.email_disabled %]
                 [% terms.Bug %] 通知信已停用。
@@ -81,13 +81,13 @@
         [% END %]
       </ul>
     [% ELSE %]
-      [% title = "并未对使用者 $otheruser.login 做出修改" %]
-      你并未对使用者 [%+ otheruser.login FILTER html %] 做出任何修改。
+      [% title = "并未对用户 $otheruser.login 做出修改" %]
+      你并未对用户 [%+ otheruser.login FILTER html %] 做出任何修改。
     [% END %]
 
   [% ELSIF message_tag == "account_deleted" %]
-    [% title = "已刪除使用者 $otheruser.login" %]
-    已成功刪除使用者 [% otheruser.login FILTER html %] 。
+    [% title = "已刪除用户 $otheruser.login" %]
+    已成功刪除用户 [% otheruser.login FILTER html %] 。
 
   [% ELSIF message_tag == "account_disabled" %]
     已无法使用 [% account FILTER html %] 此账号登录，所以你无法修改他的密码。
@@ -336,13 +336,13 @@
     [% title = "已刪除群组成员权限" %]
     [% IF users.size %]
       已[% IF regexp %]对符合正则表达式
-        '[% regexp FILTER html %]' 的使用者[% END %]刪除群组
+        '[% regexp FILTER html %]' 的用户[% END %]刪除群组
         <em>[% group FILTER html %]</em> 的成员权限：
       [% FOREACH user = users %]
         [%+ user.login FILTER html %]
       [% END %]
     [% ELSE %]
-      没有使用者受到影响。
+      没有用户受到影响。
     [% END %]
 
   [% ELSIF message_tag == "group_updated" %]
@@ -378,28 +378,28 @@
             <li>此群组已不是下列群组的成员：
               [%+ changes.member_of_remove.join(', ') FILTER html %]</li>
           [% CASE 'bless_from_add' %]
-            <li>下列群组现在可以新增使用者至此群组：
+            <li>下列群组现在可以新增用户至此群组：
               [%+ changes.bless_from_add.join(', ') FILTER html %]</li>
           [% CASE 'bless_from_remove' %]
-            <li>下列群组已无法新增使用者至此群组：
+            <li>下列群组已无法新增用户至此群组：
               [%+ changes.bless_from_remove.join(', ') FILTER html %]</li>
           [% CASE 'bless_to_add' %]
-            <li>此群组现在可以新增使用者至下列群组：
+            <li>此群组现在可以新增用户至下列群组：
               [%+ changes.bless_to_add.join(', ') FILTER html %]</li>
           [% CASE 'bless_to_remove' %]
-            <li>此群组已无法新增使用者至下列群组：
+            <li>此群组已无法新增用户至下列群组：
               [%+ changes.bless_to_remove.join(', ') FILTER html %]</li>
           [% CASE 'visible_from_add' %]
-            <li>下列群组现在可以看见此群组的使用者：
+            <li>下列群组现在可以看见此群组的用户：
               [%+ changes.visible_from_add.join(', ') FILTER html %]</li>
           [% CASE 'visible_from_remove' %]
-            <li>下列群组已无法看见此群组的使用者：
+            <li>下列群组已无法看见此群组的用户：
               [%+ changes.visible_from_remove.join(', ') FILTER html %]</li>
           [% CASE 'visible_to_me_add' %]
-            <li>此群组现在可以看见下列群组的使用者：
+            <li>此群组现在可以看见下列群组的用户：
               [%+ changes.visible_to_me_add.join(', ') FILTER html %]</li>
           [% CASE 'visible_to_me_remove' %]
-            <li>此群组已无法看见下列群组的使用者：
+            <li>此群组已无法看见下列群组的用户：
               [%+ changes.visible_to_me_remove.join(', ') FILTER html %]</li>
           [% CASE %]
             [% Hook.process('group_updated_fields') %]
@@ -476,14 +476,14 @@
     读取产品中…
 
   [% ELSIF message_tag == "migrate_reading_users" %]
-    读取使用者中…
+    读取用户中…
 
   [% ELSIF message_tag == "migrate_translating_bugs" %]
     将[% terms.bug %]的数值转换为适合
     [%+ terms.Bugzilla %] 中…
 
   [% ELSIF message_tag == "migrate_user_created" %]
-    已创建使用者： [% created.email FILTER html %]
+    已创建用户： [% created.email FILTER html %]
     [% IF password %] 密码： [% password FILTER html %][% END %]
 
   [% ELSIF message_tag == "migrate_value_created" %]
@@ -695,10 +695,10 @@
     新增默认群组中...
 
   [% ELSIF message_tag == "install_setting_new" %]
-    新增使用者设置： '[% name FILTER html %]'
+    新增用户设置： '[% name FILTER html %]'
 
   [% ELSIF message_tag == "install_setting_setup" %]
-    设置使用者偏好设置中...
+    设置用户偏好设置中...
 
   [% ELSIF message_tag == "install_success" %]
     checksetup.pl 已完成。
@@ -790,7 +790,7 @@
   [% ELSIF message_tag == "sudo_started" %]
     [% title = "已开始 sudo" %]
       已开始 sudo 。除非你主动登出，否则接下来的 6 个小时，所有的动作都是以 sudo 的权限进行。
-      被 sudo 的使用者： [% target FILTER html %] 。
+      被 sudo 的用户： [% target FILTER html %] 。
 
   [% ELSIF message_tag == "sudo_ended" %]
     [% title = "已结束 sudo" %]
@@ -824,11 +824,11 @@
     无法设置部份旗标。请检查你的设置。
 
   [% ELSIF message_tag == "user_match_failed" %]
-    你输入的使用者名称并不符合任何已知的 [% terms.Bugzilla %] 使用者，因此字段
+    你输入的用户名称并不符合任何已知的 [% terms.Bugzilla %] 用户，因此字段
     [% match_field FILTER html %] 留白。
 
   [% ELSIF message_tag == "user_match_multiple" %]
-    你输入的使用者名称符合多位使用者，因此字段
+    你输入的用户名称符合多位用户，因此字段
     [% match_field FILTER html %] 留白。
 
   [% ELSIF message_tag == "version_created" %]
@@ -879,6 +879,6 @@
     你输入了字串 '[% message_tag FILTER html %]' 。
     正确的用法是输入一个标签，并且在 <kbd>messages.html.tmpl</kbd> 文件中定义该标签。<br>
     <br>
-    如果你是一个 [% terms.Bugzilla %] 的使用者，但却看到此信息时，请将这页存储下来并发给 [% Param('maintainer') %] 。
+    如果你是一个 [% terms.Bugzilla %] 的用户，但却看到此信息时，请将这页存储下来并发给 [% Param('maintainer') %] 。
   [% END %]
 [% END %]

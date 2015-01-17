@@ -35,11 +35,11 @@
 <form method="post" action="editgroups.cgi">
   [% IF group.members_non_inherited.size %]
     <p><b>[% group.members_non_inherited.size FILTER html %]
-      位使用者只属于此群组。你无法在群组中还有使用者时删除它。</b>
+      位用户只属于此群组。你无法在群组中还有用户时删除它。</b>
 
     <br><a href="editusers.cgi?action=list&amp;groupid=
-                 [%- group.id FILTER uri %]&amp;grouprestrict=1">显示有哪些使用者</a>
-    - <label><input type="checkbox" name="removeusers">删除此群组中的所有使用者。</label></p>
+                 [%- group.id FILTER uri %]&amp;grouprestrict=1">显示有哪些用户</a>
+    - <label><input type="checkbox" name="removeusers">删除此群组中的所有用户。</label></p>
   [% END %]
 
   [% IF group.granted_by_direct(constants.GROUP_MEMBERSHIP).size %]

@@ -69,7 +69,7 @@
         登录为：
       [% END %]
       [% IF sudoer %]
-        [%+ sudoer.login FILTER html %] (<b>sudo 使用者
+        [%+ sudoer.login FILTER html %] (<b>sudo 用户
         [%+ user.login FILTER html %] 中</b>
         <a href="relogin.cgi?action=end-sudo">结束 sudo </a>)
       [% ELSE %]

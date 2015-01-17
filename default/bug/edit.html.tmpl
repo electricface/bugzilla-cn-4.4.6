@@ -621,7 +621,7 @@
       [% IF NOT emitted_description %]
         [% emitted_description = 1 %]
           <div id="bz_restrict_group_visibility_help">
-            <b>只有在所有已选择群组中的使用者可以浏览这个
+            <b>只有在所有已选择群组中的用户可以浏览这个
               [%+ terms.bug %] ：</b>
              <p class="instructions">
                若不勾选，[% terms.bug %]将会公开。
@@ -741,7 +741,7 @@
             <br>
           [% END %]
         [% END %]
-        [% bug.cc.size FILTER html %] 位使用者
+        [% bug.cc.size FILTER html %] 位用户
         [% IF user.id %]
           [% IF bug.cc.contains( user.email ) %]，包括你
           [% END %]

@@ -57,7 +57,7 @@
   [% IF user.login %]
     [% '<link rel="Administration" title="参数设置"
               href="editparams.cgi">' IF user.in_group('tweakparams') %]
-    [% '<link rel="Administration" title="使用者"
+    [% '<link rel="Administration" title="用户"
               href="editusers.cgi">' IF user.in_group('editusers') %]
     [% '<link rel="Administration" title="产品" href="editproducts.cgi">'
        IF user.in_group('editcomponents') || user.get_products_by_permission("editcomponents").size %]

@@ -23,11 +23,11 @@
 %]
 
 [% IF regexp %]
-  <p>此选项将会把符合下列正则表达式的所有使用者从
+  <p>此选项将会把符合下列正则表达式的所有用户从
      '[% group.name FILTER html %]' 群组中移除：<br>
      '[% regexp FILTER html %]'</p>
 [% ELSE %]
-  <p>此选项将会自 '[% group.name FILTER html %]' 群组中移除所有指定的使用者。</p>
+  <p>此选项将会自 '[% group.name FILTER html %]' 群组中移除所有指定的用户。</p>
 [% END %]
 
 <p>一般而言，你只有在替以[% terms.Bugzilla %]

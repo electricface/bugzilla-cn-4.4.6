@@ -44,10 +44,10 @@
 
   inbound_proxies =>
     "当通过代理服务器连接至 $terms.Bugzilla 时，"
-    _ " $terms.Bugzilla 将每个使用者都认定为该代理服务器的 IP 地址。"
+    _ " $terms.Bugzilla 将每个用户都认定为该代理服务器的 IP 地址。"
     _ "如果在参数中输入以逗号 (,) 分隔的 IP 列表，"
     _ "那么 $terms.Bugzilla 将会信任来自这些 IP 的 <code>X-Forwarded-For</code> Header ，"
-    _ "并使用 Header 的值来作为使用者的 IP 地址。",
+    _ "并使用 Header 的值来作为用户的 IP 地址。",
 
   proxy_url =>
     "$terms.Bugzilla 可以自动连接到网络并获取关于最新版的版本信息，参考"

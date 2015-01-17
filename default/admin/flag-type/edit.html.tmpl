@@ -79,7 +79,7 @@
       <th>分类：</th>
 
       <td>
-        为了让使用者能够替 [% type.target_type == "bug" ? terms.bugs : "附件" %]
+        为了让用户能够替 [% type.target_type == "bug" ? terms.bugs : "附件" %]
         设置此旗标类型， [% type.target_type == "bug" ? terms.bugs : "附件" %]
         必须（「包括」）或必须不（「不包括」）属于哪些产品／模块。
         [% UNLESS can_fully_edit %]
@@ -129,7 +129,7 @@
       <th>排序键：</th>
       <td>
         输入介于 1 和 [% constants.MAX_SMALLINT FILTER none %] 之间的数字。
-        当以列表显示给使用者时，将会以该方法排序。如果你想要以字母做排序，或不在乎排序，则无须填入。<br>
+        当以列表显示给用户时，将会以该方法排序。如果你想要以字母做排序，或不在乎排序，则无须填入。<br>
         <input type="text" name="sortkey" value="[% type.sortkey || 1 FILTER html %]" size="5"
                maxlength="5" [% ' disabled="disabled"' UNLESS can_fully_edit %]>
       </td>
@@ -141,7 +141,7 @@
         <input type="checkbox" id="is_active" name="is_active"
                [%- ' disabled="disabled"' UNLESS can_fully_edit %]
                [% " checked" IF type.is_active || !type.is_active.defined %]>
-        <label for="is_active">启用（将会在使用者界面显示此旗标类型，并可设置）</label>
+        <label for="is_active">启用（将会在用户界面显示此旗标类型，并可设置）</label>
       </td>
     </tr>
 
@@ -151,7 +151,7 @@
         <input type="checkbox" id="is_requestable" name="is_requestable"
                [%- ' disabled="disabled"' UNLESS can_fully_edit %]
                [% " checked" IF type.is_requestable || !type.is_requestable.defined %]>
-        <label for="is_requestable">可以要求（使用者可以要求设置此旗标类型）</label>
+        <label for="is_requestable">可以要求（用户可以要求设置此旗标类型）</label>
       </td>
     </tr>
 
@@ -175,7 +175,7 @@
         <input type="checkbox" id="is_requesteeble" name="is_requesteeble"
                [%- ' disabled="disabled"' UNLESS can_fully_edit %]
                [% " checked" IF type.is_requesteeble || !type.is_requesteeble.defined %]>
-        <label for="is_requesteeble">特定要求（使用者可以要求特定的其他使用者设置此类旗标类型）</label>
+        <label for="is_requesteeble">特定要求（用户可以要求特定的其他用户设置此类旗标类型）</label>
       </td>
     </tr>
 
@@ -195,7 +195,7 @@
       <th>同意的群组：</th>
       <td>
         允许同意／否决此类型旗标的群组<br>
-        （如要允许所有使用者可以同意／否决此旗标类型，则不要选择群组）。<br>
+        （如要允许所有用户可以同意／否决此旗标类型，则不要选择群组）。<br>
         [% PROCESS group_select selname = "grant_group" %]
       </td>
     </tr>
@@ -204,7 +204,7 @@
       <th>要求的群组：</th>
       <td>
         如果此类型的旗标必须通过要求产生，则允许做出要求动作的群组<br>
-        （如要允许所有使用者要求此旗标类型，则不要选择群组）。<br>
+        （如要允许所有用户要求此旗标类型，则不要选择群组）。<br>
         注意：若并未定义「同意的群组」时，「要求的群组」并不会有任何效力！<br>
         [% PROCESS group_select selname = "request_group" %]
       </td>

@@ -239,25 +239,25 @@
        [%- issue_hash_token(['sanitycheck']) FILTER uri %]">寄出这些邮件</a>。
 
   [% ELSIF san_tag == "whines_obsolete_target_deletion_start" %]
-    移除订阅中不存在的使用者／群组中。
+    移除订阅中不存在的用户／群组中。
 
   [% ELSIF san_tag == "whines_obsolete_target_deletion_end" %]
-    已自订阅中移除不存在的使用者／群组。
+    已自订阅中移除不存在的用户／群组。
 
   [% ELSIF san_tag == "whines_obsolete_target_start" %]
-    检查订阅中是否有不存在的使用者／群组。
+    检查订阅中是否有不存在的用户／群组。
 
   [% ELSIF san_tag == "whines_obsolete_target_alert" %]
     [% FOREACH schedule = schedules %]
       订阅计划 [% schedule.0 FILTER html %] 有不存在的
-      [% (type == constants.MAILTO_USER) ? "使用者" : "群组" FILTER html %]
+      [% (type == constants.MAILTO_USER) ? "用户" : "群组" FILTER html %]
       [%+ schedule.1 FILTER html %]<br>
     [% END %]
 
   [% ELSIF san_tag == "whines_obsolete_target_fix" %]
     <a href="sanitycheck.cgi?remove_old_whine_targets=1&amp;token=
        [%- issue_hash_token(['sanitycheck']) FILTER uri %]">
-      点击此处移除旧的使用者／群组</a>
+      点击此处移除旧的用户／群组</a>
 
   [% ELSE %]
     [% message = Hook.process("statuses") %]

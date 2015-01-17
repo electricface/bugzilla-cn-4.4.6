@@ -103,7 +103,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
 </table>
 
 <hr>
-<b>栏位及收件人个别设置选项：</b>
+<b>字段及收件人个别设置选项：</b>
 <br>
 <br>
 
@@ -125,9 +125,9 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
     { id = constants.EVT_ATTACHMENT_DATA,
       description = "部分附件内容修改" },
     { id = constants.EVT_KEYWORD,
-      description = "关键字栏位修改" },
+      description = "关键字字段修改" },
     { id = constants.EVT_CC,
-      description = "抄送栏位修改" },
+      description = "抄送字段修改" },
     { id = constants.EVT_DEPEND_BLOCK,
       description = "依赖关系修改" },
     { id = constants.EVT_OTHER,
@@ -258,7 +258,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
 [% END %]
 </p>
 
-<p id="new_watched_by_you">将用户加入监视列表〔以半角逗号 (,) 分隔多个使用者〕：
+<p id="new_watched_by_you">将用户加入监视列表〔以半角逗号 (,) 分隔多个用户名〕：
   [% INCLUDE global/userselect.html.tmpl
      id => "new_watchedusers"
      name => "new_watchedusers"

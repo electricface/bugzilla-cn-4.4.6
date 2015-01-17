@@ -21,7 +21,7 @@
   <tr>
     <td>
       [% IF has_bits.size %]
-        你的账号拥有以下权限：
+        你的账号拥有如下权限：
         <table align="center">
           [% FOREACH bit_description = has_bits %]
             <tr>
@@ -52,10 +52,10 @@
 
       [% IF user.in_group('editusers') %]
         <br>
-        你拥有 editusers 的权限。你可以开启或关闭所有使用者的所有权限。
+        你拥有 editusers 的权限。你可以开启或关闭所有用户的所有权限。
       [% ELSIF set_bits.size %]
         <br>
-        你可以开启或关闭<a href="editusers.cgi">其他使用者</a>的以下权限：
+        你可以开启或关闭<a href="editusers.cgi">其他用户</a>的以下权限：
           <table align="center">
           [% FOREACH bit_description = set_bits %]
             <tr>
@@ -68,7 +68,7 @@
 
       [% IF user.in_group('bz_sudoers') %]
         <br>
-        你是 <b>bz_sudoers</b> 群组的成员，因此你可以<a href="relogin.cgi?action=prepare-sudo">以其他使用者身份进行操作</a>。
+        你是 <b>bz_sudoers</b> 群组的成员，因此你可以<a href="relogin.cgi?action=prepare-sudo">以其他用户身份进行操作</a>。
       [% END %]
     </td>
   </tr>

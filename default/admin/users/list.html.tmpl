@@ -15,7 +15,7 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "选择使用者"
+  title = "选择用户"
   style_urls = ['skins/standard/editusers.css']
   doc_section = "useradmin.html"
 %]
@@ -28,7 +28,7 @@
 
 [% columns =
   [{name               => 'login_name'
-    heading            => '编辑使用者…'
+    heading            => '编辑用户…'
     contentlink        => 'editusers.cgi?action=edit&amp;userid=%%userid%%' _
                           listselectionurlparams
    }
@@ -90,7 +90,7 @@
   [% END %]
 [% END %]
 
-<p>找到 [% users.size %] 位使用者。</p>
+<p>找到 [% users.size %] 位用户。</p>
 
 [% PROCESS admin/table.html.tmpl
   columns = columns
@@ -99,8 +99,8 @@
 %]
 
 <p>
-  如果你并不想要在此时修改使用者账号，你可以<a href="editusers.cgi">搜索其他使用者</a>[% IF editusers %]，或者<a
-  href="editusers.cgi?action=add[% INCLUDE listselectionurlparams %]">新增使用者</a>[% END %]。
+  如果你并不想要在此时修改用户账号，你可以<a href="editusers.cgi">搜索其他用户</a>[% IF editusers %]，或者<a
+  href="editusers.cgi?action=add[% INCLUDE listselectionurlparams %]">新增用户</a>[% END %]。
 </p>
 
 [% PROCESS global/footer.html.tmpl %]

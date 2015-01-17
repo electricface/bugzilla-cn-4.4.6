@@ -34,7 +34,7 @@
   #                           created
   #%]
 
-[% title = BLOCK %]确认删除使用者 [% otheruser.login FILTER html %][% END %]
+[% title = BLOCK %]确认删除用户 [% otheruser.login FILTER html %][% END %]
 
 [% PROCESS global/header.html.tmpl
   title = title
@@ -82,7 +82,7 @@
 
 [% IF otheruser.product_responsibilities.size %]
   <p>
-    你现在无法删除该使用者，因为
+    你现在无法删除该用户，因为
     [%+ otheruser.login FILTER html %] 对至少一项产品负责。
   </p>
   <p>
@@ -105,7 +105,7 @@
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?field0-0-0=attachments.submitter&type0-0-0=equals&value0-0-0=
                [%- otheruser.login FILTER uri %]"
-               >已送出了 [% attachments %] 个附件</a>。如果你删除此使用者账号，资料库的记录将不一致，导致这
+               >已送出了 [% attachments %] 个附件</a>。如果你删除此用户账号，资料库的记录将不一致，导致这
                [%+ attachments %] 个附件不再出现于[% terms.bugs %]中。
           </li>
         [% END %]
@@ -114,14 +114,14 @@
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?emailreporter1=1&amp;emailtype1=exact&amp;email1=
                [%- otheruser.login FILTER uri %]">报告了 [% reporter %] 个[% terms.bugs %]</a>
-               。如果你删除该使用者，数据库的记录将不一致，导致这
+               。如果你删除该用户，数据库的记录将不一致，导致这
                [%+ reporter %] 个[% terms.bug %]不再出现在[% terms.bug %]列表中。
           </li>
         [% END %]
         [% IF bugs_activity %]
           <li>
             [% otheruser.login FILTER html %] 曾对[% terms.bugs %]
-            做出修改。如果你删除该使用者，数据库中的[% terms.bugs %]
+            做出修改。如果你删除该用户，数据库中的[% terms.bugs %]
             活动记录将不一致，导致这 [% bugs_activity %] 项修改不再出现在
             [%+ terms.bug %] 活动记录中。
           </li>
@@ -131,7 +131,7 @@
             [% otheruser.login FILTER html %] 曾经<a
               href="buglist.cgi?field0-0-0=setters.login_name&amp;type0-0-0=equals&amp;value0-0-0=
               [%- otheruser.login FILTER uri %]">设置或要求设置
-              [%+ flags.setter %] 个旗标</a>。如果你删除该使用者，数据库中的旗标记录将不一致，导致这
+              [%+ flags.setter %] 个旗标</a>。如果你删除该用户，数据库中的旗标记录将不一致，导致这
               [%+ flags.setter %] 个旗标不再正确地显示。
           </li>
         [% END %]
@@ -140,14 +140,14 @@
             [% otheruser.login FILTER html %] 曾经<a
               href="buglist.cgi?emaillongdesc1=1&amp;emailtype1=exact&amp;email1=
               [%- otheruser.login FILTER uri %]">对[% terms.bugs %]发表过
-              [%+ longdescs %] 次意见</a>。如果你删除该使用者，数据库中的留言记录将不一致，导致这
+              [%+ longdescs %] 次意见</a>。如果你删除该用户，数据库中的留言记录将不一致，导致这
               [%+ longdescs %] 个留言无法再浏览。
           </li>
         [% END %]
         [% IF profiles_activity %]
           <li>
             [% otheruser.login FILTER html %]
-            曾对其他使用者的文档做出修改。如果你删除该使用者，数据库中的使用者文件活动记录将不一致。
+            曾对其他用户的文档做出修改。如果你删除该用户，数据库中的用户文件活动记录将不一致。
           </li>
         [% END %]
       </ul>
@@ -168,7 +168,7 @@
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?emailassigned_to1=1&amp;emailqa_contact1=1&amp;emailtype1=exact&amp;email1=
                [%- otheruser.login FILTER uri %]">是 [% assignee_or_qa %] 个[% terms.bugs %]</a>
-               的默认负责人或 QA 联络人。如果你删除该使用者，将会自动设回默认的负责人或默认的 QA 联络人。
+               的默认负责人或 QA 联络人。如果你删除该用户，将会自动设回默认的负责人或默认的 QA 联络人。
           </li>
         [% END %]
         [% IF cc %]
@@ -176,18 +176,18 @@
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?emailcc1=1&amp;emailtype1=exact&amp;email1=
                [%- otheruser.login FILTER uri %]">在 [% cc %] 个[% terms.bugs %]</a>
-               的邮件抄送列表中。如果你删除该使用者，将会自动自邮件抄送列表中删除。
+               的邮件抄送列表中。如果你删除该用户，将会自动自邮件抄送列表中删除。
           </li>
         [% END %]
         [% IF component_cc %]
           <li>
             [% otheruser.login FILTER html %] 在 [% component_cc %]
-            项模块的默认邮件抄送列表中。如果你删除该使用者，将会自动自默认的邮件抄送列表中删除。
+            项模块的默认邮件抄送列表中。如果你删除该用户，将会自动自默认的邮件抄送列表中删除。
           </li>
         [% END %]
         [% IF email_setting %]
           <li>
-            使用者的电子邮件设置将和该使用者一并删除。
+            用户的电子邮件设置将和该用户一并删除。
           </li>
         [% END %]
         [% IF flags.requestee %]
@@ -195,49 +195,49 @@
             [% otheruser.login FILTER html %] 曾<a
               href="buglist.cgi?field0-0-0=requestees.login_name&amp;type0-0-0=equals&amp;value0-0-0=
               [%- otheruser.login FILTER uri %]">被要求设置 [% flags.requestee %]
-              个旗标</a>。如果你删除该使用者，这 [% flags.requestee %] 个旗标将修改为非指定要求的状态。
+              个旗标</a>。如果你删除该用户，这 [% flags.requestee %] 个旗标将修改为非指定要求的状态。
           </li>
         [% END %]
         [% IF namedqueries %]
           <li>
             [% otheruser.login FILTER html %] 有 [% namedqueries FILTER html %]
-            个[% '已分享的' IF namedquery_group_map %]自定义搜索名称，将和该使用者一并删除。
+            个[% '已分享的' IF namedquery_group_map %]自定义搜索名称，将和该用户一并删除。
             [% IF namedquery_group_map %]
               [% IF namedqueries > 1 %]
                 在那之中，有 [% namedquery_group_map FILTER html %]
                 个是已分享的自定义搜索。
               [% END %]
-              其他使用者将不再可以使用这 [% namedquery_group_map %] 个已分享的自定义搜索名称。
+              其他用户将不再可以使用这 [% namedquery_group_map %] 个已分享的自定义搜索名称。
             [% END %]
           </li>
         [% END %]
         [% IF profile_setting %]
           <li>
-            使用者的偏好设置将和该使用者一并删除。
+            用户的偏好设置将和该用户一并删除。
           </li>
         [% END %]
         [% IF series %]
           <li>
-            [% otheruser.login FILTER html %] 建立了 [% series %] 个系列，将和该使用者一并删除。
+            [% otheruser.login FILTER html %] 建立了 [% series %] 个系列，将和该用户一并删除。
           </li>
         [% END %]
         [% IF quips %]
           <li>
-            [% otheruser.login FILTER html %] 提出了 [% quips %] 条妙语。如果你删除此使用者账号，这
-            [%+ quips %] 条妙语将不再有作者，但仍会显示。
+            [% otheruser.login FILTER html %] 提出了 [% quips %] 条标语。如果你删除此用户账号，这
+            [%+ quips %] 条标语将不再有作者，但仍会显示。
           </li>
         [% END %]
         [% IF watch.watched || watch.watcher %]
           <li>
             [% otheruser.login FILTER html %]
-            [% IF watch.watched %]被 [% watch.watched %] 位使用者监视中[% END %]
+            [% IF watch.watched %]被 [% watch.watched %] 位用户监视中[% END %]
             [% IF watch.watcher %][% '，并' IF watch.watched %]监视 [% watch.watcher %]
-            位使用者中[% END %]。所有相关的监视将和该使用者一并刪除。
+            位用户中[% END %]。所有相关的监视将和该用户一并刪除。
           </li>
         [% END %]
         [% IF whine_events %]
           <li>
-            [% otheruser.login FILTER html %] 排定了 [% whine_events %] 项订阅。相关订阅将和该使用者一并删除。
+            [% otheruser.login FILTER html %] 排定了 [% whine_events %] 项订阅。相关订阅将和该用户一并删除。
           </li>
         [% END %]
         [% IF whine_schedules %]
@@ -248,7 +248,7 @@
         [% END %]
         [% IF otheruser.has_audit_entries %]
           <li>
-            在数据库中有使用者执行过的稽查管理记录。如果你删除此使用者账号，这些记录将无法再被辨识。
+            在数据库中有用户执行过的稽查管理记录。如果你删除此用户账号，这些记录将无法再被辨识。
           </li>
         [% END %]
         [% Hook.process('warn_safe') %]
@@ -260,7 +260,7 @@
         在继续执行之前，请先确认执行后可能的结果。
       </p>
 
-      <p>你确定要删除该使用者吗？</p>
+      <p>你确定要删除该用户吗？</p>
 
       <form method="post" action="editusers.cgi">
         <p>
@@ -272,19 +272,19 @@
         </p>
       </form>
 
-      <p>如果你现在不想要删除该使用者，你可以
+      <p>如果你现在不想要删除该用户，你可以
     [% ELSE %]
-      <p>因为前述不安全的动作，<b>你无法删除此使用者账号</b>。你可以
+      <p>因为前述不安全的动作，<b>你无法删除此用户账号</b>。你可以
     [% END %]
 
   [% END %]
 [% END %]
 
   <a href="editusers.cgi?action=edit&amp;userid=[% otheruser.id %]
-           [% INCLUDE listselectionurlparams %]">编辑该使用者</a>，回到<a
-     href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">使用者列表</a>，[% IF editusers %]<a
-     href="editusers.cgi?action=add[% INCLUDE listselectionurlparams %]">新增使用者</a>，[% END %]或是<a
-     href="editusers.cgi">搜索其他使用者</a>。
+           [% INCLUDE listselectionurlparams %]">编辑该用户</a>，回到<a
+     href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">用户列表</a>，[% IF editusers %]<a
+     href="editusers.cgi?action=add[% INCLUDE listselectionurlparams %]">新增用户</a>，[% END %]或是<a
+     href="editusers.cgi">搜索其他用户</a>。
 </p>
 
 [% PROCESS global/footer.html.tmpl %]

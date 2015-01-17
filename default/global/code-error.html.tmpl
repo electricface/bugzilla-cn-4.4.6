@@ -106,7 +106,7 @@
     [% IF Param("auth_env_email") %]
       这代表 '[% Param("auth_env_email") FILTER html %]' 环境变量是空白或不存在。
     [% ELSE %]
-      你必须设置 "auth_env_email" 参数到包含使用者的电子邮件地址的该环境变量名称中。
+      你必须设置 "auth_env_email" 参数到包含用户的电子邮件地址的该环境变量名称中。
     [% END %]
 
   [% ELSIF error == "extension_must_be_subclass" %]
@@ -234,7 +234,7 @@
     [% IF errstr %]
       <code>[% errstr FILTER html %]</code>
     [% ELSE %]
-      在 LDAP 中找不到使用者
+      在 LDAP 中找不到用户
     [% END %]
 
   [% ELSIF error == "ldap_server_not_defined" %]
@@ -355,7 +355,7 @@
       内部发生错误，但是 [% terms.Bugzilla %] 并不知道
       <code>[% error FILTER html %]</code> 所代表的意义。<br>
       <br>
-      如果你是一个 [% terms.Bugzilla %] 的使用者，但却看到此消息时，请将它转发给 [% Param('maintainer') %] 。
+      如果你是一个 [% terms.Bugzilla %] 的用户，但却看到此消息时，请将它转发给 [% Param('maintainer') %] 。
     [% ELSE %]
       [% error_message FILTER none %]
     [% END %]
