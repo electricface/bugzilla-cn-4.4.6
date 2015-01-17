@@ -11,17 +11,17 @@
 <tr class="attachment_data">
   <th><label for="data">文件</label>：</th>
   <td>
-    <em>输入该文件在你的电脑的路径位置</em>（或者
+    <em>选择该文件在你的电脑的存储路径</em>（或者
     <a id="attachment_data_controller" href="javascript:TUI_toggle_class('attachment_text_field');
                                              javascript:TUI_toggle_class('attachment_data')"
-    >把文字贴上作为附件</a>）。<br>
+    >把文字作为附件</a>）。<br>
     <input type="file" id="data" name="data" size="50" onchange="DataFieldHandler()">
   </td>
 </tr>
 <tr class="attachment_text_field">
   <th><label for="attach_text">文件</label>：</th>
   <td>
-   <em>贴上文字作为附件</em>（或者
+   <em>文字作为附件</em>（或者
     <a id="attachment_text_field_controller" href="javascript:TUI_toggle_class('attachment_text_field');
                                                    javascript:TUI_toggle_class('attachment_data')"
     >附加一个文件</a>）。<br>
@@ -32,7 +32,7 @@
 <tr>
   <th class="required"><label for="description">描述</label>：</th>
   <td>
-    <em>简要描述该附件。</em><br>
+    <em>简要描述此附件。</em><br>
     <input type="text" id="description" name="description" class="required"
            size="60" maxlength="200">
   </td>
@@ -40,7 +40,7 @@
 <tr[% ' class="expert_fields"' UNLESS bug.id %]>
   <th>内容类别：</th>
   <td>
-    <em>如果该附件是一个 patch 的话，勾选下方选项。</em><br>
+    <em>如果该附件是一个补丁的话，勾选下方选项。</em><br>
     <input type="checkbox" id="ispatch" name="ispatch" value="1"
            onchange="setContentTypeDisabledState(this.form);">
     <label for="ispatch">patch</label><br><br>
@@ -54,7 +54,7 @@
     <em>否则，选择一种方法来决定内容类别。</em><br>
     <input type="radio" id="autodetect"
            name="contenttypemethod" value="autodetect" checked="checked">
-      <label for="autodetect">自动侦测</label><br>
+      <label for="autodetect">自动检测</label><br>
     <input type="radio" id="list"
            name="contenttypemethod" value="list">
       <label for="list">自列表中选择</label>：
@@ -75,7 +75,7 @@
   <td>
     [% IF flag_types && flag_types.size > 0 %]
       [% PROCESS "flag/list.html.tmpl" %]<br>
-    [% END %]
+    [% END %]：
   </td>
 </tr>
 
