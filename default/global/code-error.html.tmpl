@@ -251,8 +251,8 @@
     [%+ series.name FILTER html %]。
 
   [% ELSIF error == "must_be_patch" %]
-    [% title = "附件必须是 patch" %]
-    附件 #[% attach_id FILTER html %] 必须是一个 patch 。
+    [% title = "附件必须是补丁" %]
+    附件 #[% attach_id FILTER html %] 必须是一个补丁。
 
   [% ELSIF error == "not_in_transaction" %]
     未开始修改就尝试结束。

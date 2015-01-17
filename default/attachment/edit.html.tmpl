@@ -211,7 +211,7 @@
                 [% END %]
                 [% IF user.id %]
                   document.write('<button type="button" id="editButton" onclick="editAsComment(patchviewerinstalled);">以编辑附件方式作为留言<\/button>');
-                  document.write('<button type="button" id="undoEditButton" onclick="undoEditAsComment(patchviewerinstalled);" class="bz_default_hidden">回复<\/button>');
+                  document.write('<button type="button" id="undoEditButton" onclick="undoEditAsComment(patchviewerinstalled);" class="bz_default_hidden">撤销<\/button>');
                   document.write('<button type="button" id="redoEditButton" onclick="redoEditAsComment(patchviewerinstalled);" class="bz_default_hidden">重做以编辑附件方式作为留言<\/button>');
                   var editFrame = document.getElementById('editFrame');
                   if (editFrame) {
@@ -241,7 +241,7 @@
       <div id="attachment_comments_and_flags">
         [% IF user.id %]
           <div id="smallCommentFrame" >
-            <label for="comment">（对[% terms.bug %]）的留言：</label>
+            <label for="comment">对此[% terms.bug %]的留言：</label>
             [% classNames = 'block' %]
             [% classNames = "$classes bz_private" IF attachment.isprivate %]
             [% INCLUDE global/textarea.html.tmpl

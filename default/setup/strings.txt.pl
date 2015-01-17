@@ -89,7 +89,7 @@ END
     feature_old_charts => '旧图表',
     feature_mod_perl => 'mod_perl',
     feature_moving => '在不同机器间移动 Bugs',
-    feature_patch_viewer => 'Patch Viewer',
+    feature_patch_viewer => '补丁查看器',
     feature_smtp_auth => 'SMTP 认证',
     feature_smtp_ssl => 'SMTP 的 SSL 支持',
     feature_updates => '自动更新通知',
@@ -185,8 +185,8 @@ MySQL 才需要输入的：输入 unix socket for MySQL 的路径。
 END
     localconfig_db_user => "用来连接数据库的用户",
     localconfig_diffpath => <<'END',
-如果要让「两个 patch 之间的 diff 」功能有效，需要知道 "diff" bin
-在哪个目录。（只有在使用 Patch Viewer 功能时才需要设置。）
+如果要让「两个补丁之间的差异」功能有效，需要知道 "diff" 可执行程序
+在哪个目录。（只有在使用补丁查看器功能时才需要设置。）
 END
     localconfig_index_html => <<'END',
 大部份的网页服务器允许你使用 index.cgi 作为目录索引，并且也已经
@@ -198,7 +198,7 @@ checksetup.pl 会在 index.html 不存在时，替你建立一个。
        index.html 文件不存在。
 END
     localconfig_interdiffbin => <<'END',
-如果你想要使用 Patch Viewer 的「两个 patch 之间的 diff 」功能，
+如果你想要使用补丁查看器的「两个补丁之间的差异」功能，
 请指定 "interdiff" 可执行的完整路径。
 END
     localconfig_site_wide_secret => <<'END',
@@ -340,7 +340,7 @@ END
 </html>
 END
     patchutils_missing => <<'END',
-额外选项备注：如果你想要使用 Bugzilla 的「两个 patch 之间的 diff 」功能
+额外选项备注：如果你想要使用 Bugzilla 的「两个补丁之间的差异」功能
 （它需要 PatchReader 这个 Perl 模块），你应该从以下网址安装 patchutils
 ：
 
