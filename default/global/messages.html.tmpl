@@ -55,7 +55,7 @@
         [% END %]
         [% IF groups_added_to.size %]
           <li>
-            已新增该账号至下列群组：
+            已添加该账号至下列群组：
             [%+ groups_added_to.join(', ') FILTER html %]
           </li>
         [% END %]
@@ -69,14 +69,14 @@
           <li>
             该账号已获得对
             [%+ groups_granted_rights_to_bless.join(', ') FILTER html %]
-            群组 bless （在群组中新增成员）的权限。
+            群组 bless （在群组中添加成员）的权限。
           </li>
         [% END %]
         [% IF groups_denied_rights_to_bless.size %]
           <li>
             该账号对
             [%+ groups_denied_rights_to_bless.join(', ') FILTER html %]
-            群组 bless （在群组中新增成员）的权限已被拒绝。
+            群组 bless （在群组中添加成员）的权限已被拒绝。
           </li>
         [% END %]
       </ul>
@@ -94,17 +94,17 @@
 
   [% ELSIF message_tag == "attachment_creation_failed" %]
     成功创建[% terms.bug %]，但无法创建附件。
-    请以下方的"新增附件"链接再次新增附件。
+    请以下方的"添加附件"链接再次添加附件。
 
   [% ELSIF message_tag == "bug_group_description" %]
     浏览 [% product.name FILTER html %] 产品的[% terms.bugs %]
 
   [% ELSIF message_tag == "buglist_adding_field" %]
-    [% title = "新增字段至搜索页中…" %]
+    [% title = "添加字段至搜索页中…" %]
     [% link  = "如果此页面并未自动更新，请点选此链接。" %]
 
   [% ELSIF message_tag == "buglist_new_default_query" %]
-    已新增默认搜索。你也可以将任何搜索的结果设为书签。
+    已添加默认搜索。你也可以将任何搜索的结果设为书签。
 
   [% ELSIF message_tag == "buglist_new_named_query" %]
     [% title = "已建立搜索" %]
@@ -132,8 +132,8 @@
     如果页面没有自动更新，请点击<a href="[% redirect_url FILTER html %]">此链接</a>。
 
   [% ELSIF message_tag == "classification_created" %]
-    [% title = "已新增新的分类" %]
-    已新增分类 <em>[% classification.name FILTER html %]</em> 。
+    [% title = "已添加新的分类" %]
+    已添加分类 <em>[% classification.name FILTER html %]</em> 。
 
   [% ELSIF message_tag == "classification_deleted" %]
     [% title = "已刪除分类" %]
@@ -215,8 +215,8 @@
     [% END %]
 
   [% ELSIF message_tag == "custom_field_created" %]
-    [% title = "已新增自定义字段" %]
-    已成功新增自定义字段 '[% field.name FILTER html %]' 。
+    [% title = "已添加自定义字段" %]
+    已成功添加自定义字段 '[% field.name FILTER html %]' 。
 
   [% ELSIF message_tag == "custom_field_deleted" %]
     [% title = "已刪除自定义字段" %]
@@ -249,11 +249,11 @@
     已回复原有账号的设置。
 
   [% ELSIF message_tag == "extension_created" %]
-    已在 [% path FILTER html %] 新增名为 [% name FILTER html %] 的附加元件。
+    已在 [% path FILTER html %] 添加名为 [% name FILTER html %] 的附加元件。
 
   [% ELSIF message_tag == "field_value_created" %]
     [% title = "已建立新的字段值" %]
-    已将 <em>[% value.name FILTER html %]</em> 新增为字段
+    已将 <em>[% value.name FILTER html %]</em> 添加为字段
     <em>[% field.description FILTER html %]</em>
     (<em>[% field.name FILTER html %]</em>) 的合法选项。
     [% IF field.name == "bug_status" %]
@@ -311,7 +311,7 @@
     部份旗标在新的产品／模块中不适用，因此已被清除。
 
   [% ELSIF message_tag == "flag_creation_failed" %]
-    [% title = "新增旗标失败" %]
+    [% title = "添加旗标失败" %]
     在认证旗标时发生错误：
     [%+ flag_creation_error FILTER none %]
 
@@ -366,7 +366,7 @@
           [% CASE 'icon_url' %]
             <li>已更新群组图示网址。</li>
           [% CASE 'members_add' %]
-            <li>已新增下列成员至此群组：
+            <li>已添加下列成员至此群组：
               [%+ changes.members_add.join(', ') FILTER html %]</li>
           [% CASE 'members_remove' %]
             <li>已自此群组中刪除下列成员：
@@ -378,16 +378,16 @@
             <li>此群组已不是下列群组的成员：
               [%+ changes.member_of_remove.join(', ') FILTER html %]</li>
           [% CASE 'bless_from_add' %]
-            <li>下列群组现在可以新增用户至此群组：
+            <li>下列群组现在可以添加用户至此群组：
               [%+ changes.bless_from_add.join(', ') FILTER html %]</li>
           [% CASE 'bless_from_remove' %]
-            <li>下列群组已无法新增用户至此群组：
+            <li>下列群组已无法添加用户至此群组：
               [%+ changes.bless_from_remove.join(', ') FILTER html %]</li>
           [% CASE 'bless_to_add' %]
-            <li>此群组现在可以新增用户至下列群组：
+            <li>此群组现在可以添加用户至下列群组：
               [%+ changes.bless_to_add.join(', ') FILTER html %]</li>
           [% CASE 'bless_to_remove' %]
-            <li>此群组已无法新增用户至下列群组：
+            <li>此群组已无法添加用户至下列群组：
               [%+ changes.bless_to_remove.join(', ') FILTER html %]</li>
           [% CASE 'visible_from_add' %]
             <li>下列群组现在可以看见此群组的用户：
@@ -460,7 +460,7 @@
     (产品是 [% product.name FILTER html %])
 
   [% ELSIF message_tag == "migrate_creating_bugs" %]
-    新增[% terms.bugs %]中…
+    添加[% terms.bugs %]中…
 
   [% ELSIF message_tag == "migrate_field_created" %]
     新的自定义字段： [% field.description FILTER html %]
@@ -554,8 +554,8 @@
     已更新你的密码。
 
   [% ELSIF message_tag == "flag_type_created" %]
-    [% title = BLOCK %]已新增旗标类型 '[% name FILTER html %]'[% END %]
-    已新增旗标类型 <em>[% name FILTER html %]</em> 。
+    [% title = BLOCK %]已添加旗标类型 '[% name FILTER html %]'[% END %]
+    已添加旗标类型 <em>[% name FILTER html %]</em> 。
 
   [% ELSIF message_tag == "flag_type_deactivated" %]
     [% title = BLOCK %]已停用旗标类型 '[% flag_type.name FILTER html %]'[% END %]
@@ -640,7 +640,7 @@
     这可能是你第一次使用 [% terms.Bugzilla %] ，或者你的管理者权限被意外刪除了。
 
   [% ELSIF message_tag == "install_column_add" %]
-    在表格 '[% table FILTER html %]' 中新增 '[% column FILTER html %]'字段...
+    在表格 '[% table FILTER html %]' 中添加 '[% column FILTER html %]'字段...
 
   [% ELSIF message_tag == "install_column_drop" %]
     自表格 '[% table FILTER html %]' 中刪除 '[% column FILTER html %]'字段...
@@ -661,7 +661,7 @@
     修复文件权限中...
 
   [% ELSIF message_tag == "install_fk_add" %]
-    新增 foreign key ： [% table FILTER html %].[% column FILTER html %] -&gt; [% fk.TABLE FILTER html %].[% fk.COLUMN FILTER html %]...
+    添加 foreign key ： [% table FILTER html %].[% column FILTER html %] -&gt; [% fk.TABLE FILTER html %].[% fk.COLUMN FILTER html %]...
 
   [% ELSIF message_tag == "install_fk_drop" %]
     移除 foreign key ： [% table FILTER html %].[% column FILTER html %] -&gt; [% fk.TABLE FILTER html %].[% fk.COLUMN FILTER html %]...
@@ -689,13 +689,13 @@
     设置 foreign key 中...
 
   [% ELSIF message_tag == "install_group_create" %]
-    新增 [% name FILTER html %] 群组...
+    添加 [% name FILTER html %] 群组...
 
   [% ELSIF message_tag == "install_groups_setup" %]
-    新增默认群组中...
+    添加默认群组中...
 
   [% ELSIF message_tag == "install_setting_new" %]
-    新增用户设置： '[% name FILTER html %]'
+    添加用户设置： '[% name FILTER html %]'
 
   [% ELSIF message_tag == "install_setting_setup" %]
     设置用户偏好设置中...
@@ -797,8 +797,8 @@
       已结束 sudo 。接下来所做的动作将影响自己的帐号。
 
   [% ELSIF message_tag == "series_created" %]
-    [% title = "系列已新增" %]
-      已新增 <em>[% series.category FILTER html %] /
+    [% title = "系列已添加" %]
+      已添加 <em>[% series.category FILTER html %] /
       [%+ series.subcategory FILTER html %] /
       [%+ series.name FILTER html %]</em> 。
       注意：在此一系列有足够的数据可以产生图表之前，你需要等

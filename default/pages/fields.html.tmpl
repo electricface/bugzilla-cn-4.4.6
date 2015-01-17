@@ -56,7 +56,7 @@
           [% display_value("bug_status", "CONFIRMED") FILTER html %]
         </dt>
         <dd class="confirmed">
-          这个[% terms.bug %]是最近才新增且被确认的[% terms.bug %]。
+          这个[% terms.bug %]是最近才添加且被确认的[% terms.bug %]。
           当有人开始处理在这个状态的 [%+ terms.bugs %] 时，状态修改为
           <b>[% display_value("bug_status", "IN_PROGRESS") FILTER html %]</b>
           ；或是将它解决，并标记为

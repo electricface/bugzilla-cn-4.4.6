@@ -13,7 +13,7 @@
 [% PROCESS global/header.html.tmpl title = title %]
 [% FOREACH group = mandatory_groups %]
 <p>
-由于群组 '[% group.name FILTER html %]' 设置为强制 (MANDATORY)，因此将新增受该群组影响的
+由于群组 '[% group.name FILTER html %]' 设置为强制 (MANDATORY)，因此将添加受该群组影响的
 [% group.count %] 个 [%+ terms.bugs %] 。</p>
 [% END %]
 

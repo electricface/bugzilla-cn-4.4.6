@@ -7,8 +7,8 @@
   #%]
 
 [%# Define strings that will serve as the title and header of this page %]
-[% title = BLOCK %]新增[% terms.Bug %]#[% bug.bug_id %] 的附件[% END %]
-[% header = BLOCK %]新增 [%+ "${terms.Bug}#${bug.bug_id}" FILTER bug_link(bug) FILTER none %] 的附件[% END %]
+[% title = BLOCK %]添加[% terms.Bug %]#[% bug.bug_id %] 的附件[% END %]
+[% header = BLOCK %]添加 [%+ "${terms.Bug}#${bug.bug_id}" FILTER bug_link(bug) FILTER none %] 的附件[% END %]
 [% subheader = BLOCK %][% bug.short_desc FILTER html %][% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -80,7 +80,7 @@ TUI_hide_default('attachment_text_field');
     <tr>
       <th><label for="comment">意见：</label></th>
       <td>
-        <em>对新增的附件加上意见。（选填）</em><br>
+        <em>对添加的附件加上意见。（选填）</em><br>
         [% INCLUDE global/textarea.html.tmpl
           name    = 'comment'
           id      = 'comment'

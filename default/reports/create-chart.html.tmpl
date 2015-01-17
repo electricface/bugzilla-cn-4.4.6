@@ -236,7 +236,7 @@ function subcatSelected() {
 </form>
 
 [% IF user.in_group('editbugs') %]
-  <h3>新增资料集</h3>
+  <h3>添加资料集</h3>
   <p>
     你可以根据已存储的搜索为基础，来创建新的资料集。或是你也可以从头开始创建。
   </p>
@@ -250,7 +250,7 @@ function subcatSelected() {
         <option value="[% q.name FILTER html %]">[% q.name FILTER html %]</option>
       [% END %]
     </select>
-    <input id="submit_create" type="submit" value="新增资料集">
+    <input id="submit_create" type="submit" value="添加资料集">
   </form>
 [% END %]
 

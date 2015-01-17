@@ -16,13 +16,13 @@
 
 [% PROCESS global/header.html.tmpl
            title = "${terms.Bugzilla} 标语系统"
-           header = "新增自己的大标题"
+           header = "添加自己的大标题"
  %]
 
 [% IF added_quip %]
   <p>
     <font color="red">
-      已新增标语 '<tt>[% added_quip FILTER html %]</tt>'。
+      已添加标语 '<tt>[% added_quip FILTER html %]</tt>'。
       [% IF Param("quip_list_entry_control") == "moderated" AND !user.in_group('bz_quip_moderators') %]
         在通过审核之后就会立即使用它。
       [% END %]

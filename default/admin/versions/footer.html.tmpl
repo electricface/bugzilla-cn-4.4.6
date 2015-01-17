@@ -24,9 +24,9 @@
 <p>
 
 [% UNLESS no_add_version_link %]
-  <a title="在产品 '[% product.name FILTER html %]' 新增版本"
+  <a title="在产品 '[% product.name FILTER html %]' 添加版本"
      href="editversions.cgi?action=add&amp;product=
-          [%- product.name FILTER uri %]">新增</a>版本。
+          [%- product.name FILTER uri %]">添加</a>版本。
 [% END %]
 
 [% IF version.name && !no_edit_version_link %]

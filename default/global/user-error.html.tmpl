@@ -105,7 +105,7 @@
     [% IF reason %]
       [% IF group %]而且[% END %]
       [% IF reason == "cant_bless" %]
-        你也沒有在群组新增或刪除成员的权限，
+        你也沒有在群组添加或刪除成员的权限，
       [% ELSIF reason == "not_visible" %]
         对特定的用户群组有浏览的权限限制，
       [% END %]
@@ -115,7 +115,7 @@
     [% IF action == "access" %]
       进入
     [% ELSIF action == "add" %]
-      新增
+      添加
     [% ELSIF action == "begin" %]
       开始
     [% ELSIF action == "modify" %]
@@ -123,7 +123,7 @@
     [% ELSIF action == "delete" %]
       刪除
     [% ELSIF action == "edit" %]
-      新增、修改或刪除
+      添加、修改或刪除
     [% ELSIF action == "run" %]
       执行
     [% ELSIF action == "schedule" %]
@@ -603,7 +603,7 @@
     但是附加档不得大于
     [%# Hack to get the max value between both limits %]
     [%+ max_limit.nsort.last FILTER html %] KB 。<br>
-    我们建议你将附件储存在其他地方，然后在新增附件的页面中，你有权限浏览「贴上文字做为附件」连结内容的文字字段里，贴上储存该附件的网址。
+    我们建议你将附件储存在其他地方，然后在添加附件的页面中，你有权限浏览「贴上文字做为附件」连结内容的文字字段里，贴上储存该附件的网址。
     <br>如果你的附件是圖片的话，你可以先将它轉換为 JPG 或 PNG 格式，然后再试一次。
 
   [% ELSIF error == "flag_requestee_disabled" %]
@@ -840,7 +840,7 @@
 
   [% ELSIF error == "illegal_frequency" %]
     [% title = "过于频繁" %]
-    除非你是管理者，否则你不能够新增执行频率高于每
+    除非你是管理者，否则你不能够添加执行频率高于每
     [% minimum FILTER html %] 天执行一次的系列。
 
   [% ELSIF error == "illegal_group_control_combination" %]
@@ -855,7 +855,7 @@
   [% ELSIF error == "illegal_series_creation" %]
     [% admindocslinks = {'groups.html' => '群组安全性'} %]
     [% docslinks = {'reporting.html' => '报告'} %]
-    你并未被授权允许新增一个系列。
+    你并未被授权允许添加一个系列。
 
   [% ELSIF error == "illegal_series_edit" %]
     [% admindocslinks = {'groups.html' => '群组安全性'} %]
@@ -1099,7 +1099,7 @@
   [% ELSIF error == "mismatched_bug_ids_on_obsolete" %]
     附件 [% attach_id FILTER html %] （[% description FILTER html %]）是附加在[% terms.bug %]
     [%+ attach_bug_id FILTER html %] 的附件，但在对[% terms.bug %]
-    [%+ my_bug_id FILTER html %] 新增附件时，你尝试将它标记为「已廢棄的附件」。
+    [%+ my_bug_id FILTER html %] 添加附件时，你尝试将它标记为「已廢棄的附件」。
 
   [% ELSIF error == "missing_attachment_description" %]
     [% title = "缺少附件描述" %]
@@ -1115,13 +1115,13 @@
   [% ELSIF error == "missing_component" %]
     [% title = "缺少子产品" %]
     [% admindocslinks = {'products.html'   => '管理产品',
-                         'components.html' => '新增子产品'} %]
+                         'components.html' => '添加子产品'} %]
     很抱歉，产品 <em>[% product.name FILTER html %]</em>
     中必须至少有一项启用的子产品，才能够输入[% terms.bug %]。<br>
     [% IF user.in_group("editcomponents", product.id) %]
-      <a href="editcomponents.cgi?action=add&amp;product=[% product.name FILTER uri %]">新增子产品</a>。
+      <a href="editcomponents.cgi?action=add&amp;product=[% product.name FILTER uri %]">添加子产品</a>。
     [% ELSE %]
-      请洽管理员 [% Param("maintainer") %] 并要求他们新增子产品到此产品中。
+      请洽管理员 [% Param("maintainer") %] 并要求他们添加子产品到此产品中。
     [% END %]
 
   [% ELSIF error == "missing_content_type" %]
@@ -1172,9 +1172,9 @@
     很抱歉，产品 <em>[% product.name FILTER html %]</em>
     必须要至少有一个启用的版本，才能够输入[% terms.bug %]。<br>
     [% IF user.in_group("editcomponents", product.id) %]
-      <a href="editversions.cgi?action=add&amp;product=[% product.name FILTER uri %]">新增版本</a>。
+      <a href="editversions.cgi?action=add&amp;product=[% product.name FILTER uri %]">添加版本</a>。
     [% ELSE %]
-      请洽[% Param("maintainer") %]并要求他们替此产品新增一个版本。
+      请洽[% Param("maintainer") %]并要求他们替此产品添加一个版本。
     [% END %]
 
   [% ELSIF error == "multiple_alias_not_allowed" %]
@@ -1207,13 +1207,13 @@
 
   [% ELSIF error == "no_initial_bug_status" %]
     [% title = "沒有初始的${terms.Bug}状态" %]
-    在新增[% terms.bug %]时沒有初始的[% terms.bug %]状态可以选。
+    在添加[% terms.bug %]时沒有初始的[% terms.bug %]状态可以选。
     请将此问题回报給 [% Param("maintainer") %] 。
 
   [% ELSIF error == "no_new_quips" %]
     [% title = "沒有新的标语" %]
     [% admindocslinks = {'quips.html' => '控管标语的使用'} %]
-    此站点不允许新增标语。
+    此站点不允许添加标语。
 
   [% ELSIF error == "no_page_specified" %]
     [% title = "并未指定文件" %]
@@ -1222,13 +1222,13 @@
   [% ELSIF error == "no_products" %]
     [% title = "沒有产品" %]
     [% admindocslinks = {'products.html'   => '设置产品',
-                         'components.html' => '在产品中新增子产品',
+                         'components.html' => '在产品中添加子产品',
                          'groups.html'     => '群组安全性'} %]
     并未定义可以输入[% terms.bugs %]的产品，或者你沒有权限可以浏览任何产品。
 
   [% ELSIF error == "no_tag_to_edit" %]
     [% title = "未选择标签" %]
-    你尝试新增或移除沒有名称的标签。
+    你尝试添加或移除沒有名称的标签。
 
   [% ELSIF error == "number_not_numeric" %]
     [% title = "必须是数字" %]
@@ -1358,7 +1358,7 @@
     [% admindocslinks = {'products.html' => '管理产品',
                          'milestones.html' => '关于里程碑'} %]
     你必须<a href="editmilestones.cgi?action=add&amp;product=[% product FILTER uri %]">
-    新增里程碑 '[% milestone FILTER html %]' </a>，才能将它设置为产品
+    添加里程碑 '[% milestone FILTER html %]' </a>，才能将它设置为产品
     '[% product FILTER html %]' 的默认里程碑。
 
   [% ELSIF error == "product_must_have_description" %]
@@ -1370,7 +1370,7 @@
     [% title = "必须输入产品版本" %]
     [% admindocslinks = {'products.html' => '管理产品',
                          'versions.html' => '管理版本'} %]
-    你必须输入有效的版本，才能新增一项产品。
+    你必须输入有效的版本，才能添加一项产品。
 
   [% ELSIF error == "product_name_already_in_use" %]
     [% title = "产品名称已存在" %]
@@ -1703,7 +1703,7 @@
 
   [% ELSIF error == "wrong_token_for_creating_account" %]
     [% title = "错误的 token" %]
-    无法使用该 token 新增账号。
+    无法使用该 token 添加账号。
 
   [% ELSIF error == "xmlrpc_invalid_value" %]
     "[% value FILTER html %]" 并非

@@ -13,7 +13,7 @@
     [% IF type.id %]
       以 [% type.name FILTER html %] 为基础
     [% END %]
-    新增 [% type.target_type == "bug" ? terms.Bugs : "附件" %] 的旗标类型
+    添加 [% type.target_type == "bug" ? terms.Bugs : "附件" %] 的旗标类型
   [% END %]
   [% doc_section = "flags-overview.html#flags-create" %]
 [% ELSE %]
@@ -85,7 +85,7 @@
         [% UNLESS can_fully_edit %]
           <p class="warning">此旗标类型也适用于一些你不被允许编辑的产品
           （也因此你在列表中并不会看见它们）。因为你的权限有限，
-          因此你仅被允许在你可以编辑的产品中新增／移除此旗标类型，
+          因此你仅被允许在你可以编辑的产品中添加／移除此旗标类型，
           但是无法编辑此一旗标类型的其他设置值。</p>
         [% END %]
         <table>
@@ -213,7 +213,7 @@
     <tr>
       <th>&nbsp;</th>
       <td>
-        <input type="submit" id="save" value="[% action == "insert" ? "新增" : "存储设置" %]">
+        <input type="submit" id="save" value="[% action == "insert" ? "添加" : "存储设置" %]">
       </td>
     </tr>
 

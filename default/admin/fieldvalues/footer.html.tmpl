@@ -23,9 +23,9 @@
 <p>
 
 [% UNLESS no_add_link %]
-  <a title="在 '[% field.description FILTER html %]' 新增一个数值。"
+  <a title="在 '[% field.description FILTER html %]' 添加一个数值。"
      href="editvalues.cgi?action=add&amp;field=
-          [%- field.name FILTER uri %]">新增</a>一个数值。
+          [%- field.name FILTER uri %]">添加</a>一个数值。
 [% END %]
 
 [% IF value.defined && !no_edit_link %]

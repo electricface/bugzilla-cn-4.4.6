@@ -47,8 +47,8 @@
 
         [% class = (user.in_group('editusers') || user.can_bless) ? "" : "forbidden" %]
         <dt id="users" class="[% class %]"><a href="editusers.cgi">用户</a></dt>
-        <dd class="[% class %]">新增或者编辑用户。
-        <br>你也可以从群组中新增或移除用户。（又称「用户权限设置」）</dd>
+        <dd class="[% class %]">添加或者编辑用户。
+        <br>你也可以从群组中添加或移除用户。（又称「用户权限设置」）</dd>
 
         [% class = (Param('useclassification') && user.in_group('editclassifications')) ? "" : "forbidden" %]
         <dt id="classifications" class="[% class %]"><a href="editclassifications.cgi">分类</a></dt>
@@ -77,15 +77,14 @@
         [% class = user.in_group('admin') ? "" : "forbidden" %]
         <dt id="custom_fields" class="[% class %]"><a href="editfields.cgi">自定义字段</a></dt>
         <dd class="[% class %]">[% terms.Bugzilla %] 允许你根据你的需要，自行设置系统中并未默认建立的自定义字段。这些自定义字段可以和一般字段一并使用，包括在搜索时使用。
-        <br>在新增自定义字段时，请记得过多的字段会使用户界面变得过于复杂，因而难以使用。请先确定没有其他方式可以满足你的需求，才新增自定义字段。</dd>
+        <br>在添加自定义字段时，请记得过多的字段会使用户界面变得过于复杂，因而难以使用。请先确定没有其他方式可以满足你的需求，才添加自定义字段。</dd>
 
         <dt id="field_values" class="[% class %]"><a href="editvalues.cgi">字段值</a></dt>
         <dd class="[% class %]">定义字段的有效数值。
         <br>这也是定义自定义字段的有效数值的地方。</dd>
 
         <dt id="status_workflow" class="[% class %]"><a href="editworkflow.cgi">[% terms.Bug %]状态确认流程</a></dt>
-        <dd class="[% class %]">自定义你的确认流程，选择在新增[% terms.bug %]
-        时[% terms.bug %]的默认状态，以及在编辑现有的[% terms.bugs %]时是否允许修改状态。</dd>
+        <dd class="[% class %]">自定义你的确认流程，选择在添加[% terms.bug %]时[% terms.bug %]的默认状态，以及在编辑现有的[% terms.bugs %]时是否允许修改状态。</dd>
 
         [% class = user.in_group('creategroups') ? "" : "forbidden" %]
         <dt id="groups" class="[% class %]"><a href="editgroups.cgi">群组</a></dt>

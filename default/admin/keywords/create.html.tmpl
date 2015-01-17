@@ -11,8 +11,8 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "新增关键字"
-  subheader = "此页面允许你新增关键字。"
+  title = "添加关键字"
+  subheader = "此页面允许你添加关键字。"
 %]
 
 <form method="post" action="editkeywords.cgi">
@@ -35,7 +35,7 @@
   </table>
   <hr>
   <input type="hidden" name="id" value="-1">
-  <input type="submit" id="create" value="新增">
+  <input type="submit" id="create" value="添加">
   <input type="hidden" name="action" value="new">
   <input type="hidden" name="token" value="[% token FILTER html %]">
 </form>

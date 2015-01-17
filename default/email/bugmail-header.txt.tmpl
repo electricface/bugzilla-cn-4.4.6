@@ -13,7 +13,7 @@
 
 From: [% Param('mailfrom') %]
 To: [% to_user.email %]
-Subject: [[% terms.Bug %][%+ bug.id %]] [% '新增：' IF show_new %][%+ bug.short_desc %]
+Subject: [[% terms.Bug %][%+ bug.id %]] [% '添加：' IF show_new %][%+ bug.short_desc %]
 Date: [% date %]
 X-Bugzilla-Reason: [% reasonsheader %]
 X-Bugzilla-Type: [% isnew ? 'new' : 'changed' %]

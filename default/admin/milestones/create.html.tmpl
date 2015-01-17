@@ -11,8 +11,8 @@
   #               which the milestone belongs.
   #%]
 
-[% title = BLOCK %]在产品 '[% product.name FILTER html %] '新增里程碑[% END %]
-[% subheader = BLOCK %]此页面允许你在产品 '[% product.name FILTER html %]' 新增里程碑。[% END %]
+[% title = BLOCK %]在产品 '[% product.name FILTER html %] '添加里程碑[% END %]
+[% subheader = BLOCK %]此页面允许你在产品 '[% product.name FILTER html %]' 添加里程碑。[% END %]
 [% PROCESS global/header.html.tmpl
   title = title
   subheader = subheader
@@ -32,7 +32,7 @@
                  value=""></td>
     </tr>
   </table>
-  <input type="submit" id="create" value="新增">
+  <input type="submit" id="create" value="添加">
   <input type="hidden" name="action" value="new">
   <input type="hidden" name='product' value="[% product.name FILTER html %]">
   <input type="hidden" name="token" value="[% token FILTER html %]">

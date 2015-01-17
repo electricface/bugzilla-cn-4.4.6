@@ -30,12 +30,12 @@
 </p>
 
 <p>
-  要设置一个新的订阅事件，点击「新增事件」。
+  要设置一个新的订阅事件，点击「添加事件」。
   <br>只要输入信件主题以及描述文字，就会和[% terms.bug %]列表一起寄出。
 </p>
 
 <p>
-  要替事件设置排程，点击「新增排程」。
+  要替事件设置排程，点击「添加排程」。
   <br>排程的内容包括一天、一天中的某个时间，或是一个时间的间隔（例如每15分钟），以及电子邮件地址。
   <br>电子邮件地址将会根据你的权限来决定是否可以变动。
   <br>一个事件可以设置多组排程，以便对不同的用户执行多次。
@@ -44,7 +44,7 @@
 <p>
   搜索来自已存储的搜索。
   <br>已存储的搜索是在执行<a href="query.cgi">搜索</a>页面，并将该页面结果以指定的名称储存于 [% terms.Bugzilla %] 中。
-  <br>点击「新增搜索」，选择已存储的搜索名称，并于[% terms.bug %]表格中加入标题。
+  <br>点击「添加搜索」，选择已存储的搜索名称，并于[% terms.bug %]表格中加入标题。
   <br>「排序」下的数字为选填。若有多条搜索排列，将会以该数字决定执行的顺序（从最小到最大）。
   <br>如果勾选「每个[% terms.bug %]送出一封信」，那么符合该搜索的每个 [% terms.bug%] 都会寄出一封信。
 </p>
@@ -120,7 +120,7 @@
       </td>
       <td class="unset" colspan="2">
         无任何排程可执行<br>
-        <input type="submit" value="新增排程"
+        <input type="submit" value="添加排程"
                name="add_schedule_[% event.key %]"
                id="add_schedule_[% event.key %]">
       </td>
@@ -189,7 +189,7 @@
 
           <tr>
             <td colspan="3">
-              <input type="submit" value="新增排程"
+              <input type="submit" value="添加排程"
                      name="add_schedule_[% event.key %]"
                      id="add_schedule_[% event.key %]">
             </td>
@@ -210,7 +210,7 @@
       </td>
       <td align="left">
         无搜索<br>
-        <input type="submit" value="新增搜索"
+        <input type="submit" value="添加搜索"
                name="add_query_[% event.key %]"
                id="add_query_[% event.key %]">
       </td>
@@ -276,7 +276,7 @@
 
           <tr>
             <td colspan="3">
-              <input type="submit" value="新增搜索"
+              <input type="submit" value="添加搜索"
                      name="add_query_[% event.key %]"
                      id="add_query_[% event.key %]">
             </td>
@@ -296,7 +296,7 @@
 [% END %]
 
 <p align="left">
-  <input type="submit" value="新增事件" name="add_event" id="add_event">
+  <input type="submit" value="添加事件" name="add_event" id="add_event">
 </p>
 
 </form>

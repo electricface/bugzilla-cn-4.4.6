@@ -131,7 +131,7 @@
 </p>
 [% IF editusers %]
   <p>
-    在「可替其他用户设置这些权限」勾选框旁的中括号指出因属于另一群组的成员，而有 bless 用户（在群组中新增成员）的能力。
+    在「可替其他用户设置这些权限」勾选框旁的中括号指出因属于另一群组的成员，而有 bless 用户（在群组中添加成员）的能力。
   </p>
 [% END %]
 
@@ -148,7 +148,7 @@
 
 <p>
   你也可以[% IF editusers %]<a
-  href="editusers.cgi?action=add[% INCLUDE listselectionurlparams %]">新增用户</a>，[% END %]
+  href="editusers.cgi?action=add[% INCLUDE listselectionurlparams %]">添加用户</a>，[% END %]
   [% IF listselectionvalues.matchtype != 'exact' %]回到<a
   href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">用户列表</a>，[% END %]
   [% IF editusers OR listselectionvalues %]或是[% END %]<a

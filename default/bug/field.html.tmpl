@@ -160,11 +160,11 @@
        [% IF Param('use_see_also') %]
          <span id="container_showhide_[% field.name FILTER html %]"
                class="bz_default_hidden">
-           （<a href="#" id="showhide_[% field.name FILTER html %]">新增</a>）
+           （<a href="#" id="showhide_[% field.name FILTER html %]">添加</a>）
          </span>
          <div id="container_[% field.name FILTER html %]">
            <label for="[% field.name FILTER html %]">
-             <strong>新增[% terms.Bug %]反馈信息的网址：</strong>
+             <strong>添加[% terms.Bug %]反馈信息的网址：</strong>
            </label><br>
            <input type="text" id="[% field.name FILTER html %]" size="40"
                   class="text_input" name="[% field.name FILTER html %]">

@@ -71,7 +71,7 @@
     的 foreign key ，但是该字段并没有 foreign key 。
 
   [% ELSIF error == "column_not_null_without_default" %]
-    新增字段 [% name FILTER html %] 失败：
+    添加字段 [% name FILTER html %] 失败：
     <br>除非你在参数 <code>$init_value</code> 中做设置，否则你不能在现有的表格中加入没有默认值的 NOT NULL 字段。
 
   [% ELSIF error == "column_not_null_no_default_alter" %]
@@ -150,7 +150,7 @@
 
   [% ELSIF error == "field_type_not_specified" %]
     [% title = "未指定字段种类" %]
-    在新增自定字段时，你必须指定字段的种类。
+    在添加自定字段时，你必须指定字段的种类。
 
   [% ELSIF error == "flag_type_inactive" %]
     [% title = "无效的旗标类型" %]
@@ -314,7 +314,7 @@
     '[% joiner FILTER html %]' 对搜索而言不是有效的 joiner 。
 
   [% ELSIF error == "setting_info_invalid" %]
-    要新增设置，你必须输入设置名称、合适的数值／排序键，以及默认值。
+    要添加设置，你必须输入设置名称、合适的数值／排序键，以及默认值。
 
   [% ELSIF error == "setting_name_invalid" %]
     设置名称 <em>[% name FILTER html %]</em> 并非有效的选项。
