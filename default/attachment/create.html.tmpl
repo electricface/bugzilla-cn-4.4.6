@@ -41,7 +41,7 @@ TUI_hide_default('attachment_text_field');
       <tr>
         <th>废弃附件：</th>
         <td>
-          <em>（选用）若勾选以下已存在的附件，在新增附件的同时会废弃已勾选的附件。</em><br>
+          <em>若勾选如下已存在的附件，在添加新附件的同时会废弃已勾选的附件。（选用）</em><br>
           [% FOREACH attachment = attachments %]
             <input type="checkbox" id="[% attachment.id %]"
                  name="obsolete" value="[% attachment.id %]">
@@ -80,7 +80,7 @@ TUI_hide_default('attachment_text_field');
     <tr>
       <th><label for="comment">意见：</label></th>
       <td>
-        <em>（选填）对新增的附件加上意见。</em><br>
+        <em>对新增的附件加上意见。（选填）</em><br>
         [% INCLUDE global/textarea.html.tmpl
           name    = 'comment'
           id      = 'comment'
