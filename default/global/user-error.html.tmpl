@@ -67,7 +67,7 @@
   [% ELSIF error == "alias_in_use" %]
     [% title = "别名使用中" %]
     [% IF user.can_see_bug(bug_id) %]
-      [% terms.Bug %] [%+ bug_id FILTER bug_link(bug_id) FILTER none %]
+      [% terms.Bug %][%+ bug_id FILTER bug_link(bug_id) FILTER none %]
     [% ELSE %]
       另一个[% terms.bug %]
     [% END %]
@@ -241,7 +241,7 @@
     [% bug_id FILTER uri %]&amp;GoAheadAndLogIn=1">登入</a>。
 
   [% ELSIF error == "bug_url_invalid" %]
-    [% title = "无效的 $terms.Bug 回报资讯网址" %]
+    [% title = "无效的${terms.Bug}回报资讯网址" %]
     <code>[% url FILTER html %]</code> 对一个[% terms.bug %]而言并不是有效的网址。
     [% IF reason == 'http' %]
       网址必须以 "http" 或 "https" 开头。
@@ -266,15 +266,15 @@
     [% END %]
 
   [% ELSIF error == "bug_url_too_long" %]
-    [% title = "无效的 $terms.Bug 回报资讯网址" %]
-    [% terms.Bug %] 回报资讯网址不能长于
+    [% title = "无效的${terms.Bug}回报资讯网址" %]
+    [% terms.Bug %]回报资讯网址不能长于
     [%+ constants.MAX_BUG_URL_LENGTH FILTER none %] 字元。
     <code>[% url FILTER html %]</code> 太长了。
 
   [% ELSIF error == "buglist_parameters_required" %]
     [% title = "需要输入字串" %]
     [% docslinks = {'query.html' => "搜索${terms.bugs}",
-                    'query.html#list' => "$terms.Bug 清单"} %]
+                    'query.html#list' => "${terms.Bug}清单"} %]
     在未输入搜索字串时，你无法搜索，或储存搜索结果。
 
   [% ELSIF error == "cc_remove_denied" %]
@@ -356,7 +356,7 @@
     你必须输入子产品的名称。
 
   [% ELSIF error == "component_has_bugs" %]
-    [% title = BLOCK %]子产品已有 [% terms.Bugs %][% END %]
+    [% title = BLOCK %]子产品已有[% terms.Bugs %][% END %]
     此子产品内已经有 [% nb FILTER html %] 个[% terms.bugs %]！
     在刪除子产品之前，你必须将[% terms.bugs %]重新分配到其他的子产品。
 
@@ -405,7 +405,7 @@
     你不能把一个[% terms.bug %]标记为「如果沒修好这个[% terms.bug %]，会挡掉它自己」。
 
   [% ELSIF error == "dupe_id_required" %]
-    [% title = "需要指定重复的 $terms.Bug 编号" %]
+    [% title = "需要指定重复的${terms.Bug}编号" %]
     你必须指定和此[% terms.bug %]重复的[% terms.bug %]编号。
 
   [% ELSIF error == "dupe_not_allowed" %]
@@ -779,7 +779,7 @@
     [%+ bug_id FILTER html %] 的附件。
 
   [% ELSIF error == "illegal_bug_status_transition" %]
-    [% title = "无效的 $terms.Bug 状态修改" %]
+    [% title = "无效的${terms.Bug}状态修改" %]
     [% IF old.defined %]
       你并未被允许可以将[% terms.bug %]
       的状态自[%+ old FILTER html %]修改为[+% new FILTER html %]。
@@ -880,12 +880,12 @@
     附件编号 [% attach_id FILTER html %] 无效。
 
   [% ELSIF error == "bug_id_does_not_exist" %]
-    [% title = BLOCK %]无效的 [% terms.Bug %] 编号[% END %]
-    [% terms.Bug %] #[% bug_id FILTER html %] 不存在。
+    [% title = BLOCK %]无效的[% terms.Bug %]编号[% END %]
+    [% terms.Bug %]#[% bug_id FILTER html %] 不存在。
 
   [% ELSIF error == "improper_bug_id_field_value" %]
     [% title = BLOCK %]
-      [% IF bug_id %]无效的[% ELSE %]缺少[% END %] [% terms.Bug %] 编号
+      [% IF bug_id %]无效的[% ELSE %]缺少[% END %][% terms.Bug %]编号
     [% END %]
     [% IF bug_id %]
       '[% bug_id FILTER html %]'并非有效的[% terms.bug %]
@@ -1150,7 +1150,7 @@
   [% ELSIF error == "missing_query" %]
     [% title = "缺少搜索" %]
     [% docslinks = {'query.html' => "搜索${terms.bugs}",
-                    'query.html#list' => "$terms.Bug 清单"} %]
+                    'query.html#list' => "${terms.Bug}清单"} %]
     名称是 <em>[% name FILTER html %]</em> 的搜索
     [% IF sharer_id && sharer_id != user.id %]
       并未对你公开。
@@ -1199,14 +1199,14 @@
     你并未定义任何座标轴。
 
   [% ELSIF error == "no_bugs_chosen" %]
-    [% title = BLOCK %]未选择 [% terms.Bugs %][% END %]
+    [% title = BLOCK %]未选择[% terms.Bugs %][% END %]
     你并未选择要
     [% IF action == "modify" %]修改
     [% ELSIF action == "view" %]浏览[% END %]
     的[% terms.bugs %]。
 
   [% ELSIF error == "no_initial_bug_status" %]
-    [% title = "沒有初始的 $terms.Bug 状态" %]
+    [% title = "沒有初始的${terms.Bug}状态" %]
     在新增[% terms.bug %]时沒有初始的[% terms.bug %]状态可以选。
     请将此问题回报給 [% Param("maintainer") %] 。
 
@@ -1332,7 +1332,7 @@
     你必须输入产品的名称。
 
   [% ELSIF error == "product_disabled" %]
-    [% title = BLOCK %]产品已不允许回报 [% terms.Bug %][% END %]
+    [% title = BLOCK %]产品已不允许回报[% terms.Bug %][% END %]
     [% admindocslinks = {'products.html' => '管理产品'} %]
     很抱歉，已不允许在产品 <em>[% product.name FILTER html %]</em> 中回报[% terms.bug %]。
 
@@ -1399,7 +1399,7 @@
 
   [% ELSIF error == "query_name_missing" %]
     [% title = "未指定搜索名称" %]
-    [% docslinks = {'query.html#list' => "$terms.Bug 清单"} %]
+    [% docslinks = {'query.html#list' => "${terms.Bug}清单"} %]
     你必须输入你的搜索名称。
 
   [% ELSIF error == "query_name_too_long" %]
@@ -1492,7 +1492,7 @@
     你必须对 '[% field_descs.${field.name} FILTER html %]' 字段设置数字。
 
   [% ELSIF error == "resolution_cant_clear" %]
-    [% terms.Bug %] [% bug_id FILTER bug_link(bug_id) FILTER none %]
+    [% terms.Bug %][% bug_id FILTER bug_link(bug_id) FILTER none %]
     已关閉，因此你无法清除它的解決方案。
 
   [% ELSIF error == "resolution_not_allowed" %]
@@ -1543,7 +1543,7 @@
   [% ELSIF error == "still_unresolved_bugs" %]
     [% title = "未解決的依赖关系" %]
     [% IF bug_id %]
-      [% terms.Bug %] [%+ bug_id FILTER bug_link(bug_id) FILTER none %]
+      [% terms.Bug %][%+ bug_id FILTER bug_link(bug_id) FILTER none %]
     [% ELSE %]
       这个[% terms.bug %]
     [% END %]
@@ -1642,7 +1642,7 @@
     你必须为此版本输入名称。
 
   [% ELSIF error == "version_has_bugs" %]
-    [% title = BLOCK %]版本中还有 [% terms.Bugs %][% END %]
+    [% title = BLOCK %]版本中还有[% terms.Bugs %][% END %]
     这个版本中还有 [% nb FILTER html %] 个[% terms.bugs %]！
     在刪除此版本前，你必须将这些[% terms.bugs %]重新分配至另一个版本。
 

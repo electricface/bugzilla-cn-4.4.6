@@ -18,8 +18,8 @@
 
 [% PROCESS "bug/show-header.html.tmpl" %]
 [% PROCESS global/header.html.tmpl
-  title = "$terms.Bug $id 已提交 &ndash; $filtered_desc"
-  header = "$terms.Bug $id 已提交"
+  title = "${terms.Bug}$id 已提交 &ndash; $filtered_desc"
+  header = "${terms.Bug}$id 已提交"
 %]
 
 [% header_done = 1 %]

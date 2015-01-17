@@ -25,7 +25,7 @@
 [%# *** Column Headers *** %]
 
 [% SET columns = [
-    { name => "id", description => "$terms.Bug 编号" },
+    { name => "id", description => "${terms.Bug}编号" },
     { name => "count", description => "重复数量" },
     { name => "delta",
       description => "过去 $changedsince 天做出的修改" },

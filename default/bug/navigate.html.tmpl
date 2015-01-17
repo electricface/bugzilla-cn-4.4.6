@@ -15,7 +15,7 @@
     <li>&nbsp;-&nbsp;<a href="show_bug.cgi?ctype=xml&amp;id=
                         [% bug.bug_id  FILTER uri %]">XML</a></li>
     <li>&nbsp;-&nbsp;<a href="enter_bug.cgi?cloned_bug_id=
-                        [% bug.bug_id  FILTER uri %]">拷贝这个 [% terms.Bug %]</a></li>
+                        [% bug.bug_id  FILTER uri %]">拷贝这个[% terms.Bug %]</a></li>
     [%# Links to more things users can do with this bug. %]
     [% Hook.process("links") %]
     <li>&nbsp;-&nbsp;<a href="#">回到首页</a></li>
@@ -27,7 +27,7 @@
 [% IF my_search %]
   [% SET last_bug_list = my_search.bug_list %]
   [% SET this_bug_idx = lsearch(last_bug_list, bug.id) %]
-  <b>[% terms.Bug %] 列表：</b>
+  <b>[% terms.Bug %]列表：</b>
 
   (共 [% last_bug_list.size %] 个，第 [% this_bug_idx + 1 %] 个)
 

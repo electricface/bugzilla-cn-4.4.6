@@ -6,7 +6,7 @@
   # defined by the Mozilla Public License, v. 2.0.
   #%]
 
-[% DEFAULT title = "$terms.Bugzilla $terms.Bugs" %]
+[% DEFAULT title = "$terms.Bugzilla${terms.Bugs}" %]
 
 <?xml version="1.0"[% IF Param('utf8') %] encoding="UTF-8"[% END %]?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -23,7 +23,7 @@
 
   [% FOREACH bug = bugs %]
   <entry>
-    <title>[% "@" IF bug.secure_mode %][[% terms.Bug %] [%+ bug.bug_id FILTER xml %]] [% bug.short_desc FILTER xml %]</title>
+    <title>[% "@" IF bug.secure_mode %][[% terms.Bug %][%+ bug.bug_id FILTER xml %]] [% bug.short_desc FILTER xml %]</title>
     <link rel="alternate" type="text/html"
           href="[% urlbase FILTER html %]show_bug.cgi?id=
           [%- bug.bug_id FILTER xml %]"/>

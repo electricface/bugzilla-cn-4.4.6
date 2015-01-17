@@ -12,7 +12,7 @@
   #%]
 
 [% title = BLOCK %]
-  删除 [% terms.Bug %] [%+ a.bug_id FILTER html %] 的附件 [% a.id FILTER html %]
+  删除[% terms.Bug %][%+ a.bug_id FILTER html %] 的附件 [% a.id FILTER html %]
 [% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -40,7 +40,7 @@
     <td valign="top">[% a.description FILTER html %]</td>
   </tr>
   <tr>
-    <td valign="top">此附件位于 [% terms.Bug %] 中：</td>
+    <td valign="top">此附件位于[% terms.Bug %]中：</td>
     <td valign="top">[% a.bug_id FILTER bug_link(a.bug_id) FILTER none %]</td>
   </tr>
   <tr>

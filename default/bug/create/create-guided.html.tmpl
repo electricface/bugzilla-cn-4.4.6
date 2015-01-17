@@ -14,7 +14,7 @@
 [% cgi = Bugzilla.cgi %]
 
 [% PROCESS global/header.html.tmpl
-   title = "输入 $terms.Bug"
+   title = "输入${terms.Bug}"
    onload = "PutDescription()"
    style = "#somebugs { width: 100%; height: 500px }"
  %]

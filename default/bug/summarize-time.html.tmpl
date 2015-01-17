@@ -8,9 +8,9 @@
 
 [% title = "时间统计" %]
 [% IF do_depends %]
-    [% header = "$terms.Bug $ids.0" FILTER bug_link(ids.0) FILTER none %]
+    [% header = "${terms.Bug}$ids.0" FILTER bug_link(ids.0) FILTER none %]
     [% header = header _ " (包括把这个${terms.bug}档掉的所有${terms.bugs})" _ title %]
-    [% title = "$terms.Bug $ids.0 " _ title %]
+    [% title = "${terms.Bug}$ids.0 " _ title %]
 [% ELSE %]
     [% title = "$ids.size 个已选的${terms.bugs}" _ title %]
     [% header = title %]
@@ -175,7 +175,7 @@
 [% BLOCK bug_header %]
     <tr class="bug_header[% '2' IF cid % 2 %]">
         <td width="80" valign="top">
-          <b>[% "$terms.Bug $id" FILTER bug_link(id) FILTER none %]</b>
+          <b>[% "${terms.Bug}$id" FILTER bug_link(id) FILTER none %]</b>
         </td>
         <td width="100"><b>[% display_value("bug_status", bugs.$id.bug_status) FILTER html %]</b></td>
         <td colspan="2">[% bugs.$id.short_desc FILTER html %]</td>
@@ -301,7 +301,7 @@
   <input type="radio" name="group_by" id="number" value="number" [%+
     'checked="checked"' IF group_by == "number"
   %]><label
-  for="number" accesskey="n">[% terms.Bug %] 编号 (<u>N</u>)</label>
+  for="number" accesskey="n">[% terms.Bug %]编号 (<u>N</u>)</label>
   <input type="radio" name="group_by" id="owner" value="owner" [%+
     'checked="checked"' IF group_by == "owner"
   %]><label

@@ -21,7 +21,7 @@
 [% USE Bugzilla %]
 [% cgi = Bugzilla.cgi %]
 
-[% unfiltered_title = "$terms.Bug 列表" %]
+[% unfiltered_title = "${terms.Bug}列表" %]
 [% IF searchname || defaultsavename %]
   [% unfiltered_title = unfiltered_title _ ": " _ (searchname OR defaultsavename) %]
 [% END %]
@@ -242,13 +242,13 @@
         [% IF bugs.size > 1 && caneditbugs && !dotweak %]
           <a href="buglist.cgi?[% urlquerypart FILTER html %]
             [%- "&order=$qorder" FILTER html IF order %]&amp;tweak=1"
-            >一次修改多个 [% terms.Bugs %]</a>
+            >一次修改多个[% terms.Bugs %]</a>
           |
         [% END %]
 
         [% IF bugowners && user.id %]
           <a href="mailto:
-            [% bugowners FILTER html %]">发送给 [% terms.Bug %] 负责人</a> |
+            [% bugowners FILTER html %]">发送给[% terms.Bug %]负责人</a> |
         [% END %]
 
         [%# Links to more things users can do with this bug list. %]

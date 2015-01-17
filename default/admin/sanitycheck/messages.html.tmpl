@@ -30,7 +30,7 @@
     检查没有建立日期的[% terms.bugs %]中…（没有建立日期将会使[% terms.bugs %]无法检查。）
 
   [% ELSIF san_tag == "bug_check_creation_date_error_text" %]
-    没有建立日期的 [% terms.Bugs %]
+    没有建立日期的[% terms.Bugs %]
 
   [% ELSIF san_tag == "bug_check_creation_date_repair_text" %]
     修复没有建立日期的[% terms.bugs %]中…
@@ -39,7 +39,7 @@
     檢查没有全文字搜索的[% terms.bugs %]报告。
 
   [% ELSIF san_tag == "bug_check_bugs_fulltext_error_text" %]
-    没有全文字搜索的 [% terms.Bugs %] 报告
+    没有全文字搜索的[% terms.Bugs %]报告
 
   [% ELSIF san_tag == "bug_check_bugs_fulltext_repair_text" %]
     修复缺少全文字搜索的这些[% terms.bugs %]报告
@@ -48,28 +48,28 @@
     检查解决方案中标记为重复的[% terms.bugs %]…
 
   [% ELSIF san_tag == "bug_check_res_dupl_error_text" %]
-    在标记为重复的 [% terms.Bugs %] 列表中找到并非被标记为重复的[% terms.bugs %]
+    在标记为重复的[% terms.Bugs %]列表中找到并非被标记为重复的[% terms.bugs %]
 
   [% ELSIF san_tag == "bug_check_res_dupl_error_text2" %]
-    找到标记为重复的 [% terms.Bugs %] ，但并不在标记为重复的[% terms.bugs %]列表中
+    找到标记为重复的[% terms.Bugs %]，但并不在标记为重复的[% terms.bugs %]列表中
 
   [% ELSIF san_tag == "bug_check_status_res" %]
     检查状态／解決方案中…
 
   [% ELSIF san_tag == "bug_check_status_res_error_text" %]
-    状态为开启，却有解決方案的 [% terms.Bugs %]
+    状态为开启，却有解決方案的[% terms.Bugs %]
 
   [% ELSIF san_tag == "bug_check_status_res_error_text2" %]
-    状态为关闭，但没有解決方案的 [% terms.Bugs %]
+    状态为关闭，但没有解決方案的[% terms.Bugs %]
 
   [% ELSIF san_tag == "bug_check_status_everconfirmed" %]
     检查状态／是否确认中…
 
   [% ELSIF san_tag == "bug_check_status_everconfirmed_error_text" %]
-    状态是未确认 (UNCONFIRMED) 的 [% terms.Bugs %] ，但已设置 everconfirmed 参数
+    状态是未确认 (UNCONFIRMED) 的[% terms.Bugs %]，但已设置 everconfirmed 参数
 
   [% ELSIF san_tag == "bug_check_status_everconfirmed_error_text2" %]
-    状态是已确认的 [% terms.Bugs %] ，但未设置 everconfirmed 参数
+    状态是已确认的[% terms.Bugs %]，但未设置 everconfirmed 参数
 
   [% ELSIF san_tag == "bug_check_control_values" %]
     检查 group_control_map 错误的数值中…
@@ -231,7 +231,7 @@
     检查未寄出的邮件…
 
   [% ELSIF san_tag == "unsent_bugmail_alert" %]
-    已做出修改，但超过半小时没有寄信通知的 [% terms.Bugs %] ：
+    已做出修改，但超过半小时没有寄信通知的[% terms.Bugs %]：
     [% INCLUDE bug_list badbugs = badbugs %]
 
   [% ELSIF san_tag == "unsent_bugmail_fix" %]

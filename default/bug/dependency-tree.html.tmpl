@@ -8,8 +8,8 @@
 
 [% filtered_desc = blocked_tree.$bugid.short_desc FILTER html %]
 [% PROCESS global/header.html.tmpl
-   title           = "$terms.Bug $bugid 的依赖关系树"
-   header          = "<a href=\"show_bug.cgi?id=$bugid\">$terms.Bug $bugid</a> 的依赖关系树"
+   title           = "${terms.Bug}$bugid 的依赖关系树"
+   header          = "<a href=\"show_bug.cgi?id=$bugid\">${terms.Bug}$bugid</a> 的依赖关系树"
    javascript_urls = ["js/expanding-tree.js"]
    style_urls      = ["skins/standard/dependency-tree.css"]
    subheader      = filtered_desc
@@ -40,7 +40,7 @@
   [% global.seen = {} %]
   [%# Display the tree of bugs that this bug depends on. %]
   <h3>
-    <a href="show_bug.cgi?id=[% bugid %]">[% terms.Bug %] [%+ bugid %]</a>
+    <a href="show_bug.cgi?id=[% bugid %]">[% terms.Bug %][%+ bugid %]</a>
     [% IF type == 1 %]
         [% tree_name = "dependson_tree" %]
         [% IF ids.size %]

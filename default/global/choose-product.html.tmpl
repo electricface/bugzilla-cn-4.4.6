@@ -16,7 +16,7 @@
   #%]
 
 [% IF target == "enter_bug.cgi" %]
-  [% title = "录入 $terms.Bug" %]
+  [% title = "录入${terms.Bug}" %]
   [% h2 = BLOCK %]在提交新[% terms.bug %]之前，你必须先选择一个产品：[% END %]
 [% ELSIF target == "describecomponents.cgi" %]
   [% title = "浏览" %]

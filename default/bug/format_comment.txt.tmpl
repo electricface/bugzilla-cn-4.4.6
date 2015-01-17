@@ -26,7 +26,7 @@ X[% comment_body %]
 
 *** 此[% terms.bug %]被标记为和[% terms.bug %][%+ comment.extra_data %] 重复。 ***
 [% ELSIF comment.type == constants.CMT_HAS_DUPE %]
-*** [% terms.Bug %] [%+ comment.extra_data %] 被标记为和此[% terms.bug %]重复。 ***
+***[% terms.Bug %][%+ comment.extra_data %] 被标记为和此[% terms.bug %]重复。 ***
 [% ELSIF comment.type == constants.CMT_ATTACHMENT_CREATED %]
 已添加附件 [% comment.extra_data %]
 [% IF is_bugmail %]

@@ -8,10 +8,10 @@
 
 [%# Define strings that will serve as the title and header of this page %]
 [% title = BLOCK %]
-  [% terms.Bug %] [%+ attachment.bug_id %] 附件 [% attachment.id %] 的详细内容
+  [% terms.Bug %][%+ attachment.bug_id %] 附件 [% attachment.id %] 的详细内容
 [% END %]
 [% header = BLOCK %]
-  [%+ "$terms.Bug $attachment.bug_id" FILTER bug_link(attachment.bug_id) FILTER none %]
+  [%+ "${terms.Bug}$attachment.bug_id" FILTER bug_link(attachment.bug_id) FILTER none %]
   附件 [% attachment.id %] 的详细内容
 [% END %]
 [% subheader = BLOCK %][% attachment.bug.short_desc FILTER html %][% END %]

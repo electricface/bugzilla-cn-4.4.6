@@ -31,7 +31,7 @@
             href="showdependencygraph.cgi?id=[% bug.bug_id %]">
     [% END %]
 
-      <link rel="Show" title="[% terms.Bug %] 活动"
+      <link rel="Show" title="[% terms.Bug %]活动"
             href="show_activity.cgi?id=[% bug.bug_id %]">
       <link rel="Show" title="友好显示"
             href="show_bug.cgi?format=multiple&amp;id=[% bug.bug_id %]">
@@ -41,7 +41,7 @@
   [%# *** Saved Searches *** %]
   [% IF user.showmybugslink %]
     [% user_login = user.login FILTER uri %]
-    <link rel="Saved&nbsp;Searches" title="我的 [% terms.Bugs %]"
+    <link rel="Saved&nbsp;Searches" title="我的[% terms.Bugs %]"
           href="[% Param('mybugstemplate').replace('%userid%', user_login) %]">
   [% END %]
 

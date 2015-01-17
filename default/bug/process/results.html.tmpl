@@ -20,7 +20,7 @@
 
 [% DEFAULT type="bug" %]
 
-[% Link = BLOCK %][% "$terms.Bug $id" FILTER bug_link(id) %][% END %]
+[% Link = BLOCK %][% "${terms.Bug}$id" FILTER bug_link(id) %][% END %]
 [% link = BLOCK %][% "${terms.bug}$id" FILTER bug_link(id) %][% END %]
 
 [%

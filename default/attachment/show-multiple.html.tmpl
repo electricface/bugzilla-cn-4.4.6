@@ -7,10 +7,10 @@
   #%]
 
 [% filtered_summary = bugsummary FILTER html %]
-[% header = BLOCK %]浏览 [%+ "$terms.Bug $bug.id" FILTER bug_link(bug) FILTER none %] 的所有附件[% END %]
+[% header = BLOCK %]浏览 [%+ "${terms.Bug}$bug.id" FILTER bug_link(bug) FILTER none %] 的所有附件[% END %]
 
 [% title = BLOCK %]
-  浏览 [% terms.Bug %] [%+ bug.bug_id FILTER html %] 的所有附件
+  浏览[% terms.Bug %][%+ bug.bug_id FILTER html %] 的所有附件
 [% END %]
 
 [% PROCESS global/header.html.tmpl

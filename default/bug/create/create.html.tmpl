@@ -6,7 +6,7 @@
   # defined by the Mozilla Public License, v. 2.0.
   #%]
 
-[% title = BLOCK %]在 [% product.name FILTER html %] 产品下输入 [% terms.Bug %][% END %]
+[% title = BLOCK %]在 [% product.name FILTER html %] 产品下输入[% terms.Bug %][% END %]
 
 [% PROCESS global/header.html.tmpl
   title = title
@@ -524,7 +524,7 @@ TUI_hide_default('attachment_text_field');
 
       [% defaultcontent = BLOCK %]
         [% IF cloned_bug_id %]
-+++ 此[% terms.bug %]是拷贝自 [% terms.Bug %] #[% cloned_bug_id %] +++
++++ 此[% terms.bug %]是拷贝自[% terms.Bug %]#[% cloned_bug_id %] +++
 
 
         [% END %]

@@ -44,7 +44,7 @@
   ${constants.FIELD_TYPE_MULTI_SELECT}  => "多选框",
   ${constants.FIELD_TYPE_TEXTAREA}      => "文本框",
   ${constants.FIELD_TYPE_DATETIME}      => "日期／时间",
-  ${constants.FIELD_TYPE_BUG_ID}        => "$terms.Bug 编号"
+  ${constants.FIELD_TYPE_BUG_ID}        => "${terms.Bug}编号"
 } %]
 
 [% IF in_template_var %]
@@ -56,7 +56,7 @@
     # across all templates--see VARIABLES in Bugzilla/Template.pm.
     #%]
   [% vars.field_descs = {
-    "[Bug creation]"          => "[建立 $terms.Bug 时]",
+    "[Bug creation]"          => "[建立${terms.Bug}时]",
     "actual_time"             => "实际小时数",
     "alias"                   => "别名",
     "assigned_to"             => "负责人",
@@ -69,10 +69,10 @@
     "attachments.isobsolete"  => "附件已废弃",
     "attachments.isprivate"   => "附件不公开",
     "attachments.submitter"   => "附件创建者",
-    "blocked"                 => "会block掉这些 $terms.Bug",
+    "blocked"                 => "会block掉这些${terms.Bug}",
     "bug_file_loc"            => "网址",
     "bug_group"               => "群组",
-    "bug_id"                  => "$terms.Bug 编号",
+    "bug_id"                  => "${terms.Bug}编号",
     "bug_severity"            => "严重程度",
     "bug_status"              => "状态",
     "changeddate"             => "修改日期",
@@ -83,11 +83,11 @@
     "component_id"            => "模块编号",
     "component"               => "模块",
     "content"                 => "内容",
-    "creation_ts"             => "创建 $terms.Bug 的时间",
+    "creation_ts"             => "创建${terms.Bug}的时间",
     "days_elapsed"            => "距上次${terms.bug}修改已过几天",
     "deadline"                => "截至期限",
     "delta_ts"                => "已修改",
-    "dependson"               => "要先修改好这些 $terms.Bug",
+    "dependson"               => "要先修改好这些${terms.Bug}",
     "dup_id"                  => "重复的",
     "estimated_time"          => "原先估计时间",
     "everconfirmed"           => "是否确认",

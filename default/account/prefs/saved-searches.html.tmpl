@@ -56,7 +56,7 @@
       [% END %]
     </tr>
     <tr>
-      <td>我的 [% terms.Bugs %]</td>
+      <td>我的[% terms.Bugs %]</td>
       <td>
         [% filtered_username = user.login FILTER uri %]
         <a href="[% Param('mybugstemplate').replace('%userid%', filtered_username) %]">执行</a>

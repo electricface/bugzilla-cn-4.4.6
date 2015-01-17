@@ -84,7 +84,7 @@ END:VCALENDAR
   [% ELSIF bug.short_short_desc %]
     [% summary = bug.short_short_desc %]
   [% ELSE %]
-    [% summary = "$terms.Bug $bug.bug_id" %]
+    [% summary = "${terms.Bug}$bug.bug_id" %]
   [% END %]
   [% summary FILTER ics('SUMMARY') %]
 [% END %]

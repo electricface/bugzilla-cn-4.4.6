@@ -7,7 +7,7 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "纯文字 $terms.Bug 列表"
+  title = "纯文字${terms.Bug}列表"
   h1 = ""
   style_urls = ["skins/standard/show_multiple.css",
                 "skins/standard/buglist.css"]
@@ -314,7 +314,7 @@
 
 [% BLOCK dependencies %]
   <tr>
-    <th>[% terms.Bug %] [%+ field_descs.${name} FILTER html %]：</th>
+    <th>[% terms.Bug %][%+ field_descs.${name} FILTER html %]：</th>
     <td>
       [% FOREACH depbug = bug.${name} %]
         [% depbug FILTER bug_link(depbug) FILTER none %][% ", " IF not loop.last() %]

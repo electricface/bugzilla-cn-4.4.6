@@ -18,7 +18,7 @@
   [% title = BLOCK %]
     已对
     [% IF Bugzilla.cgi.param('id') %]
-      [% terms.Bug %] [%+ id FILTER html %]
+      [% terms.Bug %][%+ id FILTER html %]
     [% ELSE %]
       [% terms.Bugs %]
     [% END %]
