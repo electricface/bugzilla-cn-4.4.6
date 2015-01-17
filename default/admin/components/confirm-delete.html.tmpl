@@ -13,7 +13,7 @@
   #               which the component belongs.
   #%]
 
-[% title = BLOCK %]自 '[% product.name FILTER html %]' 产品中删除模宽 '[% comp.name FILTER html %]'
+[% title = BLOCK %]自 '[% product.name FILTER html %]' 项目中删除模宽 '[% comp.name FILTER html %]'
   [% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -47,20 +47,20 @@
 
 </tr>
 <tr>
-  <td valign="top">所属产品别：</td>
+  <td valign="top">所属项目别：</td>
   <td valign="top">[% product.name FILTER html %]</td>
 
 [% IF product.description %]
 </tr>
 <tr>
-  <td valign="top">产品描述：</td>
+  <td valign="top">项目描述：</td>
   <td valign="top">[% product.description FILTER html_light %]</td>
 [% END %]
 
 [% IF Param('usetargetmilestone') %]
 </tr>
 <tr>
-  <td valign="top">产品里程碑网址：</td>
+  <td valign="top">项目里程碑网址：</td>
   <td valign="top">
     <a href="[% product.milestone_url FILTER html %]">[% product.milestone_url FILTER html %]</a>
   </td>

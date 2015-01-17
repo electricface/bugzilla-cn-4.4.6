@@ -24,11 +24,11 @@ function toggle_display(link) {
     }
 
     if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
-        link.innerHTML = "显示已废弃的附件";
+        link.innerHTML = "显示已作废的附件";
         view_all.href = view_all.href + hide_obsolete_url_parameter
     }
     else {
-        link.innerHTML = "隐藏已废弃的附件";
+        link.innerHTML = "隐藏已作废的附件";
         view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");
     }
 
@@ -145,7 +145,7 @@ function toggle_display(link) {
       [% IF attachments.size %]
         <span class="bz_attach_view_hide">
           [% IF obsolete_attachments %]
-            <a href="#a0" onclick="return toggle_display(this);">显示已废弃的附件</a> ([% obsolete_attachments %])
+            <a href="#a0" onclick="return toggle_display(this);">显示已作废的附件</a> ([% obsolete_attachments %])
           [% END %]
           [% IF Param("allow_attachment_display") %]
             <a id="view_all" href="attachment.cgi?bugid=

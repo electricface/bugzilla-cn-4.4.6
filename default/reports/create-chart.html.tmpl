@@ -53,7 +53,7 @@ function subcatSelected() {
     [% IF NOT category OR category.size == 0 %]
       <tr>
         <td>
-          <i>没有资料集存在，或是你没有权限浏览。</i>
+          <i>没有数据集存在，或是你没有权限浏览。</i>
         </td>
       </tr>
     [% ELSE %]
@@ -106,7 +106,7 @@ function subcatSelected() {
     [% END %]
   </table>
 
-  <h3>列出要放置的资料集</h3>
+  <h3>列出要放置的数据集</h3>
 
   [% IF chart.lines.size %]
     <table cellspacing="2" cellpadding="2">
@@ -114,7 +114,7 @@ function subcatSelected() {
         <th style="width: 5em;">选择</th>
         <th>标签</th>
         <th></th>
-        <th>资料集</th>
+        <th>数据集</th>
         <th></th>
       </tr>
 
@@ -236,9 +236,9 @@ function subcatSelected() {
 </form>
 
 [% IF user.in_group('editbugs') %]
-  <h3>添加资料集</h3>
+  <h3>添加数据集</h3>
   <p>
-    你可以根据已存储的搜索为基础，来创建新的资料集。或是你也可以从头开始创建。
+    你可以根据已存储的搜索为基础，来创建新的数据集。或是你也可以从头开始创建。
   </p>
 
   <form action="chart.cgi" id="create_series" name="create_series" method="GET">
@@ -250,7 +250,7 @@ function subcatSelected() {
         <option value="[% q.name FILTER html %]">[% q.name FILTER html %]</option>
       [% END %]
     </select>
-    <input id="submit_create" type="submit" value="添加资料集">
+    <input id="submit_create" type="submit" value="添加数据集">
   </form>
 [% END %]
 

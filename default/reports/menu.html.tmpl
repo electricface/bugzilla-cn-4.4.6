@@ -53,7 +53,7 @@
   [% IF feature_enabled('old_charts') %]
     <li id="old_charts">
       <strong><a href="reports.cgi">旧的图表</a></strong> -
-      以资料库中每一个产品为单位，绘出时间、[% terms.bugs %]的状态和／或解決方案。
+      以资料库中每一个项目为单位，绘出时间、[% terms.bugs %]的状态和／或解決方案。
     </li>
   [% END %]
   [% IF feature_enabled('new_charts') AND user.in_group(Param("chartgroup")) %]

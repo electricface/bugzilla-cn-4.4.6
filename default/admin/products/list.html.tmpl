@@ -25,13 +25,13 @@
 [% END %]
 
 [% PROCESS global/header.html.tmpl
-  title = "选择${classification_title}产品"
+  title = "选择${classification_title}项目"
 %]
 
 [% columns = [
      {
        name => "name"
-       heading => "编辑产品…"
+       heading => "编辑项目…"
        contentlink => 'editproducts.cgi?action=edit&amp;product=%%name%%'
      },
      {

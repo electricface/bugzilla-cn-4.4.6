@@ -80,7 +80,7 @@ END
     feature_auth_ldap => 'LDAP 认证',
     feature_auth_radius => 'RADIUS 认证',
     feature_graphical_reports => '图表式报告',
-    feature_html_desc => '在产品／用户组描述中使用较多的 HTML',
+    feature_html_desc => '在项目／用户组描述中使用较多的 HTML',
     feature_inbound_email => 'Inbound Email',
     feature_jobqueue => '邮件排队序列',
     feature_jsonrpc => 'JSON-RPC 界面',

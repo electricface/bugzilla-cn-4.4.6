@@ -21,7 +21,7 @@
     你所做的修改已被拒绝，原因是在提交你对 [% script_name FILTER html %]
     所做的修改的时限（
     [% constants.MAX_TOKEN_AGE FILTER html %]
-    天）已经超过了。可能是页面显示过久，或是意外送出已送出的旧有修改。
+    天）已经超过了。可能是页面显示过久，或是意外提交已提交的旧有修改。
 
   [% ELSIF reason == "missing_token" %]
     看起来你并非从正确的页面过来。

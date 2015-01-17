@@ -17,13 +17,13 @@
 
 [% IF target == "enter_bug.cgi" %]
   [% title = "提交新${terms.Bug}" %]
-  [% h2 = BLOCK %]在提交新[% terms.bug %]之前，你必须先选择一个产品：[% END %]
+  [% h2 = BLOCK %]在提交新[% terms.bug %]之前，你必须先选择一个项目：[% END %]
 [% ELSIF target == "describecomponents.cgi" %]
   [% title = "浏览" %]
-  [% h2 = "选择要浏览的产品分类：" %]
+  [% h2 = "选择要浏览的项目分类：" %]
 [% END %]
 
-[% DEFAULT title = "选择一个产品" %]
+[% DEFAULT title = "选择一个项目" %]
 [% PROCESS global/header.html.tmpl %]
 
 <h2>[% h2 FILTER html %]</h2>

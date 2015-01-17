@@ -21,7 +21,7 @@
 <p>
 [% IF changes._group_controls.now_na.size %]
   [% FOREACH g = changes._group_controls.now_na %]
-    从群组 '[% g.name FILTER html %]' 中删除[% terms.bugs %]，因已不再适用这项产品的权限。
+    从群组 '[% g.name FILTER html %]' 中删除[% terms.bugs %]，因已不再适用这项项目的权限。
     <p>
     已删除 [% g.bug_count FILTER html %] 个[% terms.bugs %]。<p>
   [% END %]
@@ -29,7 +29,7 @@
 
 [% IF changes._group_controls.now_mandatory.size %]
   [% FOREACH g = changes._group_controls.now_mandatory %]
-    在群组 '[% g.name FILTER html %]' 添加[% terms.bugs %]中，因已适用此项产品的权限。
+    在群组 '[% g.name FILTER html %]' 添加[% terms.bugs %]中，因已适用此项项目的权限。
     <p>
     已添加 [% g.bug_count FILTER html %] 个[% terms.bugs %]。<p>
   [% END %]

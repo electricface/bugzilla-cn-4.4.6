@@ -43,7 +43,7 @@
 [% END %]
 
 <p>
-当你登入的时候，默认值只显示你所做的要求以及你所收到的要求。你可以用下方的表格做调整。<br>
+当你登录的时候，默认值只显示你所做的要求以及你所收到的要求。你可以用下方的表格做调整。<br>
 当你登出之后，默认值显示的是并未限制于某一群组，且未解決的要求。
 </p>
 
@@ -63,7 +63,7 @@
            field_title => "要求者的电子邮件地址"
         %]
       </td>
-      <th>产品：</th>
+      <th>项目：</th>
       <td>
         <select name="product" onchange="selectProduct(this, this.form.component, null, null, '任何');">
           <option value="">任何</option>
@@ -137,7 +137,7 @@
             "请求者" => 'requester' ,
             "被请求者" => 'requestee',
             "旗标" => 'type' ,
-            "产品／模块" => 'category'
+            "项目／模块" => 'category'
           } %]
         [% PROCESS "global/select-menu.html.tmpl" name="group" options=groups default=cgi.param('group') %]
     </tr>
@@ -165,7 +165,7 @@
       "requester"  => "请求者" ,
       "requestee"  => "被请求者" ,
       "created"    => "已建立的" ,
-      "category"   => "产品／子产品"    } %]
+      "category"   => "项目／模块"    } %]
 
 [% DEFAULT display_columns = ["requester", "requestee", "type", "bug", "attachment", "created"]
            group_field     = "被请求者"
@@ -257,5 +257,5 @@
   [% NEXT UNLESS buglist.keys.size %]
   <a href="buglist.cgi?bug_id=
           [%- buglist.keys.nsort.join(",") FILTER html %]">（以
-  [%+ terms.bug %] 列表方式检视）</a>
+  [%+ terms.bug %] 列表方式查看）</a>
 [% END %]

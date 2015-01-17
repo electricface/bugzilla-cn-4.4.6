@@ -92,7 +92,7 @@
   [% END %]
 
   <tr>
-    <th>产品负责数：</th>
+    <th>项目负责数：</th>
     <td>
       [% IF otheruser.product_responsibilities.size %]
         [% PROCESS admin/users/responsibilities.html.tmpl otheruser = otheruser %]
@@ -103,7 +103,7 @@
   </tr>
 
   <tr>
-    <th>上次登入：</th>
+    <th>上次登录：</th>
     <td>
       [% IF otheruser.last_seen_date %]
         [% otheruser.last_seen_date FILTER html %]

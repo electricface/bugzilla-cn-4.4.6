@@ -18,7 +18,7 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = '认证新产品的详细信息...' %]
+  title = '认证新项目的详细信息...' %]
 
 <form action="process_bug.cgi" method="post">
 
@@ -43,10 +43,10 @@
 [% IF Param("usetargetmilestone")
    && bug.check_can_change_field('target_milestone', 0, 1)
 %]
-  你正在将[% terms.bug %]移至产品 <b>[% product.name FILTER html %]</b> ，因此版本、模块，以及目标里程碑的字段都不正确了。<br>
+  你正在将[% terms.bug %]移至项目 <b>[% product.name FILTER html %]</b> ，因此版本、模块，以及目标里程碑的字段都不正确了。<br>
   请现在立即设置正确的版本、模块，以及目标里程碑：
 [% ELSE %]
-  你正在将[% terms.bug %]移至产品 <b>[% product.name FILTER html %]</b> ，因此版本以及模块的字段都不正确了。<br>
+  你正在将[% terms.bug %]移至项目 <b>[% product.name FILTER html %]</b> ，因此版本以及模块的字段都不正确了。<br>
   请现在立即设置正确的版本以及模块：
 [% END %]
 </p>
@@ -115,7 +115,7 @@
   [% END %]
 
   [% IF old_groups.size %]
-    <p>对 '[% product.name FILTER html %]' 产品而言，这些群组已经无效；或者你不被允许将[% terms.bugs %]限制于这些群组中。如果不加入其他群组的话， [%+ terms.Bugs %] 将不再被限制于这些群组，且会变为公开：<br>
+    <p>对 '[% product.name FILTER html %]' 项目而言，这些群组已经无效；或者你不被允许将[% terms.bugs %]限制于这些群组中。如果不加入其他群组的话， [%+ terms.Bugs %] 将不再被限制于这些群组，且会变为公开：<br>
     [% FOREACH group = old_groups %]
       <input type="checkbox" id="group_[% group.id FILTER html %]"
              name="groups" disabled="disabled" value="[% group.name FILTER html %]">

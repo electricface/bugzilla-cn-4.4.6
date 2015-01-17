@@ -69,7 +69,7 @@
 
     [% IF value.bug_count %]
       <li>有 [% value.bug_count FILTER html %] 个[% terms.bug %]
-          使用了此一数值。在删除此数值之前，你必须先修改<a
+          使用了此数值。在删除此数值之前，你必须先修改<a
           title="列出 '[% field.description FILTER html %]' 是
                 '[%+ value.name FILTER html %]' 的[% terms.bugs %]"
           href="buglist.cgi?[% field.name FILTER uri %]=[% value.name FILTER uri %]"

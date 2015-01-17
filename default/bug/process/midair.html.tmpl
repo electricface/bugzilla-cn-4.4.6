@@ -69,7 +69,7 @@
              value="[% bug.delta_ts FILTER html %]">
       [% PROCESS "global/hidden-fields.html.tmpl"
           exclude="^Bugzilla_login|Bugzilla_password|delta_ts$" %]
-      <input type="submit" id="process" value="仍舊送出我做的修改">
+      <input type="submit" id="process" value="仍舊提交我做的修改">
         [% "除了已加入的留言之外，" IF comments.size > start_at %]这将会覆盖以上的修改。
     </form>
   </li>

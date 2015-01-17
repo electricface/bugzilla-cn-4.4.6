@@ -7,8 +7,8 @@
   #%]
 
 [%
-   title = "${terms.Bug}修改政策"
-   desc = "设置${terms.bug}修改的政策"
+   title = "${terms.Bug}修改策略"
+   desc = "设置${terms.bug}修改的策略"
 %]
 
 [% accept_status = display_value('bug_status', 'IN_PROGRESS') FILTER html %]
@@ -21,7 +21,7 @@
                                 "若设为「关」，则使用默认的优先程度值。",
 
   letsubmitterchoosemilestone => "若设为「开」，则报告${terms.bug}的用户可以选择它的目标里程碑为何。" _
-                                 "若设为「关」，则使用该产品默认的目标里程碑。",
+                                 "若设为「关」，则使用该项目默认的目标里程碑。",
 
   musthavemilestoneonaccept =>
     "使用 ${field_descs.target_milestone} 时，是否要求用户在接受一个${terms.bug}时，设置目标里程碑？",

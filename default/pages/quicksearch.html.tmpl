@@ -83,7 +83,7 @@
   <li>所有状态为开启 (OPEN) 的[% terms.bugs %]中， userA@company.com
     在邮件抄送副本中的[% terms.bugs %]（不需要输入「开启」这个状态字串，这是默认值）：<br>
     <kbd>cc:userA@company.com</kbd></li>
-  <li>所有在产品「productA」中，状态为未确认 (UNCONFIRMED) 的[% terms.bugs %]
+  <li>所有在项目「productA」中，状态为未确认 (UNCONFIRMED) 的[% terms.bugs %]
     （将[% terms.bug %]的状态放在第一个字的话，就会自动视为[% terms.bug %]
     的状态）：<br>
     <kbd>UNCONFIRMED product:productA</kbd>
@@ -94,8 +94,8 @@
   <li>所有状态为开启、严重等级是 blocker 或 critical ，且目标里程碑是
     2.5 的[% terms.bugs %]：<br>
     <kbd>severity:blocker,critical milestone:2.5</kbd>
-  <li>所有在产品「Research & Development」中，优先程度是 P1 或 P2 ，状态为开启的[% terms.bugs %]
-    （因为产品名称中含有空白，因此必须以引号 (") 包覆它）：<br>
+  <li>所有在项目「Research & Development」中，优先程度是 P1 或 P2 ，状态为开启的[% terms.bugs %]
+    （因为项目名称中含有空白，因此必须以引号 (") 括住它）：<br>
     <kbd>component:"Research & Development" priority:P1,P2</kbd></li>
 </ul>
 
@@ -148,7 +148,7 @@
 
 <ul class="qs_help">
   <li>如果你要搜索的是<strong>片语</strong>或是含有空白、逗号 (,) 、冒号 (:)
-    、引号 (&quot;) 的字，必须以引号包覆这些字。
+    、引号 (&quot;) 的字，必须以引号括住这些字。
     例如： <kbd>"yes, this is a phrase"</kbd> 。
     如要搜索含有会被快速搜索认定为特别功能的字符时，也可以放在引号中。
     例如： <kbd>"this|that"</kbd> 就会以字面上的 <em>this|that</em> 进行搜索。
@@ -285,7 +285,7 @@
     [% terms.bugs %]（关于 @
     的用法，参见上方<a href="#shortcuts">高级快速键</a>一段）：<br>
     <kbd>ALL @userA@company.com OR reporter:userA@company.com</kbd></li>
-  <li>所有在产品「productA」中，状态为开启 (OPEN) 的[% terms.bugs %]中
+  <li>所有在项目「productA」中，状态为开启 (OPEN) 的[% terms.bugs %]中
     ，严重等级是 blocker 、 critical 或 major ，或者优先程度为 P1
     ，或者设置了 blocker+ 的旗标，且并非由 userB@company.com 或
     userC@company.com 负责（我们假设只有两个用户符合 userB 和 userC

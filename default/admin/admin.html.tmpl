@@ -52,15 +52,15 @@
 
         [% class = (Param('useclassification') && user.in_group('editclassifications')) ? "" : "forbidden" %]
         <dt id="classifications" class="[% class %]"><a href="editclassifications.cgi">分类</a></dt>
-        <dd class="[% class %]">如果你需要一次管理多种产品，建议你将产品分为数个分类。
+        <dd class="[% class %]">如果你需要一次管理多种项目，建议你将项目分为数个分类。
         <br>这样对用户搜索或报告新的[% terms.bugs %]时，也较为容易。</dd>
 
         [% class = (user.in_group('editcomponents')
                     || user.get_products_by_permission("editcomponents").size) ? "" : "forbidden" %]
-        <dt id="products" class="[% class %]"><a href="editproducts.cgi">产品</a></dt>
-        <dd class="[% class %]">编辑所有和产品的相关设置，包括限制哪些群组的用户可以在哪像产品中浏览
+        <dt id="products" class="[% class %]"><a href="editproducts.cgi">项目</a></dt>
+        <dd class="[% class %]">编辑所有和项目的相关设置，包括限制哪些群组的用户可以在哪像项目中浏览
         [% terms.bugs %]。
-        <br>你也可以直接编辑产品的特定属性，包括<a href="editcomponents.cgi">模块</a>、<a
+        <br>你也可以直接编辑项目的特定属性，包括<a href="editcomponents.cgi">模块</a>、<a
         href="editversions.cgi">版本</a>以及<a href="editmilestones.cgi">里程碑</a>。</dd>
 
         [% class = user.in_group('editcomponents') ? "" : "forbidden" %]

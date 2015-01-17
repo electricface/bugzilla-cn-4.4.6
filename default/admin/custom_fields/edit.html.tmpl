@@ -60,7 +60,7 @@
       <th class="narrow_label">种类：</th>
       <td>[% field_types.${field.type} FILTER html %]</td>
 
-      <th><label for="obsolete">已废弃：</label></th>
+      <th><label for="obsolete">已作废：</label></th>
       <td><input type="checkbox" id="obsolete" name="obsolete" value="1"
                  [%- " checked" IF field.obsolete %]></td>
     </tr>
@@ -75,7 +75,7 @@
                  [%- ' checked="checked"' IF field.is_mandatory %]></td>
     </tr>
     <tr>
-      <th class="narrow_label">较长的描述：</th>
+      <th class="narrow_label">详细描述：</th>
       <td>
         [% INCLUDE global/textarea.html.tmpl
          name           = 'long_desc'
@@ -133,7 +133,7 @@
         此字段，而连至一个[% terms.bug %]的[% terms.bugs %]列表。
         例如，描述是「此[% terms.bug %]和 ... 重复」时，
         反向关系就会是「和此[% terms.bug %]重复的[% terms.bugs %]」。
-        如果要停用此字段的列表，请留白。
+        如果要停用此字段的列表，请留空。
       </td>
     [% END %]
     [% IF field.is_select %]

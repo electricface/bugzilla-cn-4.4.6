@@ -49,11 +49,11 @@
   [% ELSIF error == "chart_data_not_generated" %]
     [% admindocslinks = {'extraconfig.html' => '设置图表'} %]
     [% IF product %]
-      因为自建立产品以来尚未收集产生图表用的资料，所以目前尚未有产品 <em>[% product FILTER html %]</em> 的图表。
+      因为自建立项目以来尚未收集产生图表用的资料，所以目前尚未有项目 <em>[% product FILTER html %]</em> 的图表。
     [% ELSE %]
       尚未收集图表用的资料。
     [% END %]
-    请隔一天后再试。如果你一天后仍然看到此一消息，请将此错误汇报给
+    请隔一天后再试。如果你一天后仍然看到此消息，请将此错误汇报给
     <a href="mailto:[% Param('maintainer') %]">[% Param('maintainer') %]</a> 。
 
   [% ELSIF error == "chart_datafile_corrupt" %]

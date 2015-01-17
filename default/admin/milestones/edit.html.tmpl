@@ -13,7 +13,7 @@
   #                    milestone the user wants to edit.
   #%]
 
-[% title = BLOCK %]编辑产品 '[%- product.name FILTER html %]' 的里程碑 '[% milestone.name FILTER html %]'[% END %]
+[% title = BLOCK %]编辑项目 '[%- product.name FILTER html %]' 的里程碑 '[% milestone.name FILTER html %]'[% END %]
 [% PROCESS global/header.html.tmpl
   title = title
   onload = "document.forms['f'].milestone.select()"

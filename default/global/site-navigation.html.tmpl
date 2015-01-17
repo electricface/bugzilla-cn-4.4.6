@@ -59,7 +59,7 @@
               href="editparams.cgi">' IF user.in_group('tweakparams') %]
     [% '<link rel="Administration" title="用户"
               href="editusers.cgi">' IF user.in_group('editusers') %]
-    [% '<link rel="Administration" title="产品" href="editproducts.cgi">'
+    [% '<link rel="Administration" title="项目" href="editproducts.cgi">'
        IF user.in_group('editcomponents') || user.get_products_by_permission("editcomponents").size %]
     [% '<link rel="Administration" title="旗标类型"
               href="editflagtypes.cgi">' IF user.in_group('editcomponents') %]

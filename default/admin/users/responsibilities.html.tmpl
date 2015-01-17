@@ -15,7 +15,7 @@
     [% END %]
     <tbody>
     <tr>
-      <th colspan="3" class="product">产品： [% item.product.name FILTER html %]</th>
+      <th colspan="3" class="product">项目： [% item.product.name FILTER html %]</th>
     </tr>
     <tr>
       <th>模块</th>
@@ -51,5 +51,5 @@
 </table>
 
 [% IF hidden_products %]
-  <p class="criticalmessages">此用户和至少一种你无法浏览的产品有关联，因此该产品并未列出。你必须要求有足够权限的管理者对此用户进行编辑。</p>
+  <p class="criticalmessages">此用户和至少一种你无法浏览的项目有关联，因此该项目并未列出。你必须要求有足够权限的管理员对此用户进行编辑。</p>
 [% END %]

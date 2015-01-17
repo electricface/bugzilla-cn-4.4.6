@@ -12,7 +12,7 @@
 %]
 
 [% param_descs = {
-  useclassification => "若设为「开」， $terms.Bugzilla 将把每项产品归到一个分类中。" _
+  useclassification => "若设为「开」， $terms.Bugzilla 将把每项项目归到一个分类中。" _
                        "但是你必须将 editclassification 参数设为「开」，才能够编辑分类。",
 
   usetargetmilestone => "你是否希望使用目标里程碑字段？",
@@ -30,9 +30,9 @@
   defaultseverity => "这是新输入的${terms.bugs}的默认严重等级。",
 
   defaultplatform => "这是在输入${terms.bug}时，默认选择的硬件平台。<br>" _
-                     "若留白，则 $terms.Bugzilla 会使用浏览器报告的值做为平台预先选择的值。",
+                     "若留空，则 $terms.Bugzilla 会使用浏览器报告的值做为平台预先选择的值。",
 
   defaultopsys => "这是在输入${terms.bug}时，预先选择的操作系统。<br>" _
-                  "若留白，则 $terms.Bugzilla 会使用浏览器报告的值作为操作系统预先选择的值。"
+                  "若留空，则 $terms.Bugzilla 会使用浏览器报告的值作为操作系统预先选择的值。"
 }
 %]

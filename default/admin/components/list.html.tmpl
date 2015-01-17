@@ -12,7 +12,7 @@
   #               which the component belongs.
   #%]
 
-[% title = BLOCK %]选择产品 '[% product.name FILTER html %]' 的模块[% END %]
+[% title = BLOCK %]选择项目 '[% product.name FILTER html %]' 的模块[% END %]
 [% PROCESS global/header.html.tmpl
   title = title
 %]
@@ -116,7 +116,7 @@
      overrides = overrides
 %]
 
-<p>在产品 '[% product.name FILTER html %]'
+<p>在项目 '[% product.name FILTER html %]'
   <a href="editcomponents.cgi?action=add&amp;product=[% product.name FILTER uri %]">添加</a>模块
   '[% product.name FILTER html %]'</p>
 

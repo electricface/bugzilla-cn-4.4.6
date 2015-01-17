@@ -97,11 +97,11 @@
     请以下方的"添加附件"链接再次添加附件。
 
   [% ELSIF message_tag == "bug_group_description" %]
-    浏览 [% product.name FILTER html %] 产品的[% terms.bugs %]
+    浏览 [% product.name FILTER html %] 项目的[% terms.bugs %]
 
   [% ELSIF message_tag == "buglist_adding_field" %]
     [% title = "添加字段至搜索页中…" %]
-    [% link  = "如果此页面并未自动更新，请点选此链接。" %]
+    [% link  = "如果此页面并未自动更新，请点击此链接。" %]
 
   [% ELSIF message_tag == "buglist_new_default_query" %]
     已添加默认搜索。你也可以将任何搜索的结果设为书签。
@@ -308,7 +308,7 @@
     [% END %]
 
   [% ELSIF message_tag == "flag_cleared" %]
-    部份旗标在新的产品／模块中不适用，因此已被清除。
+    部份旗标在新的项目／模块中不适用，因此已被清除。
 
   [% ELSIF message_tag == "flag_creation_failed" %]
     [% title = "添加旗标失败" %]
@@ -364,7 +364,7 @@
               <li>此群组将不再被用于[% terms.bugs %]。</li>
             [% END %]
           [% CASE 'icon_url' %]
-            <li>已更新群组图示网址。</li>
+            <li>已更新群组图标网址。</li>
           [% CASE 'members_add' %]
             <li>已添加下列成员至此群组：
               [%+ changes.members_add.join(', ') FILTER html %]</li>
@@ -457,7 +457,7 @@
 
   [% ELSIF message_tag == "migrate_component_created" %]
     已创建模块： [% comp.name FILTER html %]
-    (产品是 [% product.name FILTER html %])
+    (项目是 [% product.name FILTER html %])
 
   [% ELSIF message_tag == "migrate_creating_bugs" %]
     添加[% terms.bugs %]中…
@@ -467,13 +467,13 @@
     ([% field.name FILTER html %])
 
   [% ELSIF message_tag == "migrate_product_created" %]
-    已创建产品： [% created.name FILTER html %]
+    已创建项目： [% created.name FILTER html %]
 
   [% ELSIF message_tag == "migrate_reading_bugs" %]
     读取[% terms.bugs %]中…
 
   [% ELSIF message_tag == "migrate_reading_products" %]
-    读取产品中…
+    读取项目中…
 
   [% ELSIF message_tag == "migrate_reading_users" %]
     读取用户中…
@@ -508,7 +508,7 @@
   [% ELSIF message_tag == "milestone_updated" %]
     [% title = "已更新里程碑" %]
     [% IF changes.size %]
-      已储存对里程碑 <em>[% milestone.name FILTER html %]</em> 所做的修改：
+      已保存对里程碑 <em>[% milestone.name FILTER html %]</em> 所做的修改：
       <ul>
         [% IF changes.value.defined %]
           <li>已更新里程碑为 <em>[% milestone.name FILTER html %]</em></li>
@@ -636,8 +636,8 @@
     [% user.login FILTER html %] 已设置为管理员。
 
   [% ELSIF message_tag == "install_admin_setup" %]
-    目前尚未设置管理者。<br>
-    这可能是你第一次使用 [% terms.Bugzilla %] ，或者你的管理者权限被意外刪除了。
+    目前尚未设置管理员。<br>
+    这可能是你第一次使用 [% terms.Bugzilla %] ，或者你的管理员权限被意外刪除了。
 
   [% ELSIF message_tag == "install_column_add" %]
     在表格 '[% table FILTER html %]' 中添加 '[% column FILTER html %]'字段...
@@ -655,7 +655,7 @@
     建立默认分类 '[% name FILTER html %]'...
 
   [% ELSIF message_tag == "install_default_product" %]
-    建立默认产品 '[% name FILTER html %]'...
+    建立默认项目 '[% name FILTER html %]'...
 
   [% ELSIF message_tag == "install_file_perms_fix" %]
     修复文件权限中...
@@ -746,19 +746,19 @@
     <br>请确认在你的 [% terms.Bugzilla %] 目录的文件权限是否适合你的系统，并避免不必要的写入权限。
 
   [% ELSIF message_tag == "product_created" %]
-    [% title = "已创建产品" %]
-    已创建产品 <em>[% product.name FILTER html %]</em> 。
+    [% title = "已创建项目" %]
+    已创建项目 <em>[% product.name FILTER html %]</em> 。
 
   [% ELSIF message_tag == "product_deleted" %]
-    [% title = "已刪除产品" %]
-    产品 <em>[% product.name FILTER html %]</em> 及其模块、版本、里程碑、群组均已被刪除。
+    [% title = "已刪除项目" %]
+    项目 <em>[% product.name FILTER html %]</em> 及其模块、版本、里程碑、群组均已被刪除。
     [% IF product.bug_count %]
-      此产品的所有[% terms.bugs %]以及所有参照到这些[% terms.bugs %]的链接均已被刪除。
+      此项目的所有[% terms.bugs %]以及所有参照到这些[% terms.bugs %]的链接均已被刪除。
     [% END %]
 
   [% ELSIF message_tag == "product_invalid" %]
     [% title = "$terms.Bugzilla 模块描述" %]
-    产品 <em>[% product FILTER html %]</em> 不存在，或是你沒有权限浏览。下列列表是你可以选择的产品。
+    项目 <em>[% product FILTER html %]</em> 不存在，或是你沒有权限浏览。下列列表是你可以选择的项目。
 
   [% ELSIF message_tag == "remaining_time_zeroed" %]
     由于已将此[% terms.bug %]关闭，或只是将它从其中一种关闭的状态修改为另一种，因此
@@ -801,7 +801,7 @@
       已添加 <em>[% series.category FILTER html %] /
       [%+ series.subcategory FILTER html %] /
       [%+ series.name FILTER html %]</em> 。
-      注意：在此一系列有足够的数据可以产生图表之前，你需要等
+      注意：在此系列有足够的数据可以产生图表之前，你需要等
       [%+ series.frequency * 2 %] 天左右。
 
   [% ELSIF message_tag == "series_deleted" %]
@@ -825,20 +825,20 @@
 
   [% ELSIF message_tag == "user_match_failed" %]
     你输入的用户名称并不符合任何已知的 [% terms.Bugzilla %] 用户，因此字段
-    [% match_field FILTER html %] 留白。
+    [% match_field FILTER html %] 留空。
 
   [% ELSIF message_tag == "user_match_multiple" %]
     你输入的用户名称符合多位用户，因此字段
-    [% match_field FILTER html %] 留白。
+    [% match_field FILTER html %] 留空。
 
   [% ELSIF message_tag == "version_created" %]
     [% title = "已建立版本" %]
-    已建立产品 <em>[% product.name FILTER html %]</em> 的版本
+    已建立项目 <em>[% product.name FILTER html %]</em> 的版本
     <em>[% version.name FILTER html %]</em> 。
 
   [% ELSIF message_tag == "version_deleted" %]
     [% title = "已刪除版本" %]
-    已刪除产品 <em>[% product.name FILTER html %]</em> 的版本
+    已刪除项目 <em>[% product.name FILTER html %]</em> 的版本
     <em>[% version.name FILTER html %]</em> 。
 
   [% ELSIF message_tag == "version_updated" %]

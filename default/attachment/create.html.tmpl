@@ -39,9 +39,9 @@ TUI_hide_default('attachment_text_field');
     [%# Additional fields for attachments on existing bugs: %]
     [% IF attachments.size %]
       <tr>
-        <th>废弃附件：</th>
+        <th>作废附件：</th>
         <td>
-          <em>若勾选如下已存在的附件，在添加新附件的同时会废弃已勾选的附件。（选用）</em><br>
+          <em>若勾选如下已存在的附件，在添加新附件的同时会作废已勾选的附件。（选用）</em><br>
           [% FOREACH attachment = attachments %]
             <input type="checkbox" id="[% attachment.id %]"
                  name="obsolete" value="[% attachment.id %]">

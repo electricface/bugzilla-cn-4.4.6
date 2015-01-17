@@ -13,7 +13,7 @@
   #                    version the user wants to delete.
   #%]
 
-[% title = BLOCK %]删除产品 '[% product.name FILTER html %]' 的版本
+[% title = BLOCK %]删除项目 '[% product.name FILTER html %]' 的版本
   [% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -31,7 +31,7 @@
   <td valign="top">[% version.name FILTER html %]</td>
 </tr>
 <tr>
-  <td valign="top">产品：</td>
+  <td valign="top">项目：</td>
   <td valign="top">[% product.name FILTER html %]</td>
 </tr>
 <tr>
@@ -57,7 +57,7 @@
   </p>
 [% ELSE %]
 
-  <p>你确定要删除此一版本吗？</p>
+  <p>你确定要删除此版本吗？</p>
 
   <form method="post" action="editversions.cgi">
     <input type="submit" id="delete" value="是的，刪除">

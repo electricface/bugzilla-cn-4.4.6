@@ -64,7 +64,7 @@
   [% END %]
 
   [% IF group.products.size %]
-    <p><b>此群组和以下产品仍有关系：</b></p>
+    <p><b>此群组和以下项目仍有关系：</b></p>
     [% SET any_hidden = 0 %]
     <ul>
       [% FOREACH data = group.products %]
@@ -100,8 +100,8 @@
           [%- data.product.name FILTER html %]</a>
           ([% active.join(', ') FILTER html %])
           [% IF hidden %]
-            <strong>警告：此产品目前设置为隐藏。
-            删除此群组后，若无其他合适的群组时，将导致此产品变为公开。
+            <strong>警告：此项目目前设置为隐藏。
+            删除此群组后，若无其他合适的群组时，将导致此项目变为公开。
             </strong>
           [% END %]</li>
       [% END %]
@@ -124,7 +124,7 @@
 
   [% IF shared_queries %]
     <p>
-      <b>有 [% shared_queries %] 个已存储的搜索分享给此一群组。</b><br>
+      <b>有 [% shared_queries %] 个已存储的搜索分享给此群组。</b><br>
       如果你删除此群组，所有已存储的搜索都会再次设置为私人状态。
     </p>
   [% END %]

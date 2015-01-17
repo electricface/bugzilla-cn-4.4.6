@@ -72,7 +72,7 @@
   </tr>
   [% IF otheruser.product_responsibilities.size %]
     <tr>
-      <th>负责的产品：</th>
+      <th>负责的项目：</th>
       <td>
         [% PROCESS admin/users/responsibilities.html.tmpl otheruser = otheruser %]
       </td>
@@ -83,11 +83,11 @@
 [% IF otheruser.product_responsibilities.size %]
   <p>
     你现在无法删除该用户，因为
-    [%+ otheruser.login FILTER html %] 对至少一项产品负责。
+    [%+ otheruser.login FILTER html %] 对至少一项项目负责。
   </p>
   <p>
     [% IF user.in_group("editcomponents", component.product_id) %]
-      点击上方的编辑产品链接修改此设置，
+      点击上方的编辑项目链接修改此设置，
     [% ELSE %]
       现在你可以
     [% END %]
@@ -105,7 +105,7 @@
             [% otheruser.login FILTER html %]
             <a href="buglist.cgi?field0-0-0=attachments.submitter&type0-0-0=equals&value0-0-0=
                [%- otheruser.login FILTER uri %]"
-               >已送出了 [% attachments %] 个附件</a>。如果你删除此用户账号，资料库的记录将不一致，导致这
+               >已提交了 [% attachments %] 个附件</a>。如果你删除此用户账号，资料库的记录将不一致，导致这
                [%+ attachments %] 个附件不再出现于[% terms.bugs %]中。
           </li>
         [% END %]
@@ -248,7 +248,7 @@
         [% END %]
         [% IF otheruser.has_audit_entries %]
           <li>
-            在数据库中有用户执行过的稽查管理记录。如果你删除此用户账号，这些记录将无法再被辨识。
+            在数据库中有用户执行过的稽查管理记录。如果你删除此用户账号，这些记录将无法再被辨别。
           </li>
         [% END %]
         [% Hook.process('warn_safe') %]

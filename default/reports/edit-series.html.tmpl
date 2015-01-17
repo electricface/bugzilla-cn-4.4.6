@@ -26,7 +26,7 @@
 <form method="get" action="chart.cgi" name="chartform">
 
   [% PROCESS reports/series.html.tmpl
-     button_name = "修改资料集" %]
+     button_name = "修改数据集" %]
   <input type="hidden" name="action" value="alter">
   <input type="hidden" name="token"
          value="[% issue_hash_token([default.id, default.name]) FILTER html %]">
@@ -46,7 +46,7 @@
   [% END %]
 </p>
 
-<p>注意：目前还无法编辑和此资料集有关的搜索。
+<p>注意：目前还无法编辑和此数据集有关的搜索。
 </p>
 
 <p>

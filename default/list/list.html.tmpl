@@ -167,7 +167,7 @@
   <ul class="zero_result_links">
     <li>[% PROCESS enter_bug_link %]</li>
     [% IF one_product.defined %]
-      <li><a href="enter_bug.cgi">在不同的产品中提交一个新的[% terms.bug %]</a></li>
+      <li><a href="enter_bug.cgi">在不同的项目中提交一个新的[% terms.bug %]</a></li>
     [% END %]
     <li><a href="[% PROCESS edit_search_url %]">修改搜索条件</a></li>
     <li><a href="query.cgi">开始新的搜索</a></li>
@@ -316,7 +316,7 @@
            [%- IF one_product.defined %]?product=
              [%- one_product.name FILTER uri %][% END %]">
    [% IF one_product.defined %]
-     在 "[% one_product.name FILTER html %]" 产品中
+     在 "[% one_product.name FILTER html %]" 项目中
    [% END %]
    提交新的[% terms.bug %]
   </a>

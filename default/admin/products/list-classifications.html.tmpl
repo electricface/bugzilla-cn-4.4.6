@@ -32,7 +32,7 @@
      {
        name => "product_count"
        align => "right"
-       heading => "产品数"
+       heading => "项目数"
      }
    ]
 %]
@@ -40,7 +40,7 @@
 [% IF user.in_group('editcomponents') %]
   [% columns.push({
        heading => "动作…"
-       content => "添加产品"
+       content => "添加项目"
        contentlink => 'editproducts.cgi?action=add&amp;classification=%%name%%' })
   %]
 [% END %]

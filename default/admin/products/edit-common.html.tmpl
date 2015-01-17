@@ -20,7 +20,7 @@
 [% END %]
 
 <tr>
-  <th align="right">产品：</th>
+  <th align="right">项目：</th>
   <td><input size="64" maxlength="64" name="product"
              value="[% product.name FILTER html %]">
   </td>
@@ -40,7 +40,7 @@
 </tr>
 <tr>
   <th align="right">
-    <label for="allows_unconfirmed">在此产品中允许
+    <label for="allows_unconfirmed">在此项目中允许
       [%+ display_value('bug_status', 'UNCONFIRMED') FILTER html %] 状态：
       </label>
   </th>

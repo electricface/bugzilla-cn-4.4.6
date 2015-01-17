@@ -13,7 +13,7 @@
   #                    milestone the user wants to delete.
   #%]
 
-[% title = BLOCK %]删除产品 '[% product.name FILTER html %]' 的里程碑
+[% title = BLOCK %]删除项目 '[% product.name FILTER html %]' 的里程碑
   [% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -31,7 +31,7 @@
   <td valign="top">[% milestone.name FILTER html %]</td>
 </tr>
 <tr>
-  <td valign="top">产品名称：</td>
+  <td valign="top">项目名称：</td>
   <td valign="top">[% product.name FILTER html %]</td>
 </tr>
 <tr>
@@ -56,7 +56,7 @@
   <p class="confirmation">
     在此里程碑中还有 [% milestone.bug_count FILTER none %] 个 [%+ terms.bugs %] ！
     <br>当你删除此里程碑时，<b>所有</b>[% terms.bugs %]的里程碑将会被指到
-    '[% product.name FILTER html %]' 产品的默认里程碑 [% product.default_milestone FILTER html %] 。
+    '[% product.name FILTER html %]' 项目的默认里程碑 [% product.default_milestone FILTER html %] 。
   </p>
 [% END %]
 

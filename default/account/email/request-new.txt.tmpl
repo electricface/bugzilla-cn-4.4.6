@@ -17,23 +17,23 @@ To: [% email %]
 Subject: [% terms.Bugzilla %]：确认创建新账号
 X-Bugzilla-Type: admin
 
-[%+ terms.Bugzilla %] 收到以你的电子邮件 ([% email %]) 创建一个新的用户账号的请求。
+[%+ terms.Bugzilla %] 收到以你的电子邮件地址 ([% email %]) 创建一个新的用户账号的请求。
 
-如果要继续用此电子邮件创建账号，请于 [% expiration_ts FILTER time("%Y-%m-%d %H:%M %Z") %] 前点击以下链接：
+如果要继续用此电子邮件地址创建账号，请于 [% expiration_ts FILTER time("%Y-%m-%d %H:%M %Z") %] 前点击以下链接：
 
 [%+ urlbase %]token.cgi?t=[% token FILTER uri %]&a=request_new_account
 
 如果你并没有在 [% expiration_ts FILTER time("%Y-%m-%d %H:%M %Z") %] 之前收到过此封电子邮件，
-或者是你想要以其他的电子邮件创建新账号，你可以点击以下链接重新开始：
+或者是你想要以其他的电子邮件地址创建新账号，你可以点击以下链接重新开始：
 
 [%+ urlbase %]createaccount.cgi
 
 [% IF Param('createemailregexp') == '.*' && Param('emailsuffix') == '' %]
 隐私权提醒：
 [% terms.Bugzilla %] 是一个开放的[% terms.bug %]追踪系统。
-在大多数[% terms.bugs %]的活动，包括电子邮件地址，都是公众可浏览的。
-我们建议使用次要的电子邮件，或者使用免费的网络电子邮件（例如 Gmail、Yahoo、Hotmail 等等），
-以避免你的主要电子邮件收到垃圾邮件。
+大多数[% terms.bugs %]的内容，包括电子邮件地址，都是公众可浏览的。
+我们建议使用次要的电子邮箱，或者使用免费的电子邮箱（例如 Gmail、Yahoo、Hotmail 等等），
+以避免你的常用电子邮箱收到垃圾邮件。
 [% END %]
 
 如果你不想要创建账号，或者此要求是错误的，你可以什么都不做，或者点击以下链接：

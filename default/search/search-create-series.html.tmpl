@@ -17,7 +17,7 @@
 [% END %]
 
 [% PROCESS global/header.html.tmpl
-  title = "新建资料集"
+  title = "新建数据集"
   onload = "doOnSelectProduct(0);"
   yui = [ 'autocomplete', 'calendar' ]
   javascript = js_data
@@ -31,13 +31,13 @@
 [% PROCESS search/form.html.tmpl %]
 
 <p>
-  <input type="submit" id="action-search" name="action-search" value="执行搜索">来看看哪些[% terms.bugs %]会被包含在这个资料集中。
+  <input type="submit" id="action-search" name="action-search" value="执行搜索">来看看哪些[% terms.bugs %]会被包含在这个数据集中。
 </p>
 
-<h3>资料集参数</h3>
+<h3>数据集参数</h3>
 
 [% PROCESS reports/series.html.tmpl
-   button_name = "新建资料集" %]
+   button_name = "新建数据集" %]
   <input type="hidden" name="action" value="create">
   <input type="hidden" name="token" value="[% issue_hash_token(['create-series']) FILTER html %]">
 

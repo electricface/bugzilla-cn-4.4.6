@@ -26,7 +26,7 @@
     <form id="choose_product" method="get" action="reports.cgi">
       <table border="1" cellpadding="5" cellspacing="2">
         <tr>
-          <th>产品：</th>
+          <th>项目：</th>
           <td align="center">
             <select id="product" name="product">
               [% FOREACH product = products %]
@@ -36,7 +36,7 @@
           </td>
         </tr>
         <tr>
-          <th>图表资料集：</th>
+          <th>图表数据集：</th>
           <td align="center">
             <select id="datasets" name="datasets" multiple="multiple" size="5">
               [%# We cannot use translated statuses and resolutions from field-descs.none.html
