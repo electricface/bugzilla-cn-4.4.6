@@ -71,7 +71,7 @@
   <div class="bz_add_comment">
     <a href="#"
        onclick="return goto_add_comments();">
-       新增留言</a>
+       附加留言</a>
   </div>
 [% END %]
 
@@ -91,7 +91,7 @@
       [% IF user.settings.comment_box_position.value == "after_comments" && user.id %]
         <li class="bz_add_comment"><a href="#"
             onclick="return goto_add_comments('bug_status_bottom');">
-            新增留言</a></li>
+            附加留言</a></li>
       [% END %]
     </ul>
   [% END %]

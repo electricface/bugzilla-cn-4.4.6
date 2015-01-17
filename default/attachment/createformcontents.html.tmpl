@@ -57,7 +57,7 @@
       <label for="autodetect">自动检测</label><br>
     <input type="radio" id="list"
            name="contenttypemethod" value="list">
-      <label for="list">自列表中选择</label>：
+      <label for="list">从列表中选择</label>：
       <select name="contenttypeselection" id="contenttypeselection"
               onchange="this.form.contenttypemethod[1].checked = true;">
         [% PROCESS content_types %]
@@ -80,14 +80,14 @@
 </tr>
 
 [% BLOCK content_types %]
-  [% mimetypes = [{type => "text/plain", desc => "纯文字 (text/plain)"},
-                  {type => "text/html",  desc => "HTML (text/html)"},
-                  {type => "application/xml", desc => "XML (application/xml)"},
-                  {type => "image/gif",  desc => "GIF 格式 (image/gif)"},
-                  {type => "image/jpeg", desc => "JPEG 格式 (image/jpeg)"},
-                  {type => "image/png",  desc => "PNG 格式 (image/png)"},
-                  {type => "application/pdf", desc => "PDF 文件 (application/pdf)"},
-                  {type => "application/octet-stream", desc => "二进制格式 (application/octet-stream)"}]
+  [% mimetypes = [{type => "text/plain", desc => "纯文字"},
+                  {type => "text/html",  desc => "HTML"},
+                  {type => "application/xml", desc => "XML)"},
+                  {type => "image/gif",  desc => "GIF 图片"},
+                  {type => "image/jpeg", desc => "JPEG 图片"},
+                  {type => "image/png",  desc => "PNG 图片"},
+                  {type => "application/pdf", desc => "PDF 文档"},
+                  {type => "application/octet-stream", desc => "二进制文件"}]
   %]
   [% Hook.process("mimetypes", "attachment/createformcontents.html.tmpl") %]
 

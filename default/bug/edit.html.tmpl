@@ -1031,7 +1031,7 @@
 [% BLOCK comment_box %]
   <div id="add_comment" class="bz_section_additional_comments">
     [% IF user.id %]
-      <label for="comment" accesskey="c"><b>附加意见
+      <label for="comment" accesskey="c"><b>附加留言
         (<u>C</u>)</b></label> ：
 
       [% IF user.is_insider && bug.check_can_change_field('longdesc', 0, 1) %]
@@ -1061,7 +1061,7 @@
           [% END %]
           [% Hook.process("after_comment_textarea", 'bug/edit.html.tmpl') %]
         [% ELSE %]
-          你并未被允许在这个[% terms.bug %]新增留言。
+          你并未被允许在这个[% terms.bug %]附加留言。
         [% END %]
         <br>
         [% PROCESS commit_button id=""%]
