@@ -9,7 +9,7 @@
 [% PROCESS "global/js-products.html.tmpl" %]
 
 [% PROCESS global/header.html.tmpl
-  title = '管理旗标类型'
+  title = '管理标记类型'
   style = "
     table#flag_types_bugs tr th,
     table#flag_types_attachments tr th { text-align: left; }
@@ -22,8 +22,8 @@
 %]
 
 <p>
-  旗标是用来辨别[% terms.bug %]或附件是否已被同意或被拒绝某些状态的一种旗标。在用户界面中，旗标以名称和状态符号显示：
-  "+" 代表同意， "-" 代表拒绝， "?" 代表用户已要求设置旗标的状态。
+  标记是用来辨别[% terms.bug %]或附件是否已被同意或被拒绝某些状态的一种标记。在用户界面中，标记以名称和状态符号显示：
+  "+" 代表同意， "-" 代表拒绝， "?" 代表用户已要求设置标记的状态。
 </p>
 
 <p>
@@ -33,7 +33,7 @@
 </p>
 
 <p>
-  你可以对特定的项目以及模块限制旗标类型的列表。如果选择没有模块的项目，那么将只显示属于项目中至少一项模块的旗标类型。
+  你可以对特定的项目以及模块限制标记类型的列表。如果选择没有模块的项目，那么将只显示属于项目中至少一项模块的标记类型。
 </p>
 
 <form id="flagtype_form" name="flagtype_form" action="editflagtypes.cgi" method="get">
@@ -64,27 +64,27 @@
       <td>
         <input type="checkbox" id="show_flag_counts" name="show_flag_counts" value="1"
                [%+ 'checked="checked"' IF show_flag_counts %]>
-        <label for="show_flag_counts">显示旗标数</label>
+        <label for="show_flag_counts">显示标记数</label>
       </td>
       <td><input type="submit" id="submit" value="筛选"></td>
     </tr>
   </table>
 </form>
 
-<h3>[% terms.Bugs %]的旗标类型</h3>
+<h3>[% terms.Bugs %]的标记类型</h3>
 
 [% PROCESS display_flag_types types=bug_types types_id='bugs' %]
 
 <p>
-  <a href="editflagtypes.cgi?action=enter&amp;target_type=bug">添加[% terms.Bugs %]的旗标类型</a>
+  <a href="editflagtypes.cgi?action=enter&amp;target_type=bug">添加[% terms.Bugs %]的标记类型</a>
 </p>
 
-<h3>附件的旗标类型</h3>
+<h3>附件的标记类型</h3>
 
 [% PROCESS display_flag_types types=attachment_types types_id='attachments' %]
 
 <p>
-  <a href="editflagtypes.cgi?action=enter&amp;target_type=attachment">添加附件的旗标类型</a>
+  <a href="editflagtypes.cgi?action=enter&amp;target_type=attachment">添加附件的标记类型</a>
 </p>
 
 [% PROCESS global/footer.html.tmpl %]
@@ -101,7 +101,7 @@
       <th>同意的群组</th>
       <th>要求的群组</th>
       [% IF show_flag_counts %]
-        <th>旗标</th>
+        <th>标记</th>
         [%# Note to translators: translate the strings in quotes only. %]
         [% state_desc = {granted = '同意' denied = '拒绝' pending = '未决定'} %]
       [% END %]

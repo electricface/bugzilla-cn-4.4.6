@@ -6,7 +6,7 @@
   # defined by the Mozilla Public License, v. 2.0.
   #%]
 
-[% title = BLOCK %]确认删除旗标类型 '[% flag_type.name FILTER html %]'[% END %]
+[% title = BLOCK %]确认删除标记类型 '[% flag_type.name FILTER html %]'[% END %]
 
 [% PROCESS global/header.html.tmpl
   title = title
@@ -16,20 +16,20 @@
 <p>
 [% IF flag_type.flag_count %]
     目前在类型 [% flag_type.name FILTER html %] 下有 [% flag_type.flag_count %]
-    种旗标。如果你删除此旗标类型，这些旗标也都会被删除。
+    种标记。如果你删除此标记类型，这些标记也都会被删除。
   [% END %]
 
   除了删除以外，你也可以选择<a
   href="editflagtypes.cgi?action=deactivate&amp;id=[% flag_type.id %]&amp;token=
-  [%- token FILTER html %]">禁用</a>。如果选择禁用，那么此旗标类型
-  [%- IF flag_type.flag_count %]以及这些旗标[% END %]仍会保存在资料库中，但不会在
+  [%- token FILTER html %]">禁用</a>。如果选择禁用，那么此标记类型
+  [%- IF flag_type.flag_count %]以及这些标记[% END %]仍会保存在资料库中，但不会在
   [% terms.Bugzilla %] 用户界面里显示。
 </p>
 
 <table>
    <tr>
       <td colspan="2">
-         你确定要删除该旗标类型吗？
+         你确定要删除该标记类型吗？
       </td>
    </tr>
    <tr>

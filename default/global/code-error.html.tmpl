@@ -153,16 +153,16 @@
     在添加自定字段时，你必须指定字段的种类。
 
   [% ELSIF error == "flag_type_inactive" %]
-    [% title = "无效的旗标类型" %]
-    旗标类型 [% type FILTER html %] 无效，也不能用于建立新旗标。
+    [% title = "无效的标记类型" %]
+    标记类型 [% type FILTER html %] 无效，也不能用于建立新标记。
 
   [% ELSIF error == "flag_type_target_type_invalid" %]
     目标种类既非 <em>[% terms.bug %]</em> ，也不是<em>附件</em>，而是 <em>[% target_type FILTER html %]</em> 。
 
   [% ELSIF error == "flag_unexpected_object" %]
     [% title = "无法被辨认的对象" %]
-    无法对种类是 [% caller FILTER html %] 的对象设置旗标。
-    旗标仅能设置于[% terms.bugs %]和附件上。
+    无法对种类是 [% caller FILTER html %] 的对象设置标记。
+    标记仅能设置于[% terms.bugs %]和附件上。
 
   [% ELSIF error == "illegal_field" %]
     并未设置有效的 [% field FILTER html %] 。
@@ -178,8 +178,8 @@
     <code>OPTIONAL_MODULES</code> 来寻找有效的名称。
 
   [% ELSIF error == "invalid_flag_association" %]
-    [% title = "无效的旗标关联" %]
-    某些旗标并不属于
+    [% title = "无效的标记关联" %]
+    某些标记并不属于
     [% IF attach_id %]
       附件 [% attach_id FILTER html %] 。
     [% ELSE %]

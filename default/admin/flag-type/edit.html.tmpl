@@ -13,11 +13,11 @@
     [% IF type.id %]
       以 [% type.name FILTER html %] 为基础
     [% END %]
-    添加 [% type.target_type == "bug" ? terms.Bugs : "附件" %] 的旗标类型
+    添加 [% type.target_type == "bug" ? terms.Bugs : "附件" %] 的标记类型
   [% END %]
   [% doc_section = "flags-overview.html#flags-create" %]
 [% ELSE %]
-  [% title = BLOCK %]编辑旗标类型 [% type.name FILTER html %][% END %]
+  [% title = BLOCK %]编辑标记类型 [% type.name FILTER html %][% END %]
   [% doc_section = "flags-overview.html#flags-edit" %]
 [% END %]
 
@@ -55,7 +55,7 @@
     <tr>
       <th>名称：</th>
       <td>
-        能辨别此旗标类型的简短名称。<br>
+        能辨别此标记类型的简短名称。<br>
         <input type="text" name="name" value="[% type.name FILTER html %]" size="50"
                maxlength="50" [%- ' disabled="disabled"' UNLESS can_fully_edit %]>
       </td>
@@ -64,7 +64,7 @@
     <tr>
       <th>描述：</th>
       <td>
-        对此旗标类型的描述。<br>
+        对此标记类型的描述。<br>
         [% INCLUDE global/textarea.html.tmpl
           name           = 'description'
           minrows        = 4
@@ -80,13 +80,13 @@
 
       <td>
         为了让用户能够替 [% type.target_type == "bug" ? terms.bugs : "附件" %]
-        设置此旗标类型， [% type.target_type == "bug" ? terms.bugs : "附件" %]
+        设置此标记类型， [% type.target_type == "bug" ? terms.bugs : "附件" %]
         必须（「包括」）或必须不（「不包括」）属于哪些项目／模块。
         [% UNLESS can_fully_edit %]
-          <p class="warning">此旗标类型也适用于一些你不被允许编辑的项目
+          <p class="warning">此标记类型也适用于一些你不被允许编辑的项目
           （也因此你在列表中并不会看见它们）。因为你的权限有限，
-          因此你仅被允许在你可以编辑的项目中添加／移除此旗标类型，
-          但是无法编辑此旗标类型的其他设置值。</p>
+          因此你仅被允许在你可以编辑的项目中添加／移除此标记类型，
+          但是无法编辑此标记类型的其他设置值。</p>
         [% END %]
         <table>
           <tr>
@@ -141,7 +141,7 @@
         <input type="checkbox" id="is_active" name="is_active"
                [%- ' disabled="disabled"' UNLESS can_fully_edit %]
                [% " checked" IF type.is_active || !type.is_active.defined %]>
-        <label for="is_active">启用（将会在用户界面显示此旗标类型，并可设置）</label>
+        <label for="is_active">启用（将会在用户界面显示此标记类型，并可设置）</label>
       </td>
     </tr>
 
@@ -151,14 +151,14 @@
         <input type="checkbox" id="is_requestable" name="is_requestable"
                [%- ' disabled="disabled"' UNLESS can_fully_edit %]
                [% " checked" IF type.is_requestable || !type.is_requestable.defined %]>
-        <label for="is_requestable">可以要求（用户可以要求设置此旗标类型）</label>
+        <label for="is_requestable">可以要求（用户可以要求设置此标记类型）</label>
       </td>
     </tr>
 
     <tr>
       <th>邮件抄送列表：</th>
       <td>
-        如果可以要求此类型旗标的话，谁应该收到关于要求的电子邮件通知。此列表以半角逗号 (,)
+        如果可以要求此类型标记的话，谁应该收到关于要求的电子邮件通知。此列表以半角逗号 (,)
         分隔多位收信人。收信人不一定要拥有 [% terms.Bugzilla %] 的账号。
         [% IF Param('emailsuffix') %]
           <br>注意：默认的电子邮件地址的后半段 (<kbd>[% Param('emailsuffix') %]</kbd>)
@@ -175,7 +175,7 @@
         <input type="checkbox" id="is_requesteeble" name="is_requesteeble"
                [%- ' disabled="disabled"' UNLESS can_fully_edit %]
                [% " checked" IF type.is_requesteeble || !type.is_requesteeble.defined %]>
-        <label for="is_requesteeble">特定要求（用户可以要求特定的其他用户设置此类旗标类型）</label>
+        <label for="is_requesteeble">特定要求（用户可以要求特定的其他用户设置此类标记类型）</label>
       </td>
     </tr>
 
@@ -187,15 +187,15 @@
                [% " checked" IF type.is_multiplicable || !type.is_multiplicable.defined %]>
         <label for="is_multiplicable">多重种类（可以在同一
                [% type.target_type == "bug" ? terms.bug : "附件" %]
-               上设置多个此类旗标类型）</label>
+               上设置多个此类标记类型）</label>
       </td>
     </tr>
 
     <tr>
       <th>同意的群组：</th>
       <td>
-        允许同意／否决此类型旗标的群组<br>
-        （如要允许所有用户可以同意／否决此旗标类型，则不要选择群组）。<br>
+        允许同意／否决此类型标记的群组<br>
+        （如要允许所有用户可以同意／否决此标记类型，则不要选择群组）。<br>
         [% PROCESS group_select selname = "grant_group" %]
       </td>
     </tr>
@@ -203,8 +203,8 @@
     <tr>
       <th>要求的群组：</th>
       <td>
-        如果此类型的旗标必须通过要求产生，则允许做出要求动作的群组<br>
-        （如要允许所有用户要求此旗标类型，则不要选择群组）。<br>
+        如果此类型的标记必须通过要求产生，则允许做出要求动作的群组<br>
+        （如要允许所有用户要求此标记类型，则不要选择群组）。<br>
         注意：若并未定义「同意的群组」时，「要求的群组」并不会有任何效力！<br>
         [% PROCESS group_select selname = "request_group" %]
       </td>

@@ -111,15 +111,15 @@
   [% END %]
 
   [% IF group.flag_types.size %]
-    <p><b>此群组限制谁可以对特定类型的旗标做修改。<br>
-       你无法在使用旗标类型时删除此群组。</b>
+    <p><b>此群组限制谁可以对特定类型的标记做修改。<br>
+       你无法在使用标记类型时删除此群组。</b>
 
     <br><a href="editflagtypes.cgi?action=list&amp;group=[% gid FILTER html %]">显示有哪些类型</a>
-    - <input type="checkbox" name="removeflags">删除此群组中的所有旗标类型。</p>
+    - <input type="checkbox" name="removeflags">删除此群组中的所有标记类型。</p>
 
     <br><a href="editflagtypes.cgi?action=list&amp;group=
                  [%- group.id FILTER uri %]">显示有哪些类型</a>
-    - <label><input type="checkbox" name="removeflags">删除此群组中的所有旗标类型。</label></p>
+    - <label><input type="checkbox" name="removeflags">删除此群组中的所有标记类型。</label></p>
   [% END %]
 
   [% IF shared_queries %]

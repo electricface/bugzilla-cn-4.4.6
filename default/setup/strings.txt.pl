@@ -357,7 +357,7 @@ END
     update_cf_invalid_name =>
         "移除自定义字段 '##field##' 中，因为它有无效的名称...",
     update_flags_bad_name => <<'END',
-"##flag##" 不是有效的旗标名称。请把它更名为不含空白或逗号 (,)
+"##flag##" 不是有效的标记名称。请把它更名为不含空白或逗号 (,)
 的名称。
 END
     update_nomail_bad => <<'END',

@@ -64,9 +64,9 @@
         href="editversions.cgi">版本</a>以及<a href="editmilestones.cgi">里程碑</a>。</dd>
 
         [% class = user.in_group('editcomponents') ? "" : "forbidden" %]
-        <dt id="flags" class="[% class %]"><a href="editflagtypes.cgi">旗标</a></dt>
-        <dd class="[% class %]">旗标是对[% terms.bugs %]和／或附件所做出的四种自定义状态：同意、否定、请求和未定义。
-        <br>你可以对每个[% terms.bug %]设置多种旗标，并定义哪些用户可以编辑旗标。</dd>
+        <dt id="flags" class="[% class %]"><a href="editflagtypes.cgi">标记</a></dt>
+        <dd class="[% class %]">标记是对[% terms.bugs %]和／或附件所做出的四种自定义状态：同意、否定、请求和未定义。
+        <br>你可以对每个[% terms.bug %]设置多种标记，并定义哪些用户可以编辑标记。</dd>
 
 	[% Hook.process('end_links_left') %]
       </dl>

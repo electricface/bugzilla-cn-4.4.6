@@ -255,7 +255,7 @@
       [% SET key = "flagtypes.name" %]
       <td class="field_name">[% field_descs.$key FILTER html %]</td>
       <td class="field_nickname">
-        <em>旗标</em><strong>?</strong><em>被要求者</em>
+        <em>标记</em><strong>?</strong><em>被要求者</em>
       </td>
     </tr>
     <tr>
@@ -287,12 +287,12 @@
     <kbd>ALL @userA@company.com OR reporter:userA@company.com</kbd></li>
   <li>所有在项目「productA」中，状态为开启 (OPEN) 的[% terms.bugs %]中
     ，严重等级是 blocker 、 critical 或 major ，或者优先程度为 P1
-    ，或者设置了 blocker+ 的旗标，且并非由 userB@company.com 或
+    ，或者设置了 blocker+ 的标记，且并非由 userB@company.com 或
     userC@company.com 负责（我们假设只有两个用户匹配 userB 和 userC
     ，不然就必须要输入完整的登录名称）：<br>
     <kbd>:productA sev:blocker,critical,major OR pri:P1 OR flag:blocker+ -assign:userB,userC</kbd></li>
   <li>所有解決方案为已解决 (FIXED) 的[% terms.bugs %]中，设置了
-    blocker+ 的旗标，但没有设置 approval+ 或 approval? 的旗标：<br>
+    blocker+ 的标记，但没有设置 approval+ 或 approval? 的标记：<br>
     <kbd>FIXED flag:blocker+ -flag:approval+ -flag:approval?</kbd></li>
   <li>摘要中含有 <em>That's a "unusual" issue</em> 字串的
     [%+ terms.bugs %] （引号以 <em>\"</em> 方式输入）：<br>

@@ -61,7 +61,7 @@
               href="editusers.cgi">' IF user.in_group('editusers') %]
     [% '<link rel="Administration" title="项目" href="editproducts.cgi">'
        IF user.in_group('editcomponents') || user.get_products_by_permission("editcomponents").size %]
-    [% '<link rel="Administration" title="旗标类型"
+    [% '<link rel="Administration" title="标记类型"
               href="editflagtypes.cgi">' IF user.in_group('editcomponents') %]
     [% '<link rel="Administration" title="群组"
               href="editgroups.cgi">' IF user.in_group('creategroups') %]

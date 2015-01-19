@@ -104,7 +104,7 @@ function toggle_display(link) {
         [% IF show_attachment_flags %]
           <td class="bz_attach_flags" valign="top">
             [% IF attachment.flags.size == 0 %]
-              <i>没有旗标</i>
+              <i>没有标记</i>
             [% ELSE %]
               [% FOREACH flag = attachment.flags %]
                 [% IF user.id %]

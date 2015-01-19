@@ -161,7 +161,7 @@
     [% ELSIF object == "field_values" %]
       字段值
     [% ELSIF object == "flagtypes" %]
-      旗标类型
+      标记类型
     [% ELSIF object == "group_access" %]
       浏览群组
     [% ELSIF object == "groups" %]
@@ -607,62 +607,62 @@
     <br>如果你的附件是圖片的话，你可以先将它轉換为 JPG 或 PNG 格式，然后再试一次。
 
   [% ELSIF error == "flag_requestee_disabled" %]
-    [% title = "无法要求特定的人设置旗标" %]
+    [% title = "无法要求特定的人设置标记" %]
     你不能要求特定的人设置 <em>[% type.name FILTER html %]</em> 。
 
   [% ELSIF error == "flag_requestee_needs_privs" %]
-    [% title = "旗标设置者需要权限" %]
+    [% title = "标记设置者需要权限" %]
     [% requestee.identity FILTER html %]并沒有设置
-    <em>[% flagtype.name FILTER html %]</em> 旗标的权限。请选择一位属于
+    <em>[% flagtype.name FILTER html %]</em> 标记的权限。请选择一位属于
     <em>[% flagtype.grant_group.name FILTER html %]</em> 群组的用户。
 
   [% ELSIF error == "flag_requestee_unauthorized" %]
-    [% title = "你要求设置旗标的人未经授权" %]
-    [% admindocslinks = {'flags-overview.html#flags-admin'  => '管理旗标',
+    [% title = "你要求设置标记的人未经授权" %]
+    [% admindocslinks = {'flags-overview.html#flags-admin'  => '管理标记',
                          'groups.html' => '群组安全性'} %]
-    [% docslinks = {'flags-overview.html' => '旗标概述',
-                    'flags.html' => '使用旗标'} %]
+    [% docslinks = {'flags-overview.html' => '标记概述',
+                    'flags.html' => '使用标记'} %]
 
     你要求 [% requestee.identity FILTER html %] 对[% terms.bug %][% bug_id FILTER html -%]
-    [% IF attach_id && attach_id > 0 %]的附件 [% attach_id FILTER html %] [% END %]设置旗标
+    [% IF attach_id && attach_id > 0 %]的附件 [% attach_id FILTER html %] [% END %]设置标记
     <code>[% flag_type.name FILTER html %]</code> ，
     但是该[% terms.bug %]仅限制属于特定群组的用户浏览，
     而你所要求的用户并不属于[% terms.bug %]所限定的特定群组。
     请选择其他人，或者将该用户加入[% terms.bug %]的邮件抄送列表中。
 
   [% ELSIF error == "flag_requestee_unauthorized_attachment" %]
-    [% title = "你要求设置旗标的人未经授权" %]
-    [% admindocslinks = {'flags-overview.html#flags-admin'  => '管理旗标',
+    [% title = "你要求设置标记的人未经授权" %]
+    [% admindocslinks = {'flags-overview.html#flags-admin'  => '管理标记',
                          'groups.html' => '群组安全性'} %]
-    [% docslinks = {'flags-overview.html' => '旗标概述',
-                    'flags.html' => '使用旗标'} %]
+    [% docslinks = {'flags-overview.html' => '标记概述',
+                    'flags.html' => '使用标记'} %]
 
     你要求 [% requestee.identity FILTER html %] 对[% terms.bug %][% bug_id FILTER html %] 的
-    附件 [% attach_id FILTER html %]设置旗标 <code>[% flag_type.name FILTER html %]</code> ，
+    附件 [% attach_id FILTER html %]设置标记 <code>[% flag_type.name FILTER html %]</code> ，
     但是该附件仅限制属于 [% Param("insidergroup") FILTER html %] 群组的用户浏览，
     而你所要求的用户并不属于该群组。
     请选择属于该群组的用户，或是要求管理员将该用户加入该群组中。
 
   [% ELSIF error == "flag_status_invalid" %]
-    [% title = "旗标状态无效" %]
+    [% title = "标记状态无效" %]
     [% IF id %]
-      旗标编号 #[% id FILTER html %] 的
+      标记编号 #[% id FILTER html %] 的
     [% END %]
-    旗标状态 <em>[% status FILTER html %]</em> 无效。
+    标记状态 <em>[% status FILTER html %]</em> 无效。
 
   [% ELSIF error == "flag_type_cannot_deactivate" %]
-    [% title = "无法禁用旗标类型" %]
-    很抱歉，旗标类型 '[% flagtype.name FILTER html %]'
+    [% title = "无法禁用标记类型" %]
+    很抱歉，标记类型 '[% flagtype.name FILTER html %]'
     也用在一些你无法看见的项目，所以你无法禁用 (deactivate) 它。
 
   [% ELSIF error == "flag_type_cannot_delete" %]
-    [% title = "不允许刪除旗标类型" %]
-    很抱歉，旗标类型 '[% flagtype.name FILTER html %]'
+    [% title = "不允许刪除标记类型" %]
+    很抱歉，标记类型 '[% flagtype.name FILTER html %]'
     也用在一些你无法看见的项目，所以你无法刪除它。
 
   [% ELSIF error == "flag_type_cc_list_invalid" %]
-    [% title = "无效的旗标类型邮件抄送列表" %]
-    [% admindocslinks = {'flags-overview.html#flags-admin'  => '管理旗标'} %]
+    [% title = "无效的标记类型邮件抄送列表" %]
+    [% admindocslinks = {'flags-overview.html#flags-admin'  => '管理标记'} %]
     邮件抄送列表 [% cc_list FILTER html %] 必须少于 200 字符。
 
   [% ELSIF error == "flag_type_component_without_product" %]
@@ -670,32 +670,32 @@
     仅选择了模块，但并未选择项目。
 
   [% ELSIF error == "flag_type_description_invalid" %]
-    [% title = "无效的旗标类型描述" %]
-    [% admindocslinks = {'flags-overview.html#flags-admin'  => '管理旗标'} %]
-    你必须对此旗标类型输入描述。
+    [% title = "无效的标记类型描述" %]
+    [% admindocslinks = {'flags-overview.html#flags-admin'  => '管理标记'} %]
+    你必须对此标记类型输入描述。
 
   [% ELSIF error == "flag_type_name_invalid" %]
-    [% title = "无效的旗标类型名称" %]
-    [% admindocslinks = {'flags-overview.html#flags-admin'  => '管理旗标'} %]
+    [% title = "无效的标记类型名称" %]
+    [% admindocslinks = {'flags-overview.html#flags-admin'  => '管理标记'} %]
     名称 <em>[% name FILTER html %]</em> 必须是 1 到 50 字符长，且不得包含任何空白或逗号 (,) 。
 
   [% ELSIF error == "flag_type_not_editable" %]
-    [% title = "无法编辑旗标类型" %]
+    [% title = "无法编辑标记类型" %]
     你无法编辑 '[% flagtype.name FILTER html %]'
-    的旗标类型设置，因为你可以管理的项目并不适用此旗标类型。
+    的标记类型设置，因为你可以管理的项目并不适用此标记类型。
 
   [% ELSIF error == "flag_type_not_multiplicable" %]
-    [% docslinks = {'flags-overview.html' => '旗标概述',
-                    'flags.html' => '使用旗标'} %]
+    [% docslinks = {'flags-overview.html' => '标记概述',
+                    'flags.html' => '使用标记'} %]
     你不能对这个[% IF attachment %]附件
-    [% ELSE %] [%+ terms.bug %] [% END %]设置多个 <em>[% type.name FILTER html %]</em> 旗标。
+    [% ELSE %] [%+ terms.bug %] [% END %]设置多个 <em>[% type.name FILTER html %]</em> 标记。
 
   [% ELSIF error == "flag_update_denied" %]
-    [% title = "拒绝修改旗标" %]
-    [% admindocslinks = {'flags-overview.html#flags-admin'  => '管理旗标',
+    [% title = "拒绝修改标记" %]
+    [% admindocslinks = {'flags-overview.html#flags-admin'  => '管理标记',
                          'groups.html' => '群组安全性'} %]
-    [% docslinks = {'flags-overview.html' => '旗标概述',
-                    'flags.html' => '使用旗标'} %]
+    [% docslinks = {'flags-overview.html' => '标记概述',
+                    'flags.html' => '使用标记'} %]
     你试着[% IF status == "+" %]同意[% ELSIF status == "-" %]拒绝
     [% ELSIF status == "X" %]清除[% ELSE %]要求[% END %]
     <code>[% name FILTER html %]
@@ -713,7 +713,7 @@
     [% END %]
 
   [% ELSIF error == "flag_type_sortkey_invalid" %]
-    [% title = "无效的旗标排序键" %]
+    [% title = "无效的标记排序键" %]
     排序键 <em>[% sortkey FILTER html %]</em> 必须是在 0 和
     [% constants.MAX_SMALLINT FILTER none %]
     之间的任意整数。
@@ -1809,9 +1809,9 @@
   [% ELSIF class == "Bugzilla::Status" %]
     状态
   [% ELSIF class == "Bugzilla::Flag" %]
-    旗标
+    标记
   [% ELSIF class == "Bugzilla::FlagType" %]
-    旗标种类
+    标记种类
   [% ELSIF class == "Bugzilla::Field" %]
     字段
   [% ELSIF class == "Bugzilla::Group" %]

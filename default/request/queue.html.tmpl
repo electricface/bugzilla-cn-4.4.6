@@ -88,7 +88,7 @@
           [% END %]
         </select>
       </td>
-      <th>旗标：</th>
+      <th>标记：</th>
       <td>
         [% PROCESS "global/select-menu.html.tmpl"
                     name="type"
@@ -136,7 +136,7 @@
         [% groups = {
             "请求者" => 'requester' ,
             "被请求者" => 'requestee',
-            "旗标" => 'type' ,
+            "标记" => 'type' ,
             "项目／模块" => 'category'
           } %]
         [% PROCESS "global/select-menu.html.tmpl" name="group" options=groups default=cgi.param('group') %]
@@ -158,7 +158,7 @@
 </form>
 
 [% column_headers = {
-      "type"       => "旗标" ,
+      "type"       => "标记" ,
       "status"     => "状态" ,
       "bug"        => "${terms.Bug}" ,
       "attachment" => "附件" ,

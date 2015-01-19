@@ -244,7 +244,7 @@
             <table>
               <tr>
                 <th>描述</th>
-                <th>旗标</th>
+                <th>标记</th>
               </tr>
               [% FOREACH attachment = bug.attachments %]
                 <tr>
@@ -343,7 +343,7 @@
       <th class="rightcell">[% field_descs.${name} FILTER html %]：</th>
       <td>[% bug.${name}.identity FILTER email FILTER html %]</td>
     [% ELSIF name == "flags" %]
-        <th class="rightcell">旗标：</th>
+        <th class="rightcell">标记：</th>
         <td>
           [% FOREACH type = bug.flag_types %]
             [% FOREACH flag = type.flags %]

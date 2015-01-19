@@ -131,8 +131,8 @@
             [% otheruser.login FILTER html %] 曾经<a
               href="buglist.cgi?field0-0-0=setters.login_name&amp;type0-0-0=equals&amp;value0-0-0=
               [%- otheruser.login FILTER uri %]">设置或要求设置
-              [%+ flags.setter %] 个旗标</a>。如果你删除该用户，数据库中的旗标记录将不一致，导致这
-              [%+ flags.setter %] 个旗标不再正确地显示。
+              [%+ flags.setter %] 个标记</a>。如果你删除该用户，数据库中的标记记录将不一致，导致这
+              [%+ flags.setter %] 个标记不再正确地显示。
           </li>
         [% END %]
         [% IF longdescs %]
@@ -195,7 +195,7 @@
             [% otheruser.login FILTER html %] 曾<a
               href="buglist.cgi?field0-0-0=requestees.login_name&amp;type0-0-0=equals&amp;value0-0-0=
               [%- otheruser.login FILTER uri %]">被要求设置 [% flags.requestee %]
-              个旗标</a>。如果你删除该用户，这 [% flags.requestee %] 个旗标将修改为非指定要求的状态。
+              个标记</a>。如果你删除该用户，这 [% flags.requestee %] 个标记将修改为非指定要求的状态。
           </li>
         [% END %]
         [% IF namedqueries %]

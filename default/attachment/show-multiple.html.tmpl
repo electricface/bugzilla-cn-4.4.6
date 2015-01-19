@@ -55,7 +55,7 @@
 
       <td valign="top">
         [% IF a.flags.size == 0 %]
-          <i>没有旗标</i>
+          <i>没有标记</i>
         [% ELSE %]
           [% FOREACH flag = a.flags %]
             [% flag.setter.nick FILTER html %]:

@@ -162,23 +162,23 @@
     已修正 "everconfirmed" 。
 
   [% ELSIF san_tag == "flag_check_start" %]
-    检查项目及模块中的错误旗标中…
+    检查项目及模块中的错误标记中…
 
   [% ELSIF san_tag == "flag_deletion_start" %]
-    删除无效的旗标中…
+    删除无效的标记中…
 
   [% ELSIF san_tag == "flag_deletion_end" %]
-    已删除无效的旗标。
+    已删除无效的标记。
 
   [% ELSIF san_tag == "flag_alert" %]
     [%+ PROCESS bug_link bug_id = bug_id %]
     [% IF attach_id %]附件 [% attach_id FILTER html %][% END %]
-    的旗标[% flag_id FILTER html %]无效。
+    的标记[% flag_id FILTER html %]无效。
 
   [% ELSIF san_tag == "flag_fix" %]
     <a href="sanitycheck.cgi?remove_invalid_flags=1&amp;token=
        [%- issue_hash_token(['sanitycheck']) FILTER uri %]">
-      点击此处删除无效的旗标</a>
+      点击此处删除无效的标记</a>
 
   [% ELSIF san_tag == "group_control_map_entries_creation" %]
     现在替已合并但缺少成员群组管控的项目／群组，建立 <code>显示 (SHOWN)</code>

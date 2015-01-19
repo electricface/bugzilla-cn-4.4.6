@@ -308,11 +308,11 @@
     [% END %]
 
   [% ELSIF message_tag == "flag_cleared" %]
-    部份旗标在新的项目／模块中不适用，因此已被清除。
+    部份标记在新的项目／模块中不适用，因此已被清除。
 
   [% ELSIF message_tag == "flag_creation_failed" %]
-    [% title = "添加旗标失败" %]
-    在认证旗标时发生错误：
+    [% title = "添加标记失败" %]
+    在认证标记时发生错误：
     [%+ flag_creation_error FILTER none %]
 
   [% ELSIF message_tag == "get_field_desc" %]
@@ -554,30 +554,30 @@
     已更新你的密码。
 
   [% ELSIF message_tag == "flag_type_created" %]
-    [% title = BLOCK %]已添加旗标类型 '[% name FILTER html %]'[% END %]
-    已添加旗标类型 <em>[% name FILTER html %]</em> 。
+    [% title = BLOCK %]已添加标记类型 '[% name FILTER html %]'[% END %]
+    已添加标记类型 <em>[% name FILTER html %]</em> 。
 
   [% ELSIF message_tag == "flag_type_deactivated" %]
-    [% title = BLOCK %]已禁用旗标类型 '[% flag_type.name FILTER html %]'[% END %]
-    已禁用 (deactivate) 旗标类型 <em>[% flag_type.name FILTER html %]</em> 。
+    [% title = BLOCK %]已禁用标记类型 '[% flag_type.name FILTER html %]'[% END %]
+    已禁用 (deactivate) 标记类型 <em>[% flag_type.name FILTER html %]</em> 。
 
   [% ELSIF message_tag == "flag_type_deleted" %]
-    [% title = BLOCK %]已刪除旗标类型 '[% name FILTER html %]'[% END %]
-    已刪除旗标类型 <em>[% name FILTER html %]</em> 。
+    [% title = BLOCK %]已刪除标记类型 '[% name FILTER html %]'[% END %]
+    已刪除标记类型 <em>[% name FILTER html %]</em> 。
 
   [% ELSIF message_tag == "flag_type_updated" %]
     [%# 注：参考 admin/flag-type #%]
-    [% title = BLOCK %]已更新旗标类型 '[% flagtype.name FILTER html %]'[% END %]
+    [% title = BLOCK %]已更新标记类型 '[% flagtype.name FILTER html %]'[% END %]
     [% IF changes.size %]
-      对旗标类型 <em>[% flagtype.name FILTER html %]</em>
+      对标记类型 <em>[% flagtype.name FILTER html %]</em>
       所做的修改已保存：
       <ul>
         [% IF changes.is_active.defined %]
           [%# 注：active/inactive, 见 flag_type_deactivated #%]
-          <li>旗标类型已设置为[% flagtype.is_active ? "启用" : "禁用 (inactive)" %]</li>
+          <li>标记类型已设置为[% flagtype.is_active ? "启用" : "禁用 (inactive)" %]</li>
         [% END %]
         [% IF changes.name.defined %]
-          <li>旗标类型已更名为 <em>[% flagtype.name FILTER html %]</em></li>
+          <li>标记类型已更名为 <em>[% flagtype.name FILTER html %]</em></li>
         [% END %]
         [% IF changes.description.defined %]
           <li>描述已更新为 <em>[% flagtype.description FILTER html %]</em></li>
@@ -593,13 +593,13 @@
           <li>排序键已更新为 <em>[% flagtype.sortkey FILTER html %]</em></li>
         [% END %]
         [% IF changes.is_requestable.defined %]
-          <li>旗标类型[% "不再" UNLESS flagtype.is_requestable %]可请求</li>
+          <li>标记类型[% "不再" UNLESS flagtype.is_requestable %]可请求</li>
         [% END %]
         [% IF changes.is_requesteeble.defined AND flagtype.is_requestable %]
-          <li>旗标类型[% "不再" UNLESS flagtype.is_requesteeble %]可特定请求</li>
+          <li>标记类型[% "不再" UNLESS flagtype.is_requesteeble %]可特定请求</li>
         [% END %]
         [% IF changes.is_multiplicable.defined %]
-          <li>旗标类型[% "不再" UNLESS flagtype.is_multiplicable %]可设为多重种类</li>
+          <li>标记类型[% "不再" UNLESS flagtype.is_multiplicable %]可设为多重种类</li>
         [% END %]
         [% IF changes.grant_group_id.defined %]
           [% IF flagtype.grant_group_id %]
@@ -620,7 +620,7 @@
         [% END %]
      </ul>
     [% ELSE %]
-      并未修改旗标类型 <em>[% flagtype.name FILTER html %]</em> 。
+      并未修改标记类型 <em>[% flagtype.name FILTER html %]</em> 。
     [% END %]
 
   [% ELSIF message_tag == "install_admin_get_email" %]
@@ -821,7 +821,7 @@
     [% terms.$term FILTER html %]
 
   [% ELSIF message_tag == "unexpected_flag_types" %]
-    无法设置部份旗标。请检查你的设置。
+    无法设置部份标记。请检查你的设置。
 
   [% ELSIF message_tag == "user_match_failed" %]
     你输入的用户名称并不匹配任何已知的 [% terms.Bugzilla %] 用户，因此字段

@@ -76,7 +76,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
         value="1"
         [% " checked"
            IF user.mail_settings.${constants.REL_ANY}.${constants.EVT_FLAG_REQUESTED} %]>
-      <label for="[% prefname %]">当有人要求我设置这一项旗标时，发送电子邮件给我</label>
+      <label for="[% prefname %]">当有人要求我设置这一项标记时，发送电子邮件给我</label>
       <br>
     </td>
   </tr>
@@ -88,7 +88,7 @@ document.write('<input type="button" value="全不选" onclick="SetCheckboxes(fa
         value="1"
         [% " checked"
            IF user.mail_settings.${constants.REL_ANY}.${constants.EVT_REQUESTED_FLAG} %]>
-      <label for="[% prefname %]">当有人应允我的要求，设置一项旗标，发送电子邮件给我</label>
+      <label for="[% prefname %]">当有人应允我的要求，设置一项标记，发送电子邮件给我</label>
       <br>
     </td>
   </tr>
