@@ -65,7 +65,7 @@
 
         [% class = user.in_group('editcomponents') ? "" : "forbidden" %]
         <dt id="flags" class="[% class %]"><a href="editflagtypes.cgi">标记</a></dt>
-        <dd class="[% class %]">标记是对[% terms.bugs %]和／或附件所做出的四种自定义状态：同意、否定、请求和未定义。
+        <dd class="[% class %]">标记是对[% terms.bugs %]和附件所做出的四种自定义状态：同意、否定、请求和未定义。
         <br>你可以对每个[% terms.bug %]设置多种标记，并定义哪些用户可以编辑标记。</dd>
 
 	[% Hook.process('end_links_left') %]
