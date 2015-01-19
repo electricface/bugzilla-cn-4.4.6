@@ -108,7 +108,7 @@
 
   [% ELSIF message_tag == "buglist_new_named_query" %]
     [% title = "已建立搜索" %]
-    已将搜索结果存储为 <code><a
+    已将搜索结果保存为 <code><a
      href="buglist.cgi?cmdtype=runnamed&amp;namedcmd=[% queryname FILTER uri %]"
     >[% queryname FILTER html %]</a></code> 。
 
@@ -142,7 +142,7 @@
   [% ELSIF message_tag == "classification_updated" %]
     [% title = "已更新分类" %]
     [% IF changes.keys.size %]
-      已存储对分类 <em>[% classification.name FILTER html %]</em> 所做出的修改：
+      已保存对分类 <em>[% classification.name FILTER html %]</em> 所做出的修改：
       <ul>
         [% IF changes.name.defined %]
           <li>名称已更新为 '[% classification.name FILTER html %]'</li>
@@ -177,7 +177,7 @@
   [% ELSIF message_tag == "component_updated" %]
     [% title = "已更新模块" %]
     [% IF changes.keys.size %]
-      已存储对模块 <em>[% comp.name FILTER html %]</em> 所做的修改：
+      已保存对模块 <em>[% comp.name FILTER html %]</em> 所做的修改：
       <ul>
       [% IF changes.name.defined %]
         <li>名称已更新为 '[% comp.name FILTER html %]'</li>
@@ -228,7 +228,7 @@
 
   [% ELSIF message_tag == "default_settings_updated" %]
     [% IF changes_saved %]
-      已存储对默认偏好设置所做的修改。
+      已保存对默认偏好设置所做的修改。
     [% ELSE %]
       并未做出修改。
     [% END %]
@@ -270,7 +270,7 @@
   [% ELSIF message_tag == "field_value_updated" %]
     [% title = "已更新字段值" %]
     [% IF changes.keys.size %]
-      已存储对字段 <em>[% field.description FILTER html %]</em>
+      已保存对字段 <em>[% field.description FILTER html %]</em>
       (<em>[% field.name FILTER html %]</em>)
       的值 <em>[% value_old FILTER html %]</em> 所做的修改：
       <ul>
@@ -432,7 +432,7 @@
   [% ELSIF message_tag == "keyword_updated" %]
     [% title = "已更新关键字" %]
     [% IF changes.keys.size %]
-      已存储对关键字 <em>[% keyword.name FILTER html %]</em> 所做的修改：
+      已保存对关键字 <em>[% keyword.name FILTER html %]</em> 所做的修改：
       <ul>
         [% IF changes.name.defined %]
           <li>已将关键字更名为 <em>[% keyword.name FILTER html %]</em> 。</li>
@@ -570,7 +570,7 @@
     [% title = BLOCK %]已更新旗标类型 '[% flagtype.name FILTER html %]'[% END %]
     [% IF changes.size %]
       对旗标类型 <em>[% flagtype.name FILTER html %]</em>
-      所做的修改已存储：
+      所做的修改已保存：
       <ul>
         [% IF changes.is_active.defined %]
           [%# 注：active/inactive, 见 flag_type_deactivated #%]
@@ -724,7 +724,7 @@
     ****************************************************************************
     <b><u>警告！</u></b>你没有在 localconfig 输入 "webservergroup" 参数。
     <br>这代表着某些需要以你和网页服务器编辑的文件和目录，变成所有人都可以写入，
-    <br>此外，其他文件（包括存储你的数据库密码的 localconfig 文件），变成所有人都可以读取。
+    <br>此外，其他文件（包括保存你的数据库密码的 localconfig 文件），变成所有人都可以读取。
     <br>这代表着拥有浏览这台机器的<u>任何人</u>可以对你安装的 [% terms.Bugzilla %]
     做任何事情，甚至也可以执行任何 Perl 程序。
 
@@ -845,7 +845,7 @@
     [% title = "已更新版本" %]
     [% IF changes.size %]
       对版本 <em>[% version.name FILTER html %]</em>
-      所做的修改已存储：
+      所做的修改已保存：
       <ul>
         [% IF changes.value.defined %]
           <li>已将版本更名为 <em>[% version.name FILTER html %]</em></li>
@@ -879,6 +879,6 @@
     你输入了字串 '[% message_tag FILTER html %]' 。
     正确的用法是输入一个标签，并且在 <kbd>messages.html.tmpl</kbd> 文件中定义该标签。<br>
     <br>
-    如果你是一个 [% terms.Bugzilla %] 的用户，但却看到此信息时，请将这页存储下来并发给 [% Param('maintainer') %] 。
+    如果你是一个 [% terms.Bugzilla %] 的用户，但却看到此信息时，请将这页保存下来并发给 [% Param('maintainer') %] 。
   [% END %]
 [% END %]

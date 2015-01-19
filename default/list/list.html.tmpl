@@ -266,14 +266,14 @@
         <a href="buglist.cgi?cmdtype=dorem&amp;remaction=forget&amp;namedcmd=
                 [% searchname FILTER uri %]&amp;token=
                 [% issue_hash_token([search_id, searchname]) FILTER uri %]">
-          刪除已存储的搜索 '[% searchname FILTER html %]'</a>
+          刪除已保存的搜索 '[% searchname FILTER html %]'</a>
       </td>
     [% ELSE %]
       <td>&nbsp;</td>
 
       <td valign="middle" class="bz_query_remember">
         <form method="get" action="buglist.cgi">
-          <input type="submit" id="remember" value="将搜索结果存储为">
+          <input type="submit" id="remember" value="将搜索结果保存为">
           <input type="hidden" name="newquery"
                  value="[% urlquerypart FILTER html %][% "&order=$qorder" FILTER html IF order %]">
           <input type="hidden" name="cmdtype" value="doit">

@@ -19,7 +19,7 @@
 
 <dl>
   <dt>对[% "${terms.bug}$attachment.bug_id" FILTER bug_link(attachment.bug_id) FILTER none %]的<a
-    href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">附件 [% attachment.id %]</a> 所作的修改已存储。
+    href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">附件 [% attachment.id %]</a> 所作的修改已保存。
   </dt>
   <dd>
     [% PROCESS "bug/process/bugmail.html.tmpl" mailing_bugid = attachment.bug_id %]
